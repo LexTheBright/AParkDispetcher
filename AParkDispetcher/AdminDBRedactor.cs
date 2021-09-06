@@ -10,6 +10,36 @@ namespace AParkDispetcher
 {
     class AdminDBRedactor
     {
+        public void createNewKouple(string table, Dictionary<string, string> props)
+        {
+            string querry = "";
+            string addingKeys = "";
+            string addingValues = "";
+
+            foreach (var prop in props)
+            {
+                addingKeys += $"{prop.Key}, ";
+                addingValues += $"'{prop.Value}', ";
+            }
+
+            addingKeys = addingKeys.Remove(addingKeys.Length - 2);
+            addingValues = addingValues.Remove(addingValues.Length - 2);
+
+            querry = $"USE autos; INSERT INTO {table}({addingKeys})" +
+                $" VALUES ({addingValues})";
+
+            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            try
+            {
+                comm.ExecuteNonQuery();
+                MessageBox.Show("Записалося!!!!!!");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public void deleteByID(string table, string id_title, string id)
         {
@@ -25,8 +55,6 @@ namespace AParkDispetcher
 
                 throw;
             }
-            
-            comm.Connection.Close();
         }
 
         public void updateByID(string table, string id_title, string id, Dictionary<string, string> props)

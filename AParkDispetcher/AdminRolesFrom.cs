@@ -33,7 +33,7 @@ namespace AParkDispetcher
             {
                 case "user":
                     AdminUsersGrid.Enabled = true;
-
+                    
                     int start_index = AdminUsersGrid.SelectedCells[0].RowIndex;
                     AdminUsersGrid.Rows.Clear();
                     DU.fillAdminsUserGrid(AdminUsersGrid);
@@ -62,6 +62,7 @@ namespace AParkDispetcher
                     user_role_textbox.ReadOnly = true;
                     login_place.ReadOnly = true;
                     password_place.ReadOnly = true;
+                    user_tab_textbox.ReadOnly = true;
 
                     admin_users_role.Visible = false;
                     user_role_textbox.Visible = true;
@@ -258,8 +259,9 @@ namespace AParkDispetcher
         {
             int selectedrowindex = AdminUsersGrid.SelectedCells[0].RowIndex;
             string[] user_args = new string[2];
-            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
-            user_args[1] = "(" +AdminUsersGrid.Rows[selectedrowindex].Cells[1].Value.ToString() + ")";
+            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+            string tab_n = AdminUsersGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+            user_args[1] = "(" + tab_n + ")";
 
             DeleteDialog newDialog = new DeleteDialog("users", user_args);
 
@@ -267,7 +269,9 @@ namespace AParkDispetcher
 
             if (newDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(dqd.Remove(dqd.Length - 2));
+                ADBR.deleteByID("users", "tab_number", tab_n);
+                endingEvent("user");
+                //MessageBox.Show(dqd.Remove(dqd.Length - 2));
             }
         }
 
@@ -312,19 +316,36 @@ namespace AParkDispetcher
 
         private void User_button_save_Click(object sender, EventArgs e)
         {
-            //tabControl1.TabPages[0].Focus();
             password_place.Focus();
 
             Dictionary<string, string> properties = new Dictionary<string, string>();
 
+            //табель
+            if (!user_tab_textbox.ReadOnly)
+            {
+                string error_message = IsValidFunc("Табельный №", user_tab_textbox.Text.ToString());
+                if (error_message != null)
+                {
+                    MessageBox.Show(error_message);
+                    return;
+                }
+                else
+                {
+                    //MessageBox.Show("прошло");
+                    properties.Add("tab_number", user_tab_textbox.Text);
+                }
+            }
+
+            //роль
             if (admin_users_role.SelectedItem.ToString() != user_role_textbox.Text) 
             {
                 properties.Add("user_role_id", admin_users_role.SelectedIndex.ToString());
             }
 
-            if (login_place.Text != tempArgs["login"])
+            //логин
+            if (!user_tab_textbox.ReadOnly || login_place.Text != tempArgs["login"])
             {
-                string error_message = IsValidFunc("login", login_place.Text.ToString());
+                string error_message = IsValidFunc("Логин", login_place.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -337,11 +358,11 @@ namespace AParkDispetcher
                 }
             } 
 
-
-            if (password_place.Text.Length > 0)
+            //пароль
+            if (!user_tab_textbox.ReadOnly || password_place.Text.Length > 0)
             {
                 //string dsqdpi = password_place.
-                string error_message = IsValidFunc("password", password_place.Text.ToString());
+                string error_message = IsValidFunc("Пароль", password_place.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -354,10 +375,10 @@ namespace AParkDispetcher
                 }
             } 
 
-
-            if (user_FIO_textbox.Text != tempArgs["FIO"])
+            //ФИО
+            if (!user_tab_textbox.ReadOnly  || user_FIO_textbox.Text != tempArgs["FIO"])
             {
-                string error_message = IsValidFunc("FIO", user_FIO_textbox.Text.ToString());
+                string error_message = IsValidFunc("ФИО", user_FIO_textbox.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -372,15 +393,24 @@ namespace AParkDispetcher
                     }
                     //MessageBox.Show("прошло");
                     properties.Add("user_surname", splited_FIO[0]);
-                    properties.Add("user_name", splited_FIO[1]);
+                    properties.Add("user_name", splited_FIO[1]);// if index exist checkout
                     properties.Add("user_midname", splited_FIO[2]);
                 }
             } 
 
 
-            if (properties.Count > 0 && user_tab_textbox.ReadOnly)
+            if (user_tab_textbox.ReadOnly)
             {
-                ADBR.updateByID("users", "tab_number", user_tab_textbox.Text, properties);
+                if (properties.Count > 0) ADBR.updateByID("users", "tab_number", user_tab_textbox.Text, properties);
+            }
+             else
+            {
+                if (properties.ContainsKey("tab_number") && properties.ContainsKey("user_surname") && properties.ContainsKey("login") && properties.ContainsKey("password"))
+                {
+                    if (!properties.ContainsKey("user_role_id")) properties.Add("user_role_id", admin_users_role.SelectedIndex.ToString());
+                    ADBR.createNewKouple("users", properties);
+                    this.Height += 35; 
+                }
             }
             endingEvent("user");
             tempArgs.Clear();
@@ -390,19 +420,27 @@ namespace AParkDispetcher
         {
             string pattern = "";
             string vlid_error = "";
+            if (expr == "") return "Не заполнено поле " + field_name;
             switch (field_name)
             {
-                case "login":
-                    pattern = @"^[A-Za-z0-9]{8,15}$";
+                case "Логин":
+                    pattern = @"^[А-Яа-яA-Za-z0-9]{8,15}$";
+                    //int fst = 1024, dq = 256;
+                    //pattern = @"^\[а-яё]$"; // nicodeRanges.Cyrillic.FirstCodePoint, UnicodeRanges.Cyrillic.Length
                     vlid_error = "Неверный логин! Логин должен состоять только из букв латинского алфавита и цифр. А также должен содержать от 8 до 15 символов.";
                     break;
-                case "password":
-                    pattern = @"^[A-Za-z0-9]{8,20}$";
+                case "Пароль":
+                    pattern = @"^[А-Яа-яA-Za-z0-9]{8,20}$";
                     vlid_error = "Неверный пароль! Пароль должен состоять только из букв латинского алфавита и цифр. А также должен содержать от 8 до 20 символов.";
                     break;
-                case "FIO":
-                    pattern = @"\w*\s\w*\s\w*";
+                case "ФИО":
+                    //pattern = @"\w*\s\w*\s\w*";
+                    pattern = @"[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,50}";
                     vlid_error = "Ошибка! ФИО должно содержать от 10 до 150 символов";
+                    break;
+                case "Табельный №":
+                    pattern = @"^\d{6}$";
+                    vlid_error = "Ошибка! Табельный номер должен содержать 6 цифр";
                     break;
                 default:
                     break;
@@ -413,6 +451,42 @@ namespace AParkDispetcher
             {
                 return vlid_error;
             }
+        }
+
+        private void User_button_add_Click(object sender, EventArgs e)
+        {
+            user_tab_textbox.Focus();
+            admin_users_role.SelectedIndex = 0;
+            AdminUsersGrid.Enabled = false;
+
+            
+            user_tab_textbox.ReadOnly = false;
+            user_tab_textbox.BackColor = Color.PaleGreen;
+            user_tab_textbox.Clear();
+            login_place.ReadOnly = false;
+            login_place.Clear();
+            login_place.BackColor = Color.PaleGreen;
+            password_place.ReadOnly = false;
+            password_place.BackColor = Color.PaleGreen;
+            password_place.Clear();
+            user_FIO_textbox.ReadOnly = false;
+            user_FIO_textbox.BackColor = Color.PaleGreen;
+            user_FIO_textbox.Clear();
+            admin_users_role.Visible = true;
+            user_role_textbox.Visible = false;
+
+
+            User_button_delete.Enabled = false;
+            User_button_edit.Enabled = false;
+            User_button_add.Enabled = false;
+            User_button_delete.BackColor = Color.Tan;
+            User_button_edit.BackColor = Color.Tan;
+            User_button_add.BackColor = Color.Tan;
+
+            User_button_cancel.Enabled = true;
+            User_button_save.Enabled = true;
+            User_button_cancel.BackColor = Color.White;
+            User_button_save.BackColor = Color.White;
         }
     }
 }
