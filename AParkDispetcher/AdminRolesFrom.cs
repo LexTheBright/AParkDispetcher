@@ -33,11 +33,12 @@ namespace AParkDispetcher
             {
                 case "user":
                     AdminUsersGrid.Enabled = true;
-                    
+
                     int start_index = AdminUsersGrid.SelectedCells[0].RowIndex;
+
                     AdminUsersGrid.Rows.Clear();
                     DU.fillAdminsUserGrid(AdminUsersGrid);
-                    AdminUsersGrid.Rows[start_index].Selected = true;
+                    if (start_index < AdminUsersGrid.RowCount) AdminUsersGrid.Rows[start_index].Selected = true;
 
                     User_button_delete.Enabled = true;
                     User_button_edit.Enabled = true;
@@ -69,6 +70,33 @@ namespace AParkDispetcher
 
                     //AdminUsersGrid.SelectAll();
                     dataGridView1_SelectionChanged(User_button_cancel, new EventArgs());
+                    break;
+
+                case "driver":
+                    AdminDriversGrid.Enabled = true;
+                    
+                    int start_index_dr = AdminDriversGrid.SelectedCells[0].RowIndex;
+                    AdminDriversGrid.Rows.Clear();
+                    DD.fillAdminsDriverGrid(AdminDriversGrid);
+                    if (start_index_dr < AdminDriversGrid.RowCount) AdminDriversGrid.Rows[start_index_dr].Selected = true;
+
+                    Driver_button_delete.Enabled = true;
+                    Driver_button_add.Enabled = true;
+                    Driver_button_cancel.Enabled = false;
+                    Driver_button_save.Enabled = false;
+
+                    Driver_button_delete.BackColor = Color.White;
+                    Driver_button_add.BackColor = Color.White;
+                    Driver_button_cancel.BackColor = Color.Tan;
+                    Driver_button_save.BackColor = Color.Tan;
+
+                    driver_FIO_textbox.BackColor = Color.Linen;
+                    driver_tab_textbox.BackColor = Color.Linen;
+
+                    driver_FIO_textbox.ReadOnly = true;
+                    driver_tab_textbox.ReadOnly = true;
+
+                    dataGridView2_SelectionChanged(Driver_button_cancel, new EventArgs());
                     break;
                 default:
                     break;
@@ -138,8 +166,8 @@ namespace AParkDispetcher
                 string State = AdminDriversGrid.Rows[selectedrowindex].Cells[2].ToString();
                 //string[] splited_FIO = FIO.Split(' ');
 
-                textBox8.Text = FIO;
-                textBox7.Text = Tab_num;
+                driver_FIO_textbox.Text = FIO;
+                driver_tab_textbox.Text = Tab_num;
             }
         }
 
@@ -259,7 +287,7 @@ namespace AParkDispetcher
         {
             int selectedrowindex = AdminUsersGrid.SelectedCells[0].RowIndex;
             string[] user_args = new string[2];
-            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
             string tab_n = AdminUsersGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
             user_args[1] = "(" + tab_n + ")";
 
@@ -409,7 +437,7 @@ namespace AParkDispetcher
                 {
                     if (!properties.ContainsKey("user_role_id")) properties.Add("user_role_id", admin_users_role.SelectedIndex.ToString());
                     ADBR.createNewKouple("users", properties);
-                    this.Height += 35; 
+                    if (this.Height < Screen.GetWorkingArea(this).Height) this.Height += 35; 
                 }
             }
             endingEvent("user");
@@ -427,16 +455,16 @@ namespace AParkDispetcher
                     pattern = @"^[А-Яа-яA-Za-z0-9]{8,15}$";
                     //int fst = 1024, dq = 256;
                     //pattern = @"^\[а-яё]$"; // nicodeRanges.Cyrillic.FirstCodePoint, UnicodeRanges.Cyrillic.Length
-                    vlid_error = "Неверный логин! Логин должен состоять только из букв латинского алфавита и цифр. А также должен содержать от 8 до 15 символов.";
+                    vlid_error = "Неверный логин! Логин должен состоять только из букв и цифр. А также должен содержать от 8 до 15 символов.";
                     break;
                 case "Пароль":
                     pattern = @"^[А-Яа-яA-Za-z0-9]{8,20}$";
-                    vlid_error = "Неверный пароль! Пароль должен состоять только из букв латинского алфавита и цифр. А также должен содержать от 8 до 20 символов.";
+                    vlid_error = "Неверный пароль! Пароль должен состоять только из букв и цифр. А также должен содержать от 8 до 20 символов.";
                     break;
                 case "ФИО":
                     //pattern = @"\w*\s\w*\s\w*";
                     pattern = @"[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,50}";
-                    vlid_error = "Ошибка! ФИО должно содержать от 10 до 150 символов";
+                    vlid_error = "Ошибка! ФИО должно состоять из букв и содержать от 10 до 150 символов";
                     break;
                 case "Табельный №":
                     pattern = @"^\d{6}$";
@@ -487,6 +515,100 @@ namespace AParkDispetcher
             User_button_save.Enabled = true;
             User_button_cancel.BackColor = Color.White;
             User_button_save.BackColor = Color.White;
+        }
+
+        private void Driver_button_add_Click(object sender, EventArgs e)
+        {
+            driver_tab_textbox.Focus();
+            AdminDriversGrid.Enabled = false;
+
+            driver_FIO_textbox.ReadOnly = false;
+            driver_FIO_textbox.BackColor = Color.PaleGreen;
+            driver_FIO_textbox.Clear();
+            driver_tab_textbox.ReadOnly = false;
+            driver_tab_textbox.BackColor = Color.PaleGreen;
+            driver_tab_textbox.Clear();
+
+            Driver_button_add.Enabled = false;
+            Driver_button_add.BackColor = Color.Tan;
+            Driver_button_delete.Enabled = false;
+            Driver_button_delete.BackColor = Color.Tan;
+
+            Driver_button_cancel.Enabled = true;
+            Driver_button_save.Enabled = true;
+            Driver_button_cancel.BackColor = Color.White;
+            Driver_button_save.BackColor = Color.White;
+        }
+
+        private void Driver_button_delete_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = AdminDriversGrid.SelectedCells[0].RowIndex;
+            string[] driver_args = new string[2];
+            driver_args[0] = AdminDriversGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
+            string tab_n = AdminDriversGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+            driver_args[1] = "(" + tab_n + ")";
+
+            DeleteDialog newDialog = new DeleteDialog("drivers", driver_args);
+
+            if (newDialog.ShowDialog() == DialogResult.OK)
+            {
+                ADBR.deleteByID("drivers", "tab_number", tab_n);
+                endingEvent("driver");
+            }
+        }
+
+        private void Driver_button_cancel_Click(object sender, EventArgs e)
+        {
+            endingEvent("driver");
+        }
+
+        private void Driver_button_save_Click(object sender, EventArgs e)
+        {
+
+            Dictionary<string, string> properties_driver = new Dictionary<string, string>();
+
+            //табель
+            string error_message = IsValidFunc("Табельный №", driver_tab_textbox.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                //MessageBox.Show("прошло");
+                properties_driver.Add("tab_number", driver_tab_textbox.Text);
+            }
+
+            //ФИО
+            error_message = IsValidFunc("ФИО", driver_FIO_textbox.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                string[] splited_FIO = driver_FIO_textbox.Text.Split(' ');
+                if (splited_FIO.Length > 3)
+                {
+                    for (int i = 3; i < splited_FIO.Length; i++) splited_FIO[2] += splited_FIO[i];
+                }
+                //MessageBox.Show("прошло");
+                properties_driver.Add("driver_surname", splited_FIO[0]);
+                properties_driver.Add("driver_name", splited_FIO[1]);// if index exist checkout
+                properties_driver.Add("driver_midname", splited_FIO[2]);
+            }
+
+
+
+            if (properties_driver.ContainsKey("tab_number") && properties_driver.ContainsKey("driver_surname"))
+            {
+                properties_driver.Add("driver_state", "2");
+                if (ADBR.createNewKouple("drivers", properties_driver) == 1) return;
+                if (this.Height < Screen.GetWorkingArea(this).Height) this.Height += 35;
+            }
+            endingEvent("driver");
         }
     }
 }

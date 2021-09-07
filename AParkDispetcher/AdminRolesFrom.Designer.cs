@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.driver_tab_textbox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Driver_button_save = new System.Windows.Forms.Button();
             this.Driver_button_delete = new System.Windows.Forms.Button();
             this.Driver_button_cancel = new System.Windows.Forms.Button();
             this.Driver_button_add = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.driver_FIO_textbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -133,7 +133,7 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(693, 51);
+            this.groupBox6.Size = new System.Drawing.Size(693, 144);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Пользователи";
@@ -145,7 +145,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(938, 531);
+            this.tabPage2.Size = new System.Drawing.Size(938, 624);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Водители";
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
@@ -164,7 +164,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(932, 526);
+            this.groupBox2.Size = new System.Drawing.Size(932, 619);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Управление пользователями";
@@ -174,28 +174,29 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.PapayaWhip;
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.driver_tab_textbox);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.driver_FIO_textbox);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(2, 331);
+            this.panel2.Location = new System.Drawing.Point(2, 424);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(928, 191);
             this.panel2.TabIndex = 12;
             // 
-            // textBox7
+            // driver_tab_textbox
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Linen;
-            this.textBox7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(374, 80);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(306, 26);
-            this.textBox7.TabIndex = 60;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.driver_tab_textbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.driver_tab_textbox.BackColor = System.Drawing.Color.Linen;
+            this.driver_tab_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.driver_tab_textbox.Location = new System.Drawing.Point(374, 80);
+            this.driver_tab_textbox.Name = "driver_tab_textbox";
+            this.driver_tab_textbox.ReadOnly = true;
+            this.driver_tab_textbox.Size = new System.Drawing.Size(306, 26);
+            this.driver_tab_textbox.TabIndex = 2;
+            this.driver_tab_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
             // 
@@ -216,7 +217,8 @@
             // 
             this.Driver_button_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Driver_button_save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Driver_button_save.BackColor = System.Drawing.SystemColors.Window;
+            this.Driver_button_save.BackColor = System.Drawing.Color.Tan;
+            this.Driver_button_save.Enabled = false;
             this.Driver_button_save.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Driver_button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -225,8 +227,10 @@
             this.Driver_button_save.Name = "Driver_button_save";
             this.Driver_button_save.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_save.TabIndex = 51;
+            this.Driver_button_save.TabStop = false;
             this.Driver_button_save.Text = "Сохранить";
             this.Driver_button_save.UseVisualStyleBackColor = false;
+            this.Driver_button_save.Click += new System.EventHandler(this.Driver_button_save_Click);
             // 
             // Driver_button_delete
             // 
@@ -241,14 +245,17 @@
             this.Driver_button_delete.Name = "Driver_button_delete";
             this.Driver_button_delete.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_delete.TabIndex = 57;
+            this.Driver_button_delete.TabStop = false;
             this.Driver_button_delete.Text = "Удалить";
             this.Driver_button_delete.UseVisualStyleBackColor = false;
+            this.Driver_button_delete.Click += new System.EventHandler(this.Driver_button_delete_Click);
             // 
             // Driver_button_cancel
             // 
             this.Driver_button_cancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Driver_button_cancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Driver_button_cancel.BackColor = System.Drawing.SystemColors.Window;
+            this.Driver_button_cancel.BackColor = System.Drawing.Color.Tan;
+            this.Driver_button_cancel.Enabled = false;
             this.Driver_button_cancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Driver_button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -256,9 +263,10 @@
             this.Driver_button_cancel.Location = new System.Drawing.Point(466, 4);
             this.Driver_button_cancel.Name = "Driver_button_cancel";
             this.Driver_button_cancel.Size = new System.Drawing.Size(150, 39);
-            this.Driver_button_cancel.TabIndex = 55;
+            this.Driver_button_cancel.TabIndex = 7;
             this.Driver_button_cancel.Text = "Отмена";
             this.Driver_button_cancel.UseVisualStyleBackColor = false;
+            this.Driver_button_cancel.Click += new System.EventHandler(this.Driver_button_cancel_Click);
             // 
             // Driver_button_add
             // 
@@ -272,20 +280,22 @@
             this.Driver_button_add.Location = new System.Drawing.Point(154, 4);
             this.Driver_button_add.Name = "Driver_button_add";
             this.Driver_button_add.Size = new System.Drawing.Size(150, 39);
-            this.Driver_button_add.TabIndex = 56;
+            this.Driver_button_add.TabIndex = 4;
             this.Driver_button_add.Text = "Добавить";
             this.Driver_button_add.UseVisualStyleBackColor = false;
+            this.Driver_button_add.Click += new System.EventHandler(this.Driver_button_add_Click);
             // 
-            // textBox8
+            // driver_FIO_textbox
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Linen;
-            this.textBox8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(310, 40);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(370, 26);
-            this.textBox8.TabIndex = 1;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.driver_FIO_textbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.driver_FIO_textbox.BackColor = System.Drawing.Color.Linen;
+            this.driver_FIO_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.driver_FIO_textbox.Location = new System.Drawing.Point(310, 40);
+            this.driver_FIO_textbox.Name = "driver_FIO_textbox";
+            this.driver_FIO_textbox.ReadOnly = true;
+            this.driver_FIO_textbox.Size = new System.Drawing.Size(370, 26);
+            this.driver_FIO_textbox.TabIndex = 3;
+            this.driver_FIO_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -319,7 +329,7 @@
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(320, 23);
-            this.textBox9.TabIndex = 7;
+            this.textBox9.TabIndex = 1;
             this.textBox9.Text = "Поиск";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -334,14 +344,14 @@
             this.AdminDriversGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminDriversGrid.CausesValidation = false;
             this.AdminDriversGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AdminDriversGrid.ColumnHeadersHeight = 35;
             this.AdminDriversGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminDriversGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -359,11 +369,11 @@
             this.AdminDriversGrid.RowHeadersVisible = false;
             this.AdminDriversGrid.RowHeadersWidth = 90;
             this.AdminDriversGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -372,7 +382,7 @@
             this.AdminDriversGrid.RowTemplate.ReadOnly = true;
             this.AdminDriversGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.AdminDriversGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AdminDriversGrid.Size = new System.Drawing.Size(928, 300);
+            this.AdminDriversGrid.Size = new System.Drawing.Size(928, 393);
             this.AdminDriversGrid.StandardTab = true;
             this.AdminDriversGrid.TabIndex = 0;
             this.AdminDriversGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
@@ -468,6 +478,7 @@
             this.user_role_textbox.ReadOnly = true;
             this.user_role_textbox.Size = new System.Drawing.Size(175, 26);
             this.user_role_textbox.TabIndex = 65;
+            this.user_role_textbox.TabStop = false;
             this.user_role_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // admin_users_role
@@ -494,7 +505,7 @@
             this.password_place.PasswordChar = '*';
             this.password_place.ReadOnly = true;
             this.password_place.Size = new System.Drawing.Size(240, 26);
-            this.password_place.TabIndex = 63;
+            this.password_place.TabIndex = 4;
             this.password_place.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // login_place
@@ -505,7 +516,7 @@
             this.login_place.Name = "login_place";
             this.login_place.ReadOnly = true;
             this.login_place.Size = new System.Drawing.Size(240, 26);
-            this.login_place.TabIndex = 62;
+            this.login_place.TabIndex = 3;
             this.login_place.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // user_tab_textbox
@@ -516,7 +527,7 @@
             this.user_tab_textbox.Name = "user_tab_textbox";
             this.user_tab_textbox.ReadOnly = true;
             this.user_tab_textbox.Size = new System.Drawing.Size(95, 26);
-            this.user_tab_textbox.TabIndex = 60;
+            this.user_tab_textbox.TabIndex = 1;
             this.user_tab_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel3
@@ -539,7 +550,7 @@
             // 
             this.User_button_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.User_button_save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.User_button_save.BackColor = System.Drawing.Color.White;
+            this.User_button_save.BackColor = System.Drawing.Color.Tan;
             this.User_button_save.Enabled = false;
             this.User_button_save.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.User_button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -549,6 +560,7 @@
             this.User_button_save.Name = "User_button_save";
             this.User_button_save.Size = new System.Drawing.Size(150, 39);
             this.User_button_save.TabIndex = 58;
+            this.User_button_save.TabStop = false;
             this.User_button_save.Text = "Сохранить";
             this.User_button_save.UseVisualStyleBackColor = false;
             this.User_button_save.Click += new System.EventHandler(this.User_button_save_Click);
@@ -557,7 +569,7 @@
             // 
             this.User_button_cancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.User_button_cancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.User_button_cancel.BackColor = System.Drawing.SystemColors.Window;
+            this.User_button_cancel.BackColor = System.Drawing.Color.Tan;
             this.User_button_cancel.Enabled = false;
             this.User_button_cancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.User_button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -566,7 +578,7 @@
             this.User_button_cancel.Location = new System.Drawing.Point(547, 4);
             this.User_button_cancel.Name = "User_button_cancel";
             this.User_button_cancel.Size = new System.Drawing.Size(150, 39);
-            this.User_button_cancel.TabIndex = 51;
+            this.User_button_cancel.TabIndex = 6;
             this.User_button_cancel.Text = "Отмена";
             this.User_button_cancel.UseVisualStyleBackColor = false;
             this.User_button_cancel.Click += new System.EventHandler(this.User_button_cancel_Click);
@@ -584,6 +596,7 @@
             this.User_button_edit.Name = "User_button_edit";
             this.User_button_edit.Size = new System.Drawing.Size(150, 39);
             this.User_button_edit.TabIndex = 57;
+            this.User_button_edit.TabStop = false;
             this.User_button_edit.Text = "Изменить";
             this.User_button_edit.UseVisualStyleBackColor = false;
             this.User_button_edit.Click += new System.EventHandler(this.User_button_edit_Click);
@@ -601,6 +614,7 @@
             this.User_button_delete.Name = "User_button_delete";
             this.User_button_delete.Size = new System.Drawing.Size(150, 39);
             this.User_button_delete.TabIndex = 55;
+            this.User_button_delete.TabStop = false;
             this.User_button_delete.Text = "Удалить";
             this.User_button_delete.UseVisualStyleBackColor = false;
             this.User_button_delete.Click += new System.EventHandler(this.User_button_delete_Click);
@@ -617,7 +631,7 @@
             this.User_button_add.Location = new System.Drawing.Point(79, 4);
             this.User_button_add.Name = "User_button_add";
             this.User_button_add.Size = new System.Drawing.Size(150, 39);
-            this.User_button_add.TabIndex = 56;
+            this.User_button_add.TabIndex = 5;
             this.User_button_add.Text = "Добавить";
             this.User_button_add.UseVisualStyleBackColor = false;
             this.User_button_add.Click += new System.EventHandler(this.User_button_add_Click);
@@ -630,7 +644,7 @@
             this.user_FIO_textbox.Name = "user_FIO_textbox";
             this.user_FIO_textbox.ReadOnly = true;
             this.user_FIO_textbox.Size = new System.Drawing.Size(348, 26);
-            this.user_FIO_textbox.TabIndex = 1;
+            this.user_FIO_textbox.TabIndex = 2;
             this.user_FIO_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -714,14 +728,14 @@
             this.AdminUsersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminUsersGrid.CausesValidation = false;
             this.AdminUsersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.AdminUsersGrid.ColumnHeadersHeight = 35;
             this.AdminUsersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminUsersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -740,11 +754,11 @@
             this.AdminUsersGrid.RowHeadersVisible = false;
             this.AdminUsersGrid.RowHeadersWidth = 90;
             this.AdminUsersGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -803,7 +817,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(946, 568);
+            this.tabControl1.Size = new System.Drawing.Size(946, 661);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.TabStop = false;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -1108,14 +1122,14 @@
             this.AdminCarsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminCarsGrid.CausesValidation = false;
             this.AdminCarsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.AdminCarsGrid.ColumnHeadersHeight = 35;
             this.AdminCarsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminCarsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1135,11 +1149,11 @@
             this.AdminCarsGrid.RowHeadersVisible = false;
             this.AdminCarsGrid.RowHeadersWidth = 90;
             this.AdminCarsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -1194,7 +1208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(200)))), ((int)(((byte)(226)))));
-            this.ClientSize = new System.Drawing.Size(946, 568);
+            this.ClientSize = new System.Drawing.Size(946, 661);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox6);
             this.Font = new System.Drawing.Font("Bookman Old Style", 9.75F);
@@ -1238,13 +1252,13 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox driver_tab_textbox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Driver_button_save;
         private System.Windows.Forms.Button Driver_button_delete;
         private System.Windows.Forms.Button Driver_button_cancel;
         private System.Windows.Forms.Button Driver_button_add;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox driver_FIO_textbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox9;

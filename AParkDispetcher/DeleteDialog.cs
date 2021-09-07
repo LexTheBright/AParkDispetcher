@@ -25,6 +25,14 @@ namespace AParkDispetcher
                     }
                     textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
                     break;
+                case "drivers":
+                    textBox1.Text += " водителя?";
+                    foreach (var arg in agrs)
+                    {
+                        textBox2.Text += arg + " "; 
+                    }
+                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                    break;
                 default:
                     break;
             }

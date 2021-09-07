@@ -10,7 +10,19 @@ namespace AParkDispetcher
 {
     class AdminDBRedactor
     {
-        public void createNewKouple(string table, Dictionary<string, string> props)
+
+        private string getErrorMessage(int ErrorNumber)
+        {
+            switch (ErrorNumber)
+            {
+                case 1062:
+                    return "Данный табельный номер уже существует в системе.";
+                default:
+                    return "";
+            }
+        }
+
+        public int createNewKouple(string table, Dictionary<string, string> props)
         {
             string querry = "";
             string addingKeys = "";
@@ -32,12 +44,15 @@ namespace AParkDispetcher
             try
             {
                 comm.ExecuteNonQuery();
-                MessageBox.Show("Записалося!!!!!!");
+                //MessageBox.Show("Записалося!!!!!!");
+                return 0;
             }
-            catch (Exception)
+            catch (MySqlException e)
             {
-
-                throw;
+                string ErrMessageText = getErrorMessage(e.Number);
+                if (ErrMessageText == "") throw;
+                else MessageBox.Show(ErrMessageText);
+                return 1;
             }
         }
 
