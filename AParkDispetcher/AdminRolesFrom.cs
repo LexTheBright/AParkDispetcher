@@ -98,6 +98,46 @@ namespace AParkDispetcher
 
                     dataGridView2_SelectionChanged(Driver_button_cancel, new EventArgs());
                     break;
+
+                case "car":
+                    AdminCarsGrid.Enabled = true;
+                    
+                    int start_index_cr = AdminCarsGrid.SelectedCells[0].RowIndex;
+                    AdminCarsGrid.Rows.Clear();
+                    DC.fillAdminsCarGrid(AdminCarsGrid);
+                    if (start_index_cr < AdminCarsGrid.RowCount) AdminCarsGrid.Rows[start_index_cr].Selected = true;
+
+                    admin_car_type_label.Visible = true;
+                    admin_car_type_cbox.Visible = false;
+
+                    //красим области обратно
+                    admin_car_mark_label.ReadOnly = true;
+                    admin_car_mark_label.BackColor = Color.Linen;
+                    admin_car_model_label.ReadOnly = true;
+                    admin_car_model_label.BackColor = Color.Linen;
+                    admin_car_color_label.ReadOnly = true;
+                    admin_car_color_label.BackColor = Color.Linen;
+                    admin_car_descr_label.ReadOnly = true;
+                    admin_car_descr_label.BackColor = Color.Linen;
+
+
+                    //красим кнопочки
+                    admin_car_add_button.Enabled = true;
+                    admin_car_add_button.BackColor = Color.White;
+                    admin_car_edit_button.Enabled = true;
+                    admin_car_edit_button.BackColor = Color.White;
+                    admin_car_delete_button.Enabled = true;
+                    admin_car_delete_button.BackColor = Color.White;
+
+                    admin_car_cancel_button.Enabled = false;
+                    admin_car_add_save_button.Enabled = false;
+                    admin_car_add_save_button.Visible = true;
+                    admin_car_edit_save_button.Visible = false;
+                    admin_car_cancel_button.BackColor = Color.Tan;
+                    admin_car_add_save_button.BackColor = Color.Tan;
+
+                    dataGridView3_SelectionChanged(Driver_button_cancel, new EventArgs());
+                    break;
                 default:
                     break;
             }
@@ -114,7 +154,7 @@ namespace AParkDispetcher
             DU.fillAdminsUserGrid(AdminUsersGrid);
             DD.fillAdminsDriverGrid(AdminDriversGrid);
             DC.fillAdminsCarGrid(AdminCarsGrid);
-            DC.fillTypes(comboBox2);
+            DC.fillTypes(admin_car_type_cbox);
         }
 
 
@@ -215,8 +255,8 @@ namespace AParkDispetcher
 
         private void tabPage3_Leave(object sender, EventArgs e)
         {
-            comboBox2.Items.Clear();
-            DC.fillTypes(comboBox2);
+            admin_car_type_cbox.Items.Clear();
+            DC.fillTypes(admin_car_type_cbox);
         }
 
         private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -261,13 +301,13 @@ namespace AParkDispetcher
                 }
                 //string[] splited_FIO = FIO.Split(' ');
 
-                textBox12.Text = reg_mark;
-                textBox13.Text = model;
-                textBox3.Text = type;
-                textBox6.Text = color;
-                textBox11.Text = description;
+                admin_car_mark_label.Text = reg_mark;
+                admin_car_model_label.Text = model;
+                admin_car_type_label.Text = type;
+                admin_car_color_label.Text = color;
+                admin_car_descr_label.Text = description;
 
-                comboBox2.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key; //DC.types[type].Key;
+                admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key; //DC.types[type].Key;
 
             }
         }
@@ -609,6 +649,90 @@ namespace AParkDispetcher
                 if (this.Height < Screen.GetWorkingArea(this).Height) this.Height += 35;
             }
             endingEvent("driver");
+        }
+
+        private void admin_car_add_button_Click(object sender, EventArgs e)
+        {
+            admin_car_mark_label.Focus();
+            AdminCarsGrid.Enabled = false;
+
+            //заменяем лейбл комбобоксом
+            admin_car_type_label.Visible = false;
+            admin_car_type_cbox.Visible = true;
+
+            //красим области в зеленый
+            admin_car_mark_label.ReadOnly = false;
+            admin_car_mark_label.BackColor = Color.PaleGreen;
+            admin_car_mark_label.Clear();
+            admin_car_model_label.ReadOnly = false;
+            admin_car_model_label.BackColor = Color.PaleGreen;
+            admin_car_model_label.Clear();
+            admin_car_color_label.ReadOnly = false;
+            admin_car_color_label.BackColor = Color.PaleGreen;
+            admin_car_color_label.Clear();
+            admin_car_descr_label.ReadOnly = false;
+            admin_car_descr_label.BackColor = Color.PaleGreen;
+            admin_car_descr_label.Clear();
+
+            //красим кнопочки
+            admin_car_add_button.Enabled = false;
+            admin_car_add_button.BackColor = Color.Tan;
+            admin_car_edit_button.Enabled = false;
+            admin_car_edit_button.BackColor = Color.Tan;
+            admin_car_delete_button.Enabled = false;
+            admin_car_delete_button.BackColor = Color.Tan;
+
+            admin_car_cancel_button.Enabled = true;
+            admin_car_add_save_button.Enabled = true;
+            admin_car_cancel_button.BackColor = Color.White;
+            admin_car_add_save_button.BackColor = Color.White;
+        }
+
+        private void admin_car_edit_button_Click(object sender, EventArgs e)
+        {
+            admin_car_descr_label.Focus();
+            AdminCarsGrid.Enabled = false;
+
+            //красим области в зеленый
+            admin_car_descr_label.ReadOnly = false;
+            admin_car_descr_label.BackColor = Color.PaleGreen;
+            admin_car_descr_label.Clear();
+
+            //красим кнопочки
+            admin_car_add_button.Enabled = false;
+            admin_car_add_button.BackColor = Color.Tan;
+            admin_car_edit_button.Enabled = false;
+            admin_car_edit_button.BackColor = Color.Tan;
+            admin_car_delete_button.Enabled = false;
+            admin_car_delete_button.BackColor = Color.Tan;
+
+            admin_car_cancel_button.Enabled = true;
+            admin_car_add_save_button.Visible = false;
+            admin_car_edit_save_button.Enabled = true;
+            admin_car_edit_save_button.Visible = true;
+            admin_car_cancel_button.BackColor = Color.White;
+        }
+
+        private void admin_car_delete_button_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = AdminCarsGrid.SelectedCells[0].RowIndex;
+            string[] car_args = new string[2];
+            car_args[0] = AdminCarsGrid.Rows[selectedrowindex].Cells[1].Value.ToString() + "\r\n";
+            string mark_n = AdminCarsGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+            car_args[1] = "(" + mark_n + ")";
+
+            DeleteDialog newDialog = new DeleteDialog("cars", car_args);
+
+            if (newDialog.ShowDialog() == DialogResult.OK)
+            {
+                ADBR.deleteByID("cars", "reg_mark", mark_n);
+                endingEvent("car");
+            }
+        }
+
+        private void admin_car_cancel_button_Click(object sender, EventArgs e)
+        {
+            endingEvent("car");
         }
     }
 }

@@ -19,23 +19,21 @@ namespace AParkDispetcher
             {
                 case "users":
                     textBox1.Text += " пользователя?";
-                    foreach (var arg in agrs)
-                    {
-                        textBox2.Text += arg + " "; 
-                    }
-                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
                     break;
                 case "drivers":
                     textBox1.Text += " водителя?";
-                    foreach (var arg in agrs)
-                    {
-                        textBox2.Text += arg + " "; 
-                    }
-                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                    break;
+                case "cars":
+                    textBox1.Text += " автомобиль?";
                     break;
                 default:
                     break;
             }
+            foreach (var arg in agrs)
+            {
+                textBox2.Text += arg + " ";
+            }
+            textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
         }
 
         private void User_button_cancel_Click(object sender, EventArgs e)

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -82,19 +82,19 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.admin_car_color_label = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.admin_car_type_label = new System.Windows.Forms.TextBox();
+            this.admin_car_type_cbox = new System.Windows.Forms.ComboBox();
+            this.admin_car_descr_label = new System.Windows.Forms.TextBox();
+            this.admin_car_mark_label = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.admin_car_add_save_button = new System.Windows.Forms.Button();
+            this.admin_car_cancel_button = new System.Windows.Forms.Button();
+            this.admin_car_edit_button = new System.Windows.Forms.Button();
+            this.admin_car_delete_button = new System.Windows.Forms.Button();
+            this.admin_car_add_button = new System.Windows.Forms.Button();
+            this.admin_car_model_label = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -106,6 +106,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_car_edit_save_button = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -167,7 +168,7 @@
             this.groupBox2.Size = new System.Drawing.Size(932, 619);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Управление пользователями";
+            this.groupBox2.Text = "Управление водителями";
             // 
             // panel2
             // 
@@ -344,14 +345,14 @@
             this.AdminDriversGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminDriversGrid.CausesValidation = false;
             this.AdminDriversGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.AdminDriversGrid.ColumnHeadersHeight = 35;
             this.AdminDriversGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminDriversGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -369,11 +370,11 @@
             this.AdminDriversGrid.RowHeadersVisible = false;
             this.AdminDriversGrid.RowHeadersWidth = 90;
             this.AdminDriversGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -421,7 +422,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(938, 531);
+            this.tabPage1.Size = new System.Drawing.Size(938, 624);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Пользователи";
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
@@ -440,7 +441,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(932, 526);
+            this.groupBox1.Size = new System.Drawing.Size(932, 619);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление пользователями";
@@ -464,7 +465,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(2, 331);
+            this.panel1.Location = new System.Drawing.Point(2, 424);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 191);
             this.panel1.TabIndex = 12;
@@ -728,14 +729,14 @@
             this.AdminUsersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminUsersGrid.CausesValidation = false;
             this.AdminUsersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.AdminUsersGrid.ColumnHeadersHeight = 35;
             this.AdminUsersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminUsersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -754,11 +755,11 @@
             this.AdminUsersGrid.RowHeadersVisible = false;
             this.AdminUsersGrid.RowHeadersWidth = 90;
             this.AdminUsersGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -767,7 +768,7 @@
             this.AdminUsersGrid.RowTemplate.ReadOnly = true;
             this.AdminUsersGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.AdminUsersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AdminUsersGrid.Size = new System.Drawing.Size(928, 300);
+            this.AdminUsersGrid.Size = new System.Drawing.Size(928, 393);
             this.AdminUsersGrid.StandardTab = true;
             this.AdminUsersGrid.TabIndex = 0;
             this.AdminUsersGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -831,7 +832,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(938, 531);
+            this.tabPage3.Size = new System.Drawing.Size(938, 624);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Автомобили";
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
@@ -851,45 +852,46 @@
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(932, 526);
+            this.groupBox3.Size = new System.Drawing.Size(932, 619);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Управление пользователями";
+            this.groupBox3.Text = "Управление автомобилями";
             // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.PapayaWhip;
-            this.panel5.Controls.Add(this.textBox6);
+            this.panel5.Controls.Add(this.admin_car_edit_save_button);
+            this.panel5.Controls.Add(this.admin_car_color_label);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.comboBox2);
-            this.panel5.Controls.Add(this.textBox11);
-            this.panel5.Controls.Add(this.textBox12);
+            this.panel5.Controls.Add(this.admin_car_type_label);
+            this.panel5.Controls.Add(this.admin_car_type_cbox);
+            this.panel5.Controls.Add(this.admin_car_descr_label);
+            this.panel5.Controls.Add(this.admin_car_mark_label);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.textBox13);
+            this.panel5.Controls.Add(this.admin_car_model_label);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(2, 331);
+            this.panel5.Location = new System.Drawing.Point(2, 424);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(928, 191);
             this.panel5.TabIndex = 12;
             // 
-            // textBox6
+            // admin_car_color_label
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Linen;
-            this.textBox6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(399, 78);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(140, 26);
-            this.textBox6.TabIndex = 67;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.admin_car_color_label.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_color_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_color_label.Location = new System.Drawing.Point(399, 78);
+            this.admin_car_color_label.Name = "admin_car_color_label";
+            this.admin_car_color_label.ReadOnly = true;
+            this.admin_car_color_label.Size = new System.Drawing.Size(140, 26);
+            this.admin_car_color_label.TabIndex = 67;
+            this.admin_car_color_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -902,155 +904,162 @@
             this.label6.TabIndex = 66;
             this.label6.Text = "Цвет";
             // 
-            // textBox3
+            // admin_car_type_label
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Linen;
-            this.textBox3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(399, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(140, 26);
-            this.textBox3.TabIndex = 65;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.admin_car_type_label.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_type_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_type_label.Location = new System.Drawing.Point(399, 10);
+            this.admin_car_type_label.Name = "admin_car_type_label";
+            this.admin_car_type_label.ReadOnly = true;
+            this.admin_car_type_label.Size = new System.Drawing.Size(140, 26);
+            this.admin_car_type_label.TabIndex = 65;
+            this.admin_car_type_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comboBox2
+            // admin_car_type_cbox
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.Linen;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.Location = new System.Drawing.Point(399, 42);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 27);
-            this.comboBox2.TabIndex = 64;
+            this.admin_car_type_cbox.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_type_cbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.admin_car_type_cbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_type_cbox.Location = new System.Drawing.Point(399, 42);
+            this.admin_car_type_cbox.Name = "admin_car_type_cbox";
+            this.admin_car_type_cbox.Size = new System.Drawing.Size(140, 27);
+            this.admin_car_type_cbox.TabIndex = 64;
+            this.admin_car_type_cbox.Visible = false;
             // 
-            // textBox11
+            // admin_car_descr_label
             // 
-            this.textBox11.BackColor = System.Drawing.Color.Linen;
-            this.textBox11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox11.Location = new System.Drawing.Point(568, 31);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(324, 86);
-            this.textBox11.TabIndex = 62;
+            this.admin_car_descr_label.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_descr_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_descr_label.Location = new System.Drawing.Point(568, 31);
+            this.admin_car_descr_label.Multiline = true;
+            this.admin_car_descr_label.Name = "admin_car_descr_label";
+            this.admin_car_descr_label.ReadOnly = true;
+            this.admin_car_descr_label.Size = new System.Drawing.Size(324, 86);
+            this.admin_car_descr_label.TabIndex = 62;
             // 
-            // textBox12
+            // admin_car_mark_label
             // 
-            this.textBox12.BackColor = System.Drawing.Color.Linen;
-            this.textBox12.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox12.Location = new System.Drawing.Point(107, 42);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(219, 26);
-            this.textBox12.TabIndex = 60;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.admin_car_mark_label.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_mark_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_mark_label.Location = new System.Drawing.Point(107, 42);
+            this.admin_car_mark_label.Name = "admin_car_mark_label";
+            this.admin_car_mark_label.ReadOnly = true;
+            this.admin_car_mark_label.Size = new System.Drawing.Size(219, 26);
+            this.admin_car_mark_label.TabIndex = 60;
+            this.admin_car_mark_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.Tan;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.button2);
-            this.panel6.Controls.Add(this.button3);
-            this.panel6.Controls.Add(this.button4);
-            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.admin_car_add_save_button);
+            this.panel6.Controls.Add(this.admin_car_cancel_button);
+            this.panel6.Controls.Add(this.admin_car_edit_button);
+            this.panel6.Controls.Add(this.admin_car_delete_button);
+            this.panel6.Controls.Add(this.admin_car_add_button);
             this.panel6.Location = new System.Drawing.Point(0, 145);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(928, 46);
             this.panel6.TabIndex = 59;
             // 
-            // button1
+            // admin_car_add_save_button
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(703, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 39);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = false;
+            this.admin_car_add_save_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_add_save_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_add_save_button.BackColor = System.Drawing.Color.Tan;
+            this.admin_car_add_save_button.Enabled = false;
+            this.admin_car_add_save_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_add_save_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_add_save_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_add_save_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_add_save_button.Location = new System.Drawing.Point(703, 4);
+            this.admin_car_add_save_button.Name = "admin_car_add_save_button";
+            this.admin_car_add_save_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_add_save_button.TabIndex = 58;
+            this.admin_car_add_save_button.Text = "Сохранить";
+            this.admin_car_add_save_button.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // admin_car_cancel_button
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(547, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 39);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = false;
+            this.admin_car_cancel_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_cancel_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_cancel_button.BackColor = System.Drawing.Color.Tan;
+            this.admin_car_cancel_button.Enabled = false;
+            this.admin_car_cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_cancel_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_cancel_button.Location = new System.Drawing.Point(547, 4);
+            this.admin_car_cancel_button.Name = "admin_car_cancel_button";
+            this.admin_car_cancel_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_cancel_button.TabIndex = 51;
+            this.admin_car_cancel_button.Text = "Отмена";
+            this.admin_car_cancel_button.UseVisualStyleBackColor = false;
+            this.admin_car_cancel_button.Click += new System.EventHandler(this.admin_car_cancel_button_Click);
             // 
-            // button3
+            // admin_car_edit_button
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(235, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 39);
-            this.button3.TabIndex = 57;
-            this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = false;
+            this.admin_car_edit_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_edit_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_edit_button.BackColor = System.Drawing.SystemColors.Window;
+            this.admin_car_edit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_edit_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_edit_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_edit_button.Location = new System.Drawing.Point(235, 4);
+            this.admin_car_edit_button.Name = "admin_car_edit_button";
+            this.admin_car_edit_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_edit_button.TabIndex = 57;
+            this.admin_car_edit_button.Text = "Изменить";
+            this.admin_car_edit_button.UseVisualStyleBackColor = false;
+            this.admin_car_edit_button.Click += new System.EventHandler(this.admin_car_edit_button_Click);
             // 
-            // button4
+            // admin_car_delete_button
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.SystemColors.Window;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(391, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 39);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = false;
+            this.admin_car_delete_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_delete_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_delete_button.BackColor = System.Drawing.SystemColors.Window;
+            this.admin_car_delete_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_delete_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_delete_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_delete_button.Location = new System.Drawing.Point(391, 4);
+            this.admin_car_delete_button.Name = "admin_car_delete_button";
+            this.admin_car_delete_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_delete_button.TabIndex = 55;
+            this.admin_car_delete_button.Text = "Удалить";
+            this.admin_car_delete_button.UseVisualStyleBackColor = false;
+            this.admin_car_delete_button.Click += new System.EventHandler(this.admin_car_delete_button_Click);
             // 
-            // button5
+            // admin_car_add_button
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button5.BackColor = System.Drawing.SystemColors.Window;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(79, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 39);
-            this.button5.TabIndex = 56;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = false;
+            this.admin_car_add_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_add_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_add_button.BackColor = System.Drawing.SystemColors.Window;
+            this.admin_car_add_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_add_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_add_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_add_button.Location = new System.Drawing.Point(79, 4);
+            this.admin_car_add_button.Name = "admin_car_add_button";
+            this.admin_car_add_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_add_button.TabIndex = 56;
+            this.admin_car_add_button.Text = "Добавить";
+            this.admin_car_add_button.UseVisualStyleBackColor = false;
+            this.admin_car_add_button.Click += new System.EventHandler(this.admin_car_add_button_Click);
             // 
-            // textBox13
+            // admin_car_model_label
             // 
-            this.textBox13.BackColor = System.Drawing.Color.Linen;
-            this.textBox13.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox13.Location = new System.Drawing.Point(107, 78);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(219, 26);
-            this.textBox13.TabIndex = 1;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.admin_car_model_label.BackColor = System.Drawing.Color.Linen;
+            this.admin_car_model_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_model_label.Location = new System.Drawing.Point(107, 78);
+            this.admin_car_model_label.Name = "admin_car_model_label";
+            this.admin_car_model_label.ReadOnly = true;
+            this.admin_car_model_label.Size = new System.Drawing.Size(219, 26);
+            this.admin_car_model_label.TabIndex = 1;
+            this.admin_car_model_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -1122,14 +1131,14 @@
             this.AdminCarsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminCarsGrid.CausesValidation = false;
             this.AdminCarsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.AdminCarsGrid.ColumnHeadersHeight = 35;
             this.AdminCarsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminCarsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1149,11 +1158,11 @@
             this.AdminCarsGrid.RowHeadersVisible = false;
             this.AdminCarsGrid.RowHeadersWidth = 90;
             this.AdminCarsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -1162,7 +1171,7 @@
             this.AdminCarsGrid.RowTemplate.ReadOnly = true;
             this.AdminCarsGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.AdminCarsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AdminCarsGrid.Size = new System.Drawing.Size(928, 300);
+            this.AdminCarsGrid.Size = new System.Drawing.Size(928, 393);
             this.AdminCarsGrid.StandardTab = true;
             this.AdminCarsGrid.TabIndex = 0;
             this.AdminCarsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
@@ -1202,6 +1211,24 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Состояние";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 117;
+            // 
+            // admin_car_edit_save_button
+            // 
+            this.admin_car_edit_save_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.admin_car_edit_save_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admin_car_edit_save_button.BackColor = System.Drawing.Color.White;
+            this.admin_car_edit_save_button.Enabled = false;
+            this.admin_car_edit_save_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.admin_car_edit_save_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.admin_car_edit_save_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.admin_car_edit_save_button.ForeColor = System.Drawing.Color.Black;
+            this.admin_car_edit_save_button.Location = new System.Drawing.Point(703, 104);
+            this.admin_car_edit_save_button.Name = "admin_car_edit_save_button";
+            this.admin_car_edit_save_button.Size = new System.Drawing.Size(150, 39);
+            this.admin_car_edit_save_button.TabIndex = 59;
+            this.admin_car_edit_save_button.Text = "Сохранить";
+            this.admin_car_edit_save_button.UseVisualStyleBackColor = false;
+            this.admin_car_edit_save_button.Visible = false;
             // 
             // AdminRolesFrom
             // 
@@ -1296,29 +1323,30 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox admin_car_type_label;
+        private System.Windows.Forms.ComboBox admin_car_type_cbox;
+        private System.Windows.Forms.TextBox admin_car_descr_label;
+        private System.Windows.Forms.TextBox admin_car_mark_label;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button admin_car_add_save_button;
+        private System.Windows.Forms.Button admin_car_cancel_button;
+        private System.Windows.Forms.Button admin_car_edit_button;
+        private System.Windows.Forms.Button admin_car_delete_button;
+        private System.Windows.Forms.Button admin_car_add_button;
+        private System.Windows.Forms.TextBox admin_car_model_label;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.DataGridView AdminCarsGrid;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox admin_car_color_label;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button admin_car_edit_save_button;
     }
 }
