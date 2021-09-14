@@ -339,8 +339,9 @@ namespace AParkDispetcher
             {
                 ADBR.deleteByID("users", "tab_number", tab_n);
                 endingEvent("user");
-                //MessageBox.Show(dqd.Remove(dqd.Length - 2));
             }
+
+            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void User_button_edit_Click(object sender, EventArgs e)
@@ -484,11 +485,11 @@ namespace AParkDispetcher
             tempArgs.Clear();
         }
 
-        private string IsValidFunc(string field_name, string expr)
+        private string IsValidFunc(string field_name, string expr, bool NotNULL = true)
         {
             string pattern = "";
             string vlid_error = "";
-            if (expr == "") return "Не заполнено поле " + field_name;
+            if (NotNULL && expr == "") return "Не заполнено поле " + field_name;
             switch (field_name)
             {
                 case "Логин":
@@ -509,6 +510,23 @@ namespace AParkDispetcher
                 case "Табельный №":
                     pattern = @"^\d{6}$";
                     vlid_error = "Ошибка! Табельный номер должен содержать 6 цифр";
+                    break;
+                case "Описание":
+                    pattern = @"^[А-Яа-яA-Za-z0-9.,:% ]{0,100}$";
+                    vlid_error = "Ошибка! Описание может содержать только буквы, пробелы, цифры, знаки . , : %. Описание не должно превышать 100 знаков.";
+                    break;
+                case "Номер":
+                    pattern = @"^[АВЕКМНОРСТУХ]{1,2}\d{3,4}[АВЕКМНОРСТУХ]{0,2}\d{2,3}RUS$";
+                    //pattern = @"^[АВЕКМНОРСТУХ]{1,2}\d{3,4}(?<!000)[АВЕКМНОРСТУХ]{0,2}\d{2,3}RUS$";
+                    vlid_error = "Ошибка! Неверный формат номеров!";
+                    break;
+                case "Модель":
+                    pattern = @"^[А-Яа-яA-Za-z0-9() ]{3,40}$";
+                    vlid_error = "Ошибка! Неверный формат Модели! Доступны только буквы, пробелы, цифры, знаки ( ). В строке должно быть от 3 до 40 символов";
+                    break;
+                case "Цвет":
+                    pattern = @"^[А-Яа-я-]{3,20}$";
+                    vlid_error = "Ошибка! Неверный формат Цвета! Цвет может содержать только буквы и знак -.  В строке должно быть от 3 до 20 символов";
                     break;
                 default:
                     break;
@@ -595,6 +613,8 @@ namespace AParkDispetcher
                 ADBR.deleteByID("drivers", "tab_number", tab_n);
                 endingEvent("driver");
             }
+
+            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void Driver_button_cancel_Click(object sender, EventArgs e)
@@ -646,7 +666,7 @@ namespace AParkDispetcher
             {
                 properties_driver.Add("driver_state", "2");
                 if (ADBR.createNewKouple("drivers", properties_driver) == 1) return;
-                if (this.Height < Screen.GetWorkingArea(this).Height) this.Height += 35;
+                if (this.Height < Screen.GetWorkingArea(this).Height-this.Location.Y) this.Height += 35;
             }
             endingEvent("driver");
         }
@@ -655,6 +675,7 @@ namespace AParkDispetcher
         {
             admin_car_mark_label.Focus();
             AdminCarsGrid.Enabled = false;
+            admin_car_type_cbox.SelectedIndex = 0;
 
             //заменяем лейбл комбобоксом
             admin_car_type_label.Visible = false;
@@ -696,7 +717,6 @@ namespace AParkDispetcher
             //красим области в зеленый
             admin_car_descr_label.ReadOnly = false;
             admin_car_descr_label.BackColor = Color.PaleGreen;
-            admin_car_descr_label.Clear();
 
             //красим кнопочки
             admin_car_add_button.Enabled = false;
@@ -728,10 +748,99 @@ namespace AParkDispetcher
                 ADBR.deleteByID("cars", "reg_mark", mark_n);
                 endingEvent("car");
             }
+
+            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void admin_car_cancel_button_Click(object sender, EventArgs e)
         {
+            endingEvent("car");
+        }
+
+        private void admin_car_edit_save_button_Click(object sender, EventArgs e)
+        {
+
+            Dictionary<string, string> car_properties = new Dictionary<string, string>();
+
+            //if (admin_car_descr_label.Text != "")
+            {
+                string error_mese = IsValidFunc("Описание", admin_car_descr_label.Text, false);
+                if (error_mese != null)
+                {
+                    MessageBox.Show(error_mese);
+                    return;
+                }
+                else
+                {
+                    //MessageBox.Show("прошло");
+                    car_properties.Add("description", admin_car_descr_label.Text);
+                    ADBR.updateByID("cars", "reg_mark", admin_car_mark_label.Text, car_properties);
+                    endingEvent("car");
+                }
+            }
+
+        }
+
+        private void admin_car_add_save_button_Click(object sender, EventArgs e)
+        {
+
+            Dictionary<string, string> add_car_properties = new Dictionary<string, string>();
+            string error_message;
+
+            //Проверка номера авто
+            error_message = IsValidFunc("Номер", admin_car_mark_label.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_car_properties.Add("reg_mark", admin_car_mark_label.Text);
+            }
+            //Проверка модели
+            error_message = IsValidFunc("Модель", admin_car_model_label.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_car_properties.Add("model", admin_car_model_label.Text);
+            }
+            //Проверка Цвета
+            error_message = IsValidFunc("Цвет", admin_car_color_label.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_car_properties.Add("color", admin_car_color_label.Text);
+            }
+            //Проверка Описания
+            if (admin_car_descr_label.Text != "")
+            {
+                error_message = IsValidFunc("Описание", admin_car_descr_label.Text.ToString(), false);
+                if (error_message != null)
+                {
+                    MessageBox.Show(error_message);
+                    return;
+                }
+                else
+                {
+                    add_car_properties.Add("description", admin_car_descr_label.Text);
+                }
+            }
+            //Добавляем тип
+            add_car_properties.Add("car_type_id", admin_car_type_cbox.SelectedIndex.ToString());
+            //Добавляем состояние
+            add_car_properties.Add("car_state", "0");
+
+            if (ADBR.createNewKouple("cars", add_car_properties) == 1) return;
+            if (this.Height < Screen.GetWorkingArea(this).Height - this.Location.Y) this.Height += 35;
             endingEvent("car");
         }
     }

@@ -59,7 +59,7 @@ namespace AParkDispetcher
         public void deleteByID(string table, string id_title, string id)
         {
             string querry = "";
-            querry = $"USE autos; DELETE FROM {table} WHERE {id_title} = {id}";
+            querry = $"USE autos; DELETE FROM {table} WHERE {id_title} = '{id}'";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {
@@ -85,7 +85,7 @@ namespace AParkDispetcher
             adding = adding.Remove(adding.Length - 2);
 
             querry = $"USE autos; UPDATE {table} SET " + adding +
-                $" WHERE {id_title} = {id}";
+                $" WHERE {id_title} = '{id}'";
 
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try

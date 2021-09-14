@@ -31,7 +31,7 @@ namespace AParkDispetcher
         {
             types.Clear();
             string querry = "";
-            querry = "USE autos; SELECT * FROM ctypes";
+            querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {
