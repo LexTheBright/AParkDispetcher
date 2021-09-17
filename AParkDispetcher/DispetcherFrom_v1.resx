@@ -171,6 +171,37 @@
   <metadata name="Column23.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAOVJREFUWEft
+        180JwkAQhuGoF892oEVYhB48aRM2IlqIWoZNiBUIghfBm6C+oyzEZG5ZZgbMBw+EZA8f+dnsFm3aOOWJ
+        1ffQP2e8cERXTnhmCikjHhjCNfKoUiGxhFt2KJcRB7hkgGoZcYdcM88VWiExg2kW0IokW5ilA61E2QV9
+        qFlDXr5cbtBKlMmXN0Yt2mArciN+og2ydEIPn2gDrMmsPYJ60Yt60lqYOxPmnal9TRvsM2o0z+RM4xk4
+        Z+bQCiSm/6Ywf+1Q6xl5BNUibiu9MGvgCVIJ991BqH1TqB1lm39JUbwBhWZ0tmgV9ZEAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAOVJREFUWEft
+        180JwkAQhuGoF892oEVYhB48aRM2IlqIWoZNiBUIghfBm6C+oyzEZG5ZZgbMBw+EZA8f+dnsFm3aOOWJ
+        1ffQP2e8cERXTnhmCikjHhjCNfKoUiGxhFt2KJcRB7hkgGoZcYdcM88VWiExg2kW0IokW5ilA61E2QV9
+        qFlDXr5cbtBKlMmXN0Yt2mArciN+og2ydEIPn2gDrMmsPYJ60Yt60lqYOxPmnal9TRvsM2o0z+RM4xk4
+        Z+bQCiSm/6Ywf+1Q6xl5BNUibiu9MGvgCVIJ991BqH1TqB1lm39JUbwBhWZ0tmgV9ZEAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAOVJREFUWEft
+        180JwkAQhuGoF892oEVYhB48aRM2IlqIWoZNiBUIghfBm6C+oyzEZG5ZZgbMBw+EZA8f+dnsFm3aOOWJ
+        1ffQP2e8cERXTnhmCikjHhjCNfKoUiGxhFt2KJcRB7hkgGoZcYdcM88VWiExg2kW0IokW5ilA61E2QV9
+        qFlDXr5cbtBKlMmXN0Yt2mArciN+og2ydEIPn2gDrMmsPYJ60Yt60lqYOxPmnal9TRvsM2o0z+RM4xk4
+        Z+bQCiSm/6Ywf+1Q6xl5BNUibiu9MGvgCVIJ991BqH1TqB1lm39JUbwBhWZ0tmgV9ZEAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -192,6 +223,26 @@
   <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAOVJREFUWEft
+        180JwkAQhuGoF892oEVYhB48aRM2IlqIWoZNiBUIghfBm6C+oyzEZG5ZZgbMBw+EZA8f+dnsFm3aOOWJ
+        1ffQP2e8cERXTnhmCikjHhjCNfKoUiGxhFt2KJcRB7hkgGoZcYdcM88VWiExg2kW0IokW5ilA61E2QV9
+        qFlDXr5cbtBKlMmXN0Yt2mArciN+og2ydEIPn2gDrMmsPYJ60Yt60lqYOxPmnal9TRvsM2o0z+RM4xk4
+        Z+bQCiSm/6Ywf+1Q6xl5BNUibiu9MGvgCVIJ991BqH1TqB1lm39JUbwBhWZ0tmgV9ZEAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAOVJREFUWEft
+        180JwkAQhuGoF892oEVYhB48aRM2IlqIWoZNiBUIghfBm6C+oyzEZG5ZZgbMBw+EZA8f+dnsFm3aOOWJ
+        1ffQP2e8cERXTnhmCikjHhjCNfKoUiGxhFt2KJcRB7hkgGoZcYdcM88VWiExg2kW0IokW5ilA61E2QV9
+        qFlDXr5cbtBKlMmXN0Yt2mArciN+og2ydEIPn2gDrMmsPYJ60Yt60lqYOxPmnal9TRvsM2o0z+RM4xk4
+        Z+bQCiSm/6Ywf+1Q6xl5BNUibiu9MGvgCVIJ991BqH1TqB1lm39JUbwBhWZ0tmgV9ZEAAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>48</value>
   </metadata>

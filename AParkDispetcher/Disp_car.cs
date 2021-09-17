@@ -64,7 +64,7 @@ namespace AParkDispetcher
         {
             usr.Clear();
             string querry = "";
-            querry = "USE autos; SELECT reg_mark, model, color, description, car_state, type FROM cars JOIN ctypes WHERE cars.car_type_id = ctypes.type_id";
+            querry = "USE autos; SELECT reg_mark, model, color, description, car_state, type FROM cars JOIN ctypes WHERE cars.car_type_id = ctypes.type_id ORDER BY car_state";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {

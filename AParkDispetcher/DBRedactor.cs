@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class AdminDBRedactor
+    class DBRedactor
     {
 
         private string getErrorMessage(int ErrorNumber)

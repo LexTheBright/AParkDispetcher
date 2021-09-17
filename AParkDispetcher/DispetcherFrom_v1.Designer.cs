@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DispetcherFrom));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,7 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.пользовательToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,26 +121,29 @@
             this.searchTasks = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
+            this.Sort_by_state = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.state_busy = new System.Windows.Forms.RadioButton();
             this.state_free = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.FIO_aside = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.state_gone = new System.Windows.Forms.RadioButton();
-            this.state_busy = new System.Windows.Forms.RadioButton();
             this.tab_aside = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Change_state_button = new System.Windows.Forms.Button();
+            this.Save_state_button = new System.Windows.Forms.Button();
+            this.DriversViewGrid = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.sort_by_car_state = new System.Windows.Forms.Button();
+            this.carViewGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,8 +157,12 @@
             this.model_aside = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.car_edit_button = new System.Windows.Forms.Button();
+            this.car_save_button = new System.Windows.Forms.Button();
+            this.Cancel_driverstate_button = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.car_cancel_button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -167,12 +174,17 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1218,9 +1230,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Khaki;
-            this.tabPage1.Controls.Add(this.button13);
+            this.tabPage1.Controls.Add(this.Sort_by_state);
             this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.DriversViewGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(202, 648);
@@ -1228,39 +1240,42 @@
             this.tabPage1.Text = "Водители";
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
-            // button13
+            // Sort_by_state
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Sort_by_state.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button13.Location = new System.Drawing.Point(0, 0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(202, 27);
-            this.button13.TabIndex = 59;
-            this.button13.Text = "сортировать по статусу";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.Sort_by_state.BackColor = System.Drawing.Color.Transparent;
+            this.Sort_by_state.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Sort_by_state.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sort_by_state.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Sort_by_state.FlatAppearance.BorderSize = 0;
+            this.Sort_by_state.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
+            this.Sort_by_state.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Sort_by_state.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_by_state.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sort_by_state.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Sort_by_state.Location = new System.Drawing.Point(0, 0);
+            this.Sort_by_state.Name = "Sort_by_state";
+            this.Sort_by_state.Size = new System.Drawing.Size(202, 27);
+            this.Sort_by_state.TabIndex = 59;
+            this.Sort_by_state.Text = "сортировать по статусу";
+            this.Sort_by_state.UseVisualStyleBackColor = false;
+            this.Sort_by_state.Click += new System.EventHandler(this.button13_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.BackColor = System.Drawing.Color.Khaki;
+            this.groupBox5.Controls.Add(this.pictureBox3);
+            this.groupBox5.Controls.Add(this.pictureBox2);
+            this.groupBox5.Controls.Add(this.pictureBox1);
+            this.groupBox5.Controls.Add(this.state_busy);
             this.groupBox5.Controls.Add(this.state_free);
             this.groupBox5.Controls.Add(this.panel2);
             this.groupBox5.Controls.Add(this.FIO_aside);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.state_gone);
-            this.groupBox5.Controls.Add(this.state_busy);
             this.groupBox5.Controls.Add(this.tab_aside);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.panel4);
@@ -1272,17 +1287,81 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(28, 153);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 64;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            this.pictureBox3.WaitOnLoad = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(28, 126);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 63;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox2.WaitOnLoad = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 62;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.WaitOnLoad = true;
+            // 
+            // state_busy
+            // 
+            this.state_busy.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.state_busy.Appearance = System.Windows.Forms.Appearance.Button;
+            this.state_busy.Checked = true;
+            this.state_busy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.state_busy.Enabled = false;
+            this.state_busy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.state_busy.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
+            this.state_busy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.state_busy.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.state_busy.Location = new System.Drawing.Point(56, 124);
+            this.state_busy.Margin = new System.Windows.Forms.Padding(0);
+            this.state_busy.Name = "state_busy";
+            this.state_busy.Size = new System.Drawing.Size(122, 28);
+            this.state_busy.TabIndex = 3;
+            this.state_busy.TabStop = true;
+            this.state_busy.Text = "занят";
+            this.state_busy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.state_busy.UseVisualStyleBackColor = true;
+            this.state_busy.CheckedChanged += new System.EventHandler(this.state_busy_CheckedChanged);
+            // 
             // state_free
             // 
-            this.state_free.AutoSize = true;
-            this.state_free.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic);
-            this.state_free.Location = new System.Drawing.Point(44, 99);
+            this.state_free.Appearance = System.Windows.Forms.Appearance.Button;
+            this.state_free.Enabled = false;
+            this.state_free.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.state_free.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
+            this.state_free.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.state_free.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.state_free.Location = new System.Drawing.Point(56, 97);
+            this.state_free.Margin = new System.Windows.Forms.Padding(0);
             this.state_free.Name = "state_free";
-            this.state_free.Size = new System.Drawing.Size(85, 21);
+            this.state_free.Size = new System.Drawing.Size(122, 28);
             this.state_free.TabIndex = 61;
-            this.state_free.TabStop = true;
             this.state_free.Text = "свободен";
+            this.state_free.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_free.UseVisualStyleBackColor = true;
+            this.state_free.CheckedChanged += new System.EventHandler(this.state_free_CheckedChanged);
             // 
             // panel2
             // 
@@ -1302,6 +1381,7 @@
             this.FIO_aside.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FIO_aside.Location = new System.Drawing.Point(56, 16);
             this.FIO_aside.Name = "FIO_aside";
+            this.FIO_aside.ReadOnly = true;
             this.FIO_aside.Size = new System.Drawing.Size(141, 25);
             this.FIO_aside.TabIndex = 8;
             this.FIO_aside.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1320,32 +1400,21 @@
             // state_gone
             // 
             this.state_gone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.state_gone.AutoSize = true;
+            this.state_gone.Appearance = System.Windows.Forms.Appearance.Button;
             this.state_gone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.state_gone.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic);
-            this.state_gone.Location = new System.Drawing.Point(44, 152);
+            this.state_gone.Enabled = false;
+            this.state_gone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.state_gone.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
+            this.state_gone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.state_gone.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.state_gone.Location = new System.Drawing.Point(56, 151);
+            this.state_gone.Margin = new System.Windows.Forms.Padding(0);
             this.state_gone.Name = "state_gone";
-            this.state_gone.Size = new System.Drawing.Size(122, 21);
+            this.state_gone.Size = new System.Drawing.Size(122, 28);
             this.state_gone.TabIndex = 5;
-            this.state_gone.TabStop = true;
             this.state_gone.Text = "отсутствует";
             this.state_gone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_gone.UseVisualStyleBackColor = true;
-            // 
-            // state_busy
-            // 
-            this.state_busy.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.state_busy.AutoSize = true;
-            this.state_busy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.state_busy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic);
-            this.state_busy.Location = new System.Drawing.Point(44, 125);
-            this.state_busy.Name = "state_busy";
-            this.state_busy.Size = new System.Drawing.Size(68, 21);
-            this.state_busy.TabIndex = 3;
-            this.state_busy.TabStop = true;
-            this.state_busy.Text = "занят";
-            this.state_busy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.state_busy.UseVisualStyleBackColor = true;
             // 
             // tab_aside
             // 
@@ -1355,6 +1424,7 @@
             this.tab_aside.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tab_aside.Location = new System.Drawing.Point(56, 52);
             this.tab_aside.Name = "tab_aside";
+            this.tab_aside.ReadOnly = true;
             this.tab_aside.Size = new System.Drawing.Size(141, 26);
             this.tab_aside.TabIndex = 2;
             this.tab_aside.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1375,101 +1445,108 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel4.BackColor = System.Drawing.Color.DarkKhaki;
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.Cancel_driverstate_button);
+            this.panel4.Controls.Add(this.Change_state_button);
+            this.panel4.Controls.Add(this.Save_state_button);
             this.panel4.Location = new System.Drawing.Point(0, 183);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(202, 81);
             this.panel4.TabIndex = 60;
             // 
-            // button5
+            // Change_state_button
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Change_state_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(6, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 29);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Изменить";
-            this.button5.UseVisualStyleBackColor = false;
+            this.Change_state_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Change_state_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Change_state_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Change_state_button.ForeColor = System.Drawing.Color.Black;
+            this.Change_state_button.Location = new System.Drawing.Point(6, 9);
+            this.Change_state_button.Name = "Change_state_button";
+            this.Change_state_button.Size = new System.Drawing.Size(189, 29);
+            this.Change_state_button.TabIndex = 15;
+            this.Change_state_button.Text = "Изменить";
+            this.Change_state_button.UseVisualStyleBackColor = false;
+            this.Change_state_button.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button10
+            // Save_state_button
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Save_state_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(6, 44);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(189, 29);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Сохранить";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.Save_state_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Save_state_button.Enabled = false;
+            this.Save_state_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save_state_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save_state_button.ForeColor = System.Drawing.Color.Black;
+            this.Save_state_button.Location = new System.Drawing.Point(6, 44);
+            this.Save_state_button.Name = "Save_state_button";
+            this.Save_state_button.Size = new System.Drawing.Size(189, 29);
+            this.Save_state_button.TabIndex = 6;
+            this.Save_state_button.Text = "Сохранить";
+            this.Save_state_button.UseVisualStyleBackColor = false;
+            this.Save_state_button.Click += new System.EventHandler(this.button10_Click);
             // 
-            // dataGridView1
+            // DriversViewGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DriversViewGrid.AllowUserToAddRows = false;
+            this.DriversViewGrid.AllowUserToDeleteRows = false;
+            this.DriversViewGrid.AllowUserToResizeColumns = false;
+            this.DriversViewGrid.AllowUserToResizeRows = false;
+            this.DriversViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeight = 33;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DriversViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DriversViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.DriversViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DriversViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DriversViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DriversViewGrid.ColumnHeadersHeight = 33;
+            this.DriversViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DriversViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column6,
             this.Column8});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.LightYellow;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(202, 357);
-            this.dataGridView1.StandardTab = true;
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Olive;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriversViewGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DriversViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DriversViewGrid.Location = new System.Drawing.Point(0, 27);
+            this.DriversViewGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.DriversViewGrid.MultiSelect = false;
+            this.DriversViewGrid.Name = "DriversViewGrid";
+            this.DriversViewGrid.ReadOnly = true;
+            this.DriversViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DriversViewGrid.RowHeadersVisible = false;
+            this.DriversViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.DriversViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+            this.DriversViewGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DriversViewGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DriversViewGrid.RowTemplate.Height = 30;
+            this.DriversViewGrid.RowTemplate.ReadOnly = true;
+            this.DriversViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriversViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DriversViewGrid.Size = new System.Drawing.Size(202, 357);
+            this.DriversViewGrid.StandardTab = true;
+            this.DriversViewGrid.TabIndex = 16;
+            this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.DriversViewGrid.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DriversViewGrid_CellLeave);
+            this.DriversViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DriversViewGrid_CellMouseDoubleClick);
+            this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column5
             // 
@@ -1498,8 +1575,8 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Khaki;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage2.Controls.Add(this.button14);
-            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Controls.Add(this.sort_by_car_state);
+            this.tabPage2.Controls.Add(this.carViewGrid);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
@@ -1510,86 +1587,86 @@
             this.tabPage2.Text = "Машины";
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
-            // button14
+            // sort_by_car_state
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sort_by_car_state.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.Transparent;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(202, 27);
-            this.button14.TabIndex = 62;
-            this.button14.Text = "сортировать по статусу";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.sort_by_car_state.BackColor = System.Drawing.Color.Transparent;
+            this.sort_by_car_state.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.sort_by_car_state.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sort_by_car_state.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.sort_by_car_state.FlatAppearance.BorderSize = 0;
+            this.sort_by_car_state.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Bisque;
+            this.sort_by_car_state.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.sort_by_car_state.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sort_by_car_state.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sort_by_car_state.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.sort_by_car_state.Location = new System.Drawing.Point(0, 0);
+            this.sort_by_car_state.Name = "sort_by_car_state";
+            this.sort_by_car_state.Size = new System.Drawing.Size(202, 27);
+            this.sort_by_car_state.TabIndex = 62;
+            this.sort_by_car_state.Text = "сортировать по статусу";
+            this.sort_by_car_state.UseVisualStyleBackColor = false;
+            this.sort_by_car_state.Click += new System.EventHandler(this.button14_Click);
             // 
-            // dataGridView3
+            // carViewGrid
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.carViewGrid.AllowUserToAddRows = false;
+            this.carViewGrid.AllowUserToDeleteRows = false;
+            this.carViewGrid.AllowUserToResizeColumns = false;
+            this.carViewGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.carViewGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.carViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView3.ColumnHeadersHeight = 33;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.carViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.carViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.carViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.carViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century", 11.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.carViewGrid.ColumnHeadersHeight = 33;
+            this.carViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.carViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Column4,
             this.Column7,
             this.Column9});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView3.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.dataGridView3.RowTemplate.Height = 44;
-            this.dataGridView3.RowTemplate.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(202, 364);
-            this.dataGridView3.StandardTab = true;
-            this.dataGridView3.TabIndex = 0;
-            this.dataGridView3.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
-            this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carViewGrid.DefaultCellStyle = dataGridViewCellStyle11;
+            this.carViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.carViewGrid.Location = new System.Drawing.Point(0, 27);
+            this.carViewGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.carViewGrid.MultiSelect = false;
+            this.carViewGrid.Name = "carViewGrid";
+            this.carViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.carViewGrid.RowHeadersVisible = false;
+            this.carViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.carViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.carViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+            this.carViewGrid.RowTemplate.Height = 44;
+            this.carViewGrid.RowTemplate.ReadOnly = true;
+            this.carViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.carViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.carViewGrid.Size = new System.Drawing.Size(202, 364);
+            this.carViewGrid.StandardTab = true;
+            this.carViewGrid.TabIndex = 0;
+            this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
+            this.carViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1621,6 +1698,8 @@
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.BackColor = System.Drawing.Color.Khaki;
+            this.groupBox7.Controls.Add(this.pictureBox5);
+            this.groupBox7.Controls.Add(this.pictureBox4);
             this.groupBox7.Controls.Add(this.panel5);
             this.groupBox7.Controls.Add(this.mark_aside);
             this.groupBox7.Controls.Add(this.label20);
@@ -1654,6 +1733,7 @@
             this.mark_aside.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.mark_aside.Location = new System.Drawing.Point(67, 15);
             this.mark_aside.Name = "mark_aside";
+            this.mark_aside.ReadOnly = true;
             this.mark_aside.Size = new System.Drawing.Size(134, 26);
             this.mark_aside.TabIndex = 66;
             this.mark_aside.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1671,11 +1751,17 @@
             // state_notAvailable
             // 
             this.state_notAvailable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.state_notAvailable.AutoSize = true;
+            this.state_notAvailable.Appearance = System.Windows.Forms.Appearance.Button;
             this.state_notAvailable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.state_notAvailable.Location = new System.Drawing.Point(54, 146);
+            this.state_notAvailable.Enabled = false;
+            this.state_notAvailable.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.state_notAvailable.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
+            this.state_notAvailable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.state_notAvailable.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.state_notAvailable.Location = new System.Drawing.Point(58, 145);
+            this.state_notAvailable.Margin = new System.Windows.Forms.Padding(0);
             this.state_notAvailable.Name = "state_notAvailable";
-            this.state_notAvailable.Size = new System.Drawing.Size(109, 21);
+            this.state_notAvailable.Size = new System.Drawing.Size(122, 28);
             this.state_notAvailable.TabIndex = 64;
             this.state_notAvailable.TabStop = true;
             this.state_notAvailable.Text = "не доступна";
@@ -1685,16 +1771,23 @@
             // state_available
             // 
             this.state_available.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.state_available.AutoSize = true;
+            this.state_available.Appearance = System.Windows.Forms.Appearance.Button;
             this.state_available.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.state_available.Location = new System.Drawing.Point(54, 121);
+            this.state_available.Enabled = false;
+            this.state_available.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.state_available.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
+            this.state_available.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.state_available.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.state_available.Location = new System.Drawing.Point(58, 118);
+            this.state_available.Margin = new System.Windows.Forms.Padding(0);
             this.state_available.Name = "state_available";
-            this.state_available.Size = new System.Drawing.Size(91, 21);
+            this.state_available.Size = new System.Drawing.Size(122, 28);
             this.state_available.TabIndex = 63;
             this.state_available.TabStop = true;
             this.state_available.Text = "доступна";
             this.state_available.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_available.UseVisualStyleBackColor = true;
+            this.state_available.CheckedChanged += new System.EventHandler(this.state_available_CheckedChanged);
             // 
             // model_aside
             // 
@@ -1706,6 +1799,7 @@
             this.model_aside.Margin = new System.Windows.Forms.Padding(0);
             this.model_aside.Multiline = true;
             this.model_aside.Name = "model_aside";
+            this.model_aside.ReadOnly = true;
             this.model_aside.Size = new System.Drawing.Size(134, 47);
             this.model_aside.TabIndex = 62;
             this.model_aside.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1724,38 +1818,102 @@
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel6.BackColor = System.Drawing.Color.DarkKhaki;
-            this.panel6.Controls.Add(this.button11);
-            this.panel6.Controls.Add(this.button12);
+            this.panel6.Controls.Add(this.car_cancel_button);
+            this.panel6.Controls.Add(this.car_edit_button);
+            this.panel6.Controls.Add(this.car_save_button);
             this.panel6.Location = new System.Drawing.Point(4, 176);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(202, 81);
             this.panel6.TabIndex = 68;
             // 
-            // button11
+            // car_edit_button
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.car_edit_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button11.Location = new System.Drawing.Point(6, 9);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(189, 29);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "Изменить";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.car_edit_button.BackColor = System.Drawing.Color.LightGray;
+            this.car_edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.car_edit_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.car_edit_button.Location = new System.Drawing.Point(6, 9);
+            this.car_edit_button.Name = "car_edit_button";
+            this.car_edit_button.Size = new System.Drawing.Size(189, 29);
+            this.car_edit_button.TabIndex = 0;
+            this.car_edit_button.Text = "Изменить";
+            this.car_edit_button.UseVisualStyleBackColor = false;
+            this.car_edit_button.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button12
+            // car_save_button
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.car_save_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(6, 44);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(189, 29);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Сохранить";
-            this.button12.UseVisualStyleBackColor = true;
+            this.car_save_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.car_save_button.Enabled = false;
+            this.car_save_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.car_save_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.car_save_button.Location = new System.Drawing.Point(6, 44);
+            this.car_save_button.Name = "car_save_button";
+            this.car_save_button.Size = new System.Drawing.Size(189, 29);
+            this.car_save_button.TabIndex = 6;
+            this.car_save_button.Text = "Сохранить";
+            this.car_save_button.UseVisualStyleBackColor = false;
+            this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
+            // 
+            // Cancel_driverstate_button
+            // 
+            this.Cancel_driverstate_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cancel_driverstate_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Cancel_driverstate_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_driverstate_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_driverstate_button.ForeColor = System.Drawing.Color.Black;
+            this.Cancel_driverstate_button.Location = new System.Drawing.Point(5, 9);
+            this.Cancel_driverstate_button.Name = "Cancel_driverstate_button";
+            this.Cancel_driverstate_button.Size = new System.Drawing.Size(190, 29);
+            this.Cancel_driverstate_button.TabIndex = 14;
+            this.Cancel_driverstate_button.Text = "Отмена";
+            this.Cancel_driverstate_button.UseVisualStyleBackColor = false;
+            this.Cancel_driverstate_button.Visible = false;
+            this.Cancel_driverstate_button.Click += new System.EventHandler(this.Cancel_driverstate_button_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(30, 119);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 69;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            this.pictureBox4.WaitOnLoad = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(30, 147);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 70;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
+            this.pictureBox5.WaitOnLoad = true;
+            // 
+            // car_cancel_button
+            // 
+            this.car_cancel_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.car_cancel_button.BackColor = System.Drawing.Color.LightGray;
+            this.car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.car_cancel_button.Location = new System.Drawing.Point(6, 9);
+            this.car_cancel_button.Name = "car_cancel_button";
+            this.car_cancel_button.Size = new System.Drawing.Size(189, 29);
+            this.car_cancel_button.TabIndex = 7;
+            this.car_cancel_button.Text = "Отмена";
+            this.car_cancel_button.UseVisualStyleBackColor = false;
+            this.car_cancel_button.Visible = false;
+            this.car_cancel_button.Click += new System.EventHandler(this.car_cancel_button_Click);
             // 
             // DispetcherFrom
             // 
@@ -1794,13 +1952,18 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1863,7 +2026,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker OrdtimeTask_box;
         private System.Windows.Forms.ComboBox typeTask_box;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DriversViewGrid;
         private System.Windows.Forms.TextBox driverTask_box;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
@@ -1872,8 +2035,8 @@
         private System.Windows.Forms.RadioButton state_gone;
         private System.Windows.Forms.TextBox tab_aside;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button Change_state_button;
+        private System.Windows.Forms.Button Save_state_button;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox FIO_aside;
         private System.Windows.Forms.Label label19;
@@ -1886,18 +2049,18 @@
         private System.Windows.Forms.TextBox model_aside;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button car_edit_button;
+        private System.Windows.Forms.Button car_save_button;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button selectCarButton;
         private System.Windows.Forms.RadioButton state_free;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView carViewGrid;
         private System.Windows.Forms.RadioButton state_busy;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button Sort_by_state;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button sort_by_car_state;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -1923,6 +2086,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.TextBox markTask_box;
         private System.Windows.Forms.TextBox modelTask_box;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Cancel_driverstate_button;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button car_cancel_button;
     }
 }
 

@@ -17,6 +17,7 @@ namespace APark
         Disp_driver DD;
         Disp_car DC;
         Disp_task DT;
+        DBRedactor DBR;
 
         public DispetcherFrom()
         {
@@ -34,9 +35,10 @@ namespace APark
             DD = new Disp_driver();
             DC = new Disp_car();
             DT = new Disp_task();
+            DBR = new DBRedactor();
 
-            DD.fillDispatchersDriverGrid(dataGridView1);
-            DC.fillDispatchersCarGrid(dataGridView3);
+            DD.fillDispatchersDriverGrid(DriversViewGrid);
+            DC.fillDispatchersCarGrid(carViewGrid);
             DT.fillDispetcherTasks(dataGridView2);
             typeTask_box.Items.Clear();
             DT.fillTypes(typeTask_box);
@@ -72,7 +74,47 @@ namespace APark
 
         private void button10_Click(object sender, EventArgs e)
         {
+            
+            state_free.Enabled = false;
+            state_busy.Enabled = false;
+            state_gone.Enabled = false;
 
+            Dictionary<string, string> driver_state_prop = new Dictionary<string, string>();
+
+            //int selectedIndex = DriversViewGrid.SelectedCells[0].RowIndex;
+            //string tab_num_driv = DriversViewGrid.Rows[selectedIndex].Cells[2].Value.ToString();
+
+
+            if (state_free.Checked) driver_state_prop.Add("driver_state", "0");
+            if (state_busy.Checked) driver_state_prop.Add("driver_state", "1");
+            if (state_gone.Checked) driver_state_prop.Add("driver_state", "2");
+
+            if (DriversViewGrid.Rows[DriversViewGrid.SelectedCells[0].RowIndex].Cells[1].Value.ToString() == driver_state_prop["driver_state"])
+            {
+                Cancel_driverstate_button.PerformClick();
+                return; 
+            }
+            else
+            {
+                DBR.updateByID("drivers", "tab_number", tab_aside.Text, driver_state_prop);
+            }
+
+            //сохраняем индакс и обновляем таблицу
+            int savedIndex = DriversViewGrid.SelectedCells[0].RowIndex;
+            DriversViewGrid.Rows[savedIndex].Cells[1].Value = driver_state_prop["driver_state"];
+            //DriversViewGrid.Refresh();
+            //dataGridView1_SelectionChanged(sender, e);
+
+            /*DriversViewGrid.Rows.Clear();
+            DD.fillDispatchersDriverGrid(DriversViewGrid);
+            DriversViewGrid.Rows[savedIndex].Selected = true;*/
+            DriversViewGrid.Enabled = true;
+            DriversViewGrid.Focus();
+            Sort_by_state.PerformClick();
+
+            Cancel_driverstate_button.Visible = false;
+            Save_state_button.Enabled = false;
+            Save_state_button.BackColor = Color.DarkKhaki;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -165,26 +207,26 @@ namespace APark
 
             }
 
-            switch (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString())
+            switch (DriversViewGrid.Rows[e.RowIndex].Cells[1].Value.ToString())
             {
                 case "2":
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
-                    //dataGridView1.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
                     /*e.CellStyle.BackColor = Color.LightGray;
                     e.CellStyle.SelectionBackColor = Color.Gray;
                     e.Value = "";*/
                     break;
                 case "0":
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
-                    //dataGridView1.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
                     //dataGridView1.Rows[e.RowIndex].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
                     /*e.CellStyle.BackColor = Color.LightGreen;
                     e.CellStyle.SelectionBackColor = Color.Green;
                     e.Value = "";*/
                     break;
                 case "1":
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightYellow;
-                    //dataGridView1.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Orange;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightYellow;
+                    //DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.DarkKhaki;
                     /*e.CellStyle.BackColor = Color.LightYellow;
                     e.CellStyle.SelectionBackColor = Color.Orange;
                     e.Value = "";*/
@@ -196,12 +238,14 @@ namespace APark
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (DriversViewGrid.SelectedCells.Count > 0)
             {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                string FIO = dataGridView1.Rows[selectedrowindex].Cells[0].Value.ToString();
-                string state = dataGridView1.Rows[selectedrowindex].Cells[1].Value.ToString();
-                string tab_number = dataGridView1.Rows[selectedrowindex].Cells[2].Value.ToString();
+                //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Segoe UI Semibold", 13, FontStyle.Bold);
+                int selectedrowindex = DriversViewGrid.SelectedCells[0].RowIndex;
+                string FIO = DriversViewGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+                //DriversViewGrid.Rows[selectedrowindex].Cells[0].Style.Font = new Font("Segoe UI Semibold", 13, FontStyle.Bold);
+                string state = DriversViewGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+                string tab_number = DriversViewGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
 
                 string[] splited_FIO = FIO.Split(' ');
 
@@ -227,14 +271,19 @@ namespace APark
 
         private void button11_Click(object sender, EventArgs e)
         {
-
+            carViewGrid.Enabled = false;
+            state_notAvailable.Enabled = true;
+            state_available.Enabled = true;
+            car_cancel_button.Visible = true;
+            car_save_button.Enabled = true;
+            car_save_button.BackColor = Color.LightGray;
         }
 
         private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 1)  e.Value = e.Value.ToString().Remove(e.Value.ToString().Length - 3); 
 
-            string[] splited_cell = dataGridView3.Rows[e.RowIndex].Cells[2].Value.ToString().Split('~');
+            string[] splited_cell = carViewGrid.Rows[e.RowIndex].Cells[2].Value.ToString().Split('~');
 
 
             /*foreach (DataGridViewRow Myrow in dataGridView3.Rows)
@@ -252,15 +301,15 @@ namespace APark
             switch (splited_cell[0])
             {
                 case "1":
-                    dataGridView3.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
-                    dataGridView3.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
+                    carViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                    carViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
 
                     //e.CellStyle.BackColor = Color.LightGray;
                     //e.CellStyle.SelectionBackColor = Color.Gray;
                     break;
                 case "0":
-                    dataGridView3.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
-                    dataGridView3.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
+                    carViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                    carViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
 
                     //e.CellStyle.BackColor = Color.LightGreen;
                     //e.CellStyle.SelectionBackColor = Color.Green;
@@ -272,26 +321,27 @@ namespace APark
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            DD.fillDispatchersDriverGrid(dataGridView1);
+            state_free_CheckedChanged(sender, e);
+            DriversViewGrid.Rows.Clear();
+            DD.fillDispatchersDriverGrid(DriversViewGrid);
             //this.ProcessTabKey(true);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
+            DriversViewGrid.Sort(DriversViewGrid.Columns[1], ListSortDirection.Ascending);
  
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            dataGridView3.Sort(dataGridView3.Columns[2], ListSortDirection.Ascending);
+            carViewGrid.Sort(carViewGrid.Columns[2], ListSortDirection.Ascending);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            dataGridView3.Rows.Clear();
-            DC.fillDispatchersCarGrid(dataGridView3);
+            carViewGrid.Rows.Clear();
+            DC.fillDispatchersCarGrid(carViewGrid);
             //this.ProcessTabKey(true);
         }
 
@@ -302,12 +352,12 @@ namespace APark
 
         private void dataGridView3_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView3.SelectedCells.Count > 0)
+            if (carViewGrid.SelectedCells.Count > 0)
             {
-                int selectedrowindex = dataGridView3.SelectedCells[0].RowIndex;
-                string model = dataGridView3.Rows[selectedrowindex].Cells[0].Value.ToString();
-                string reg_mark = dataGridView3.Rows[selectedrowindex].Cells[1].Value.ToString();
-                string state = dataGridView3.Rows[selectedrowindex].Cells[2].Value.ToString();
+                int selectedrowindex = carViewGrid.SelectedCells[0].RowIndex;
+                string model = carViewGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+                string reg_mark = carViewGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+                string state = carViewGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
 
                 mark_aside.Text = reg_mark;
                 model_aside.Text = model;
@@ -498,6 +548,137 @@ namespace APark
                 MessageBox.Show(car_mark + " " + car_model + " " + car_type + " " + car_color);
 
             } 
+        }
+
+        private void state_free_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+
+            if (state_free.Checked) pictureBox1.Visible = true;
+            if (state_busy.Checked) pictureBox2.Visible = true;
+            if (state_gone.Checked) pictureBox3.Visible = true;
+
+        }
+
+        private void state_busy_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+
+            if (state_free.Checked) pictureBox1.Visible = true;
+            if (state_busy.Checked) pictureBox2.Visible = true;
+            if (state_gone.Checked) pictureBox3.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Cancel_driverstate_button.Visible = true;
+            Save_state_button.Enabled = true;
+            Save_state_button.BackColor = Color.LightGray;
+
+            state_free.Enabled = true;
+            state_busy.Enabled = true;
+            state_gone.Enabled = true;
+
+            DriversViewGrid.Enabled = false;
+            //DriversViewGrid.SelectedRows[0].Selected = true;
+        }
+
+        private void Cancel_driverstate_button_Click(object sender, EventArgs e)
+        {
+            dataGridView1_SelectionChanged(sender, e);
+            DriversViewGrid.Enabled = true;
+            Save_state_button.Enabled = false;
+            Save_state_button.BackColor = Color.DarkKhaki;
+
+            Cancel_driverstate_button.Visible = false;
+
+            state_free.Enabled = false;
+            state_busy.Enabled = false;
+            state_gone.Enabled = false;
+
+            //Change_state_button.Focus();
+            //tabControl1.ProcessTabKey(true);
+            //DriversViewGrid.SelectedRows[0].Cells[0].Selected = true;
+            DriversViewGrid.Focus();
+            //DriversViewGrid.SelectedRows[0].Selected = true;
+        }
+
+        private void DriversViewGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+
+            Change_state_button.PerformClick();
+        }
+
+        private void DriversViewGrid_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //DriversViewGrid.Rows[e.RowIndex].Cells[0].Style.Font = new Font("Century", 11, FontStyle.Bold);
+
+           //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Century", 11.25);
+        }
+
+        private void state_available_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+
+            if (state_available.Checked) pictureBox4.Visible = true;
+            if (state_notAvailable.Checked) pictureBox5.Visible = true;
+        }
+
+        private void car_cancel_button_Click(object sender, EventArgs e)
+        {
+            dataGridView3_SelectionChanged(sender, e);
+            carViewGrid.Enabled = true;
+            
+            car_cancel_button.Visible = false;
+
+            car_save_button.Enabled = false;
+            car_save_button.BackColor = Color.DarkKhaki;
+
+            Cancel_driverstate_button.Visible = false;
+
+            state_available.Enabled = false;
+            state_notAvailable.Enabled = false;
+
+            carViewGrid.Focus();
+        }
+
+        private void car_save_button_Click(object sender, EventArgs e)
+        {
+            state_notAvailable.Enabled = false;
+            state_available.Enabled = false;
+
+            Dictionary<string, string> car_state_prop = new Dictionary<string, string>();
+
+            if (state_available.Checked) car_state_prop.Add("car_state", "0");
+            else car_state_prop.Add("car_state", "1");
+
+            if (carViewGrid.Rows[carViewGrid.SelectedCells[0].RowIndex].Cells[2].Value.ToString() == car_state_prop["car_state"])
+            {
+                //MessageBox.Show("Jlbyfrjdjt");
+                car_cancel_button.PerformClick();
+                return;
+            }
+            else
+            {
+                DBR.updateByID("cars", "reg_mark", mark_aside.Text, car_state_prop);
+            }
+            //сохраняем индакс и обновляем таблицу
+            int savedIndex = carViewGrid.SelectedCells[0].RowIndex;
+            carViewGrid.Rows[savedIndex].Cells[2].Value = car_state_prop["car_state"];
+
+            carViewGrid.Enabled = true;
+            carViewGrid.Focus();
+            sort_by_car_state.PerformClick();
+
+            car_cancel_button.Visible = false;
+            car_save_button.Enabled = false;
+            car_save_button.BackColor = Color.DarkKhaki;
         }
     }
 }

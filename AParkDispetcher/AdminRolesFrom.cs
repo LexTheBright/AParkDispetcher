@@ -17,7 +17,7 @@ namespace AParkDispetcher
         Disp_user DU ;
         Disp_driver DD ;
         Disp_car DC;
-        AdminDBRedactor ADBR;
+        DBRedactor ADBR;
 
         public Dictionary<string, string> tempArgs = new Dictionary<string, string>();
 
@@ -34,11 +34,11 @@ namespace AParkDispetcher
                 case "user":
                     AdminUsersGrid.Enabled = true;
 
-                    int start_index = AdminUsersGrid.SelectedCells[0].RowIndex;
+                    int savedIndex = AdminUsersGrid.SelectedCells[0].RowIndex;
 
                     AdminUsersGrid.Rows.Clear();
                     DU.fillAdminsUserGrid(AdminUsersGrid);
-                    if (start_index < AdminUsersGrid.RowCount) AdminUsersGrid.Rows[start_index].Selected = true;
+                    if (savedIndex < AdminUsersGrid.RowCount) AdminUsersGrid.Rows[savedIndex].Selected = true;
 
                     User_button_delete.Enabled = true;
                     User_button_edit.Enabled = true;
@@ -149,7 +149,7 @@ namespace AParkDispetcher
             DU = new Disp_user();
             DD = new Disp_driver();
             DC = new Disp_car();
-            ADBR = new AdminDBRedactor();
+            ADBR = new DBRedactor();
 
             DU.fillAdminsUserGrid(AdminUsersGrid);
             DD.fillAdminsDriverGrid(AdminDriversGrid);

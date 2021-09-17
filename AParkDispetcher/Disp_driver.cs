@@ -25,7 +25,7 @@ namespace AParkDispetcher
         {
             usr.Clear();
             string querry = "";
-            querry = "USE autos; SELECT driver_surname, driver_name,  driver_midname, tab_number, driver_state FROM drivers";
+            querry = "USE autos; SELECT driver_surname, driver_name,  driver_midname, tab_number, driver_state FROM drivers ORDER BY driver_state";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {
