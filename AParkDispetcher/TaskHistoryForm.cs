@@ -81,7 +81,7 @@ namespace AParkDispetcher
 
             //this.Width = 1240;
 
-            // убрать - 10 на продакшене
+            // убрать - 8 на продакшене
             this.Location = new Point(Screen.GetWorkingArea(this.Location).Left - 8, this.Location.Y);
 
 

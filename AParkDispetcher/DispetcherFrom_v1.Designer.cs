@@ -50,23 +50,6 @@
             this.заявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -97,16 +80,15 @@
             this.timeTask_box = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.departTask_box = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.destTask_box = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.clientTask_box = new System.Windows.Forms.TextBox();
             this.duraTask_box = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Save_add_task_button = new System.Windows.Forms.Button();
+            this.Edit_task_button = new System.Windows.Forms.Button();
+            this.Cancel_task_button = new System.Windows.Forms.Button();
+            this.Create_task_button = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.selectCarButton = new System.Windows.Forms.Button();
@@ -135,6 +117,7 @@
             this.tab_aside = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Cancel_driverstate_button = new System.Windows.Forms.Button();
             this.Change_state_button = new System.Windows.Forms.Button();
             this.Save_state_button = new System.Windows.Forms.Button();
             this.DriversViewGrid = new System.Windows.Forms.DataGridView();
@@ -149,6 +132,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.mark_aside = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -157,12 +142,26 @@
             this.model_aside = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.car_cancel_button = new System.Windows.Forms.Button();
             this.car_edit_button = new System.Windows.Forms.Button();
             this.car_save_button = new System.Windows.Forms.Button();
-            this.Cancel_driverstate_button = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.car_cancel_button = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -182,9 +181,9 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -334,127 +333,6 @@
             this.dataGridView2.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.HeaderText = "№";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 49;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Дата заявки";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 130;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Табельный заказчика";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column3.HeaderText = "Статус";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 91;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Отправление";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 160;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Длительность";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "Место выезда";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column14.HeaderText = "Место назначения";
-            this.Column14.MinimumWidth = 95;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column15.FillWeight = 150F;
-            this.Column15.HeaderText = "Сообщение заказчика";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Visible = false;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Сообщение оператора";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Visible = false;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Табельный водителя";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Номер авто";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Тип авто";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 70;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Цвет";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Visible = false;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Запрашиваемый тип авто";
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            this.Column21.Visible = false;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "User_FIO";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            this.Column22.Visible = false;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Модель авто";
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            this.Column23.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -561,7 +439,6 @@
             this.groupBox2.Controls.Add(this.timeTask_box);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.departTask_box);
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.destTask_box);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.clientTask_box);
@@ -585,11 +462,11 @@
             this.textStateTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textStateTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.textStateTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textStateTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textStateTask_box.Location = new System.Drawing.Point(502, 26);
+            this.textStateTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textStateTask_box.Location = new System.Drawing.Point(486, 26);
             this.textStateTask_box.Name = "textStateTask_box";
             this.textStateTask_box.ReadOnly = true;
-            this.textStateTask_box.Size = new System.Drawing.Size(117, 25);
+            this.textStateTask_box.Size = new System.Drawing.Size(124, 27);
             this.textStateTask_box.TabIndex = 60;
             this.textStateTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -598,21 +475,22 @@
             this.OrderedTypeTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.OrderedTypeTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.OrderedTypeTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OrderedTypeTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold);
+            this.OrderedTypeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.OrderedTypeTask_box.Location = new System.Drawing.Point(100, 104);
             this.OrderedTypeTask_box.Name = "OrderedTypeTask_box";
             this.OrderedTypeTask_box.ReadOnly = true;
-            this.OrderedTypeTask_box.Size = new System.Drawing.Size(124, 25);
+            this.OrderedTypeTask_box.Size = new System.Drawing.Size(81, 27);
             this.OrderedTypeTask_box.TabIndex = 59;
             this.OrderedTypeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // typeTask_box
             // 
             this.typeTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.typeTask_box.BackColor = System.Drawing.Color.White;
+            this.typeTask_box.BackColor = System.Drawing.Color.PaleGreen;
+            this.typeTask_box.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.typeTask_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeTask_box.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.typeTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.typeTask_box.FormattingEnabled = true;
             this.typeTask_box.Items.AddRange(new object[] {
             "Грузовик",
@@ -621,29 +499,30 @@
             "Автобус"});
             this.typeTask_box.Location = new System.Drawing.Point(100, 104);
             this.typeTask_box.Name = "typeTask_box";
-            this.typeTask_box.Size = new System.Drawing.Size(115, 25);
+            this.typeTask_box.Size = new System.Drawing.Size(115, 28);
             this.typeTask_box.TabIndex = 56;
-            this.typeTask_box.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.typeTask_box.Visible = false;
+            this.typeTask_box.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.typeTask_box_DrawItem);
             // 
             // OrdtimeTask_box
             // 
             this.OrdtimeTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.OrdtimeTask_box.CalendarMonthBackground = System.Drawing.Color.OldLace;
+            this.OrdtimeTask_box.CalendarMonthBackground = System.Drawing.Color.Orange;
             this.OrdtimeTask_box.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.OrdtimeTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrdtimeTask_box.Enabled = false;
+            this.OrdtimeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.OrdtimeTask_box.Location = new System.Drawing.Point(100, 137);
             this.OrdtimeTask_box.Name = "OrdtimeTask_box";
             this.OrdtimeTask_box.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.OrdtimeTask_box.Size = new System.Drawing.Size(168, 25);
+            this.OrdtimeTask_box.Size = new System.Drawing.Size(159, 27);
             this.OrdtimeTask_box.TabIndex = 55;
-            this.OrdtimeTask_box.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(50, 61);
+            this.panel1.Location = new System.Drawing.Point(46, 61);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(554, 1);
@@ -654,7 +533,7 @@
             this.commTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.commTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.commTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.commTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.commTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.commTask_box.Location = new System.Drawing.Point(409, 107);
             this.commTask_box.MaximumSize = new System.Drawing.Size(396, 121);
             this.commTask_box.Multiline = true;
@@ -681,11 +560,11 @@
             this.numTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.numTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.numTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTask_box.Location = new System.Drawing.Point(110, 26);
             this.numTask_box.Name = "numTask_box";
             this.numTask_box.ReadOnly = true;
-            this.numTask_box.Size = new System.Drawing.Size(51, 25);
+            this.numTask_box.Size = new System.Drawing.Size(44, 27);
             this.numTask_box.TabIndex = 21;
             this.numTask_box.Text = "1041";
             this.numTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -712,7 +591,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(78, 167);
             this.tableLayoutPanel1.TabIndex = 19;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label10
             // 
@@ -743,9 +621,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(3, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 19);
+            this.label8.Size = new System.Drawing.Size(52, 19);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Время";
+            this.label8.Text = "Выезд";
             // 
             // label7
             // 
@@ -774,15 +652,14 @@
             this.colorTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.colorTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.colorTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colorTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.colorTask_box.Location = new System.Drawing.Point(290, 104);
             this.colorTask_box.Name = "colorTask_box";
             this.colorTask_box.ReadOnly = true;
-            this.colorTask_box.Size = new System.Drawing.Size(101, 25);
+            this.colorTask_box.Size = new System.Drawing.Size(101, 27);
             this.colorTask_box.TabIndex = 39;
             this.colorTask_box.Text = "Сиреневый";
             this.colorTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colorTask_box.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // label13
             // 
@@ -790,7 +667,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(383, 29);
+            this.label13.Location = new System.Drawing.Point(369, 29);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(113, 19);
             this.label13.TabIndex = 34;
@@ -799,11 +676,12 @@
             // StateTask_combobox
             // 
             this.StateTask_combobox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.StateTask_combobox.BackColor = System.Drawing.Color.White;
+            this.StateTask_combobox.BackColor = System.Drawing.Color.PaleGreen;
+            this.StateTask_combobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.StateTask_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateTask_combobox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StateTask_combobox.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StateTask_combobox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.StateTask_combobox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.StateTask_combobox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StateTask_combobox.FormattingEnabled = true;
             this.StateTask_combobox.Items.AddRange(new object[] {
             "Новая",
@@ -811,10 +689,12 @@
             "Исполняется",
             "Завершена",
             "Отменена"});
-            this.StateTask_combobox.Location = new System.Drawing.Point(502, 26);
+            this.StateTask_combobox.Location = new System.Drawing.Point(486, 26);
             this.StateTask_combobox.Name = "StateTask_combobox";
-            this.StateTask_combobox.Size = new System.Drawing.Size(117, 25);
+            this.StateTask_combobox.Size = new System.Drawing.Size(140, 28);
             this.StateTask_combobox.TabIndex = 35;
+            this.StateTask_combobox.Visible = false;
+            this.StateTask_combobox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.StateTask_combobox_DrawItem);
             // 
             // label15
             // 
@@ -822,7 +702,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(173, 29);
+            this.label15.Location = new System.Drawing.Point(167, 29);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 19);
             this.label15.TabIndex = 27;
@@ -845,11 +725,11 @@
             this.timeTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.timeTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.timeTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timeTask_box.Location = new System.Drawing.Point(237, 26);
+            this.timeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.timeTask_box.Location = new System.Drawing.Point(232, 26);
             this.timeTask_box.Name = "timeTask_box";
             this.timeTask_box.ReadOnly = true;
-            this.timeTask_box.Size = new System.Drawing.Size(132, 25);
+            this.timeTask_box.Size = new System.Drawing.Size(125, 27);
             this.timeTask_box.TabIndex = 28;
             this.timeTask_box.Text = "15 Февраля 11:45";
             this.timeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -871,43 +751,26 @@
             this.departTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.departTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.departTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.departTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.departTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.departTask_box.Location = new System.Drawing.Point(100, 170);
             this.departTask_box.Name = "departTask_box";
             this.departTask_box.ReadOnly = true;
-            this.departTask_box.Size = new System.Drawing.Size(291, 25);
+            this.departTask_box.Size = new System.Drawing.Size(291, 27);
             this.departTask_box.TabIndex = 25;
             this.departTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.departTask_box.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button6.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(357, 71);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(34, 26);
-            this.button6.TabIndex = 31;
-            this.button6.Text = ". . .";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseMnemonic = false;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // destTask_box
             // 
             this.destTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.destTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.destTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.destTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.destTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.destTask_box.Location = new System.Drawing.Point(100, 203);
             this.destTask_box.Name = "destTask_box";
             this.destTask_box.ReadOnly = true;
-            this.destTask_box.Size = new System.Drawing.Size(291, 25);
+            this.destTask_box.Size = new System.Drawing.Size(291, 27);
             this.destTask_box.TabIndex = 26;
             this.destTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.destTask_box.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label12
             // 
@@ -915,119 +778,116 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(286, 140);
+            this.label12.Location = new System.Drawing.Point(277, 140);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 19);
+            this.label12.Size = new System.Drawing.Size(74, 19);
             this.label12.TabIndex = 20;
-            this.label12.Text = "Срок (ч.)";
+            this.label12.Text = "Длит. (ч)";
             // 
             // clientTask_box
             // 
             this.clientTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.clientTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.clientTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.clientTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clientTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.clientTask_box.Location = new System.Drawing.Point(100, 71);
             this.clientTask_box.Name = "clientTask_box";
             this.clientTask_box.ReadOnly = true;
-            this.clientTask_box.Size = new System.Drawing.Size(251, 25);
+            this.clientTask_box.Size = new System.Drawing.Size(291, 27);
             this.clientTask_box.TabIndex = 22;
             this.clientTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clientTask_box.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // duraTask_box
             // 
             this.duraTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.duraTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.duraTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.duraTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.duraTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.duraTask_box.Location = new System.Drawing.Point(357, 137);
             this.duraTask_box.Name = "duraTask_box";
             this.duraTask_box.ReadOnly = true;
-            this.duraTask_box.Size = new System.Drawing.Size(34, 25);
+            this.duraTask_box.Size = new System.Drawing.Size(34, 27);
             this.duraTask_box.TabIndex = 29;
             this.duraTask_box.Text = "0";
             this.duraTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.duraTask_box.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkKhaki;
-            this.panel3.Controls.Add(this.button9);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.Save_add_task_button);
+            this.panel3.Controls.Add(this.Edit_task_button);
+            this.panel3.Controls.Add(this.Cancel_task_button);
+            this.panel3.Controls.Add(this.Create_task_button);
             this.panel3.Location = new System.Drawing.Point(0, 257);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(652, 46);
             this.panel3.TabIndex = 58;
             // 
-            // button9
+            // Save_add_task_button
             // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button9.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(486, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 39);
-            this.button9.TabIndex = 51;
-            this.button9.Text = "Сохранить";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.Save_add_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Save_add_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save_add_task_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Save_add_task_button.Enabled = false;
+            this.Save_add_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save_add_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save_add_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Save_add_task_button.Location = new System.Drawing.Point(486, 4);
+            this.Save_add_task_button.Name = "Save_add_task_button";
+            this.Save_add_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Save_add_task_button.TabIndex = 51;
+            this.Save_add_task_button.Text = "Сохранить";
+            this.Save_add_task_button.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // Edit_task_button
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(172, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 39);
-            this.button4.TabIndex = 57;
-            this.button4.Text = "Редактировать";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Edit_task_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Edit_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Edit_task_button.Location = new System.Drawing.Point(172, 4);
+            this.Edit_task_button.Name = "Edit_task_button";
+            this.Edit_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Edit_task_button.TabIndex = 57;
+            this.Edit_task_button.Text = "Редактировать";
+            this.Edit_task_button.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // Cancel_task_button
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(330, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 39);
-            this.button2.TabIndex = 55;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Cancel_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Cancel_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Cancel_task_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Cancel_task_button.Enabled = false;
+            this.Cancel_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Cancel_task_button.Location = new System.Drawing.Point(330, 4);
+            this.Cancel_task_button.Name = "Cancel_task_button";
+            this.Cancel_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Cancel_task_button.TabIndex = 55;
+            this.Cancel_task_button.Text = "Отмена";
+            this.Cancel_task_button.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // Create_task_button
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(16, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 39);
-            this.button3.TabIndex = 56;
-            this.button3.Text = "Добавить заявку";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Create_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Create_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Create_task_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Create_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Create_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Create_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Create_task_button.Location = new System.Drawing.Point(16, 4);
+            this.Create_task_button.Name = "Create_task_button";
+            this.Create_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Create_task_button.TabIndex = 56;
+            this.Create_task_button.Text = "Добавить заявку";
+            this.Create_task_button.UseVisualStyleBackColor = false;
+            this.Create_task_button.Click += new System.EventHandler(this.Create_task_button_Click);
             // 
             // groupBox4
             // 
@@ -1053,7 +913,6 @@
             this.groupBox4.TabIndex = 58;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Назначить";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // button8
             // 
@@ -1092,11 +951,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modelTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.modelTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.modelTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.modelTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.modelTask_box.Location = new System.Drawing.Point(94, 71);
             this.modelTask_box.Name = "modelTask_box";
             this.modelTask_box.ReadOnly = true;
-            this.modelTask_box.Size = new System.Drawing.Size(230, 25);
+            this.modelTask_box.Size = new System.Drawing.Size(230, 27);
             this.modelTask_box.TabIndex = 59;
             this.modelTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1119,11 +978,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.driverTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.driverTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.driverTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.driverTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.driverTask_box.Location = new System.Drawing.Point(94, 103);
             this.driverTask_box.Name = "driverTask_box";
             this.driverTask_box.ReadOnly = true;
-            this.driverTask_box.Size = new System.Drawing.Size(230, 25);
+            this.driverTask_box.Size = new System.Drawing.Size(230, 27);
             this.driverTask_box.TabIndex = 57;
             this.driverTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1133,11 +992,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.markTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.markTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.markTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.markTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.markTask_box.Location = new System.Drawing.Point(94, 39);
             this.markTask_box.Name = "markTask_box";
             this.markTask_box.ReadOnly = true;
-            this.markTask_box.Size = new System.Drawing.Size(230, 25);
+            this.markTask_box.Size = new System.Drawing.Size(230, 27);
             this.markTask_box.TabIndex = 56;
             this.markTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1147,7 +1006,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dispCommTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.dispCommTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dispCommTask_box.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dispCommTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.dispCommTask_box.Location = new System.Drawing.Point(23, 165);
             this.dispCommTask_box.Multiline = true;
             this.dispCommTask_box.Name = "dispCommTask_box";
@@ -1428,7 +1287,6 @@
             this.tab_aside.Size = new System.Drawing.Size(141, 26);
             this.tab_aside.TabIndex = 2;
             this.tab_aside.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tab_aside.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // label18
             // 
@@ -1453,6 +1311,23 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(202, 81);
             this.panel4.TabIndex = 60;
+            // 
+            // Cancel_driverstate_button
+            // 
+            this.Cancel_driverstate_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cancel_driverstate_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Cancel_driverstate_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_driverstate_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_driverstate_button.ForeColor = System.Drawing.Color.Black;
+            this.Cancel_driverstate_button.Location = new System.Drawing.Point(5, 9);
+            this.Cancel_driverstate_button.Name = "Cancel_driverstate_button";
+            this.Cancel_driverstate_button.Size = new System.Drawing.Size(190, 29);
+            this.Cancel_driverstate_button.TabIndex = 14;
+            this.Cancel_driverstate_button.Text = "Отмена";
+            this.Cancel_driverstate_button.UseVisualStyleBackColor = false;
+            this.Cancel_driverstate_button.Visible = false;
+            this.Cancel_driverstate_button.Click += new System.EventHandler(this.Cancel_driverstate_button_Click);
             // 
             // Change_state_button
             // 
@@ -1503,7 +1378,6 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1534,8 +1408,6 @@
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DriversViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.DriversViewGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DriversViewGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.DriversViewGrid.RowTemplate.Height = 30;
             this.DriversViewGrid.RowTemplate.ReadOnly = true;
             this.DriversViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1626,7 +1498,7 @@
             this.carViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century", 11.25F);
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1714,6 +1586,30 @@
             this.groupBox7.Size = new System.Drawing.Size(209, 264);
             this.groupBox7.TabIndex = 60;
             this.groupBox7.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(30, 147);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 70;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
+            this.pictureBox5.WaitOnLoad = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(30, 119);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 69;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            this.pictureBox4.WaitOnLoad = true;
             // 
             // panel5
             // 
@@ -1827,6 +1723,22 @@
             this.panel6.Size = new System.Drawing.Size(202, 81);
             this.panel6.TabIndex = 68;
             // 
+            // car_cancel_button
+            // 
+            this.car_cancel_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.car_cancel_button.BackColor = System.Drawing.Color.LightGray;
+            this.car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.car_cancel_button.Location = new System.Drawing.Point(6, 9);
+            this.car_cancel_button.Name = "car_cancel_button";
+            this.car_cancel_button.Size = new System.Drawing.Size(189, 29);
+            this.car_cancel_button.TabIndex = 7;
+            this.car_cancel_button.Text = "Отмена";
+            this.car_cancel_button.UseVisualStyleBackColor = false;
+            this.car_cancel_button.Visible = false;
+            this.car_cancel_button.Click += new System.EventHandler(this.car_cancel_button_Click);
+            // 
             // car_edit_button
             // 
             this.car_edit_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1858,62 +1770,126 @@
             this.car_save_button.UseVisualStyleBackColor = false;
             this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
             // 
-            // Cancel_driverstate_button
+            // Column1
             // 
-            this.Cancel_driverstate_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cancel_driverstate_button.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Cancel_driverstate_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancel_driverstate_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel_driverstate_button.ForeColor = System.Drawing.Color.Black;
-            this.Cancel_driverstate_button.Location = new System.Drawing.Point(5, 9);
-            this.Cancel_driverstate_button.Name = "Cancel_driverstate_button";
-            this.Cancel_driverstate_button.Size = new System.Drawing.Size(190, 29);
-            this.Cancel_driverstate_button.TabIndex = 14;
-            this.Cancel_driverstate_button.Text = "Отмена";
-            this.Cancel_driverstate_button.UseVisualStyleBackColor = false;
-            this.Cancel_driverstate_button.Visible = false;
-            this.Cancel_driverstate_button.Click += new System.EventHandler(this.Cancel_driverstate_button_Click);
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.HeaderText = "№";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 49;
             // 
-            // pictureBox4
+            // Column2
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(30, 119);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 69;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            this.pictureBox4.WaitOnLoad = true;
+            this.Column2.HeaderText = "Дата заявки";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 130;
             // 
-            // pictureBox5
+            // Column19
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(30, 147);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 70;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
-            this.pictureBox5.WaitOnLoad = true;
+            this.Column19.HeaderText = "Табельный заказчика";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
             // 
-            // car_cancel_button
+            // Column3
             // 
-            this.car_cancel_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.car_cancel_button.BackColor = System.Drawing.Color.LightGray;
-            this.car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.car_cancel_button.Location = new System.Drawing.Point(6, 9);
-            this.car_cancel_button.Name = "car_cancel_button";
-            this.car_cancel_button.Size = new System.Drawing.Size(189, 29);
-            this.car_cancel_button.TabIndex = 7;
-            this.car_cancel_button.Text = "Отмена";
-            this.car_cancel_button.UseVisualStyleBackColor = false;
-            this.car_cancel_button.Visible = false;
-            this.car_cancel_button.Click += new System.EventHandler(this.car_cancel_button_Click);
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.HeaderText = "Статус";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 91;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Выезд";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 130;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Длительность";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "Место выезда";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column14.HeaderText = "Место назначения";
+            this.Column14.MinimumWidth = 95;
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column15.FillWeight = 150F;
+            this.Column15.HeaderText = "Сообщение заказчика";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Visible = false;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Сообщение оператора";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Visible = false;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Табельный водителя";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Номер авто";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Тип авто";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 70;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Цвет";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Visible = false;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Запрашиваемый тип авто";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            this.Column21.Visible = false;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "User_FIO";
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            this.Column22.Visible = false;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Модель авто";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            this.Column23.Visible = false;
             // 
             // DispetcherFrom
             // 
@@ -1961,9 +1937,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2008,18 +1984,16 @@
         private System.Windows.Forms.TextBox timeTask_box;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox duraTask_box;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox StateTask_combobox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox colorTask_box;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button Save_add_task_button;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Edit_task_button;
+        private System.Windows.Forms.Button Cancel_task_button;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox dispCommTask_box;
         private System.Windows.Forms.TextBox commTask_box;
@@ -2067,6 +2041,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.TextBox OrderedTypeTask_box;
         private System.Windows.Forms.TextBox textStateTask_box;
+        private System.Windows.Forms.TextBox markTask_box;
+        private System.Windows.Forms.TextBox modelTask_box;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Cancel_driverstate_button;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button car_cancel_button;
+        private System.Windows.Forms.Button Create_task_button;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
@@ -2084,15 +2068,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.TextBox markTask_box;
-        private System.Windows.Forms.TextBox modelTask_box;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Cancel_driverstate_button;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button car_cancel_button;
     }
 }
 

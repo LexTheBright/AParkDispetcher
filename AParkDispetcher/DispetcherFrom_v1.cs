@@ -117,81 +117,6 @@ namespace APark
             Save_state_button.BackColor = Color.DarkKhaki;
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void MenuAdminUsers_Click(object sender, EventArgs e)
         {
             AdminRolesFrom CurAdminForm = new AdminRolesFrom();
@@ -399,6 +324,7 @@ namespace APark
             {
                 dataGridView2.Rows[i].MinimumHeight = 35;
             }*/
+            if (e.ColumnIndex == 4) e.Value = Convert.ToDateTime(e.Value).ToString("dd.MM  [HH:mm]");
 
             if (dataGridView2.Rows[e.RowIndex].MinimumHeight != 35) dataGridView2.Rows[e.RowIndex].MinimumHeight = 35;
 
@@ -449,7 +375,11 @@ namespace APark
             string task_datetime = dataGridView2.Rows[selectedrowindex].Cells[1].Value.ToString();
             string task_tab_user = dataGridView2.Rows[selectedrowindex].Cells[2].Value.ToString();
             string task_state = dataGridView2.Rows[selectedrowindex].Cells[3].Value.ToString();
-            string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
+
+            //string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
+            DateTime task_dep_time = Convert.ToDateTime(dataGridView2.Rows[selectedrowindex].Cells[4].Value);
+
+
             string task_dura = dataGridView2.Rows[selectedrowindex].Cells[5].Value.ToString();
             string task_dep = dataGridView2.Rows[selectedrowindex].Cells[6].Value.ToString();
             string task_dest = dataGridView2.Rows[selectedrowindex].Cells[7].Value.ToString();
@@ -471,9 +401,12 @@ namespace APark
 
             departTask_box.Text = task_dep;
 
+            
             OrdtimeTask_box.Format = DateTimePickerFormat.Custom;
-            OrdtimeTask_box.CustomFormat = "        dd/MM  H:mm";
-            OrdtimeTask_box.Text = task_dep_time;
+            OrdtimeTask_box.CustomFormat = "      dd.MM  [HH:mm]";
+            OrdtimeTask_box.Value = task_dep_time;
+
+
             destTask_box.Text = task_dest;
             duraTask_box.Text = task_dura;
             commTask_box.Text = task_user_com;
@@ -493,7 +426,7 @@ namespace APark
             }
             else
             {
-                typeTask_box.Visible = false;
+                //typeTask_box.Visible = false;
                 OrderedTypeTask_box.Text = task_ordered_type;
                 OrderedTypeTask_box.Visible = true;
             }
@@ -503,18 +436,18 @@ namespace APark
             colorTask_box.Text = task_car_color;
 
 
-/*            switch (task_state)
-            {
-                case "0":
-                    textStateTask_box.Text = task_state;
-                    break;
-                case "1":
-                    state_notAvailable.Checked = true;
-                    break;
-                default:
-                    break;
-            }*/
-            
+              /*switch (task_state)
+              {
+                  case "0":
+                      textStateTask_box.Text = task_state;
+                      break;
+                  case "1":
+                      state_notAvailable.Checked = true;
+                      break;
+                  default:
+                      break;
+              }*/
+
             StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
             textStateTask_box.Text = StateTask_combobox.Text;
 
@@ -679,6 +612,85 @@ namespace APark
             car_cancel_button.Visible = false;
             car_save_button.Enabled = false;
             car_save_button.BackColor = Color.DarkKhaki;
+        }
+
+        private void Create_task_button_Click(object sender, EventArgs e)
+        {
+            //StateTask_combobox.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+            //StateTask_combobox.Font = new Font(FontFamily.GenericMonospace, StateTask_combobox.Font.Size);
+            //StateTask_combobox.Font = typeTask_box.Font;
+            OrdtimeTask_box.Enabled = true;
+            OrderedTypeTask_box.Visible = false;
+            label14.Visible = false;
+            colorTask_box.Visible = false;
+            typeTask_box.Visible = true;
+            typeTask_box.Size = new Size(291, 25);
+            typeTask_box.Refresh();
+
+            duraTask_box.ReadOnly = false;
+            departTask_box.ReadOnly = false;
+            destTask_box.ReadOnly = false;
+            commTask_box.ReadOnly = false;
+            duraTask_box.BackColor = Color.PaleGreen;
+            departTask_box.BackColor = Color.PaleGreen;
+            destTask_box.BackColor = Color.PaleGreen;
+            commTask_box.BackColor = Color.PaleGreen;
+
+            numTask_box.Text = (DBR.getMaxID("tasks", "task_num") + 1).ToString();
+            OrdtimeTask_box.Value = DBR.getDateTimeFromServer();
+            //timeTask_box.Text = OrdtimeTask_box.Value.ToString("g");
+            timeTask_box.Text = OrdtimeTask_box.Value.ToString("dd.MM  [HH:mm]");
+
+        }
+
+        private void StateTask_combobox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+
+            var combo = sender as ComboBox;
+
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
+            }
+            else
+            {
+                if (StateTask_combobox.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+            }
+
+            
+
+            e.Graphics.DrawString(combo.Items[e.Index].ToString(),
+                                          new Font("Segoe UI", 11, FontStyle.Bold),
+                                          new SolidBrush(Color.Black),
+                                          e.Bounds,
+                                          sf);
+        }
+
+        private void typeTask_box_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+
+            var combo = sender as ComboBox;
+
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
+            }
+            else
+            {
+                if (typeTask_box.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+            }
+
+            if (e.Index >= 0) e.Graphics.DrawString(combo.Items[e.Index].ToString(),
+                                          new Font("Segoe UI", 11, FontStyle.Bold),
+                                          new SolidBrush(Color.Black),
+                                          e.Bounds,
+                                          sf);
         }
     }
 }

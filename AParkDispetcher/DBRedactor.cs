@@ -99,5 +99,47 @@ namespace AParkDispetcher
                 throw;
             }
         }
+
+        public int getMaxID(string table, string id_title)
+        {
+            string querry = "";
+            querry = $"USE autos; SELECT MAX({id_title}) FROM {table}";
+
+            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            try
+            {
+                using (MySqlDataReader reader = comm.ExecuteReader())
+                {
+                    reader.Read();
+                    return reader.GetInt32(0);
+                }
+                    
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return -1;
+        }
+        public DateTime getDateTimeFromServer()
+        {
+            string querry = "";
+            querry = $"USE autos; SELECT CURRENT_TIMESTAMP;";
+
+            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            try
+            {
+                using (MySqlDataReader reader = comm.ExecuteReader())
+                {
+                    reader.Read();
+                    return Convert.ToDateTime(reader.GetString(0));
+                }
+                    
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

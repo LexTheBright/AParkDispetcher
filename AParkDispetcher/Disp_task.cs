@@ -52,7 +52,7 @@ namespace AParkDispetcher
         {
             types.Clear();
             string querry = "";
-            querry = "USE autos; SELECT * FROM ctypes";
+            querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {
@@ -86,7 +86,7 @@ namespace AParkDispetcher
             fillTasks();
             for (int i = 0; i < usr.Count; i++)
             {
-                dgw.Rows.Add( "" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd/MM/yy HH:mm") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "", 
+                dgw.Rows.Add( "" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "", 
                     "" + usr[i].ordered_time + "", "" + usr[i].ordered_duration + "", "" + usr[i].departure + "", "" + usr[i].destination + "",
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
                     "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "", 
