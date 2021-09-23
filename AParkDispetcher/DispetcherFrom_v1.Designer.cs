@@ -49,7 +49,24 @@
             this.водителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.MainGrid = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +75,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Save_edit_task_button = new System.Windows.Forms.Button();
             this.textStateTask_box = new System.Windows.Forms.TextBox();
             this.OrderedTypeTask_box = new System.Windows.Forms.TextBox();
             this.typeTask_box = new System.Windows.Forms.ComboBox();
@@ -101,7 +119,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.searchTasks = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.AsideDispTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Sort_by_state = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -145,32 +163,15 @@
             this.car_cancel_button = new System.Windows.Forms.Button();
             this.car_edit_button = new System.Windows.Forms.Button();
             this.car_save_button = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.AsideDispTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -248,20 +249,20 @@
             this.историяToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.историяToolStripMenuItem.Text = "История";
             // 
-            // dataGridView2
+            // MainGrid
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
+            this.MainGrid.AllowUserToAddRows = false;
+            this.MainGrid.AllowUserToDeleteRows = false;
+            this.MainGrid.AllowUserToResizeColumns = false;
+            this.MainGrid.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.MainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MainGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.MainGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -269,9 +270,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.MainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column19,
@@ -296,13 +297,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 25);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
+            this.MainGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MainGrid.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MainGrid.Location = new System.Drawing.Point(6, 25);
+            this.MainGrid.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.MainGrid.MultiSelect = false;
+            this.MainGrid.Name = "MainGrid";
+            this.MainGrid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -310,28 +311,149 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.MainGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.MainGrid.RowHeadersVisible = false;
+            this.MainGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView2.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.dataGridView2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowTemplate.Height = 35;
-            this.dataGridView2.RowTemplate.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1031, 491);
-            this.dataGridView2.StandardTab = true;
-            this.dataGridView2.TabIndex = 4;
-            this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
-            this.dataGridView2.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
-            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.MainGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.MainGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MainGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+            this.MainGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.MainGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGrid.RowTemplate.Height = 35;
+            this.MainGrid.RowTemplate.ReadOnly = true;
+            this.MainGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.MainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MainGrid.ShowEditingIcon = false;
+            this.MainGrid.Size = new System.Drawing.Size(1031, 491);
+            this.MainGrid.StandardTab = true;
+            this.MainGrid.TabIndex = 4;
+            this.MainGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
+            this.MainGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
+            this.MainGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.HeaderText = "№";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 49;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Дата заявки";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 130;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Табельный заказчика";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column3.HeaderText = "Статус";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 91;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Выезд";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 130;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Длительность";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "Место выезда";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column14.HeaderText = "Место назначения";
+            this.Column14.MinimumWidth = 95;
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column15.FillWeight = 150F;
+            this.Column15.HeaderText = "Сообщение заказчика";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Visible = false;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Сообщение оператора";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Visible = false;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Табельный водителя";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Номер авто";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Тип авто";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 70;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Цвет";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Visible = false;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Запрашиваемый тип авто";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            this.Column21.Visible = false;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "User_FIO";
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            this.Column22.Visible = false;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Модель авто";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            this.Column23.Visible = false;
             // 
             // groupBox1
             // 
@@ -404,7 +526,7 @@
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.MainGrid);
             this.groupBox3.Controls.Add(this.searchTasks);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
@@ -422,6 +544,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Khaki;
+            this.groupBox2.Controls.Add(this.Save_edit_task_button);
             this.groupBox2.Controls.Add(this.textStateTask_box);
             this.groupBox2.Controls.Add(this.OrderedTypeTask_box);
             this.groupBox2.Controls.Add(this.typeTask_box);
@@ -457,6 +580,22 @@
             this.groupBox2.Text = "Подача заявки";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // Save_edit_task_button
+            // 
+            this.Save_edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Save_edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save_edit_task_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Save_edit_task_button.Enabled = false;
+            this.Save_edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save_edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save_edit_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Save_edit_task_button.Location = new System.Drawing.Point(486, 215);
+            this.Save_edit_task_button.Name = "Save_edit_task_button";
+            this.Save_edit_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Save_edit_task_button.TabIndex = 58;
+            this.Save_edit_task_button.Text = "Сохранить";
+            this.Save_edit_task_button.UseVisualStyleBackColor = false;
+            // 
             // textStateTask_box
             // 
             this.textStateTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -479,7 +618,7 @@
             this.OrderedTypeTask_box.Location = new System.Drawing.Point(100, 104);
             this.OrderedTypeTask_box.Name = "OrderedTypeTask_box";
             this.OrderedTypeTask_box.ReadOnly = true;
-            this.OrderedTypeTask_box.Size = new System.Drawing.Size(81, 27);
+            this.OrderedTypeTask_box.Size = new System.Drawing.Size(126, 27);
             this.OrderedTypeTask_box.TabIndex = 59;
             this.OrderedTypeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -499,7 +638,7 @@
             "Автобус"});
             this.typeTask_box.Location = new System.Drawing.Point(100, 104);
             this.typeTask_box.Name = "typeTask_box";
-            this.typeTask_box.Size = new System.Drawing.Size(115, 28);
+            this.typeTask_box.Size = new System.Drawing.Size(126, 28);
             this.typeTask_box.TabIndex = 56;
             this.typeTask_box.Visible = false;
             this.typeTask_box.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.typeTask_box_DrawItem);
@@ -872,6 +1011,7 @@
             this.Cancel_task_button.TabIndex = 55;
             this.Cancel_task_button.Text = "Отмена";
             this.Cancel_task_button.UseVisualStyleBackColor = false;
+            this.Cancel_task_button.Click += new System.EventHandler(this.Cancel_task_button_Click);
             // 
             // Create_task_button
             // 
@@ -1068,23 +1208,24 @@
             this.searchTasks.Text = "Поиск";
             this.searchTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tabControl1
+            // AsideDispTab
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.AsideDispTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.ItemSize = new System.Drawing.Size(103, 22);
-            this.tabControl1.Location = new System.Drawing.Point(3, 179);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(210, 678);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.AsideDispTab.Controls.Add(this.tabPage1);
+            this.AsideDispTab.Controls.Add(this.tabPage2);
+            this.AsideDispTab.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AsideDispTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.AsideDispTab.ItemSize = new System.Drawing.Size(103, 22);
+            this.AsideDispTab.Location = new System.Drawing.Point(3, 179);
+            this.AsideDispTab.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.AsideDispTab.Name = "AsideDispTab";
+            this.AsideDispTab.SelectedIndex = 0;
+            this.AsideDispTab.Size = new System.Drawing.Size(210, 678);
+            this.AsideDispTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.AsideDispTab.TabIndex = 0;
+            this.AsideDispTab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.AsideDispTab.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.AsideDispTab_Deselecting);
             // 
             // tabPage1
             // 
@@ -1149,7 +1290,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(28, 153);
+            this.pictureBox3.Location = new System.Drawing.Point(28, 151);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1161,7 +1302,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(28, 126);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 124);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1173,7 +1314,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 96);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1193,7 +1334,7 @@
             this.state_busy.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
             this.state_busy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.state_busy.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.state_busy.Location = new System.Drawing.Point(56, 124);
+            this.state_busy.Location = new System.Drawing.Point(56, 122);
             this.state_busy.Margin = new System.Windows.Forms.Padding(0);
             this.state_busy.Name = "state_busy";
             this.state_busy.Size = new System.Drawing.Size(122, 28);
@@ -1212,7 +1353,7 @@
             this.state_free.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
             this.state_free.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.state_free.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.state_free.Location = new System.Drawing.Point(56, 97);
+            this.state_free.Location = new System.Drawing.Point(56, 95);
             this.state_free.Margin = new System.Windows.Forms.Padding(0);
             this.state_free.Name = "state_free";
             this.state_free.Size = new System.Drawing.Size(122, 28);
@@ -1226,7 +1367,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Location = new System.Drawing.Point(28, 90);
+            this.panel2.Location = new System.Drawing.Point(28, 86);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 1);
@@ -1266,7 +1407,7 @@
             this.state_gone.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
             this.state_gone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.state_gone.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.state_gone.Location = new System.Drawing.Point(56, 151);
+            this.state_gone.Location = new System.Drawing.Point(56, 149);
             this.state_gone.Margin = new System.Windows.Forms.Padding(0);
             this.state_gone.Name = "state_gone";
             this.state_gone.Size = new System.Drawing.Size(122, 28);
@@ -1534,7 +1675,7 @@
             this.carViewGrid.RowTemplate.ReadOnly = true;
             this.carViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.carViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carViewGrid.Size = new System.Drawing.Size(202, 364);
+            this.carViewGrid.Size = new System.Drawing.Size(202, 357);
             this.carViewGrid.StandardTab = true;
             this.carViewGrid.TabIndex = 0;
             this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
@@ -1580,10 +1721,10 @@
             this.groupBox7.Controls.Add(this.model_aside);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.panel6);
-            this.groupBox7.Location = new System.Drawing.Point(-4, 391);
+            this.groupBox7.Location = new System.Drawing.Point(-4, 384);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(209, 264);
+            this.groupBox7.Size = new System.Drawing.Size(209, 271);
             this.groupBox7.TabIndex = 60;
             this.groupBox7.TabStop = false;
             // 
@@ -1615,7 +1756,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel5.Location = new System.Drawing.Point(30, 113);
+            this.panel5.Location = new System.Drawing.Point(30, 112);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(150, 1);
@@ -1627,7 +1768,7 @@
             this.mark_aside.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.mark_aside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mark_aside.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.mark_aside.Location = new System.Drawing.Point(67, 15);
+            this.mark_aside.Location = new System.Drawing.Point(67, 18);
             this.mark_aside.Name = "mark_aside";
             this.mark_aside.ReadOnly = true;
             this.mark_aside.Size = new System.Drawing.Size(134, 26);
@@ -1638,7 +1779,7 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 18);
+            this.label20.Location = new System.Drawing.Point(7, 21);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(34, 17);
             this.label20.TabIndex = 65;
@@ -1654,7 +1795,7 @@
             this.state_notAvailable.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
             this.state_notAvailable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.state_notAvailable.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.state_notAvailable.Location = new System.Drawing.Point(58, 145);
+            this.state_notAvailable.Location = new System.Drawing.Point(58, 148);
             this.state_notAvailable.Margin = new System.Windows.Forms.Padding(0);
             this.state_notAvailable.Name = "state_notAvailable";
             this.state_notAvailable.Size = new System.Drawing.Size(122, 28);
@@ -1674,7 +1815,7 @@
             this.state_available.FlatAppearance.CheckedBackColor = System.Drawing.Color.LightGreen;
             this.state_available.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.state_available.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.state_available.Location = new System.Drawing.Point(58, 118);
+            this.state_available.Location = new System.Drawing.Point(58, 121);
             this.state_available.Margin = new System.Windows.Forms.Padding(0);
             this.state_available.Name = "state_available";
             this.state_available.Size = new System.Drawing.Size(122, 28);
@@ -1691,7 +1832,7 @@
             this.model_aside.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.model_aside.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.model_aside.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.model_aside.Location = new System.Drawing.Point(67, 53);
+            this.model_aside.Location = new System.Drawing.Point(67, 56);
             this.model_aside.Margin = new System.Windows.Forms.Padding(0);
             this.model_aside.Multiline = true;
             this.model_aside.Name = "model_aside";
@@ -1704,7 +1845,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 57);
+            this.label21.Location = new System.Drawing.Point(6, 60);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(58, 17);
             this.label21.TabIndex = 61;
@@ -1717,7 +1858,7 @@
             this.panel6.Controls.Add(this.car_cancel_button);
             this.panel6.Controls.Add(this.car_edit_button);
             this.panel6.Controls.Add(this.car_save_button);
-            this.panel6.Location = new System.Drawing.Point(4, 176);
+            this.panel6.Location = new System.Drawing.Point(4, 183);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(202, 81);
@@ -1727,7 +1868,7 @@
             // 
             this.car_cancel_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.car_cancel_button.BackColor = System.Drawing.Color.LightGray;
+            this.car_cancel_button.BackColor = System.Drawing.SystemColors.ControlLight;
             this.car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.car_cancel_button.Location = new System.Drawing.Point(6, 9);
@@ -1743,7 +1884,7 @@
             // 
             this.car_edit_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.car_edit_button.BackColor = System.Drawing.Color.LightGray;
+            this.car_edit_button.BackColor = System.Drawing.SystemColors.ControlLight;
             this.car_edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.car_edit_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.car_edit_button.Location = new System.Drawing.Point(6, 9);
@@ -1770,134 +1911,13 @@
             this.car_save_button.UseVisualStyleBackColor = false;
             this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.HeaderText = "№";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 49;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Дата заявки";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 130;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Табельный заказчика";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column3.HeaderText = "Статус";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 91;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Выезд";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 130;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Длительность";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "Место выезда";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column14.HeaderText = "Место назначения";
-            this.Column14.MinimumWidth = 95;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column15.FillWeight = 150F;
-            this.Column15.HeaderText = "Сообщение заказчика";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Visible = false;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Сообщение оператора";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Visible = false;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Табельный водителя";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Номер авто";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Тип авто";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 70;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Цвет";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            this.Column20.Visible = false;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Запрашиваемый тип авто";
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            this.Column21.Visible = false;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "User_FIO";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            this.Column22.Visible = false;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Модель авто";
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            this.Column23.Visible = false;
-            // 
             // DispetcherFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(106)))));
             this.ClientSize = new System.Drawing.Size(1264, 861);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.AsideDispTab);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.menuStrip1);
@@ -1912,7 +1932,7 @@
             this.Resize += new System.EventHandler(this.DispetcherFrom_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1924,7 +1944,7 @@
             this.panel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.AsideDispTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1948,7 +1968,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView MainGrid;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -1964,7 +1984,7 @@
         private System.Windows.Forms.ToolStripMenuItem водителиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem заявкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem историяToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl AsideDispTab;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
@@ -2068,6 +2088,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.Button Save_edit_task_button;
     }
 }
 

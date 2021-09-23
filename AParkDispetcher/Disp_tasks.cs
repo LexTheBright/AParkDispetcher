@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_task
+    class Disp_tasks
     {
         public struct Task
         {
@@ -48,7 +48,7 @@ namespace AParkDispetcher
 
         public Dictionary<string, int> types = new Dictionary<string, int>();
 
-        public void fillTypes(ComboBox combo)
+        public void fillComboboxWithTypes(ComboBox combo)
         {
             types.Clear();
             string querry = "";

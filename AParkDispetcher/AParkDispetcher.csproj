@@ -68,10 +68,10 @@
     <Compile Include="DispetcherFrom_v1.Designer.cs">
       <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Disp_car.cs" />
-    <Compile Include="Disp_driver.cs" />
-    <Compile Include="Disp_task.cs" />
-    <Compile Include="Disp_user.cs" />
+    <Compile Include="Disp_cars.cs" />
+    <Compile Include="Disp_drivers.cs" />
+    <Compile Include="Disp_tasks.cs" />
+    <Compile Include="Disp_users.cs" />
     <Compile Include="DBRedactor.cs" />
     <Compile Include="SelectCarForm.cs">
       <SubType>Form</SubType>

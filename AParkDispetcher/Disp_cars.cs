@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_car
+    class Disp_cars
     {
         public struct C1
         {
@@ -19,7 +19,6 @@ namespace AParkDispetcher
             public int state;
             public string type;
             //public int car_type_id;
-            /*public string TitleState;*/
         }
 
 
@@ -99,7 +98,6 @@ namespace AParkDispetcher
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].reg_mark + "", "" + usr[i].model + "", "" + usr[i].type + "", "" + usr[i].color + "", "" + StateTitle(usr[i].state) + "", "" + usr[i].description + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
         }
 
@@ -109,7 +107,6 @@ namespace AParkDispetcher
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].reg_mark + "", "" + usr[i].model + "", "" + usr[i].type + "", "" + usr[i].color + "", "" + StateTitle(usr[i].state) + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
         }
         public void fillDispatchersCarGrid(DataGridView dgw)
@@ -118,7 +115,6 @@ namespace AParkDispetcher
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].model + "", "" + usr[i].reg_mark + "", "" + usr[i].state + "", "" + usr[i].description + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
         }
 

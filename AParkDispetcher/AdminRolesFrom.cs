@@ -14,12 +14,14 @@ namespace AParkDispetcher
 {
     public partial class AdminRolesFrom : Form
     {
-        Disp_user DU ;
-        Disp_driver DD ;
-        Disp_car DC;
+        Disp_users DU;
+        Disp_drivers DD;
+        Disp_cars DC;
         DBRedactor ADBR;
 
         public Dictionary<string, string> tempArgs = new Dictionary<string, string>();
+
+        private static bool IsTabSelectingActive = true;
 
         public AdminRolesFrom()
         {
@@ -29,6 +31,7 @@ namespace AParkDispetcher
 
         private void endingEvent(string tab)
         {
+            IsTabSelectingActive = true;
             switch (tab)
             {
                 case "user":
@@ -146,9 +149,9 @@ namespace AParkDispetcher
 
         private void AdminRolesFrom_Load(object sender, EventArgs e)
         {
-            DU = new Disp_user();
-            DD = new Disp_driver();
-            DC = new Disp_car();
+            DU = new Disp_users();
+            DD = new Disp_drivers();
+            DC = new Disp_cars();
             ADBR = new DBRedactor();
 
             DU.fillAdminsUserGrid(AdminUsersGrid);
@@ -339,15 +342,15 @@ namespace AParkDispetcher
             {
                 ADBR.deleteByID("users", "tab_number", tab_n);
                 endingEvent("user");
+                if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
-
-            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void User_button_edit_Click(object sender, EventArgs e)
         {
             //tabControl1.TabPages[0].Focus();
             password_place.Focus();
+            IsTabSelectingActive = false;
 
             AdminUsersGrid.Enabled = false;
             login_place.ReadOnly = false;
@@ -544,8 +547,8 @@ namespace AParkDispetcher
             user_tab_textbox.Focus();
             admin_users_role.SelectedIndex = 0;
             AdminUsersGrid.Enabled = false;
+            IsTabSelectingActive = false;
 
-            
             user_tab_textbox.ReadOnly = false;
             user_tab_textbox.BackColor = Color.PaleGreen;
             user_tab_textbox.Clear();
@@ -579,6 +582,7 @@ namespace AParkDispetcher
         {
             driver_tab_textbox.Focus();
             AdminDriversGrid.Enabled = false;
+            IsTabSelectingActive = false;
 
             driver_FIO_textbox.ReadOnly = false;
             driver_FIO_textbox.BackColor = Color.PaleGreen;
@@ -612,9 +616,8 @@ namespace AParkDispetcher
             {
                 ADBR.deleteByID("drivers", "tab_number", tab_n);
                 endingEvent("driver");
+                if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
-
-            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void Driver_button_cancel_Click(object sender, EventArgs e)
@@ -675,6 +678,7 @@ namespace AParkDispetcher
         {
             admin_car_mark_label.Focus();
             AdminCarsGrid.Enabled = false;
+            IsTabSelectingActive = false;
             admin_car_type_cbox.SelectedIndex = 0;
 
             //заменяем лейбл комбобоксом
@@ -713,6 +717,7 @@ namespace AParkDispetcher
         {
             admin_car_descr_label.Focus();
             AdminCarsGrid.Enabled = false;
+            IsTabSelectingActive = false;
 
             //красим области в зеленый
             admin_car_descr_label.ReadOnly = false;
@@ -747,9 +752,8 @@ namespace AParkDispetcher
             {
                 ADBR.deleteByID("cars", "reg_mark", mark_n);
                 endingEvent("car");
+                if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
-
-            if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
         }
 
         private void admin_car_cancel_button_Click(object sender, EventArgs e)
@@ -837,11 +841,75 @@ namespace AParkDispetcher
             //Добавляем тип
             add_car_properties.Add("car_type_id", admin_car_type_cbox.SelectedIndex.ToString());
             //Добавляем состояние
-            add_car_properties.Add("car_state", "0");
+            add_car_properties.Add("car_state", "1");
 
             if (ADBR.createNewKouple("cars", add_car_properties) == 1) return;
             if (this.Height < Screen.GetWorkingArea(this).Height - this.Location.Y) this.Height += 35;
             endingEvent("car");
+        }
+
+        //лисенер не задействуется
+        private void admin_car_type_cbox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+
+            var combo = sender as ComboBox;
+
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
+            }
+            else
+            {
+                if (admin_car_type_cbox.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+            }
+
+
+
+            if (e.Index >-1) e.Graphics.DrawString(combo.Items[e.Index].ToString(), //Cambria; 12pt; style=Bold
+                                          new Font("Segoe UI", 11, FontStyle.Bold), 
+                                          //new Font("Cambria", 12, FontStyle.Bold), SystemBrushes.ControlText,
+                                          new SolidBrush(Color.Black),
+                                          e.Bounds,
+                                          sf);
+        }
+
+        private void AdminTab_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!IsTabSelectingActive)
+            {
+                MessageBox.Show("Завершите начатую операцию!");
+                e.Cancel = true;
+            }
+        }
+
+        private void admin_users_role_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+
+            var combo = sender as ComboBox;
+
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
+            }
+            else
+            {
+                if (admin_users_role.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+            }
+
+
+
+            if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(), //Cambria; 12pt; style=Bold
+                                           new Font("Segoe UI", 11, FontStyle.Bold),
+                                           //new Font("Cambria", 12, FontStyle.Bold), SystemBrushes.ControlText,
+                                           new SolidBrush(Color.Black),
+                                           e.Bounds,
+                                           sf);
         }
     }
 }

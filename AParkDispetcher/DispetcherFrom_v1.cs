@@ -13,11 +13,13 @@ namespace APark
 {
     public partial class DispetcherFrom : Form
     {
-        Disp_user DU;
-        Disp_driver DD;
-        Disp_car DC;
-        Disp_task DT;
-        DBRedactor DBR;
+        //Disp_user DU;
+        Disp_drivers DD;
+        Disp_cars DC;
+        Disp_tasks DT;
+        DBRedactor DBRed;
+
+        private static bool IsAsideTabSelectingActive = true;
 
         public DispetcherFrom()
         {
@@ -31,19 +33,19 @@ namespace APark
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DU = new Disp_user();
-            DD = new Disp_driver();
-            DC = new Disp_car();
-            DT = new Disp_task();
-            DBR = new DBRedactor();
+            //DU = new Disp_user();
+            DD = new Disp_drivers();
+            DC = new Disp_cars();
+            DT = new Disp_tasks();
+            DBRed = new DBRedactor();
 
             DD.fillDispatchersDriverGrid(DriversViewGrid);
             DC.fillDispatchersCarGrid(carViewGrid);
-            DT.fillDispetcherTasks(dataGridView2);
+            DT.fillDispetcherTasks(MainGrid);
             typeTask_box.Items.Clear();
-            DT.fillTypes(typeTask_box);
+            DT.fillComboboxWithTypes(typeTask_box);
 
-            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+            MainGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
             //dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold); 
         }
 
@@ -96,7 +98,7 @@ namespace APark
             }
             else
             {
-                DBR.updateByID("drivers", "tab_number", tab_aside.Text, driver_state_prop);
+                DBRed.updateByID("drivers", "tab_number", tab_aside.Text, driver_state_prop);
             }
 
             //сохраняем индакс и обновляем таблицу
@@ -115,6 +117,7 @@ namespace APark
             Cancel_driverstate_button.Visible = false;
             Save_state_button.Enabled = false;
             Save_state_button.BackColor = Color.DarkKhaki;
+            IsAsideTabSelectingActive = true;
         }
 
         private void MenuAdminUsers_Click(object sender, EventArgs e)
@@ -202,6 +205,7 @@ namespace APark
             car_cancel_button.Visible = true;
             car_save_button.Enabled = true;
             car_save_button.BackColor = Color.LightGray;
+            IsAsideTabSelectingActive = false;
         }
 
         private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -303,18 +307,18 @@ namespace APark
 
         private void DispetcherFrom_Resize(object sender, EventArgs e)
         {
-            if (this.Size.Width > 1400) dataGridView2.Columns[8].Visible = true;
-            else dataGridView2.Columns[8].Visible = false;
+            if (this.Size.Width > 1400) MainGrid.Columns[8].Visible = true;
+            else MainGrid.Columns[8].Visible = false;
 
             if (this.Size.Width > 1600)
             {
-                dataGridView2.Columns[6].Visible = true;
-                dataGridView2.Columns[12].Width = 100;
+                MainGrid.Columns[6].Visible = true;
+                MainGrid.Columns[12].Width = 100;
             }
             else
             {
-                dataGridView2.Columns[6].Visible = false;
-                dataGridView2.Columns[12].Width = 70;
+                MainGrid.Columns[6].Visible = false;
+                MainGrid.Columns[12].Width = 70;
             }
         }
 
@@ -326,7 +330,7 @@ namespace APark
             }*/
             if (e.ColumnIndex == 4) e.Value = Convert.ToDateTime(e.Value).ToString("dd.MM  [HH:mm]");
 
-            if (dataGridView2.Rows[e.RowIndex].MinimumHeight != 35) dataGridView2.Rows[e.RowIndex].MinimumHeight = 35;
+            if (MainGrid.Rows[e.RowIndex].MinimumHeight != 35) MainGrid.Rows[e.RowIndex].MinimumHeight = 35;
 
 
             if (e.ColumnIndex == 11 && e.Value.ToString().Length > 5)
@@ -370,28 +374,28 @@ namespace APark
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-            string task_numb = dataGridView2.Rows[selectedrowindex].Cells[0].Value.ToString();
-            string task_datetime = dataGridView2.Rows[selectedrowindex].Cells[1].Value.ToString();
-            string task_tab_user = dataGridView2.Rows[selectedrowindex].Cells[2].Value.ToString();
-            string task_state = dataGridView2.Rows[selectedrowindex].Cells[3].Value.ToString();
+            int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
+            string task_numb = MainGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+            string task_datetime = MainGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+            string task_tab_user = MainGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
+            string task_state = MainGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
 
             //string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
-            DateTime task_dep_time = Convert.ToDateTime(dataGridView2.Rows[selectedrowindex].Cells[4].Value);
+            DateTime task_dep_time = Convert.ToDateTime(MainGrid.Rows[selectedrowindex].Cells[4].Value);
 
 
-            string task_dura = dataGridView2.Rows[selectedrowindex].Cells[5].Value.ToString();
-            string task_dep = dataGridView2.Rows[selectedrowindex].Cells[6].Value.ToString();
-            string task_dest = dataGridView2.Rows[selectedrowindex].Cells[7].Value.ToString();
-            string task_user_com = dataGridView2.Rows[selectedrowindex].Cells[8].Value.ToString();
-            string task_changer_com = dataGridView2.Rows[selectedrowindex].Cells[9].Value.ToString();
-            string task_tab_driver = dataGridView2.Rows[selectedrowindex].Cells[10].Value.ToString();
-            string task_reg_mark = dataGridView2.Rows[selectedrowindex].Cells[11].Value.ToString();
-            string task_ctype = dataGridView2.Rows[selectedrowindex].Cells[12].Value.ToString();
-            string task_car_color = dataGridView2.Rows[selectedrowindex].Cells[13].Value.ToString();
-            string task_ordered_type = dataGridView2.Rows[selectedrowindex].Cells[14].Value.ToString();
-            string task_user_FIO = dataGridView2.Rows[selectedrowindex].Cells[15].Value.ToString();
-            string task_car_model = dataGridView2.Rows[selectedrowindex].Cells[16].Value.ToString();
+            string task_dura = MainGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
+            string task_dep = MainGrid.Rows[selectedrowindex].Cells[6].Value.ToString();
+            string task_dest = MainGrid.Rows[selectedrowindex].Cells[7].Value.ToString();
+            string task_user_com = MainGrid.Rows[selectedrowindex].Cells[8].Value.ToString();
+            string task_changer_com = MainGrid.Rows[selectedrowindex].Cells[9].Value.ToString();
+            string task_tab_driver = MainGrid.Rows[selectedrowindex].Cells[10].Value.ToString();
+            string task_reg_mark = MainGrid.Rows[selectedrowindex].Cells[11].Value.ToString();
+            string task_ctype = MainGrid.Rows[selectedrowindex].Cells[12].Value.ToString();
+            string task_car_color = MainGrid.Rows[selectedrowindex].Cells[13].Value.ToString();
+            string task_ordered_type = MainGrid.Rows[selectedrowindex].Cells[14].Value.ToString();
+            string task_user_FIO = MainGrid.Rows[selectedrowindex].Cells[15].Value.ToString();
+            string task_car_model = MainGrid.Rows[selectedrowindex].Cells[16].Value.ToString();
 
             numTask_box.Text = task_numb;
             timeTask_box.Text = task_datetime;
@@ -458,9 +462,9 @@ namespace APark
             if (e.RowIndex == -1) return;
             //MessageBox.Show("The row index = " + e.RowIndex);
 
-            string task_numb = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string task_datetime = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string task_tab_user = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string task_numb = MainGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string task_datetime = MainGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string task_tab_user = MainGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
 
 
             TaskHistoryForm CurTHistoryForm = new TaskHistoryForm(task_numb, task_tab_user, task_datetime);
@@ -518,10 +522,12 @@ namespace APark
 
             DriversViewGrid.Enabled = false;
             //DriversViewGrid.SelectedRows[0].Selected = true;
+            IsAsideTabSelectingActive = false;
         }
 
         private void Cancel_driverstate_button_Click(object sender, EventArgs e)
         {
+            IsAsideTabSelectingActive = true;
             dataGridView1_SelectionChanged(sender, e);
             DriversViewGrid.Enabled = true;
             Save_state_button.Enabled = false;
@@ -566,6 +572,7 @@ namespace APark
         private void car_cancel_button_Click(object sender, EventArgs e)
         {
             dataGridView3_SelectionChanged(sender, e);
+            IsAsideTabSelectingActive = true;
             carViewGrid.Enabled = true;
             
             car_cancel_button.Visible = false;
@@ -599,7 +606,7 @@ namespace APark
             }
             else
             {
-                DBR.updateByID("cars", "reg_mark", mark_aside.Text, car_state_prop);
+                DBRed.updateByID("cars", "reg_mark", mark_aside.Text, car_state_prop);
             }
             //сохраняем индакс и обновляем таблицу
             int savedIndex = carViewGrid.SelectedCells[0].RowIndex;
@@ -612,14 +619,11 @@ namespace APark
             car_cancel_button.Visible = false;
             car_save_button.Enabled = false;
             car_save_button.BackColor = Color.DarkKhaki;
+            IsAsideTabSelectingActive = true;
         }
 
         private void Create_task_button_Click(object sender, EventArgs e)
         {
-            //StateTask_combobox.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
-            //StateTask_combobox.Font = new Font(FontFamily.GenericMonospace, StateTask_combobox.Font.Size);
-            //StateTask_combobox.Font = typeTask_box.Font;
-            OrdtimeTask_box.Enabled = true;
             OrderedTypeTask_box.Visible = false;
             label14.Visible = false;
             colorTask_box.Visible = false;
@@ -636,8 +640,20 @@ namespace APark
             destTask_box.BackColor = Color.PaleGreen;
             commTask_box.BackColor = Color.PaleGreen;
 
-            numTask_box.Text = (DBR.getMaxID("tasks", "task_num") + 1).ToString();
-            OrdtimeTask_box.Value = DBR.getDateTimeFromServer();
+            searchTasks.Enabled = false;
+            MainGrid.Enabled = false;
+            OrdtimeTask_box.Enabled = true;
+            Create_task_button.Enabled = false; 
+            Create_task_button.BackColor = Color.DarkKhaki;
+            Edit_task_button.Enabled = false;
+            Edit_task_button.BackColor = Color.DarkKhaki;
+            Cancel_task_button.Enabled = true;
+            Cancel_task_button.BackColor = SystemColors.ControlLight;
+            Save_add_task_button.Enabled = true;
+            Save_add_task_button.BackColor = SystemColors.ControlLight;
+
+            numTask_box.Text = (DBRed.getMaxID("tasks", "task_num") + 1).ToString();
+            OrdtimeTask_box.Value = DBRed.getDateTimeFromServer();
             //timeTask_box.Text = OrdtimeTask_box.Value.ToString("g");
             timeTask_box.Text = OrdtimeTask_box.Value.ToString("dd.MM  [HH:mm]");
 
@@ -650,7 +666,7 @@ namespace APark
 
             var combo = sender as ComboBox;
 
-            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
+            //e.Graphics.FillRectangle(new SoliDBRedush(Color.Navy), e.Bounds);
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
@@ -691,6 +707,55 @@ namespace APark
                                           new SolidBrush(Color.Black),
                                           e.Bounds,
                                           sf);
+        }
+
+        private void AsideDispTab_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!IsAsideTabSelectingActive)
+            {
+                MessageBox.Show("Завершите начатую операцию!");
+                e.Cancel = true;
+            }
+        }
+
+        private void endingEvent()
+        {
+            OrderedTypeTask_box.Visible = true;
+            label14.Visible = true;
+            colorTask_box.Visible = true;
+            typeTask_box.Visible = false;
+            StateTask_combobox.Visible = false;
+            textStateTask_box.Visible = true;
+            Save_edit_task_button.Visible = false;
+
+            duraTask_box.ReadOnly = true;
+            departTask_box.ReadOnly = true;
+            destTask_box.ReadOnly = true;
+            commTask_box.ReadOnly = true;
+            dispCommTask_box.ReadOnly = true;
+
+            duraTask_box.BackColor = Color.PaleGoldenrod;
+            departTask_box.BackColor = Color.PaleGoldenrod;
+            destTask_box.BackColor = Color.PaleGoldenrod;
+            commTask_box.BackColor = Color.PaleGoldenrod;
+
+            searchTasks.Enabled = true;
+            MainGrid.Enabled = true;
+            OrdtimeTask_box.Enabled = false;
+            selectCarButton.Enabled = false;
+            Create_task_button.Enabled = true;
+            Create_task_button.BackColor = SystemColors.ControlLight; 
+            Edit_task_button.Enabled = true;
+            Edit_task_button.BackColor = SystemColors.ControlLight;
+            Cancel_task_button.Enabled = false;
+            Cancel_task_button.BackColor = Color.DarkKhaki;
+            Save_add_task_button.Enabled = false;
+            Save_add_task_button.BackColor = Color.DarkKhaki;
+        } 
+
+        private void Cancel_task_button_Click(object sender, EventArgs e)
+        {
+            endingEvent();
         }
     }
 }

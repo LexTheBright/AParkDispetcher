@@ -8,24 +8,26 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_driver
+    class Disp_users
     {
-        public struct C1
-        {
+        public struct C1 {
             public string tab_number;
             public string name, surname, midname;
-            public int state;
+            /*public int state;*/
             /*public string TitleState;*/
+            public string login;
+            public string password;
+            public string role;
         }
 
 
-        public List<C1> usr = new List<C1>();
+        List<C1> usr = new List<C1>();
 
-        public void fillDriver()
+        public void fillUser()
         {
             usr.Clear();
             string querry = "";
-            querry = "USE autos; SELECT driver_surname, driver_name,  driver_midname, tab_number, driver_state FROM drivers ORDER BY driver_state";
+            querry = "USE autos; SELECT user_surname, user_name, user_midname, tab_number, role_title, login FROM users JOIN roles WHERE users.user_role_id = roles.role_id";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {
@@ -38,7 +40,11 @@ namespace AParkDispetcher
                         temp_c.name = reader.GetString(1);
                         temp_c.midname = reader.GetString(2);
                         temp_c.tab_number = reader.GetString(3);
-                        temp_c.state = reader.GetInt32(4);
+                        temp_c.role = reader.GetString(4);
+                        temp_c.login = reader.GetString(5);
+                        /*temp_c.state = reader.GetInt32(6);
+                        temp_c.TitleState = StateTitle(temp_c.state);*/
+                        //temp_c.role = reader.GetInt32(3);
                         usr.Add(temp_c);
                     }
                 }
@@ -50,42 +56,22 @@ namespace AParkDispetcher
             }
         }
 
-        /*public void fillSelectDriverForm(DataGridView dgw)
+        public void fillAdminsUserGrid(DataGridView dgw) 
         {
-            fillDriver();
+            fillUser();
             for (int i = 0; i < usr.Count; i++)
             {
-                dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].tab_number + "", "" + StateTitle(usr[i].state) + "");
+                dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].tab_number + "", "" + usr[i].role + "", "" + usr[i].login + "");
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
-        }*/
 
-        public void fillAdminsDriverGrid(DataGridView dgw)
-        {
-            fillDriver();
-            for (int i = 0; i < usr.Count; i++)
-            {
-                dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].tab_number + "", "" + StateTitle(usr[i].state) + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
-            }
         }
 
-        public void fillDispatchersDriverGrid(DataGridView dgw)
-        {
-            fillDriver();
-            for (int i = 0; i < usr.Count; i++)
-            {
-                dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].state + "", "" + usr[i].tab_number + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
-            }
-        }
-
-
-        public string StateTitle(int state)
+        public string StateTitle (int state)
         {
             switch (state)
             {
-                case 0:
+                case 0: 
                     return "Работает";
                 case 1:
                     return "Занят";
