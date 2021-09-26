@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_cars
+    class Cars_list
     {
         public struct C1
         {

@@ -68,10 +68,10 @@
     <Compile Include="DispetcherFrom_v1.Designer.cs">
       <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Disp_cars.cs" />
-    <Compile Include="Disp_drivers.cs" />
-    <Compile Include="Disp_tasks.cs" />
-    <Compile Include="Disp_users.cs" />
+    <Compile Include="Cars_list.cs" />
+    <Compile Include="Drivers_list.cs" />
+    <Compile Include="Tasks_list.cs" />
+    <Compile Include="Users_list.cs" />
     <Compile Include="DBRedactor.cs" />
     <Compile Include="SelectCarForm.cs">
       <SubType>Form</SubType>
@@ -86,7 +86,7 @@
     <Compile Include="TaskHistoryForm.Designer.cs">
       <DependentUpon>TaskHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="ParkDispecter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminRolesFrom.resx">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>

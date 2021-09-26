@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_tasks
+    class Tasks_list
     {
         public struct Task
         {
@@ -106,7 +106,8 @@ namespace AParkDispetcher
                 "LEFT JOIN cars ON tasks.car_reg_mark = cars.reg_mark " +
                 "LEFT JOIN drivers ON tasks.driver_tab_number = drivers.tab_number " +
                 "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
-                "JOIN users ON tasks.user_tab_number = users.tab_number ";
+                "JOIN users ON tasks.user_tab_number = users.tab_number " +
+                "ORDER BY order_state";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
             try
             {

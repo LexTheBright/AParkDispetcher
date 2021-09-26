@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_users
+    class Users_list
     {
-        public struct C1 {
+        private struct C1 {
             public string tab_number;
             public string name, surname, midname;
             /*public int state;*/
@@ -20,10 +20,9 @@ namespace AParkDispetcher
             public string role;
         }
 
+        private List<C1> usr = new List<C1>();
 
-        List<C1> usr = new List<C1>();
-
-        public void fillUser()
+        private void FillUser()
         {
             usr.Clear();
             string querry = "";
@@ -35,16 +34,15 @@ namespace AParkDispetcher
                 {
                     while (reader.Read())
                     {
-                        C1 temp_c = new C1();
-                        temp_c.surname = reader.GetString(0);
-                        temp_c.name = reader.GetString(1);
-                        temp_c.midname = reader.GetString(2);
-                        temp_c.tab_number = reader.GetString(3);
-                        temp_c.role = reader.GetString(4);
-                        temp_c.login = reader.GetString(5);
-                        /*temp_c.state = reader.GetInt32(6);
-                        temp_c.TitleState = StateTitle(temp_c.state);*/
-                        //temp_c.role = reader.GetInt32(3);
+                        C1 temp_c = new C1
+                        {
+                            surname = reader.GetString(0),
+                            name = reader.GetString(1),
+                            midname = reader.GetString(2),
+                            tab_number = reader.GetString(3),
+                            role = reader.GetString(4),
+                            login = reader.GetString(5)
+                        };
                         usr.Add(temp_c);
                     }
                 }
@@ -56,18 +54,17 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillAdminsUserGrid(DataGridView dgw) 
+        public void FillAdminsUserGrid(DataGridView dgw) 
         {
-            fillUser();
+            FillUser();
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].tab_number + "", "" + usr[i].role + "", "" + usr[i].login + "");
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
-
         }
 
-        public string StateTitle (int state)
+        private string StateTitle (int state)
         {
             switch (state)
             {

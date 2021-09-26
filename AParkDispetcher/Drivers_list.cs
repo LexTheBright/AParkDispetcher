@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
-    class Disp_drivers
+    class Drivers_list
     {
         public struct C1
         {

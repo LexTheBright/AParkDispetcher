@@ -8,15 +8,15 @@ using System.Text;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+
 
 namespace AParkDispetcher
 {
     public partial class AdminRolesFrom : Form
     {
-        Disp_users DU;
-        Disp_drivers DD;
-        Disp_cars DC;
+        Users_list DU;
+        Drivers_list DD;
+        Cars_list DC;
         DBRedactor ADBR;
 
         public Dictionary<string, string> tempArgs = new Dictionary<string, string>();
@@ -40,7 +40,7 @@ namespace AParkDispetcher
                     int savedIndex = AdminUsersGrid.SelectedCells[0].RowIndex;
 
                     AdminUsersGrid.Rows.Clear();
-                    DU.fillAdminsUserGrid(AdminUsersGrid);
+                    DU.FillAdminsUserGrid(AdminUsersGrid);
                     if (savedIndex < AdminUsersGrid.RowCount) AdminUsersGrid.Rows[savedIndex].Selected = true;
 
                     User_button_delete.Enabled = true;
@@ -54,10 +54,8 @@ namespace AParkDispetcher
                     User_button_add.BackColor = Color.White;
                     User_button_cancel.BackColor = Color.Tan;
                     User_button_save.BackColor = Color.Tan;
-
                     user_FIO_textbox.BackColor = Color.Linen;
                     user_tab_textbox.BackColor = Color.Linen;
-
                     user_role_textbox.BackColor = Color.Linen;
                     login_place.BackColor = Color.Linen;
                     password_place.BackColor = Color.Linen;
@@ -71,7 +69,6 @@ namespace AParkDispetcher
                     admin_users_role.Visible = false;
                     user_role_textbox.Visible = true;
 
-                    //AdminUsersGrid.SelectAll();
                     dataGridView1_SelectionChanged(User_button_cancel, new EventArgs());
                     break;
 
@@ -92,7 +89,6 @@ namespace AParkDispetcher
                     Driver_button_add.BackColor = Color.White;
                     Driver_button_cancel.BackColor = Color.Tan;
                     Driver_button_save.BackColor = Color.Tan;
-
                     driver_FIO_textbox.BackColor = Color.Linen;
                     driver_tab_textbox.BackColor = Color.Linen;
 
@@ -149,12 +145,12 @@ namespace AParkDispetcher
 
         private void AdminRolesFrom_Load(object sender, EventArgs e)
         {
-            DU = new Disp_users();
-            DD = new Disp_drivers();
-            DC = new Disp_cars();
+            DU = new Users_list();
+            DD = new Drivers_list();
+            DC = new Cars_list();
             ADBR = new DBRedactor();
 
-            DU.fillAdminsUserGrid(AdminUsersGrid);
+            DU.FillAdminsUserGrid(AdminUsersGrid);
             DD.fillAdminsDriverGrid(AdminDriversGrid);
             DC.fillAdminsCarGrid(AdminCarsGrid);
             DC.fillTypes(admin_car_type_cbox);
@@ -240,7 +236,7 @@ namespace AParkDispetcher
         private void tabPage1_Enter(object sender, EventArgs e)
         {
             AdminUsersGrid.Rows.Clear();
-            DU.fillAdminsUserGrid(AdminUsersGrid);
+            DU.FillAdminsUserGrid(AdminUsersGrid);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
@@ -395,7 +391,7 @@ namespace AParkDispetcher
             //табель
             if (!user_tab_textbox.ReadOnly)
             {
-                string error_message = IsValidFunc("Табельный №", user_tab_textbox.Text.ToString());
+                string error_message = ParkDispecter.IsValidValue("Табельный №", user_tab_textbox.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -417,7 +413,7 @@ namespace AParkDispetcher
             //логин
             if (!user_tab_textbox.ReadOnly || login_place.Text != tempArgs["login"])
             {
-                string error_message = IsValidFunc("Логин", login_place.Text.ToString());
+                string error_message = ParkDispecter.IsValidValue("Логин", login_place.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -434,7 +430,7 @@ namespace AParkDispetcher
             if (!user_tab_textbox.ReadOnly || password_place.Text.Length > 0)
             {
                 //string dsqdpi = password_place.
-                string error_message = IsValidFunc("Пароль", password_place.Text.ToString());
+                string error_message = ParkDispecter.IsValidValue("Пароль", password_place.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -450,7 +446,7 @@ namespace AParkDispetcher
             //ФИО
             if (!user_tab_textbox.ReadOnly  || user_FIO_textbox.Text != tempArgs["FIO"])
             {
-                string error_message = IsValidFunc("ФИО", user_FIO_textbox.Text.ToString());
+                string error_message = ParkDispecter.IsValidValue("ФИО", user_FIO_textbox.Text.ToString());
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -488,60 +484,7 @@ namespace AParkDispetcher
             tempArgs.Clear();
         }
 
-        private string IsValidFunc(string field_name, string expr, bool NotNULL = true)
-        {
-            string pattern = "";
-            string vlid_error = "";
-            if (NotNULL && expr == "") return "Не заполнено поле " + field_name;
-            switch (field_name)
-            {
-                case "Логин":
-                    pattern = @"^[А-Яа-яA-Za-z0-9]{8,15}$";
-                    //int fst = 1024, dq = 256;
-                    //pattern = @"^\[а-яё]$"; // nicodeRanges.Cyrillic.FirstCodePoint, UnicodeRanges.Cyrillic.Length
-                    vlid_error = "Неверный логин! Логин должен состоять только из букв и цифр. А также должен содержать от 8 до 15 символов.";
-                    break;
-                case "Пароль":
-                    pattern = @"^[А-Яа-яA-Za-z0-9]{8,20}$";
-                    vlid_error = "Неверный пароль! Пароль должен состоять только из букв и цифр. А также должен содержать от 8 до 20 символов.";
-                    break;
-                case "ФИО":
-                    //pattern = @"\w*\s\w*\s\w*";
-                    pattern = @"[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,49}\s[А-Яа-яA-Za-z]{3,50}";
-                    vlid_error = "Ошибка! ФИО должно состоять из букв и содержать от 10 до 150 символов";
-                    break;
-                case "Табельный №":
-                    pattern = @"^\d{6}$";
-                    vlid_error = "Ошибка! Табельный номер должен содержать 6 цифр";
-                    break;
-                case "Описание":
-                    pattern = @"^[А-Яа-яA-Za-z0-9.,:% ]{0,100}$";
-                    vlid_error = "Ошибка! Описание может содержать только буквы, пробелы, цифры, знаки . , : %. Описание не должно превышать 100 знаков.";
-                    break;
-                case "Номер":
-                    pattern = @"^[АВЕКМНОРСТУХ]{1,2}\d{3,4}[АВЕКМНОРСТУХ]{0,2}\d{2,3}RUS$";
-                    //pattern = @"^[АВЕКМНОРСТУХ]{1,2}\d{3,4}(?<!000)[АВЕКМНОРСТУХ]{0,2}\d{2,3}RUS$";
-                    vlid_error = "Ошибка! Неверный формат номеров!";
-                    break;
-                case "Модель":
-                    pattern = @"^[А-Яа-яA-Za-z0-9() ]{3,40}$";
-                    vlid_error = "Ошибка! Неверный формат Модели! Доступны только буквы, пробелы, цифры, знаки ( ). В строке должно быть от 3 до 40 символов";
-                    break;
-                case "Цвет":
-                    pattern = @"^[А-Яа-я-]{3,20}$";
-                    vlid_error = "Ошибка! Неверный формат Цвета! Цвет может содержать только буквы и знак -.  В строке должно быть от 3 до 20 символов";
-                    break;
-                default:
-                    break;
-            }
-
-            if (Regex.IsMatch(expr, pattern/*, RegexOptions.IgnoreCase*/)) { return null; }
-            else
-            {
-                return vlid_error;
-            }
-        }
-
+      
         private void User_button_add_Click(object sender, EventArgs e)
         {
             user_tab_textbox.Focus();
@@ -631,7 +574,7 @@ namespace AParkDispetcher
             Dictionary<string, string> properties_driver = new Dictionary<string, string>();
 
             //табель
-            string error_message = IsValidFunc("Табельный №", driver_tab_textbox.Text.ToString());
+            string error_message = ParkDispecter.IsValidValue("Табельный №", driver_tab_textbox.Text.ToString());
             if (error_message != null)
             {
                 MessageBox.Show(error_message);
@@ -644,7 +587,7 @@ namespace AParkDispetcher
             }
 
             //ФИО
-            error_message = IsValidFunc("ФИО", driver_FIO_textbox.Text.ToString());
+            error_message = ParkDispecter.IsValidValue("ФИО", driver_FIO_textbox.Text.ToString());
             if (error_message != null)
             {
                 MessageBox.Show(error_message);
@@ -661,9 +604,7 @@ namespace AParkDispetcher
                 properties_driver.Add("driver_surname", splited_FIO[0]);
                 properties_driver.Add("driver_name", splited_FIO[1]);// if index exist checkout
                 properties_driver.Add("driver_midname", splited_FIO[2]);
-            }
-
-
+                }
 
             if (properties_driver.ContainsKey("tab_number") && properties_driver.ContainsKey("driver_surname"))
             {
@@ -768,7 +709,7 @@ namespace AParkDispetcher
 
             //if (admin_car_descr_label.Text != "")
             {
-                string error_mese = IsValidFunc("Описание", admin_car_descr_label.Text, false);
+                string error_mese = ParkDispecter.IsValidValue("Описание", admin_car_descr_label.Text, false);
                 if (error_mese != null)
                 {
                     MessageBox.Show(error_mese);
@@ -787,12 +728,11 @@ namespace AParkDispetcher
 
         private void admin_car_add_save_button_Click(object sender, EventArgs e)
         {
-
             Dictionary<string, string> add_car_properties = new Dictionary<string, string>();
             string error_message;
 
             //Проверка номера авто
-            error_message = IsValidFunc("Номер", admin_car_mark_label.Text.ToString());
+            error_message = ParkDispecter.IsValidValue("Номер", admin_car_mark_label.Text.ToString());
             if (error_message != null)
             {
                 MessageBox.Show(error_message);
@@ -803,7 +743,7 @@ namespace AParkDispetcher
                 add_car_properties.Add("reg_mark", admin_car_mark_label.Text);
             }
             //Проверка модели
-            error_message = IsValidFunc("Модель", admin_car_model_label.Text.ToString());
+            error_message = ParkDispecter.IsValidValue("Модель", admin_car_model_label.Text.ToString());
             if (error_message != null)
             {
                 MessageBox.Show(error_message);
@@ -814,7 +754,7 @@ namespace AParkDispetcher
                 add_car_properties.Add("model", admin_car_model_label.Text);
             }
             //Проверка Цвета
-            error_message = IsValidFunc("Цвет", admin_car_color_label.Text.ToString());
+            error_message = ParkDispecter.IsValidValue("Цвет", admin_car_color_label.Text.ToString());
             if (error_message != null)
             {
                 MessageBox.Show(error_message);
@@ -827,7 +767,7 @@ namespace AParkDispetcher
             //Проверка Описания
             if (admin_car_descr_label.Text != "")
             {
-                error_message = IsValidFunc("Описание", admin_car_descr_label.Text.ToString(), false);
+                error_message = ParkDispecter.IsValidValue("Описание", admin_car_descr_label.Text.ToString(), false);
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -892,7 +832,6 @@ namespace AParkDispetcher
 
             var combo = sender as ComboBox;
 
-            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
@@ -906,7 +845,6 @@ namespace AParkDispetcher
 
             if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(), //Cambria; 12pt; style=Bold
                                            new Font("Segoe UI", 11, FontStyle.Bold),
-                                           //new Font("Cambria", 12, FontStyle.Bold), SystemBrushes.ControlText,
                                            new SolidBrush(Color.Black),
                                            e.Bounds,
                                            sf);

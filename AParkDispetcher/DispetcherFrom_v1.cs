@@ -8,15 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace APark
 {
     public partial class DispetcherFrom : Form
     {
         //Disp_user DU;
-        Disp_drivers DD;
-        Disp_cars DC;
-        Disp_tasks DT;
+        Drivers_list DD;
+        Cars_list DC;
+        Tasks_list DT;
         DBRedactor DBRed;
 
         private static bool IsAsideTabSelectingActive = true;
@@ -34,9 +36,9 @@ namespace APark
         private void Form1_Load(object sender, EventArgs e)
         {
             //DU = new Disp_user();
-            DD = new Disp_drivers();
-            DC = new Disp_cars();
-            DT = new Disp_tasks();
+            DD = new Drivers_list();
+            DC = new Cars_list();
+            DT = new Tasks_list();
             DBRed = new DBRedactor();
 
             DD.fillDispatchersDriverGrid(DriversViewGrid);
@@ -48,6 +50,7 @@ namespace APark
             MainGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
             //dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold); 
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -374,87 +377,73 @@ namespace APark
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
-            string task_numb = MainGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
-            string task_datetime = MainGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
-            string task_tab_user = MainGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
-            string task_state = MainGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
-
-            //string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
-            DateTime task_dep_time = Convert.ToDateTime(MainGrid.Rows[selectedrowindex].Cells[4].Value);
-
-
-            string task_dura = MainGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
-            string task_dep = MainGrid.Rows[selectedrowindex].Cells[6].Value.ToString();
-            string task_dest = MainGrid.Rows[selectedrowindex].Cells[7].Value.ToString();
-            string task_user_com = MainGrid.Rows[selectedrowindex].Cells[8].Value.ToString();
-            string task_changer_com = MainGrid.Rows[selectedrowindex].Cells[9].Value.ToString();
-            string task_tab_driver = MainGrid.Rows[selectedrowindex].Cells[10].Value.ToString();
-            string task_reg_mark = MainGrid.Rows[selectedrowindex].Cells[11].Value.ToString();
-            string task_ctype = MainGrid.Rows[selectedrowindex].Cells[12].Value.ToString();
-            string task_car_color = MainGrid.Rows[selectedrowindex].Cells[13].Value.ToString();
-            string task_ordered_type = MainGrid.Rows[selectedrowindex].Cells[14].Value.ToString();
-            string task_user_FIO = MainGrid.Rows[selectedrowindex].Cells[15].Value.ToString();
-            string task_car_model = MainGrid.Rows[selectedrowindex].Cells[16].Value.ToString();
-
-            numTask_box.Text = task_numb;
-            timeTask_box.Text = task_datetime;
-
-            //clientTask_box.Text = task_tab_user;
-            clientTask_box.Text = task_user_FIO;
-
-            departTask_box.Text = task_dep;
-
-            
-            OrdtimeTask_box.Format = DateTimePickerFormat.Custom;
-            OrdtimeTask_box.CustomFormat = "      dd.MM  [HH:mm]";
-            OrdtimeTask_box.Value = task_dep_time;
-
-
-            destTask_box.Text = task_dest;
-            duraTask_box.Text = task_dura;
-            commTask_box.Text = task_user_com;
-            driverTask_box.Text = task_tab_driver;
-            dispCommTask_box.Text = task_changer_com;
-            markTask_box.Text = task_reg_mark;
-            modelTask_box.Text = task_car_model;
-
-
-            if (task_ctype != "")
+            if (MainGrid.SelectedCells.Count > 0)
             {
-                //OrderedTypeTask_box.Visible = false;
-                typeTask_box.SelectedItem = task_ctype;
-                OrderedTypeTask_box.Text = task_ctype;
-                //typeTask_box.Visible = true;
+                int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
+                string task_numb = MainGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
+                string task_datetime = MainGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
+                string task_tab_user = MainGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
+                string task_state = MainGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
 
+                //string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
+                DateTime task_dep_time = Convert.ToDateTime(MainGrid.Rows[selectedrowindex].Cells[4].Value);
+
+
+                string task_dura = MainGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
+                string task_dep = MainGrid.Rows[selectedrowindex].Cells[6].Value.ToString();
+                string task_dest = MainGrid.Rows[selectedrowindex].Cells[7].Value.ToString();
+                string task_user_com = MainGrid.Rows[selectedrowindex].Cells[8].Value.ToString();
+                string task_changer_com = MainGrid.Rows[selectedrowindex].Cells[9].Value.ToString();
+                string task_tab_driver = MainGrid.Rows[selectedrowindex].Cells[10].Value.ToString();
+                string task_reg_mark = MainGrid.Rows[selectedrowindex].Cells[11].Value.ToString();
+                string task_ctype = MainGrid.Rows[selectedrowindex].Cells[12].Value.ToString();
+                string task_car_color = MainGrid.Rows[selectedrowindex].Cells[13].Value.ToString();
+                string task_ordered_type = MainGrid.Rows[selectedrowindex].Cells[14].Value.ToString();
+                string task_user_FIO = MainGrid.Rows[selectedrowindex].Cells[15].Value.ToString();
+                string task_car_model = MainGrid.Rows[selectedrowindex].Cells[16].Value.ToString();
+
+                numTask_box.Text = task_numb;
+                timeTask_box.Text = task_datetime;
+
+                //clientTask_box.Text = task_tab_user;
+                clientTask_box.Text = task_user_FIO;
+
+                departTask_box.Text = task_dep;
+
+
+                OrdtimeTask_box.Format = DateTimePickerFormat.Custom;
+                OrdtimeTask_box.CustomFormat = "      dd.MM  [HH:mm]";
+                OrdtimeTask_box.Value = task_dep_time;
+
+
+                destTask_box.Text = task_dest;
+                duraTask_box.Text = task_dura;
+                commTask_box.Text = task_user_com;
+                driverTask_box.Text = task_tab_driver;
+                dispCommTask_box.Text = task_changer_com;
+                markTask_box.Text = task_reg_mark;
+                modelTask_box.Text = task_car_model;
+
+
+                if (task_ctype != "")
+                {
+                    //OrderedTypeTask_box.Visible = false;
+                    typeTask_box.SelectedItem = task_ctype;
+                    OrderedTypeTask_box.Text = task_ctype;
+                    //typeTask_box.Visible = true;
+
+                }
+                else
+                {
+                    //typeTask_box.Visible = false;
+                    OrderedTypeTask_box.Text = task_ordered_type;
+                    OrderedTypeTask_box.Visible = true;
+                }
+
+                colorTask_box.Text = task_car_color;
+                StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
+                textStateTask_box.Text = StateTask_combobox.Text;
             }
-            else
-            {
-                //typeTask_box.Visible = false;
-                OrderedTypeTask_box.Text = task_ordered_type;
-                OrderedTypeTask_box.Visible = true;
-            }
-
-
-            
-            colorTask_box.Text = task_car_color;
-
-
-              /*switch (task_state)
-              {
-                  case "0":
-                      textStateTask_box.Text = task_state;
-                      break;
-                  case "1":
-                      state_notAvailable.Checked = true;
-                      break;
-                  default:
-                      break;
-              }*/
-
-            StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
-            textStateTask_box.Text = StateTask_combobox.Text;
-
         }
 
         private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -628,13 +617,18 @@ namespace APark
             label14.Visible = false;
             colorTask_box.Visible = false;
             typeTask_box.Visible = true;
+            typeTask_box.SelectedIndex = -1;
             typeTask_box.Size = new Size(291, 25);
             typeTask_box.Refresh();
 
             duraTask_box.ReadOnly = false;
+            duraTask_box.Clear();
             departTask_box.ReadOnly = false;
+            departTask_box.Clear();
             destTask_box.ReadOnly = false;
+            destTask_box.Clear();
             commTask_box.ReadOnly = false;
+            commTask_box.Clear();
             duraTask_box.BackColor = Color.PaleGreen;
             departTask_box.BackColor = Color.PaleGreen;
             destTask_box.BackColor = Color.PaleGreen;
@@ -720,6 +714,12 @@ namespace APark
 
         private void endingEvent()
         {
+            int start_index_tsk = MainGrid.SelectedCells[0].RowIndex;
+            MainGrid.Rows.Clear();
+            DT.fillDispetcherTasks(MainGrid);
+            if (start_index_tsk < MainGrid.RowCount) MainGrid.Rows[start_index_tsk].Selected = true;
+            dataGridView2_SelectionChanged(Cancel_task_button, new EventArgs());
+
             OrderedTypeTask_box.Visible = true;
             label14.Visible = true;
             colorTask_box.Visible = true;
@@ -755,6 +755,86 @@ namespace APark
 
         private void Cancel_task_button_Click(object sender, EventArgs e)
         {
+            endingEvent();
+        }
+
+        private void Save_add_task_button_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> add_task_properties = new Dictionary<string, string>();
+            string error_message;
+
+            add_task_properties.Add("user_tab_number", "281731"); //todo
+            add_task_properties.Add("task_num", numTask_box.Text);
+            add_task_properties.Add("orderdatetime", DBRed.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss"));
+            add_task_properties.Add("order_state", "0");
+            
+            if (typeTask_box.SelectedIndex > -1) {
+                add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
+            }
+
+            /*DateTime dt = new DateTime();
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            dt = DateTime.ParseExact(timeTask_box.Text.ToString(), "dd.MM  [HH:mm]", provider);*/
+
+            //MessageBox.Show(Convert.ToDateTime(OrdtimeTask_box.Value).ToString());
+            if (OrdtimeTask_box.Value > DBRed.getDateTimeFromServer().Add(DateTime.Parse("00:30:00").TimeOfDay))
+            {
+                add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                //MessageBox.Show(add_task_properties[("ordered_time")]);
+            } 
+            else
+            {
+                MessageBox.Show("Укажите даnу и время поездки. Время выбирается от получаса с текущего момента.");
+                return;
+            }
+
+            if (duraTask_box.Text != "") { error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
+                if (error_message != null)
+                {
+                    MessageBox.Show(error_message);
+                    return;
+                }
+                else
+                {
+                    add_task_properties.Add("ordered_duration", duraTask_box.Text);
+                }
+            }
+
+            error_message = ParkDispecter.IsValidValue("Откуда", departTask_box.Text);
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_task_properties.Add("departure", departTask_box.Text);
+            }
+
+            error_message = ParkDispecter.IsValidValue("Куда", destTask_box.Text);
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_task_properties.Add("destination", destTask_box.Text);
+            }
+
+            if (commTask_box.Text != "") { error_message = ParkDispecter.IsValidValue("Описание", commTask_box.Text, false);
+                if (error_message != null)
+                {
+                    MessageBox.Show(error_message);
+                    return;
+                }
+                else
+                {
+                    add_task_properties.Add("user_description", commTask_box.Text);
+                }
+            }
+
+            if (DBRed.createNewKouple("tasks", add_task_properties) == 1) return;
             endingEvent();
         }
     }

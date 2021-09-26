@@ -15,7 +15,7 @@ namespace AParkDispetcher
         public SelectCarForm()
         {
             InitializeComponent();
-            Disp_cars DC = new Disp_cars();
+            Cars_list DC = new Cars_list();
             DC.fillSelectCarForm(SelectionCarGrid);
         }
 
