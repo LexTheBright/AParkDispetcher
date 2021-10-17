@@ -751,6 +751,7 @@ namespace APark
             Cancel_task_button.BackColor = Color.DarkKhaki;
             Save_add_task_button.Enabled = false;
             Save_add_task_button.BackColor = Color.DarkKhaki;
+
         } 
 
         private void Cancel_task_button_Click(object sender, EventArgs e)
@@ -763,9 +764,11 @@ namespace APark
             Dictionary<string, string> add_task_properties = new Dictionary<string, string>();
             string error_message;
 
-            add_task_properties.Add("user_tab_number", "281731"); //todo
+            DateTime current_datetime = DBRed.getDateTimeFromServer();
+
+            add_task_properties.Add("user_tab_number", "281731"); // todo табельный текущего пользователя
             add_task_properties.Add("task_num", numTask_box.Text);
-            add_task_properties.Add("orderdatetime", DBRed.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss"));
+            add_task_properties.Add("orderdatetime", current_datetime.ToString("yyyy-MM-dd HH:mm:ss"));
             add_task_properties.Add("order_state", "0");
             
             if (typeTask_box.SelectedIndex > -1) {
@@ -777,14 +780,14 @@ namespace APark
             dt = DateTime.ParseExact(timeTask_box.Text.ToString(), "dd.MM  [HH:mm]", provider);*/
 
             //MessageBox.Show(Convert.ToDateTime(OrdtimeTask_box.Value).ToString());
-            if (OrdtimeTask_box.Value > DBRed.getDateTimeFromServer().Add(DateTime.Parse("00:30:00").TimeOfDay))
+            if (OrdtimeTask_box.Value > current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay))
             {
                 add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
                 //MessageBox.Show(add_task_properties[("ordered_time")]);
             } 
             else
             {
-                MessageBox.Show("Укажите даnу и время поездки. Время выбирается от получаса с текущего момента.");
+                MessageBox.Show("Укажите дату и время поездки. Выбирайте время начиная с " + current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay).ToString("HH:mm"));
                 return;
             }
 
@@ -835,7 +838,27 @@ namespace APark
             }
 
             if (DBRed.createNewKouple("tasks", add_task_properties) == 1) return;
+            addTaskToHistory(add_task_properties);
             endingEvent();
+        }
+
+        private void addTaskToHistory(Dictionary<string, string> add_task_properties)
+        {
+            int max_history_task_number_plus_one = DBRed.getMaxID("thistory", "htask_num") + 1;
+            add_task_properties.Add("htask_num", max_history_task_number_plus_one.ToString());
+
+            add_task_properties["changer_tab_number"] = add_task_properties["user_tab_number"]; //changer_tab_number
+            add_task_properties.Remove("user_tab_number");
+            add_task_properties["chdatetime"] = add_task_properties["orderdatetime"];
+            add_task_properties.Remove("orderdatetime");
+            try { add_task_properties["chdescription"] = add_task_properties["user_description"]; } catch { }
+            add_task_properties.Remove("user_description");
+
+            if (DBRed.createNewKouple("thistory", add_task_properties) == 1) return;
+        }
+        private void addToTaskHistoryByNumber()
+        {
+            
         }
     }
 }
