@@ -40,12 +40,6 @@ namespace AParkDispetcher
             }
         }
 
-        private void SelectionCarGrid_SelectionChanged(object sender, EventArgs e)
-        {
-            int selectedrowindex = SelectionCarGrid.SelectedCells[0].RowIndex;
-            //Car_description_text.Text = SelectionCarGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
-        }
-
         private void SelectCarForm_Load(object sender, EventArgs e)
         {
             this.Location = new Point(Screen.GetWorkingArea(this.Location).Right-this.Width, Screen.GetWorkingArea(this.Location).Bottom - this.Height);
@@ -63,7 +57,41 @@ namespace AParkDispetcher
 
         private void SelectionCarGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            if (e.RowIndex != -1) this.DialogResult = DialogResult.OK;
+        }
+
+        private void searchAutos2_Enter(object sender, EventArgs e)
+        {
+            searchAutos2.Clear();
+        }
+
+        private void searchAutos2_Leave(object sender, EventArgs e)
+        {
+            if (searchAutos2.Text == "") searchAutos2.Text = "Поиск";
+        }
+
+        private void searchAutos2_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchAutos2.Text))
+                return;
+
+            var values = searchAutos2.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < SelectionCarGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = SelectionCarGrid.Rows[i];
+
+                    if (row.Cells["Gov_num_col"].Value.ToString().Contains(value) ||
+                        row.Cells["model_col"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        SelectionCarGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
         }
     }
 }

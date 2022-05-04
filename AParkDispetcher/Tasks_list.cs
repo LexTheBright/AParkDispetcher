@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using IronXL;
 
 namespace AParkDispetcher
 {
@@ -47,6 +48,17 @@ namespace AParkDispetcher
         public List<Task> usr = new List<Task>();
 
         public Dictionary<string, int> types = new Dictionary<string, int>();
+
+        public void excelExportTest()
+        {
+            WorkBook xlsxWorkbook = WorkBook.Create(ExcelFileFormat.XLSX);
+            xlsxWorkbook.Metadata.Author = "Dispetcher";
+
+            WorkSheet xlsSheet = xlsxWorkbook.CreateWorkSheet("Заявки");
+
+
+            xlsxWorkbook.SaveAs("NewExcelFile.xls");
+        }
 
         public void fillComboboxWithTypes(ComboBox combo)
         {
@@ -95,6 +107,7 @@ namespace AParkDispetcher
             }
         }
 
+       
         public void fillTasks()
         {
             usr.Clear();

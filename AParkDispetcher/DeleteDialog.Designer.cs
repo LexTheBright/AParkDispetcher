@@ -34,18 +34,19 @@ namespace AParkDispetcher
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // User_button_save
             // 
-            this.User_button_save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.User_button_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.User_button_save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.User_button_save.BackColor = System.Drawing.SystemColors.Window;
             this.User_button_save.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.User_button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_save.ForeColor = System.Drawing.Color.Black;
-            this.User_button_save.Location = new System.Drawing.Point(270, 117);
+            this.User_button_save.Location = new System.Drawing.Point(164, 3);
             this.User_button_save.Name = "User_button_save";
             this.User_button_save.Size = new System.Drawing.Size(150, 32);
             this.User_button_save.TabIndex = 60;
@@ -55,14 +56,14 @@ namespace AParkDispetcher
             // 
             // User_button_cancel
             // 
-            this.User_button_cancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.User_button_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.User_button_cancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.User_button_cancel.BackColor = System.Drawing.SystemColors.Window;
             this.User_button_cancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.User_button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_cancel.ForeColor = System.Drawing.Color.Black;
-            this.User_button_cancel.Location = new System.Drawing.Point(114, 117);
+            this.User_button_cancel.Location = new System.Drawing.Point(8, 3);
             this.User_button_cancel.Name = "User_button_cancel";
             this.User_button_cancel.Size = new System.Drawing.Size(150, 32);
             this.User_button_cancel.TabIndex = 59;
@@ -82,7 +83,7 @@ namespace AParkDispetcher
             this.textBox1.Location = new System.Drawing.Point(12, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(503, 22);
+            this.textBox1.Size = new System.Drawing.Size(299, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Удалить";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,11 +98,11 @@ namespace AParkDispetcher
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.textBox2.Location = new System.Drawing.Point(12, 41);
+            this.textBox2.Location = new System.Drawing.Point(12, 31);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(503, 60);
+            this.textBox2.Size = new System.Drawing.Size(299, 80);
             this.textBox2.TabIndex = 61;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -111,10 +112,12 @@ namespace AParkDispetcher
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Tan;
+            this.panel3.Controls.Add(this.User_button_cancel);
+            this.panel3.Controls.Add(this.User_button_save);
             this.panel3.Location = new System.Drawing.Point(0, 114);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(527, 39);
+            this.panel3.Size = new System.Drawing.Size(323, 39);
             this.panel3.TabIndex = 62;
             // 
             // DeleteDialog
@@ -123,10 +126,8 @@ namespace AParkDispetcher
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(527, 153);
+            this.ClientSize = new System.Drawing.Size(323, 153);
             this.ControlBox = false;
-            this.Controls.Add(this.User_button_cancel);
-            this.Controls.Add(this.User_button_save);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -137,6 +138,7 @@ namespace AParkDispetcher
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Удаление";
             this.TopMost = true;
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

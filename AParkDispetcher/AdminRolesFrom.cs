@@ -157,9 +157,30 @@ namespace AParkDispetcher
         }
 
 
-        private void searchTasks_TextChanged(object sender, EventArgs e)
+        private void searchUsers_TextChanged(object sender, EventArgs e)
         {
+            AdminUsersGrid.ClearSelection();
 
+            if (string.IsNullOrWhiteSpace(searchUsers.Text))
+                return;
+
+            var values = searchUsers.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < AdminUsersGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = AdminUsersGrid.Rows[i];
+
+                    if (row.Cells["SNM_field"].Value.ToString().Contains(value) ||
+                        row.Cells["tab__field"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        AdminUsersGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -307,7 +328,6 @@ namespace AParkDispetcher
                 admin_car_descr_label.Text = description;
 
                 admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key; //DC.types[type].Key;
-
             }
         }
 
@@ -324,6 +344,7 @@ namespace AParkDispetcher
 
         private void User_button_delete_Click(object sender, EventArgs e)
         {
+            if (AdminUsersGrid.SelectedRows.Count == 0) AdminUsersGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminUsersGrid.SelectedCells[0].RowIndex;
             string[] user_args = new string[2];
             user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
@@ -344,6 +365,7 @@ namespace AParkDispetcher
 
         private void User_button_edit_Click(object sender, EventArgs e)
         {
+            if (AdminUsersGrid.SelectedRows.Count == 0) AdminUsersGrid.Rows[0].Selected = true;
             //tabControl1.TabPages[0].Focus();
             password_place.Focus();
             IsTabSelectingActive = false;
@@ -487,7 +509,7 @@ namespace AParkDispetcher
       
         private void User_button_add_Click(object sender, EventArgs e)
         {
-            user_tab_textbox.Focus();
+            user_FIO_textbox.Focus();
             admin_users_role.SelectedIndex = 0;
             AdminUsersGrid.Enabled = false;
             IsTabSelectingActive = false;
@@ -523,7 +545,7 @@ namespace AParkDispetcher
 
         private void Driver_button_add_Click(object sender, EventArgs e)
         {
-            driver_tab_textbox.Focus();
+            driver_FIO_textbox.Focus();
             AdminDriversGrid.Enabled = false;
             IsTabSelectingActive = false;
 
@@ -547,6 +569,7 @@ namespace AParkDispetcher
 
         private void Driver_button_delete_Click(object sender, EventArgs e)
         {
+            if (AdminDriversGrid.SelectedRows.Count == 0) AdminDriversGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminDriversGrid.SelectedCells[0].RowIndex;
             string[] driver_args = new string[2];
             driver_args[0] = AdminDriversGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
@@ -656,6 +679,7 @@ namespace AParkDispetcher
 
         private void admin_car_edit_button_Click(object sender, EventArgs e)
         {
+            if (AdminCarsGrid.SelectedRows.Count == 0) AdminCarsGrid.Rows[0].Selected = true;
             admin_car_descr_label.Focus();
             AdminCarsGrid.Enabled = false;
             IsTabSelectingActive = false;
@@ -681,6 +705,7 @@ namespace AParkDispetcher
 
         private void admin_car_delete_button_Click(object sender, EventArgs e)
         {
+            if (AdminCarsGrid.SelectedRows.Count == 0) AdminCarsGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminCarsGrid.SelectedCells[0].RowIndex;
             string[] car_args = new string[2];
             car_args[0] = AdminCarsGrid.Rows[selectedrowindex].Cells[1].Value.ToString() + "\r\n";
@@ -848,6 +873,88 @@ namespace AParkDispetcher
                                            new SolidBrush(Color.Black),
                                            e.Bounds,
                                            sf);
+        }
+
+        private void searchTasks_Enter(object sender, EventArgs e)
+        {
+            searchUsers.Clear();
+        }
+
+        private void searchTasks_Leave(object sender, EventArgs e)
+        {
+            if (searchUsers.Text == "") searchUsers.Text = "Поиск";
+        }
+
+        private void textBox9_Enter(object sender, EventArgs e)
+        {
+            searchDrivers.Clear();
+        }
+
+        private void textBox9_Leave(object sender, EventArgs e)
+        {
+            if (searchDrivers.Text == "") searchDrivers.Text = "Поиск";
+        }
+
+        private void searchAuto_Enter(object sender, EventArgs e)
+        {
+            searchAutos.Clear();
+        }
+
+        private void searchAuto_Leave(object sender, EventArgs e)
+        {
+            if (searchAutos.Text == "") searchAutos.Text = "Поиск";
+        }
+
+        private void searchAuto_TextChanged(object sender, EventArgs e)
+        {
+            AdminCarsGrid.ClearSelection();
+
+            if (string.IsNullOrWhiteSpace(searchAutos.Text))
+                return;
+
+            var values = searchAutos.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < AdminCarsGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = AdminCarsGrid.Rows[i];
+
+                    if (row.Cells["Gov_num_col"].Value.ToString().Contains(value) ||
+                        row.Cells["Model_col"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        AdminCarsGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
+        }
+
+        private void searchDrivers_TextChanged(object sender, EventArgs e)
+        {
+            AdminDriversGrid.ClearSelection();
+
+            if (string.IsNullOrWhiteSpace(searchDrivers.Text))
+                return;
+
+            var values = searchDrivers.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < AdminDriversGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = AdminDriversGrid.Rows[i];
+
+                    if (row.Cells["Tab_col"].Value.ToString().Contains(value) ||
+                        row.Cells["FIO_col"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        AdminDriversGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
         }
     }
 }

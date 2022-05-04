@@ -33,10 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DispetcherFrom));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DispetcherFrom));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,9 +50,9 @@
             this.заявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGrid = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TNum_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UTub_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +65,7 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIO_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -108,7 +108,7 @@
             this.Cancel_task_button = new System.Windows.Forms.Button();
             this.Create_task_button = new System.Windows.Forms.Button();
             this.oper_panel = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.SelectDriverButton = new System.Windows.Forms.Button();
             this.selectCarButton = new System.Windows.Forms.Button();
             this.modelTask_box = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -121,6 +121,9 @@
             this.searchTasks = new System.Windows.Forms.TextBox();
             this.AsideDispTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchAsideDrive = new System.Windows.Forms.TextBox();
+            this.SearchPic1 = new System.Windows.Forms.PictureBox();
+            this.DriversViewGrid = new System.Windows.Forms.DataGridView();
             this.Sort_by_state = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -138,17 +141,9 @@
             this.Cancel_driverstate_button = new System.Windows.Forms.Button();
             this.Change_state_button = new System.Windows.Forms.Button();
             this.Save_state_button = new System.Windows.Forms.Button();
-            this.DriversViewGrid = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.sort_by_car_state = new System.Windows.Forms.Button();
             this.carViewGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -163,6 +158,15 @@
             this.car_cancel_button = new System.Windows.Forms.Button();
             this.car_edit_button = new System.Windows.Forms.Button();
             this.car_save_button = new System.Windows.Forms.Button();
+            this.FIO_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tab_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchAsideAuto = new System.Windows.Forms.TextBox();
+            this.searchPic2 = new System.Windows.Forms.PictureBox();
+            this.Model_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -173,18 +177,20 @@
             this.oper_panel.SuspendLayout();
             this.AsideDispTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -265,7 +271,7 @@
             this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -273,9 +279,9 @@
             this.MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.TNum_col,
             this.Column2,
-            this.Column19,
+            this.UTub_col,
             this.Column3,
             this.Column11,
             this.Column12,
@@ -288,11 +294,11 @@
             this.Column10,
             this.Column20,
             this.Column21,
-            this.Column22,
+            this.FIO_col,
             this.Column23});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -306,7 +312,7 @@
             this.MainGrid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -334,13 +340,13 @@
             this.MainGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             this.MainGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
-            // Column1
+            // TNum_col
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.HeaderText = "№";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 49;
+            this.TNum_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TNum_col.HeaderText = "№";
+            this.TNum_col.Name = "TNum_col";
+            this.TNum_col.ReadOnly = true;
+            this.TNum_col.Width = 54;
             // 
             // Column2
             // 
@@ -349,11 +355,11 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 130;
             // 
-            // Column19
+            // UTub_col
             // 
-            this.Column19.HeaderText = "Табельный заказчика";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
+            this.UTub_col.HeaderText = "Табельный заказчика";
+            this.UTub_col.Name = "UTub_col";
+            this.UTub_col.ReadOnly = true;
             // 
             // Column3
             // 
@@ -361,7 +367,7 @@
             this.Column3.HeaderText = "Статус";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 91;
+            this.Column3.Width = 83;
             // 
             // Column11
             // 
@@ -441,12 +447,12 @@
             this.Column21.ReadOnly = true;
             this.Column21.Visible = false;
             // 
-            // Column22
+            // FIO_col
             // 
-            this.Column22.HeaderText = "User_FIO";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            this.Column22.Visible = false;
+            this.FIO_col.HeaderText = "User_FIO";
+            this.FIO_col.Name = "FIO_col";
+            this.FIO_col.ReadOnly = true;
+            this.FIO_col.Visible = false;
             // 
             // Column23
             // 
@@ -463,7 +469,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             this.groupBox1.Location = new System.Drawing.Point(3, 28);
             this.groupBox1.Name = "groupBox1";
@@ -484,38 +490,41 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(10, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = ":Пароль";
+            this.label2.Text = "Пароль";
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(77, 67);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 25);
+            this.textBox2.Size = new System.Drawing.Size(124, 29);
             this.textBox2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(10, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = ":Логин";
+            this.label1.Text = "Логин";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(77, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 25);
+            this.textBox1.Size = new System.Drawing.Size(124, 29);
             this.textBox1.TabIndex = 0;
             // 
             // groupBox3
@@ -528,7 +537,7 @@
             this.groupBox3.Controls.Add(this.oper_panel);
             this.groupBox3.Controls.Add(this.MainGrid);
             this.groupBox3.Controls.Add(this.searchTasks);
-            this.groupBox3.Font = new System.Drawing.Font("Cambria", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             this.groupBox3.Location = new System.Drawing.Point(219, 28);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
@@ -595,6 +604,7 @@
             this.Save_edit_task_button.TabIndex = 58;
             this.Save_edit_task_button.Text = "Сохранить";
             this.Save_edit_task_button.UseVisualStyleBackColor = false;
+            this.Save_edit_task_button.Click += new System.EventHandler(this.Save_edit_task_button_Click);
             // 
             // textStateTask_box
             // 
@@ -616,11 +626,13 @@
             this.OrderedTypeTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OrderedTypeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.OrderedTypeTask_box.Location = new System.Drawing.Point(100, 104);
+            this.OrderedTypeTask_box.MaxLength = 4;
             this.OrderedTypeTask_box.Name = "OrderedTypeTask_box";
             this.OrderedTypeTask_box.ReadOnly = true;
-            this.OrderedTypeTask_box.Size = new System.Drawing.Size(75, 27);
+            this.OrderedTypeTask_box.Size = new System.Drawing.Size(147, 27);
             this.OrderedTypeTask_box.TabIndex = 59;
             this.OrderedTypeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OrderedTypeTask_box.WordWrap = false;
             // 
             // typeTask_box
             // 
@@ -630,6 +642,7 @@
             this.typeTask_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeTask_box.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.typeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.typeTask_box.ForeColor = System.Drawing.Color.Black;
             this.typeTask_box.FormattingEnabled = true;
             this.typeTask_box.Items.AddRange(new object[] {
             "Грузовик",
@@ -638,7 +651,7 @@
             "Автобус"});
             this.typeTask_box.Location = new System.Drawing.Point(100, 104);
             this.typeTask_box.Name = "typeTask_box";
-            this.typeTask_box.Size = new System.Drawing.Size(126, 28);
+            this.typeTask_box.Size = new System.Drawing.Size(147, 28);
             this.typeTask_box.TabIndex = 56;
             this.typeTask_box.Visible = false;
             this.typeTask_box.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.typeTask_box_DrawItem);
@@ -653,7 +666,7 @@
             this.OrdtimeTask_box.Location = new System.Drawing.Point(100, 137);
             this.OrdtimeTask_box.Name = "OrdtimeTask_box";
             this.OrdtimeTask_box.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.OrdtimeTask_box.Size = new System.Drawing.Size(159, 27);
+            this.OrdtimeTask_box.Size = new System.Drawing.Size(171, 27);
             this.OrdtimeTask_box.TabIndex = 55;
             // 
             // panel1
@@ -792,10 +805,10 @@
             this.colorTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.colorTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.colorTask_box.Location = new System.Drawing.Point(290, 104);
+            this.colorTask_box.Location = new System.Drawing.Point(305, 104);
             this.colorTask_box.Name = "colorTask_box";
             this.colorTask_box.ReadOnly = true;
-            this.colorTask_box.Size = new System.Drawing.Size(101, 27);
+            this.colorTask_box.Size = new System.Drawing.Size(86, 27);
             this.colorTask_box.TabIndex = 39;
             this.colorTask_box.Text = "Сиреневый";
             this.colorTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -820,20 +833,21 @@
             this.StateTask_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateTask_combobox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StateTask_combobox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.StateTask_combobox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.StateTask_combobox.ForeColor = System.Drawing.Color.Black;
             this.StateTask_combobox.FormattingEnabled = true;
             this.StateTask_combobox.Items.AddRange(new object[] {
-            "Новая",
-            "Подтверждена",
-            "Исполняется",
-            "Завершена",
-            "Отменена"});
+            "новая",
+            "подтверждена",
+            "исполняется",
+            "завершена",
+            "отменена"});
             this.StateTask_combobox.Location = new System.Drawing.Point(486, 26);
             this.StateTask_combobox.Name = "StateTask_combobox";
             this.StateTask_combobox.Size = new System.Drawing.Size(140, 28);
             this.StateTask_combobox.TabIndex = 35;
             this.StateTask_combobox.Visible = false;
             this.StateTask_combobox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.StateTask_combobox_DrawItem);
+            this.StateTask_combobox.SelectedIndexChanged += new System.EventHandler(this.StateTask_combobox_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -879,7 +893,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(240, 107);
+            this.label14.Location = new System.Drawing.Point(253, 107);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 19);
             this.label14.TabIndex = 38;
@@ -919,9 +933,9 @@
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(277, 140);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 19);
+            this.label12.Size = new System.Drawing.Size(77, 19);
             this.label12.TabIndex = 20;
-            this.label12.Text = "Длит. (ч)";
+            this.label12.Text = "Длит. (м)";
             // 
             // clientTask_box
             // 
@@ -995,6 +1009,7 @@
             this.Edit_task_button.TabIndex = 57;
             this.Edit_task_button.Text = "Редактировать";
             this.Edit_task_button.UseVisualStyleBackColor = false;
+            this.Edit_task_button.Click += new System.EventHandler(this.Edit_task_button_Click);
             // 
             // Cancel_task_button
             // 
@@ -1034,7 +1049,7 @@
             this.oper_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.oper_panel.AutoSize = true;
             this.oper_panel.BackColor = System.Drawing.Color.Khaki;
-            this.oper_panel.Controls.Add(this.button8);
+            this.oper_panel.Controls.Add(this.SelectDriverButton);
             this.oper_panel.Controls.Add(this.selectCarButton);
             this.oper_panel.Controls.Add(this.modelTask_box);
             this.oper_panel.Controls.Add(this.label17);
@@ -1054,24 +1069,27 @@
             this.oper_panel.TabStop = false;
             this.oper_panel.Text = "Назначить";
             // 
-            // button8
+            // SelectDriverButton
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button8.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(330, 102);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(34, 26);
-            this.button8.TabIndex = 61;
-            this.button8.Text = ". . .";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseMnemonic = false;
-            this.button8.UseVisualStyleBackColor = true;
+            this.SelectDriverButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SelectDriverButton.Enabled = false;
+            this.SelectDriverButton.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SelectDriverButton.ForeColor = System.Drawing.Color.Black;
+            this.SelectDriverButton.Location = new System.Drawing.Point(330, 102);
+            this.SelectDriverButton.Name = "SelectDriverButton";
+            this.SelectDriverButton.Size = new System.Drawing.Size(34, 26);
+            this.SelectDriverButton.TabIndex = 61;
+            this.SelectDriverButton.Text = ". . .";
+            this.SelectDriverButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SelectDriverButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SelectDriverButton.UseMnemonic = false;
+            this.SelectDriverButton.UseVisualStyleBackColor = true;
+            this.SelectDriverButton.Click += new System.EventHandler(this.SelectDriverButton_Click);
             // 
             // selectCarButton
             // 
             this.selectCarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.selectCarButton.Enabled = false;
             this.selectCarButton.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.selectCarButton.ForeColor = System.Drawing.Color.Black;
             this.selectCarButton.Location = new System.Drawing.Point(330, 38);
@@ -1164,9 +1182,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(7, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 19);
+            this.label3.Size = new System.Drawing.Size(81, 19);
             this.label3.TabIndex = 12;
-            this.label3.Text = "ГРЗ";
+            this.label3.Text = "Гос. номер";
             // 
             // label6
             // 
@@ -1198,7 +1216,7 @@
             // 
             this.searchTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTasks.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchTasks.Font = new System.Drawing.Font("Cambria", 11.75F);
             this.searchTasks.ForeColor = System.Drawing.SystemColors.WindowText;
             this.searchTasks.Location = new System.Drawing.Point(687, -1);
             this.searchTasks.Multiline = true;
@@ -1207,6 +1225,9 @@
             this.searchTasks.TabIndex = 5;
             this.searchTasks.Text = "Поиск";
             this.searchTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchTasks.TextChanged += new System.EventHandler(this.searchTasks_TextChanged);
+            this.searchTasks.Enter += new System.EventHandler(this.searchTasks_Enter);
+            this.searchTasks.Leave += new System.EventHandler(this.searchTasks_Leave);
             // 
             // AsideDispTab
             // 
@@ -1214,7 +1235,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.AsideDispTab.Controls.Add(this.tabPage1);
             this.AsideDispTab.Controls.Add(this.tabPage2);
-            this.AsideDispTab.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AsideDispTab.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.AsideDispTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.AsideDispTab.ItemSize = new System.Drawing.Size(103, 22);
             this.AsideDispTab.Location = new System.Drawing.Point(3, 179);
@@ -1230,15 +1251,106 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Khaki;
+            this.tabPage1.Controls.Add(this.searchAsideDrive);
+            this.tabPage1.Controls.Add(this.SearchPic1);
+            this.tabPage1.Controls.Add(this.DriversViewGrid);
             this.tabPage1.Controls.Add(this.Sort_by_state);
             this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.DriversViewGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(202, 648);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Водители";
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
+            // 
+            // searchAsideDrive
+            // 
+            this.searchAsideDrive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchAsideDrive.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchAsideDrive.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchAsideDrive.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchAsideDrive.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchAsideDrive.Location = new System.Drawing.Point(0, 359);
+            this.searchAsideDrive.Name = "searchAsideDrive";
+            this.searchAsideDrive.Size = new System.Drawing.Size(177, 25);
+            this.searchAsideDrive.TabIndex = 65;
+            this.searchAsideDrive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAsideDrive.Visible = false;
+            this.searchAsideDrive.TextChanged += new System.EventHandler(this.searchAsideDrive_TextChanged);
+            this.searchAsideDrive.Leave += new System.EventHandler(this.searchAsideDrive_Leave);
+            // 
+            // SearchPic1
+            // 
+            this.SearchPic1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchPic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchPic1.Image = global::AParkDispetcher.Properties.Resources.search_64;
+            this.SearchPic1.Location = new System.Drawing.Point(176, 359);
+            this.SearchPic1.Name = "SearchPic1";
+            this.SearchPic1.Size = new System.Drawing.Size(26, 25);
+            this.SearchPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchPic1.TabIndex = 64;
+            this.SearchPic1.TabStop = false;
+            this.SearchPic1.Click += new System.EventHandler(this.SearchPic1_Click);
+            // 
+            // DriversViewGrid
+            // 
+            this.DriversViewGrid.AllowUserToAddRows = false;
+            this.DriversViewGrid.AllowUserToDeleteRows = false;
+            this.DriversViewGrid.AllowUserToResizeColumns = false;
+            this.DriversViewGrid.AllowUserToResizeRows = false;
+            this.DriversViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DriversViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DriversViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.DriversViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DriversViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DriversViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DriversViewGrid.ColumnHeadersHeight = 33;
+            this.DriversViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DriversViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FIO_a_col,
+            this.Column6,
+            this.Tab_a_col});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Olive;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriversViewGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DriversViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DriversViewGrid.Location = new System.Drawing.Point(0, 27);
+            this.DriversViewGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.DriversViewGrid.MultiSelect = false;
+            this.DriversViewGrid.Name = "DriversViewGrid";
+            this.DriversViewGrid.ReadOnly = true;
+            this.DriversViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DriversViewGrid.RowHeadersVisible = false;
+            this.DriversViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.DriversViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+            this.DriversViewGrid.RowTemplate.Height = 30;
+            this.DriversViewGrid.RowTemplate.ReadOnly = true;
+            this.DriversViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriversViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DriversViewGrid.Size = new System.Drawing.Size(202, 357);
+            this.DriversViewGrid.StandardTab = true;
+            this.DriversViewGrid.TabIndex = 16;
+            this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.DriversViewGrid.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DriversViewGrid_CellLeave);
+            this.DriversViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DriversViewGrid_CellMouseDoubleClick);
+            this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Sort_by_state
             // 
@@ -1503,91 +1615,12 @@
             this.Save_state_button.UseVisualStyleBackColor = false;
             this.Save_state_button.Click += new System.EventHandler(this.button10_Click);
             // 
-            // DriversViewGrid
-            // 
-            this.DriversViewGrid.AllowUserToAddRows = false;
-            this.DriversViewGrid.AllowUserToDeleteRows = false;
-            this.DriversViewGrid.AllowUserToResizeColumns = false;
-            this.DriversViewGrid.AllowUserToResizeRows = false;
-            this.DriversViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DriversViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DriversViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.DriversViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DriversViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DriversViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DriversViewGrid.ColumnHeadersHeight = 33;
-            this.DriversViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DriversViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column6,
-            this.Column8});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Olive;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DriversViewGrid.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DriversViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DriversViewGrid.Location = new System.Drawing.Point(0, 27);
-            this.DriversViewGrid.Margin = new System.Windows.Forms.Padding(0);
-            this.DriversViewGrid.MultiSelect = false;
-            this.DriversViewGrid.Name = "DriversViewGrid";
-            this.DriversViewGrid.ReadOnly = true;
-            this.DriversViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DriversViewGrid.RowHeadersVisible = false;
-            this.DriversViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.DriversViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.DriversViewGrid.RowTemplate.Height = 30;
-            this.DriversViewGrid.RowTemplate.ReadOnly = true;
-            this.DriversViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DriversViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DriversViewGrid.Size = new System.Drawing.Size(202, 357);
-            this.DriversViewGrid.StandardTab = true;
-            this.DriversViewGrid.TabIndex = 16;
-            this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.DriversViewGrid.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DriversViewGrid_CellLeave);
-            this.DriversViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DriversViewGrid_CellMouseDoubleClick);
-            this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.FillWeight = 164.467F;
-            this.Column5.HeaderText = "Фамилия Имя Отчество";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 35.53299F;
-            this.Column6.HeaderText = "Состояние";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Табельный номер";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Khaki;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPage2.Controls.Add(this.searchAsideAuto);
+            this.tabPage2.Controls.Add(this.searchPic2);
             this.tabPage2.Controls.Add(this.sort_by_car_state);
             this.tabPage2.Controls.Add(this.carViewGrid);
             this.tabPage2.Controls.Add(this.groupBox7);
@@ -1639,7 +1672,7 @@
             this.carViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1648,8 +1681,8 @@
             this.carViewGrid.ColumnHeadersHeight = 33;
             this.carViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.carViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Column4,
+            this.Model_a_col,
+            this.Num_a_col,
             this.Column7,
             this.Column9});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1669,6 +1702,7 @@
             this.carViewGrid.RowHeadersVisible = false;
             this.carViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.carViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.carViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.carViewGrid.RowTemplate.Height = 44;
@@ -1680,31 +1714,6 @@
             this.carViewGrid.TabIndex = 0;
             this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
             this.carViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.FillWeight = 143.6445F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Модель";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 120.8225F;
-            this.Column4.HeaderText = "Номер";
-            this.Column4.Name = "Column4";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Состояние";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Описание";
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
             // 
             // groupBox7
             // 
@@ -1781,9 +1790,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(7, 21);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 17);
+            this.label20.Size = new System.Drawing.Size(53, 17);
             this.label20.TabIndex = 65;
-            this.label20.Text = "Г.Р.З";
+            this.label20.Text = "Гос.  №";
             // 
             // state_notAvailable
             // 
@@ -1911,6 +1920,84 @@
             this.car_save_button.UseVisualStyleBackColor = false;
             this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
             // 
+            // FIO_a_col
+            // 
+            this.FIO_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FIO_a_col.FillWeight = 164.467F;
+            this.FIO_a_col.HeaderText = "Фамилия Имя Отчество";
+            this.FIO_a_col.Name = "FIO_a_col";
+            this.FIO_a_col.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 35.53299F;
+            this.Column6.HeaderText = "Состояние";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Tab_a_col
+            // 
+            this.Tab_a_col.HeaderText = "Табельный номер";
+            this.Tab_a_col.Name = "Tab_a_col";
+            this.Tab_a_col.ReadOnly = true;
+            this.Tab_a_col.Visible = false;
+            // 
+            // searchAsideAuto
+            // 
+            this.searchAsideAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchAsideAuto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchAsideAuto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchAsideAuto.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchAsideAuto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchAsideAuto.Location = new System.Drawing.Point(0, 359);
+            this.searchAsideAuto.Name = "searchAsideAuto";
+            this.searchAsideAuto.Size = new System.Drawing.Size(177, 25);
+            this.searchAsideAuto.TabIndex = 67;
+            this.searchAsideAuto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAsideAuto.Visible = false;
+            this.searchAsideAuto.TextChanged += new System.EventHandler(this.searchAsideAuto_TextChanged);
+            this.searchAsideAuto.Leave += new System.EventHandler(this.searchAsideAuto_Leave);
+            // 
+            // searchPic2
+            // 
+            this.searchPic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchPic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchPic2.Image = global::AParkDispetcher.Properties.Resources.search_64;
+            this.searchPic2.Location = new System.Drawing.Point(176, 359);
+            this.searchPic2.Name = "searchPic2";
+            this.searchPic2.Size = new System.Drawing.Size(26, 25);
+            this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.searchPic2.TabIndex = 66;
+            this.searchPic2.TabStop = false;
+            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
+            // 
+            // Model_a_col
+            // 
+            this.Model_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Model_a_col.FillWeight = 143.6445F;
+            this.Model_a_col.HeaderText = "Модель";
+            this.Model_a_col.Name = "Model_a_col";
+            // 
+            // Num_a_col
+            // 
+            this.Num_a_col.FillWeight = 120.8225F;
+            this.Num_a_col.HeaderText = "Номер";
+            this.Num_a_col.Name = "Num_a_col";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Состояние";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Описание";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
+            // 
             // DispetcherFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1924,7 +2011,7 @@
             this.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1240, 765);
+            this.MinimumSize = new System.Drawing.Size(1250, 765);
             this.Name = "DispetcherFrom";
             this.Text = "Диспетчерская";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1946,20 +2033,24 @@
             this.oper_panel.PerformLayout();
             this.AsideDispTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2045,20 +2136,13 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button car_edit_button;
         private System.Windows.Forms.Button car_save_button;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button SelectDriverButton;
         private System.Windows.Forms.Button selectCarButton;
         private System.Windows.Forms.RadioButton state_free;
         private System.Windows.Forms.DataGridView carViewGrid;
         private System.Windows.Forms.RadioButton state_busy;
         private System.Windows.Forms.Button Sort_by_state;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button sort_by_car_state;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.TextBox OrderedTypeTask_box;
         private System.Windows.Forms.TextBox textStateTask_box;
         private System.Windows.Forms.TextBox markTask_box;
@@ -2071,9 +2155,10 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button car_cancel_button;
         private System.Windows.Forms.Button Create_task_button;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button Save_edit_task_button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TNum_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UTub_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
@@ -2086,9 +2171,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.Button Save_edit_task_button;
+        private System.Windows.Forms.PictureBox SearchPic1;
+        private System.Windows.Forms.TextBox searchAsideDrive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tab_a_col;
+        private System.Windows.Forms.TextBox searchAsideAuto;
+        private System.Windows.Forms.PictureBox searchPic2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Model_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
 

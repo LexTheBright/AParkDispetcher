@@ -70,7 +70,7 @@ namespace AParkDispetcher
             this.groupBox1.Controls.Add(this.minimize_button);
             this.groupBox1.Controls.Add(this.expand_button);
             this.groupBox1.Controls.Add(this.TaskHistoryGrid);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 6);
             this.groupBox1.Name = "groupBox1";
@@ -128,7 +128,7 @@ namespace AParkDispetcher
             this.TaskHistoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -157,7 +157,7 @@ namespace AParkDispetcher
             this.Column19});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -172,7 +172,7 @@ namespace AParkDispetcher
             this.TaskHistoryGrid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -205,7 +205,7 @@ namespace AParkDispetcher
             this.Column3.HeaderText = "Статус";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 84;
+            this.Column3.Width = 83;
             // 
             // Column2
             // 
@@ -213,7 +213,7 @@ namespace AParkDispetcher
             this.Column2.HeaderText = "Дата изменения";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 142;
+            this.Column2.Width = 144;
             // 
             // Column5
             // 
@@ -237,7 +237,7 @@ namespace AParkDispetcher
             this.Column11.HeaderText = "Время выезда";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            this.Column11.Width = 130;
+            this.Column11.Width = 131;
             // 
             // dura_col
             // 

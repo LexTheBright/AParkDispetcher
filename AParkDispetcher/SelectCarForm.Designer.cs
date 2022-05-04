@@ -32,12 +32,13 @@ namespace AParkDispetcher
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchAutos2 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ok_button = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
             this.SelectionCarGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gov_num_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,22 +54,41 @@ namespace AParkDispetcher
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.searchAutos2);
             this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Controls.Add(this.SelectionCarGrid);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(974, 620);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выбите автомобиль";
+            this.groupBox1.Text = "Выберите автомобиль";
+            // 
+            // searchAutos2
+            // 
+            this.searchAutos2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchAutos2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchAutos2.Font = new System.Drawing.Font("Cambria", 11.75F);
+            this.searchAutos2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchAutos2.Location = new System.Drawing.Point(650, -3);
+            this.searchAutos2.Multiline = true;
+            this.searchAutos2.Name = "searchAutos2";
+            this.searchAutos2.Size = new System.Drawing.Size(320, 23);
+            this.searchAutos2.TabIndex = 2;
+            this.searchAutos2.TabStop = false;
+            this.searchAutos2.Text = "Поиск";
+            this.searchAutos2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAutos2.TextChanged += new System.EventHandler(this.searchAutos2_TextChanged);
+            this.searchAutos2.Enter += new System.EventHandler(this.searchAutos2_Enter);
+            this.searchAutos2.Leave += new System.EventHandler(this.searchAutos2_Leave);
             // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Tan;
+            this.panel6.BackColor = System.Drawing.Color.Khaki;
             this.panel6.Controls.Add(this.ok_button);
             this.panel6.Controls.Add(this.cancel_button);
             this.panel6.Location = new System.Drawing.Point(3, 571);
@@ -79,7 +99,7 @@ namespace AParkDispetcher
             // 
             // ok_button
             // 
-            this.ok_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ok_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ok_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ok_button.BackColor = System.Drawing.SystemColors.Window;
             this.ok_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -96,7 +116,7 @@ namespace AParkDispetcher
             // 
             // cancel_button
             // 
-            this.cancel_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cancel_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancel_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.cancel_button.BackColor = System.Drawing.SystemColors.Window;
             this.cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -127,7 +147,7 @@ namespace AParkDispetcher
             this.SelectionCarGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
@@ -136,8 +156,8 @@ namespace AParkDispetcher
             this.SelectionCarGrid.ColumnHeadersHeight = 40;
             this.SelectionCarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.SelectionCarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn3,
+            this.Gov_num_col,
+            this.model_col,
             this.dataGridViewTextBoxColumn6,
             this.Column2,
             this.dataGridViewTextBoxColumn7,
@@ -174,33 +194,32 @@ namespace AParkDispetcher
             this.SelectionCarGrid.TabIndex = 1;
             this.SelectionCarGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.SelectionCarGrid_CellFormatting);
             this.SelectionCarGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SelectionCarGrid_CellMouseDoubleClick);
-            this.SelectionCarGrid.SelectionChanged += new System.EventHandler(this.SelectionCarGrid_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn4
+            // Gov_num_col
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Г.Р.З.";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.Width = 120;
+            this.Gov_num_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Gov_num_col.HeaderText = "Гос. номер";
+            this.Gov_num_col.Name = "Gov_num_col";
+            this.Gov_num_col.ReadOnly = true;
+            this.Gov_num_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gov_num_col.Width = 120;
             // 
-            // dataGridViewTextBoxColumn3
+            // model_col
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Модель ";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 150;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.model_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.model_col.HeaderText = "Модель ";
+            this.model_col.MinimumWidth = 150;
+            this.model_col.Name = "model_col";
+            this.model_col.ReadOnly = true;
+            this.model_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.model_col.Width = 150;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.HeaderText = "Тип авто";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 111;
             // 
             // Column2
             // 
@@ -216,7 +235,7 @@ namespace AParkDispetcher
             this.dataGridViewTextBoxColumn7.HeaderText = "Состояние";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 122;
+            this.dataGridViewTextBoxColumn7.Width = 117;
             // 
             // Column1
             // 
@@ -233,11 +252,11 @@ namespace AParkDispetcher
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(106)))));
             this.ClientSize = new System.Drawing.Size(985, 631);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SelectCarForm";
-            this.Text = "SelectCarForm";
+            this.Text = "Автомобили";
             this.Load += new System.EventHandler(this.SelectCarForm_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SelectionCarGrid)).EndInit();
             this.ResumeLayout(false);
@@ -247,15 +266,16 @@ namespace AParkDispetcher
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button ok_button;
         private System.Windows.Forms.Button cancel_button;
         public System.Windows.Forms.DataGridView SelectionCarGrid;
+        private System.Windows.Forms.TextBox searchAutos2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gov_num_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn model_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

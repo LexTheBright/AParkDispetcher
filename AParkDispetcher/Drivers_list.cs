@@ -50,7 +50,7 @@ namespace AParkDispetcher
             }
         }
 
-        /*public void fillSelectDriverForm(DataGridView dgw)
+        public void fillSelectDriverForm(DataGridView dgw)
         {
             fillDriver();
             for (int i = 0; i < usr.Count; i++)
@@ -58,7 +58,7 @@ namespace AParkDispetcher
                 dgw.Rows.Add("" + usr[i].surname + " " + usr[i].name + " " + usr[i].midname + "", "" + usr[i].tab_number + "", "" + StateTitle(usr[i].state) + "");
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor = System.Drawing.Color.Green;
             }
-        }*/
+        }
 
         public void fillAdminsDriverGrid(DataGridView dgw)
         {

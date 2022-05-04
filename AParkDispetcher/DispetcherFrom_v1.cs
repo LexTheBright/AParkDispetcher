@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using IronXL;
 
 namespace APark
 {
@@ -21,10 +22,28 @@ namespace APark
         Tasks_list DT;
         DBRedactor DBRed;
 
+        private static bool isLocked = false;
         private static bool IsAsideTabSelectingActive = true;
+
+        public Dictionary<int, string> Task_Type = new Dictionary<int, string>();
+
+        public enum Task_Type_Rev
+        {
+            Новая = 0,
+            Подтверждена = 1,
+            Исполняется = 2,
+            Завершена = 3,
+            Отменена = 4
+        }
 
         public DispetcherFrom()
         {
+            Task_Type.Add(0, "новая");
+            Task_Type.Add(1, "подтверждена");
+            Task_Type.Add(2, "исполняется");
+            Task_Type.Add(3, "завершена");
+            Task_Type.Add(4, "отменена");
+
             InitializeComponent();
         }
 
@@ -46,6 +65,18 @@ namespace APark
             DT.fillDispetcherTasks(MainGrid);
             typeTask_box.Items.Clear();
             DT.fillComboboxWithTypes(typeTask_box);
+
+            /*StateTask_combobox.Items.Clear();
+            if (true)  //todo заполнение от юзера
+            {
+                StateTask_combobox.Items.Add("подтверждена");
+                StateTask_combobox.Items.Add("исполняется");
+                StateTask_combobox.Items.Add("завершена");
+                StateTask_combobox.Items.Add("отменена");
+            } else {
+                StateTask_combobox.Items.Add("отменена");
+            }
+            StateTask_combobox.SelectedIndex = 0;*/
 
             MainGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
             //dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold); 
@@ -131,6 +162,7 @@ namespace APark
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            /*if (e.Value.ToString().Length > 20) e.Value = e.Value.ToString().Substring(0, 20);*/
             string[] splited_cell = e.Value.ToString().Split(' ');
             if (splited_cell.Count() == 3)
             {
@@ -157,7 +189,7 @@ namespace APark
                     break;
                 case "1":
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightYellow;
-                    //DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.DarkKhaki;
+                    DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.DarkKhaki;
                     /*e.CellStyle.BackColor = Color.LightYellow;
                     e.CellStyle.SelectionBackColor = Color.Orange;
                     e.Value = "";*/
@@ -430,6 +462,7 @@ namespace APark
                     //OrderedTypeTask_box.Visible = false;
                     typeTask_box.SelectedItem = task_ctype;
                     OrderedTypeTask_box.Text = task_ctype;
+                    if (task_ctype.Length > 15) OrderedTypeTask_box.Text = task_ctype.Substring(0,15);
                     //typeTask_box.Visible = true;
 
                 }
@@ -437,12 +470,28 @@ namespace APark
                 {
                     //typeTask_box.Visible = false;
                     OrderedTypeTask_box.Text = task_ordered_type;
+                    if (task_ordered_type.Length > 15) OrderedTypeTask_box.Text = task_ordered_type.Substring(0,15);
                     OrderedTypeTask_box.Visible = true;
                 }
 
                 colorTask_box.Text = task_car_color;
-                StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
-                textStateTask_box.Text = StateTask_combobox.Text;
+                //StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
+                //admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key;
+                //textStateTask_box.Text = StateTask_combobox.Text;
+                textStateTask_box.Text = Task_Type[Int32.Parse(task_state)];
+                try { StateTask_combobox.SelectedItem = textStateTask_box.Text; } catch { StateTask_combobox.SelectedIndex = 0; }
+
+                if (textStateTask_box.Text == "отменена" || textStateTask_box.Text == "завершена")
+                {
+                    Edit_task_button.Enabled = false;
+                    Edit_task_button.BackColor = Color.DarkKhaki;
+                }
+                else if (!isLocked)
+                {
+                    Edit_task_button.Enabled = true;
+                    Edit_task_button.BackColor = SystemColors.ControlLight;
+                }
+                //StateTask_combobox.SelectedItem = textStateTask_box.Text;
             }
         }
 
@@ -471,8 +520,11 @@ namespace APark
                 string car_type = CurSelectCarForm.SelectionCarGrid.Rows[Index].Cells[2].Value.ToString();
                 string car_color = CurSelectCarForm.SelectionCarGrid.Rows[Index].Cells[3].Value.ToString();
 
-                MessageBox.Show(car_mark + " " + car_model + " " + car_type + " " + car_color);
-
+                //MessageBox.Show(car_mark + " " + car_model + " " + car_type + " " + car_color);
+                markTask_box.Text = car_mark;
+                modelTask_box.Text = car_model;
+                OrderedTypeTask_box.Text = car_type;
+                colorTask_box.Text = car_color;
             } 
         }
 
@@ -647,16 +699,16 @@ namespace APark
             Save_add_task_button.BackColor = SystemColors.ControlLight;
 
             numTask_box.Text = (DBRed.getMaxID("tasks", "task_num") + 1).ToString();
+            textStateTask_box.Text = "новая";
             OrdtimeTask_box.Value = DBRed.getDateTimeFromServer();
             //timeTask_box.Text = OrdtimeTask_box.Value.ToString("g");
             timeTask_box.Text = OrdtimeTask_box.Value.ToString("dd.MM  [HH:mm]");
-
         }
 
         private void StateTask_combobox_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
+            StringFormat sfs = new StringFormat();
+            sfs.Alignment = StringAlignment.Center;
 
             var combo = sender as ComboBox;
 
@@ -670,19 +722,18 @@ namespace APark
                 if (StateTask_combobox.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
             }
 
-            
 
-            e.Graphics.DrawString(combo.Items[e.Index].ToString(),
-                                          new Font("Segoe UI", 11, FontStyle.Bold),
-                                          new SolidBrush(Color.Black),
-                                          e.Bounds,
-                                          sf);
+            if (e.Index >= 0) e.Graphics.DrawString(combo.Items[e.Index].ToString(),
+                                              new Font("Segoe UI", 11, FontStyle.Bold),
+                                              new SolidBrush(Color.Black),
+                                              e.Bounds,
+                                              sfs);
         }
 
         private void typeTask_box_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
+            StringFormat sft = new StringFormat();
+            sft.Alignment = StringAlignment.Center;
 
             var combo = sender as ComboBox;
 
@@ -700,7 +751,7 @@ namespace APark
                                           new Font("Segoe UI", 11, FontStyle.Bold),
                                           new SolidBrush(Color.Black),
                                           e.Bounds,
-                                          sf);
+                                          sft);
         }
 
         private void AsideDispTab_Deselecting(object sender, TabControlCancelEventArgs e)
@@ -738,6 +789,7 @@ namespace APark
             departTask_box.BackColor = Color.PaleGoldenrod;
             destTask_box.BackColor = Color.PaleGoldenrod;
             commTask_box.BackColor = Color.PaleGoldenrod;
+            dispCommTask_box.BackColor = Color.PaleGoldenrod;
 
             searchTasks.Enabled = true;
             MainGrid.Enabled = true;
@@ -751,7 +803,10 @@ namespace APark
             Cancel_task_button.BackColor = Color.DarkKhaki;
             Save_add_task_button.Enabled = false;
             Save_add_task_button.BackColor = Color.DarkKhaki;
+            selectCarButton.Enabled = false;
+            SelectDriverButton.Enabled = false;
 
+            isLocked = false;
         } 
 
         private void Cancel_task_button_Click(object sender, EventArgs e)
@@ -761,6 +816,7 @@ namespace APark
 
         private void Save_add_task_button_Click(object sender, EventArgs e)
         {
+            isLocked = true;
             Dictionary<string, string> add_task_properties = new Dictionary<string, string>();
             string error_message;
 
@@ -859,6 +915,305 @@ namespace APark
         private void addToTaskHistoryByNumber()
         {
             
+        }
+
+        private void Edit_task_button_Click(object sender, EventArgs e)
+        {
+            if (MainGrid.SelectedRows.Count == 0) MainGrid.Rows[0].Selected = true;
+
+            StateTask_combobox.Items.Clear();
+            StateTask_combobox.Items.Add("подтверждена");
+            StateTask_combobox.Items.Add("исполняется");
+            StateTask_combobox.Items.Add("завершена");
+            StateTask_combobox.Items.Add("отменена");
+            StateTask_combobox.SelectedIndex = 0;
+
+            isLocked = true;
+            Save_edit_task_button.Visible = true;
+
+            if (StateTask_combobox.SelectedItem.ToString() != "исполняется" &&
+                StateTask_combobox.SelectedItem.ToString() != "завершена" &&
+                StateTask_combobox.SelectedItem.ToString() != "отменена")
+            {
+                selectCarButton.Enabled = true;
+                SelectDriverButton.Enabled = true;
+            }
+            if (textStateTask_box.Text == "новая")
+            {
+                OrderedTypeTask_box.Visible = false;
+                label14.Visible = false;
+                colorTask_box.Visible = false;
+                typeTask_box.Visible = true;
+                typeTask_box.SelectedIndex = -1;
+                typeTask_box.Size = new Size(291, 25);
+                typeTask_box.Refresh();
+
+                StateTask_combobox.Items.Clear();
+                StateTask_combobox.Items.Add("подтверждена");
+                StateTask_combobox.Items.Add("отменена");
+                StateTask_combobox.SelectedIndex = 0;
+            }
+            if (textStateTask_box.Text == "исполняется")
+            {
+                StateTask_combobox.Items.Clear();
+                StateTask_combobox.Items.Add("завершена");
+                StateTask_combobox.Items.Add("отменена");
+                StateTask_combobox.SelectedIndex = 0;
+            }
+            if (textStateTask_box.Text == "подтверждена")
+            {
+                StateTask_combobox.Items.Clear();
+                StateTask_combobox.Items.Add("подтверждена");
+                StateTask_combobox.Items.Add("исполняется");
+                StateTask_combobox.Items.Add("отменена");
+                StateTask_combobox.SelectedIndex = 0;
+            }
+
+            searchTasks.Enabled = false;
+            MainGrid.Enabled = false;
+
+            textStateTask_box.Visible = false;
+            StateTask_combobox.Visible = true;
+            OrdtimeTask_box.Enabled = true;
+
+            duraTask_box.ReadOnly = false;
+            departTask_box.ReadOnly = false;
+            dispCommTask_box.ReadOnly = false;
+            dispCommTask_box.Clear();
+            duraTask_box.BackColor = Color.PaleGreen;
+            departTask_box.BackColor = Color.PaleGreen;
+            dispCommTask_box.BackColor = Color.PaleGreen;
+
+            Create_task_button.Enabled = false;
+            Create_task_button.BackColor = Color.DarkKhaki;
+            Edit_task_button.Enabled = false;
+            Edit_task_button.BackColor = Color.DarkKhaki;
+            Cancel_task_button.Enabled = true;
+            Cancel_task_button.BackColor = SystemColors.ControlLight;
+            Save_edit_task_button.Enabled = true;
+            Save_edit_task_button.BackColor = SystemColors.ControlLight;
+        }
+
+        private void SelectDriverButton_Click(object sender, EventArgs e)
+        {
+            SelectDriverForm CurSelectDriverForm = new SelectDriverForm();
+            if (CurSelectDriverForm.ShowDialog(this) == DialogResult.OK)
+            {
+                int Index = CurSelectDriverForm.SelectionDriverGrid.SelectedCells[0].RowIndex;
+                string driver_FIO = CurSelectDriverForm.SelectionDriverGrid.Rows[Index].Cells[0].Value.ToString();
+                string driver_tab_num = CurSelectDriverForm.SelectionDriverGrid.Rows[Index].Cells[1].Value.ToString();
+
+                driverTask_box.Text = driver_tab_num;
+                //driverTask_box.Text = driver_tab_num + " " + driver_FIO.Split(' ')[0] + " " + driver_FIO.Split(' ')[1][0] + ". " + driver_FIO.Split(' ')[2][0] + ".";
+            }
+        }
+
+        private void Save_edit_task_button_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, string> add_task_properties = new Dictionary<string, string>();
+            string error_message;
+
+            //Статус заявки
+            if (StateTask_combobox.SelectedItem.ToString() != textStateTask_box.Text)
+            {
+                add_task_properties.Add("order_state", StateTask_combobox.SelectedItem.ToString());
+            }
+
+            //Проверка модели ordered_ctype
+            add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
+
+            if (markTask_box.Text != "") add_task_properties.Add("car_reg_mark", markTask_box.Text);
+            else
+            {
+                MessageBox.Show("Вы не выбрали автомобиль!");
+                return;
+            }
+
+            if (driverTask_box.Text != "") add_task_properties.Add("driver_tab_number", driverTask_box.Text);
+            else
+            {
+                MessageBox.Show("Вы не выбрали водителя!");
+                return;
+            }
+
+            error_message = ParkDispecter.IsValidValue("Модель", textStateTask_box.Text.ToString());
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message);
+                return;
+            }
+            else
+            {
+                add_task_properties.Add("model", textStateTask_box.Text);
+            }
+
+            endingEvent();
+        }
+
+        private void StateTask_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StateTask_combobox.SelectedItem.ToString() == "исполняется" ||
+                StateTask_combobox.SelectedItem.ToString() == "завершена" ||
+                StateTask_combobox.SelectedItem.ToString() == "отменена")
+            {
+                OrderedTypeTask_box.Visible = true;
+                label14.Visible = true;
+                colorTask_box.Visible = true;
+                typeTask_box.Visible = false;
+
+                int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
+
+                OrdtimeTask_box.Enabled = false;
+                OrdtimeTask_box.Value = Convert.ToDateTime(MainGrid.Rows[selectedrowindex].Cells[4].Value);
+
+                duraTask_box.Text = MainGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
+                duraTask_box.BackColor = Color.PaleGoldenrod;
+                duraTask_box.ReadOnly = true;
+
+                departTask_box.Text = MainGrid.Rows[selectedrowindex].Cells[6].Value.ToString();
+                departTask_box.BackColor = Color.PaleGoldenrod;
+                departTask_box.ReadOnly = true;
+                
+                selectCarButton.Enabled = false;
+                SelectDriverButton.Enabled = false;
+            }
+            else if (isLocked)
+            {
+                OrderedTypeTask_box.Visible = false;
+                label14.Visible = false;
+                colorTask_box.Visible = false;
+                typeTask_box.Visible = true;
+                typeTask_box.SelectedIndex = -1;
+                typeTask_box.Size = new Size(291, 25);
+                typeTask_box.Refresh();
+
+                selectCarButton.Enabled = true;
+                SelectDriverButton.Enabled = true;
+                OrdtimeTask_box.Enabled = true;
+
+                duraTask_box.BackColor = Color.PaleGreen;
+                departTask_box.BackColor = Color.PaleGreen;
+                duraTask_box.ReadOnly = false;
+                departTask_box.ReadOnly = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WorkBook xlsxWorkbook = WorkBook.Create(ExcelFileFormat.XLSX);
+            xlsxWorkbook.Metadata.Author = "Dispetcher";
+
+            WorkSheet xlsSheet = xlsxWorkbook.CreateWorkSheet("Заявки");
+
+        }
+
+        private void searchTasks_Enter(object sender, EventArgs e)
+        {
+            searchTasks.Clear();
+        }
+
+        private void searchTasks_Leave(object sender, EventArgs e)
+        {
+            if (searchTasks.Text == "") searchTasks.Text = "Поиск";
+        }
+
+        private void searchTasks_TextChanged(object sender, EventArgs e)
+        {
+            MainGrid.ClearSelection();
+
+            if (string.IsNullOrWhiteSpace(searchTasks.Text))
+                return;
+
+            var values = searchTasks.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < MainGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = MainGrid.Rows[i];
+
+                    if (row.Cells["TNum_col"].Value.ToString().Contains(value) ||
+                        row.Cells["UTub_col"].Value.ToString().Contains(value) ||
+                        row.Cells["FIO_col"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        MainGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
+        }
+
+        private void SearchPic1_Click(object sender, EventArgs e)
+        {
+            searchAsideDrive.Visible = true;
+            searchAsideDrive.Focus();
+        }
+
+        private void searchAsideDrive_Leave(object sender, EventArgs e)
+        {
+            searchAsideDrive.Visible = false;
+            searchAsideDrive.Clear();
+        }
+
+        private void searchAsideDrive_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchAsideDrive.Text))
+                return;
+
+            var values = searchAsideDrive.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < DriversViewGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = DriversViewGrid.Rows[i];
+
+                    if (row.Cells["Tab_a_col"].Value.ToString().Contains(value) ||
+                        row.Cells["FIO_a_col"].Value.ToString().Contains(value)) 
+                    {
+                        row.Selected = true;
+                        DriversViewGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
+        }
+
+        private void searchPic2_Click(object sender, EventArgs e)
+        {
+            searchAsideAuto.Visible = true;
+            searchAsideAuto.Focus();
+        }
+
+        private void searchAsideAuto_Leave(object sender, EventArgs e)
+        {
+            searchAsideAuto.Visible = false;
+            searchAsideAuto.Clear();
+        }
+
+        private void searchAsideAuto_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchAsideAuto.Text))
+                return;
+
+            var values = searchAsideAuto.Text.Split(new char[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < carViewGrid.RowCount; i++)
+            {
+                foreach (string value in values)
+                {
+                    var row = carViewGrid.Rows[i];
+
+                    if (row.Cells["Num_a_col"].Value.ToString().Contains(value) ||
+                        row.Cells["Model_a_col"].Value.ToString().Contains(value))
+                    {
+                        row.Selected = true;
+                        carViewGrid.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
         }
     }
 }

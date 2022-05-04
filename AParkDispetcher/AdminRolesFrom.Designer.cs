@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,10 +47,10 @@
             this.driver_FIO_textbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.searchDrivers = new System.Windows.Forms.TextBox();
             this.AdminDriversGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIO_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tab_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -72,7 +72,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.searchTasks = new System.Windows.Forms.TextBox();
+            this.searchUsers = new System.Windows.Forms.TextBox();
             this.AdminUsersGrid = new System.Windows.Forms.DataGridView();
             this.SNM_field = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab__field = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,10 +100,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.searchAutos = new System.Windows.Forms.TextBox();
             this.AdminCarsGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gov_num_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,7 +159,7 @@
             this.groupBox2.BackColor = System.Drawing.Color.Chocolate;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.searchDrivers);
             this.groupBox2.Controls.Add(this.AdminDriversGrid);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -182,21 +182,20 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(2, 424);
+            this.panel2.Location = new System.Drawing.Point(2, 471);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(928, 191);
+            this.panel2.Size = new System.Drawing.Size(928, 144);
             this.panel2.TabIndex = 12;
             // 
             // driver_tab_textbox
             // 
-            this.driver_tab_textbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.driver_tab_textbox.BackColor = System.Drawing.Color.Linen;
             this.driver_tab_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.driver_tab_textbox.Location = new System.Drawing.Point(374, 80);
+            this.driver_tab_textbox.Location = new System.Drawing.Point(631, 29);
             this.driver_tab_textbox.Name = "driver_tab_textbox";
             this.driver_tab_textbox.ReadOnly = true;
-            this.driver_tab_textbox.Size = new System.Drawing.Size(306, 26);
-            this.driver_tab_textbox.TabIndex = 2;
+            this.driver_tab_textbox.Size = new System.Drawing.Size(237, 26);
+            this.driver_tab_textbox.TabIndex = 3;
             this.driver_tab_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
@@ -208,7 +207,7 @@
             this.panel4.Controls.Add(this.Driver_button_delete);
             this.panel4.Controls.Add(this.Driver_button_cancel);
             this.panel4.Controls.Add(this.Driver_button_add);
-            this.panel4.Location = new System.Drawing.Point(0, 145);
+            this.panel4.Location = new System.Drawing.Point(0, 98);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(928, 46);
@@ -224,7 +223,7 @@
             this.Driver_button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Driver_button_save.ForeColor = System.Drawing.Color.Black;
-            this.Driver_button_save.Location = new System.Drawing.Point(622, 4);
+            this.Driver_button_save.Location = new System.Drawing.Point(774, 4);
             this.Driver_button_save.Name = "Driver_button_save";
             this.Driver_button_save.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_save.TabIndex = 7;
@@ -241,7 +240,7 @@
             this.Driver_button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Driver_button_delete.ForeColor = System.Drawing.Color.Black;
-            this.Driver_button_delete.Location = new System.Drawing.Point(310, 4);
+            this.Driver_button_delete.Location = new System.Drawing.Point(160, 4);
             this.Driver_button_delete.Name = "Driver_button_delete";
             this.Driver_button_delete.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_delete.TabIndex = 57;
@@ -260,7 +259,7 @@
             this.Driver_button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Driver_button_cancel.ForeColor = System.Drawing.Color.Black;
-            this.Driver_button_cancel.Location = new System.Drawing.Point(466, 4);
+            this.Driver_button_cancel.Location = new System.Drawing.Point(618, 4);
             this.Driver_button_cancel.Name = "Driver_button_cancel";
             this.Driver_button_cancel.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_cancel.TabIndex = 74;
@@ -278,7 +277,7 @@
             this.Driver_button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Driver_button_add.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Driver_button_add.ForeColor = System.Drawing.Color.Black;
-            this.Driver_button_add.Location = new System.Drawing.Point(154, 4);
+            this.Driver_button_add.Location = new System.Drawing.Point(4, 4);
             this.Driver_button_add.Name = "Driver_button_add";
             this.Driver_button_add.Size = new System.Drawing.Size(150, 39);
             this.Driver_button_add.TabIndex = 4;
@@ -288,14 +287,13 @@
             // 
             // driver_FIO_textbox
             // 
-            this.driver_FIO_textbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.driver_FIO_textbox.BackColor = System.Drawing.Color.Linen;
             this.driver_FIO_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.driver_FIO_textbox.Location = new System.Drawing.Point(310, 40);
+            this.driver_FIO_textbox.Location = new System.Drawing.Point(138, 29);
             this.driver_FIO_textbox.Name = "driver_FIO_textbox";
             this.driver_FIO_textbox.ReadOnly = true;
-            this.driver_FIO_textbox.Size = new System.Drawing.Size(370, 26);
-            this.driver_FIO_textbox.TabIndex = 3;
+            this.driver_FIO_textbox.Size = new System.Drawing.Size(333, 26);
+            this.driver_FIO_textbox.TabIndex = 2;
             this.driver_FIO_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -303,37 +301,40 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(248, 42);
+            this.label7.Location = new System.Drawing.Point(39, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 21);
+            this.label7.Size = new System.Drawing.Size(84, 21);
             this.label7.TabIndex = 2;
-            this.label7.Text = "ФИО";
+            this.label7.Text = "Водитель";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(248, 80);
+            this.label10.Location = new System.Drawing.Point(507, 31);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 21);
             this.label10.TabIndex = 8;
             this.label10.Text = "Табельный №";
             // 
-            // textBox9
+            // searchDrivers
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox9.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.Location = new System.Drawing.Point(610, 1);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(320, 23);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.TabStop = false;
-            this.textBox9.Text = "Поиск";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchDrivers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchDrivers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchDrivers.Font = new System.Drawing.Font("Cambria", 11.75F);
+            this.searchDrivers.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchDrivers.Location = new System.Drawing.Point(610, 1);
+            this.searchDrivers.Multiline = true;
+            this.searchDrivers.Name = "searchDrivers";
+            this.searchDrivers.Size = new System.Drawing.Size(320, 23);
+            this.searchDrivers.TabIndex = 1;
+            this.searchDrivers.TabStop = false;
+            this.searchDrivers.Text = "Поиск";
+            this.searchDrivers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchDrivers.TextChanged += new System.EventHandler(this.searchDrivers_TextChanged);
+            this.searchDrivers.Enter += new System.EventHandler(this.textBox9_Enter);
+            this.searchDrivers.Leave += new System.EventHandler(this.textBox9_Leave);
             // 
             // AdminDriversGrid
             // 
@@ -346,19 +347,19 @@
             this.AdminDriversGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminDriversGrid.CausesValidation = false;
             this.AdminDriversGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminDriversGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.AdminDriversGrid.ColumnHeadersHeight = 35;
             this.AdminDriversGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminDriversGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.FIO_col,
+            this.Tab_col,
             this.dataGridViewTextBoxColumn5});
             this.AdminDriversGrid.Cursor = System.Windows.Forms.Cursors.Default;
             this.AdminDriversGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -371,11 +372,11 @@
             this.AdminDriversGrid.RowHeadersVisible = false;
             this.AdminDriversGrid.RowHeadersWidth = 90;
             this.AdminDriversGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminDriversGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminDriversGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -384,26 +385,26 @@
             this.AdminDriversGrid.RowTemplate.ReadOnly = true;
             this.AdminDriversGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.AdminDriversGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AdminDriversGrid.Size = new System.Drawing.Size(928, 393);
+            this.AdminDriversGrid.Size = new System.Drawing.Size(928, 440);
             this.AdminDriversGrid.StandardTab = true;
             this.AdminDriversGrid.TabIndex = 0;
             this.AdminDriversGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             this.AdminDriversGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn1
+            // FIO_col
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Фамилия Имя Отчество";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 200;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FIO_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FIO_col.HeaderText = "Фамилия Имя Отчество";
+            this.FIO_col.MinimumWidth = 200;
+            this.FIO_col.Name = "FIO_col";
+            this.FIO_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn2
+            // Tab_col
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Табельный №";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.Tab_col.HeaderText = "Табельный №";
+            this.Tab_col.Name = "Tab_col";
+            this.Tab_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Tab_col.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -436,7 +437,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.Chocolate;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.searchTasks);
+            this.groupBox1.Controls.Add(this.searchUsers);
             this.groupBox1.Controls.Add(this.AdminUsersGrid);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -475,10 +476,10 @@
             // 
             this.user_role_textbox.BackColor = System.Drawing.Color.Linen;
             this.user_role_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.user_role_textbox.Location = new System.Drawing.Point(331, 78);
+            this.user_role_textbox.Location = new System.Drawing.Point(191, 60);
             this.user_role_textbox.Name = "user_role_textbox";
             this.user_role_textbox.ReadOnly = true;
-            this.user_role_textbox.Size = new System.Drawing.Size(175, 26);
+            this.user_role_textbox.Size = new System.Drawing.Size(281, 26);
             this.user_role_textbox.TabIndex = 65;
             this.user_role_textbox.TabStop = false;
             this.user_role_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -493,10 +494,10 @@
             "Пользователь",
             "Оператор",
             "Администратор"});
-            this.admin_users_role.Location = new System.Drawing.Point(331, 77);
+            this.admin_users_role.Location = new System.Drawing.Point(191, 59);
             this.admin_users_role.Name = "admin_users_role";
-            this.admin_users_role.Size = new System.Drawing.Size(175, 27);
-            this.admin_users_role.TabIndex = 64;
+            this.admin_users_role.Size = new System.Drawing.Size(281, 27);
+            this.admin_users_role.TabIndex = 3;
             this.admin_users_role.Visible = false;
             this.admin_users_role.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.admin_users_role_DrawItem);
             // 
@@ -504,34 +505,34 @@
             // 
             this.password_place.BackColor = System.Drawing.Color.Linen;
             this.password_place.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.password_place.Location = new System.Drawing.Point(624, 78);
+            this.password_place.Location = new System.Drawing.Point(613, 60);
             this.password_place.Name = "password_place";
             this.password_place.PasswordChar = '*';
             this.password_place.ReadOnly = true;
             this.password_place.Size = new System.Drawing.Size(240, 26);
-            this.password_place.TabIndex = 4;
+            this.password_place.TabIndex = 6;
             this.password_place.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // login_place
             // 
             this.login_place.BackColor = System.Drawing.Color.Linen;
             this.login_place.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_place.Location = new System.Drawing.Point(624, 42);
+            this.login_place.Location = new System.Drawing.Point(613, 24);
             this.login_place.Name = "login_place";
             this.login_place.ReadOnly = true;
             this.login_place.Size = new System.Drawing.Size(240, 26);
-            this.login_place.TabIndex = 3;
+            this.login_place.TabIndex = 5;
             this.login_place.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // user_tab_textbox
             // 
             this.user_tab_textbox.BackColor = System.Drawing.Color.Linen;
             this.user_tab_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.user_tab_textbox.Location = new System.Drawing.Point(158, 77);
+            this.user_tab_textbox.Location = new System.Drawing.Point(191, 96);
             this.user_tab_textbox.Name = "user_tab_textbox";
             this.user_tab_textbox.ReadOnly = true;
-            this.user_tab_textbox.Size = new System.Drawing.Size(95, 26);
-            this.user_tab_textbox.TabIndex = 1;
+            this.user_tab_textbox.Size = new System.Drawing.Size(281, 26);
+            this.user_tab_textbox.TabIndex = 4;
             this.user_tab_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel3
@@ -560,10 +561,10 @@
             this.User_button_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_save.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_save.ForeColor = System.Drawing.Color.Black;
-            this.User_button_save.Location = new System.Drawing.Point(703, 4);
+            this.User_button_save.Location = new System.Drawing.Point(774, 4);
             this.User_button_save.Name = "User_button_save";
             this.User_button_save.Size = new System.Drawing.Size(150, 39);
-            this.User_button_save.TabIndex = 6;
+            this.User_button_save.TabIndex = 9;
             this.User_button_save.Text = "Сохранить";
             this.User_button_save.UseVisualStyleBackColor = false;
             this.User_button_save.Click += new System.EventHandler(this.User_button_save_Click);
@@ -578,7 +579,7 @@
             this.User_button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_cancel.ForeColor = System.Drawing.Color.Black;
-            this.User_button_cancel.Location = new System.Drawing.Point(547, 4);
+            this.User_button_cancel.Location = new System.Drawing.Point(618, 4);
             this.User_button_cancel.Name = "User_button_cancel";
             this.User_button_cancel.Size = new System.Drawing.Size(150, 39);
             this.User_button_cancel.TabIndex = 43;
@@ -596,10 +597,10 @@
             this.User_button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_edit.ForeColor = System.Drawing.Color.Black;
-            this.User_button_edit.Location = new System.Drawing.Point(235, 4);
+            this.User_button_edit.Location = new System.Drawing.Point(160, 4);
             this.User_button_edit.Name = "User_button_edit";
             this.User_button_edit.Size = new System.Drawing.Size(150, 39);
-            this.User_button_edit.TabIndex = 57;
+            this.User_button_edit.TabIndex = 92;
             this.User_button_edit.TabStop = false;
             this.User_button_edit.Text = "Изменить";
             this.User_button_edit.UseVisualStyleBackColor = false;
@@ -614,10 +615,10 @@
             this.User_button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_delete.ForeColor = System.Drawing.Color.Black;
-            this.User_button_delete.Location = new System.Drawing.Point(391, 4);
+            this.User_button_delete.Location = new System.Drawing.Point(316, 4);
             this.User_button_delete.Name = "User_button_delete";
             this.User_button_delete.Size = new System.Drawing.Size(150, 39);
-            this.User_button_delete.TabIndex = 55;
+            this.User_button_delete.TabIndex = 103;
             this.User_button_delete.TabStop = false;
             this.User_button_delete.Text = "Удалить";
             this.User_button_delete.UseVisualStyleBackColor = false;
@@ -632,10 +633,10 @@
             this.User_button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.User_button_add.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.User_button_add.ForeColor = System.Drawing.Color.Black;
-            this.User_button_add.Location = new System.Drawing.Point(79, 4);
+            this.User_button_add.Location = new System.Drawing.Point(4, 4);
             this.User_button_add.Name = "User_button_add";
             this.User_button_add.Size = new System.Drawing.Size(150, 39);
-            this.User_button_add.TabIndex = 5;
+            this.User_button_add.TabIndex = 8;
             this.User_button_add.Text = "Добавить";
             this.User_button_add.UseVisualStyleBackColor = false;
             this.User_button_add.Click += new System.EventHandler(this.User_button_add_Click);
@@ -644,10 +645,10 @@
             // 
             this.user_FIO_textbox.BackColor = System.Drawing.Color.Linen;
             this.user_FIO_textbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.user_FIO_textbox.Location = new System.Drawing.Point(158, 42);
+            this.user_FIO_textbox.Location = new System.Drawing.Point(191, 24);
             this.user_FIO_textbox.Name = "user_FIO_textbox";
             this.user_FIO_textbox.ReadOnly = true;
-            this.user_FIO_textbox.Size = new System.Drawing.Size(348, 26);
+            this.user_FIO_textbox.Size = new System.Drawing.Size(281, 26);
             this.user_FIO_textbox.TabIndex = 2;
             this.user_FIO_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -656,7 +657,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(555, 80);
+            this.label5.Location = new System.Drawing.Point(544, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 21);
             this.label5.TabIndex = 11;
@@ -667,18 +668,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(109, 44);
+            this.label1.Location = new System.Drawing.Point(75, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 21);
+            this.label1.Size = new System.Drawing.Size(93, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ФИО";
+            this.label1.Text = "Сотрудник";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(281, 80);
+            this.label3.Location = new System.Drawing.Point(74, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 21);
             this.label3.TabIndex = 9;
@@ -689,7 +690,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(564, 44);
+            this.label4.Location = new System.Drawing.Point(553, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 21);
             this.label4.TabIndex = 10;
@@ -700,27 +701,29 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(44, 80);
+            this.label2.Location = new System.Drawing.Point(75, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "Табельный №";
             // 
-            // searchTasks
+            // searchUsers
             // 
-            this.searchTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTasks.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchTasks.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchTasks.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.searchTasks.Location = new System.Drawing.Point(610, 1);
-            this.searchTasks.Multiline = true;
-            this.searchTasks.Name = "searchTasks";
-            this.searchTasks.Size = new System.Drawing.Size(320, 23);
-            this.searchTasks.TabIndex = 7;
-            this.searchTasks.TabStop = false;
-            this.searchTasks.Text = "Поиск";
-            this.searchTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchTasks.TextChanged += new System.EventHandler(this.searchTasks_TextChanged);
+            this.searchUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchUsers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchUsers.Font = new System.Drawing.Font("Cambria", 11.75F);
+            this.searchUsers.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchUsers.Location = new System.Drawing.Point(610, 1);
+            this.searchUsers.Multiline = true;
+            this.searchUsers.Name = "searchUsers";
+            this.searchUsers.Size = new System.Drawing.Size(320, 23);
+            this.searchUsers.TabIndex = 1;
+            this.searchUsers.TabStop = false;
+            this.searchUsers.Text = "Поиск";
+            this.searchUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchUsers.TextChanged += new System.EventHandler(this.searchUsers_TextChanged);
+            this.searchUsers.Enter += new System.EventHandler(this.searchTasks_Enter);
+            this.searchUsers.Leave += new System.EventHandler(this.searchTasks_Leave);
             // 
             // AdminUsersGrid
             // 
@@ -733,14 +736,14 @@
             this.AdminUsersGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminUsersGrid.CausesValidation = false;
             this.AdminUsersGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminUsersGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.AdminUsersGrid.ColumnHeadersHeight = 35;
             this.AdminUsersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminUsersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -759,11 +762,11 @@
             this.AdminUsersGrid.RowHeadersVisible = false;
             this.AdminUsersGrid.RowHeadersWidth = 90;
             this.AdminUsersGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminUsersGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminUsersGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -851,13 +854,13 @@
             this.groupBox3.BackColor = System.Drawing.Color.Chocolate;
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox3.Controls.Add(this.panel5);
-            this.groupBox3.Controls.Add(this.textBox14);
+            this.groupBox3.Controls.Add(this.searchAutos);
             this.groupBox3.Controls.Add(this.AdminCarsGrid);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox3.Location = new System.Drawing.Point(3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(932, 619);
+            this.groupBox3.Size = new System.Drawing.Size(932, 617);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Управление автомобилями";
@@ -881,7 +884,7 @@
             this.panel5.Controls.Add(this.label12);
             this.panel5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(2, 424);
+            this.panel5.Location = new System.Drawing.Point(2, 422);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(928, 191);
             this.panel5.TabIndex = 12;
@@ -890,11 +893,11 @@
             // 
             this.admin_car_color_label.BackColor = System.Drawing.Color.Linen;
             this.admin_car_color_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_color_label.Location = new System.Drawing.Point(399, 78);
+            this.admin_car_color_label.Location = new System.Drawing.Point(403, 67);
             this.admin_car_color_label.Name = "admin_car_color_label";
             this.admin_car_color_label.ReadOnly = true;
-            this.admin_car_color_label.Size = new System.Drawing.Size(164, 26);
-            this.admin_car_color_label.TabIndex = 3;
+            this.admin_car_color_label.Size = new System.Drawing.Size(185, 26);
+            this.admin_car_color_label.TabIndex = 5;
             this.admin_car_color_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -902,7 +905,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(344, 81);
+            this.label6.Location = new System.Drawing.Point(347, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 21);
             this.label6.TabIndex = 66;
@@ -912,10 +915,10 @@
             // 
             this.admin_car_type_label.BackColor = System.Drawing.Color.Linen;
             this.admin_car_type_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_type_label.Location = new System.Drawing.Point(386, 42);
+            this.admin_car_type_label.Location = new System.Drawing.Point(403, 31);
             this.admin_car_type_label.Name = "admin_car_type_label";
             this.admin_car_type_label.ReadOnly = true;
-            this.admin_car_type_label.Size = new System.Drawing.Size(177, 26);
+            this.admin_car_type_label.Size = new System.Drawing.Size(185, 26);
             this.admin_car_type_label.TabIndex = 65;
             this.admin_car_type_label.TabStop = false;
             this.admin_car_type_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -926,10 +929,10 @@
             this.admin_car_type_cbox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.admin_car_type_cbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.admin_car_type_cbox.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_type_cbox.Location = new System.Drawing.Point(386, 42);
+            this.admin_car_type_cbox.Location = new System.Drawing.Point(403, 31);
             this.admin_car_type_cbox.Name = "admin_car_type_cbox";
-            this.admin_car_type_cbox.Size = new System.Drawing.Size(177, 27);
-            this.admin_car_type_cbox.TabIndex = 3;
+            this.admin_car_type_cbox.Size = new System.Drawing.Size(185, 27);
+            this.admin_car_type_cbox.TabIndex = 4;
             this.admin_car_type_cbox.Visible = false;
             this.admin_car_type_cbox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.admin_car_type_cbox_DrawItem);
             // 
@@ -937,22 +940,22 @@
             // 
             this.admin_car_descr_label.BackColor = System.Drawing.Color.Linen;
             this.admin_car_descr_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_descr_label.Location = new System.Drawing.Point(587, 31);
+            this.admin_car_descr_label.Location = new System.Drawing.Point(608, 31);
             this.admin_car_descr_label.Multiline = true;
             this.admin_car_descr_label.Name = "admin_car_descr_label";
             this.admin_car_descr_label.ReadOnly = true;
-            this.admin_car_descr_label.Size = new System.Drawing.Size(305, 86);
-            this.admin_car_descr_label.TabIndex = 4;
+            this.admin_car_descr_label.Size = new System.Drawing.Size(284, 86);
+            this.admin_car_descr_label.TabIndex = 6;
             // 
             // admin_car_mark_label
             // 
             this.admin_car_mark_label.BackColor = System.Drawing.Color.Linen;
             this.admin_car_mark_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_mark_label.Location = new System.Drawing.Point(107, 42);
+            this.admin_car_mark_label.Location = new System.Drawing.Point(124, 31);
             this.admin_car_mark_label.Name = "admin_car_mark_label";
             this.admin_car_mark_label.ReadOnly = true;
-            this.admin_car_mark_label.Size = new System.Drawing.Size(219, 26);
-            this.admin_car_mark_label.TabIndex = 1;
+            this.admin_car_mark_label.Size = new System.Drawing.Size(199, 26);
+            this.admin_car_mark_label.TabIndex = 2;
             this.admin_car_mark_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
@@ -982,10 +985,10 @@
             this.admin_car_edit_save_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_edit_save_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_edit_save_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_edit_save_button.Location = new System.Drawing.Point(703, 4);
+            this.admin_car_edit_save_button.Location = new System.Drawing.Point(774, 4);
             this.admin_car_edit_save_button.Name = "admin_car_edit_save_button";
             this.admin_car_edit_save_button.Size = new System.Drawing.Size(150, 39);
-            this.admin_car_edit_save_button.TabIndex = 6;
+            this.admin_car_edit_save_button.TabIndex = 8;
             this.admin_car_edit_save_button.Text = "Сохранить";
             this.admin_car_edit_save_button.UseVisualStyleBackColor = false;
             this.admin_car_edit_save_button.Visible = false;
@@ -1001,7 +1004,7 @@
             this.admin_car_add_save_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_add_save_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_add_save_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_add_save_button.Location = new System.Drawing.Point(703, 4);
+            this.admin_car_add_save_button.Location = new System.Drawing.Point(774, 4);
             this.admin_car_add_save_button.Name = "admin_car_add_save_button";
             this.admin_car_add_save_button.Size = new System.Drawing.Size(150, 39);
             this.admin_car_add_save_button.TabIndex = 58;
@@ -1019,7 +1022,7 @@
             this.admin_car_cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_cancel_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_cancel_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_cancel_button.Location = new System.Drawing.Point(547, 4);
+            this.admin_car_cancel_button.Location = new System.Drawing.Point(618, 4);
             this.admin_car_cancel_button.Name = "admin_car_cancel_button";
             this.admin_car_cancel_button.Size = new System.Drawing.Size(150, 39);
             this.admin_car_cancel_button.TabIndex = 53;
@@ -1037,7 +1040,7 @@
             this.admin_car_edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_edit_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_edit_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_edit_button.Location = new System.Drawing.Point(235, 4);
+            this.admin_car_edit_button.Location = new System.Drawing.Point(160, 4);
             this.admin_car_edit_button.Name = "admin_car_edit_button";
             this.admin_car_edit_button.Size = new System.Drawing.Size(150, 39);
             this.admin_car_edit_button.TabIndex = 57;
@@ -1055,7 +1058,7 @@
             this.admin_car_delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_delete_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_delete_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_delete_button.Location = new System.Drawing.Point(391, 4);
+            this.admin_car_delete_button.Location = new System.Drawing.Point(316, 4);
             this.admin_car_delete_button.Name = "admin_car_delete_button";
             this.admin_car_delete_button.Size = new System.Drawing.Size(150, 39);
             this.admin_car_delete_button.TabIndex = 55;
@@ -1073,10 +1076,10 @@
             this.admin_car_add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.admin_car_add_button.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.admin_car_add_button.ForeColor = System.Drawing.Color.Black;
-            this.admin_car_add_button.Location = new System.Drawing.Point(79, 4);
+            this.admin_car_add_button.Location = new System.Drawing.Point(4, 4);
             this.admin_car_add_button.Name = "admin_car_add_button";
             this.admin_car_add_button.Size = new System.Drawing.Size(150, 39);
-            this.admin_car_add_button.TabIndex = 5;
+            this.admin_car_add_button.TabIndex = 7;
             this.admin_car_add_button.Text = "Добавить";
             this.admin_car_add_button.UseVisualStyleBackColor = false;
             this.admin_car_add_button.Click += new System.EventHandler(this.admin_car_add_button_Click);
@@ -1085,11 +1088,11 @@
             // 
             this.admin_car_model_label.BackColor = System.Drawing.Color.Linen;
             this.admin_car_model_label.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.admin_car_model_label.Location = new System.Drawing.Point(107, 78);
+            this.admin_car_model_label.Location = new System.Drawing.Point(124, 67);
             this.admin_car_model_label.Name = "admin_car_model_label";
             this.admin_car_model_label.ReadOnly = true;
-            this.admin_car_model_label.Size = new System.Drawing.Size(219, 26);
-            this.admin_car_model_label.TabIndex = 2;
+            this.admin_car_model_label.Size = new System.Drawing.Size(199, 26);
+            this.admin_car_model_label.TabIndex = 3;
             this.admin_car_model_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
@@ -1097,7 +1100,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(35, 80);
+            this.label8.Location = new System.Drawing.Point(32, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 21);
             this.label8.TabIndex = 2;
@@ -1108,7 +1111,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(344, 44);
+            this.label9.Location = new System.Drawing.Point(347, 36);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 21);
             this.label9.TabIndex = 9;
@@ -1119,7 +1122,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(583, 7);
+            this.label11.Location = new System.Drawing.Point(604, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 21);
             this.label11.TabIndex = 10;
@@ -1130,26 +1133,29 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Candara", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(34, 44);
+            this.label12.Location = new System.Drawing.Point(31, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 21);
+            this.label12.Size = new System.Drawing.Size(87, 21);
             this.label12.TabIndex = 8;
-            this.label12.Text = "Номера";
+            this.label12.Text = "Гос. номер";
             // 
-            // textBox14
+            // searchAutos
             // 
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox14.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox14.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox14.Location = new System.Drawing.Point(610, 1);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(320, 23);
-            this.textBox14.TabIndex = 41;
-            this.textBox14.TabStop = false;
-            this.textBox14.Text = "Поиск";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchAutos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchAutos.Font = new System.Drawing.Font("Cambria", 11.75F);
+            this.searchAutos.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchAutos.Location = new System.Drawing.Point(610, 1);
+            this.searchAutos.Multiline = true;
+            this.searchAutos.Name = "searchAutos";
+            this.searchAutos.Size = new System.Drawing.Size(320, 23);
+            this.searchAutos.TabIndex = 1;
+            this.searchAutos.TabStop = false;
+            this.searchAutos.Text = "Поиск";
+            this.searchAutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAutos.TextChanged += new System.EventHandler(this.searchAuto_TextChanged);
+            this.searchAutos.Enter += new System.EventHandler(this.searchAuto_Enter);
+            this.searchAutos.Leave += new System.EventHandler(this.searchAuto_Leave);
             // 
             // AdminCarsGrid
             // 
@@ -1163,19 +1169,19 @@
             this.AdminCarsGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AdminCarsGrid.CausesValidation = false;
             this.AdminCarsGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminCarsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.AdminCarsGrid.ColumnHeadersHeight = 35;
             this.AdminCarsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdminCarsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn3,
+            this.Gov_num_col,
+            this.Model_col,
             this.dataGridViewTextBoxColumn6,
             this.Column2,
             this.dataGridViewTextBoxColumn7});
@@ -1191,11 +1197,11 @@
             this.AdminCarsGrid.RowHeadersVisible = false;
             this.AdminCarsGrid.RowHeadersWidth = 90;
             this.AdminCarsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.AdminCarsGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.AdminCarsGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.SlateBlue;
@@ -1204,28 +1210,28 @@
             this.AdminCarsGrid.RowTemplate.ReadOnly = true;
             this.AdminCarsGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.AdminCarsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AdminCarsGrid.Size = new System.Drawing.Size(928, 393);
+            this.AdminCarsGrid.Size = new System.Drawing.Size(928, 391);
             this.AdminCarsGrid.StandardTab = true;
             this.AdminCarsGrid.TabIndex = 0;
             this.AdminCarsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
             this.AdminCarsGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn4
+            // Gov_num_col
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Г.Р.З.";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.Width = 200;
+            this.Gov_num_col.HeaderText = "Гос. номер";
+            this.Gov_num_col.Name = "Gov_num_col";
+            this.Gov_num_col.ReadOnly = true;
+            this.Gov_num_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gov_num_col.Width = 200;
             // 
-            // dataGridViewTextBoxColumn3
+            // Model_col
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Модель ";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 200;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Model_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Model_col.HeaderText = "Модель ";
+            this.Model_col.MinimumWidth = 200;
+            this.Model_col.Name = "Model_col";
+            this.Model_col.ReadOnly = true;
+            this.Model_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -1308,11 +1314,8 @@
         private System.Windows.Forms.TextBox driver_FIO_textbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox searchDrivers;
         private System.Windows.Forms.DataGridView AdminDriversGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
@@ -1333,7 +1336,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox searchTasks;
+        private System.Windows.Forms.TextBox searchUsers;
         private System.Windows.Forms.DataGridView AdminUsersGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNM_field;
         private System.Windows.Forms.DataGridViewTextBoxColumn tab__field;
@@ -1358,13 +1361,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox searchAutos;
         private System.Windows.Forms.DataGridView AdminCarsGrid;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button admin_car_edit_save_button;
         private System.Windows.Forms.TextBox admin_car_color_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tab_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gov_num_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Model_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
