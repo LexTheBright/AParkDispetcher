@@ -104,11 +104,11 @@ namespace AParkDispetcher
             singleTask.Clear();
             string querry = "";
             querry = "USE autos; SELECT order_state, ordered_ctype, ordered_time, ordered_duration, departure, destination, " +
-                "user_description, car_reg_mark, changer_tab_number, tab_number_driver, chdatetime, chdescription, " +
+                "user_description, car_reg_mark, changer_tab_number, driver_tab_number, chdatetime, chdescription, " +
                 "model, color, type, driver_surname, driver_name, driver_midname " +
                 "FROM thistory " +
                 "LEFT JOIN cars ON thistory.car_reg_mark = cars.reg_mark " +
-                "LEFT JOIN drivers ON thistory.tab_number_driver = drivers.tab_number " +
+                "LEFT JOIN drivers ON thistory.driver_tab_number = drivers.tab_number " +
                 "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
                 $"WHERE thistory.task_num = {sld_task_num}";
             MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);

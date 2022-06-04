@@ -18,6 +18,12 @@ namespace AParkDispetcher
             Cars_list DC = new Cars_list();
             DC.fillSelectCarForm(SelectionCarGrid);
         }
+        public SelectCarForm(DateTime Tleft, DateTime Tright)
+        {
+            InitializeComponent();
+            Cars_list DC = new Cars_list();
+            DC.fillSelectCarForm(SelectionCarGrid, Tleft, Tright);
+        }
 
         private void SelectionCarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

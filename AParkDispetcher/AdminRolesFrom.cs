@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Security.Cryptography;
 
 namespace AParkDispetcher
 {
@@ -347,7 +347,7 @@ namespace AParkDispetcher
             if (AdminUsersGrid.SelectedRows.Count == 0) AdminUsersGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminUsersGrid.SelectedCells[0].RowIndex;
             string[] user_args = new string[2];
-            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
+            user_args[0] = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
             string tab_n = AdminUsersGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
             user_args[1] = "(" + tab_n + ")";
 
@@ -451,7 +451,7 @@ namespace AParkDispetcher
             //пароль
             if (!user_tab_textbox.ReadOnly || password_place.Text.Length > 0)
             {
-                //string dsqdpi = password_place.
+                string hash = "";
                 string error_message = ParkDispecter.IsValidValue("Пароль", password_place.Text.ToString());
                 if (error_message != null)
                 {
@@ -460,8 +460,20 @@ namespace AParkDispetcher
                 }
                 else
                 {
+                    using (SHA256 mySHA256 = SHA256.Create())
+                    {
+                        try
+                        {
+                            hash = BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(password_place.Text))).Replace("-", "").Substring(0, 32);
+                        }
+                        catch 
+                        {
+                            MessageBox.Show("Хэширование пароля не удалось. Попробуйте другой пароль.");
+                            return;
+                        }
+                    }
                     //MessageBox.Show("прошло");
-                    properties.Add("password", password_place.Text);
+                    properties.Add("password", hash);
                 }
             } 
 
@@ -572,7 +584,7 @@ namespace AParkDispetcher
             if (AdminDriversGrid.SelectedRows.Count == 0) AdminDriversGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminDriversGrid.SelectedCells[0].RowIndex;
             string[] driver_args = new string[2];
-            driver_args[0] = AdminDriversGrid.Rows[selectedrowindex].Cells[0].Value.ToString() + "\r\n";
+            driver_args[0] = AdminDriversGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
             string tab_n = AdminDriversGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
             driver_args[1] = "(" + tab_n + ")";
 
@@ -708,7 +720,7 @@ namespace AParkDispetcher
             if (AdminCarsGrid.SelectedRows.Count == 0) AdminCarsGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminCarsGrid.SelectedCells[0].RowIndex;
             string[] car_args = new string[2];
-            car_args[0] = AdminCarsGrid.Rows[selectedrowindex].Cells[1].Value.ToString() + "\r\n";
+            car_args[0] = AdminCarsGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
             string mark_n = AdminCarsGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
             car_args[1] = "(" + mark_n + ")";
 

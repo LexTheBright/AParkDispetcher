@@ -10,7 +10,6 @@ namespace AParkDispetcher
 {
     class DBRedactor
     {
-
         private string getErrorMessage(int ErrorNumber)
         {
             switch (ErrorNumber)
@@ -72,7 +71,7 @@ namespace AParkDispetcher
             }
         }
 
-        public void updateByID(string table, string id_title, string id, Dictionary<string, string> props)
+        public int updateByID(string table, string id_title, string id, Dictionary<string, string> props)
         {
             string querry = "";
             string adding = "";
@@ -92,11 +91,14 @@ namespace AParkDispetcher
             {
                 comm.ExecuteNonQuery();
                 //MessageBox.Show("ОБНОВИЛОСЯ!!!!!!");
+                return 0;
             }
-            catch (Exception)
+            catch (MySqlException e)
             {
-
-                throw;
+                string ErrMessageText = getErrorMessage(e.Number);
+                if (ErrMessageText == "") throw;
+                else MessageBox.Show(ErrMessageText);
+                return 1;
             }
         }
 

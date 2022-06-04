@@ -232,10 +232,10 @@ namespace AParkDispetcher
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Текущая занятость";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 117;
+            this.dataGridViewTextBoxColumn7.Width = 175;
             // 
             // Column1
             // 

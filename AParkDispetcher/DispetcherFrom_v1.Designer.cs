@@ -43,12 +43,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.пользовательToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdminFormButton = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuAdminUsers = new System.Windows.Forms.ToolStripMenuItem();
-            this.машиныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.водителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.заявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.историяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReportsFormButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportHis = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGrid = new System.Windows.Forms.DataGridView();
             this.TNum_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +68,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Pass_textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Login_textbox = new System.Windows.Forms.TextBox();
+            this.Tasks_group = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Save_edit_task_button = new System.Windows.Forms.Button();
             this.textStateTask_box = new System.Windows.Forms.TextBox();
@@ -124,6 +122,9 @@
             this.searchAsideDrive = new System.Windows.Forms.TextBox();
             this.SearchPic1 = new System.Windows.Forms.PictureBox();
             this.DriversViewGrid = new System.Windows.Forms.DataGridView();
+            this.FIO_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tab_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sort_by_state = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -142,8 +143,14 @@
             this.Change_state_button = new System.Windows.Forms.Button();
             this.Save_state_button = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.searchPic2 = new System.Windows.Forms.PictureBox();
+            this.searchAsideAuto = new System.Windows.Forms.TextBox();
             this.sort_by_car_state = new System.Windows.Forms.Button();
             this.carViewGrid = new System.Windows.Forms.DataGridView();
+            this.Model_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -158,19 +165,12 @@
             this.car_cancel_button = new System.Windows.Forms.Button();
             this.car_edit_button = new System.Windows.Forms.Button();
             this.car_save_button = new System.Windows.Forms.Button();
-            this.FIO_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tab_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchAsideAuto = new System.Windows.Forms.TextBox();
-            this.searchPic2 = new System.Windows.Forms.PictureBox();
-            this.Model_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_label = new System.Windows.Forms.TextBox();
+            this.exit_button = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.Tasks_group.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -185,75 +185,67 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Khaki;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.пользовательToolStripMenuItem,
-            this.администрированиеToolStripMenuItem,
-            this.заявкиToolStripMenuItem});
+            this.AdminFormButton,
+            this.ReportsFormButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // пользовательToolStripMenuItem
             // 
             this.пользовательToolStripMenuItem.Name = "пользовательToolStripMenuItem";
-            this.пользовательToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.пользовательToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.пользовательToolStripMenuItem.Text = "Выйти";
+            this.пользовательToolStripMenuItem.Click += new System.EventHandler(this.пользовательToolStripMenuItem_Click);
             // 
-            // администрированиеToolStripMenuItem
+            // AdminFormButton
             // 
-            this.администрированиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuAdminUsers,
-            this.машиныToolStripMenuItem,
-            this.водителиToolStripMenuItem});
-            this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
-            this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
-            this.администрированиеToolStripMenuItem.Text = "Администрирование";
+            this.AdminFormButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuAdminUsers});
+            this.AdminFormButton.Name = "AdminFormButton";
+            this.AdminFormButton.Size = new System.Drawing.Size(142, 21);
+            this.AdminFormButton.Text = "Администрирование";
             // 
             // MenuAdminUsers
             // 
+            this.MenuAdminUsers.Image = global::AParkDispetcher.Properties.Resources.database;
             this.MenuAdminUsers.Name = "MenuAdminUsers";
-            this.MenuAdminUsers.Size = new System.Drawing.Size(126, 22);
-            this.MenuAdminUsers.Text = "Роли";
+            this.MenuAdminUsers.Size = new System.Drawing.Size(184, 22);
+            this.MenuAdminUsers.Text = "Редактировать БД";
             this.MenuAdminUsers.Click += new System.EventHandler(this.MenuAdminUsers_Click);
             // 
-            // машиныToolStripMenuItem
+            // ReportsFormButton
             // 
-            this.машиныToolStripMenuItem.Name = "машиныToolStripMenuItem";
-            this.машиныToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.машиныToolStripMenuItem.Text = "Машины";
+            this.ReportsFormButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportHis});
+            this.ReportsFormButton.Name = "ReportsFormButton";
+            this.ReportsFormButton.Size = new System.Drawing.Size(63, 21);
+            this.ReportsFormButton.Text = "Отчеты";
             // 
-            // водителиToolStripMenuItem
+            // reportHis
             // 
-            this.водителиToolStripMenuItem.Name = "водителиToolStripMenuItem";
-            this.водителиToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.водителиToolStripMenuItem.Text = "Водители";
-            // 
-            // заявкиToolStripMenuItem
-            // 
-            this.заявкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.историяToolStripMenuItem});
-            this.заявкиToolStripMenuItem.Name = "заявкиToolStripMenuItem";
-            this.заявкиToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.заявкиToolStripMenuItem.Text = "Отчет";
-            // 
-            // историяToolStripMenuItem
-            // 
-            this.историяToolStripMenuItem.Name = "историяToolStripMenuItem";
-            this.историяToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.историяToolStripMenuItem.Text = "История";
+            this.reportHis.Image = global::AParkDispetcher.Properties.Resources.excel_48;
+            this.reportHis.Name = "reportHis";
+            this.reportHis.Size = new System.Drawing.Size(168, 22);
+            this.reportHis.Text = "Экспорт в excel";
+            this.reportHis.Click += new System.EventHandler(this.историяToolStripMenuItem_Click);
             // 
             // MainGrid
             // 
@@ -268,7 +260,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MainGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MainGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
@@ -300,7 +293,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.MainGrid.DefaultCellStyle = dataGridViewCellStyle3;
@@ -328,7 +321,7 @@
             this.MainGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.MainGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGrid.RowTemplate.Height = 35;
+            this.MainGrid.RowTemplate.Height = 25;
             this.MainGrid.RowTemplate.ReadOnly = true;
             this.MainGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.MainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -339,6 +332,7 @@
             this.MainGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             this.MainGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             this.MainGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.MainGrid.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.MainGrid_SortCompare);
             // 
             // TNum_col
             // 
@@ -402,14 +396,14 @@
             // 
             this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column15.FillWeight = 150F;
-            this.Column15.HeaderText = "Сообщение заказчика";
+            this.Column15.HeaderText = "Комментарий к заявке";
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
             this.Column15.Visible = false;
             // 
             // Column16
             // 
-            this.Column16.HeaderText = "Сообщение оператора";
+            this.Column16.HeaderText = "Последний комментарий";
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
             this.Column16.Visible = false;
@@ -465,19 +459,18 @@
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Pass_textbox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Login_textbox);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 28);
+            this.groupBox1.Location = new System.Drawing.Point(6, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(210, 145);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Пользователь";
             // 
             // button1
             // 
@@ -502,12 +495,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
-            // textBox2
+            // Pass_textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(77, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 29);
-            this.textBox2.TabIndex = 2;
+            this.Pass_textbox.Location = new System.Drawing.Point(77, 67);
+            this.Pass_textbox.Name = "Pass_textbox";
+            this.Pass_textbox.PasswordChar = '*';
+            this.Pass_textbox.Size = new System.Drawing.Size(124, 29);
+            this.Pass_textbox.TabIndex = 2;
             // 
             // label1
             // 
@@ -520,33 +514,33 @@
             this.label1.Text = "Логин";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // Login_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 29);
-            this.textBox1.TabIndex = 0;
+            this.Login_textbox.Location = new System.Drawing.Point(77, 32);
+            this.Login_textbox.Name = "Login_textbox";
+            this.Login_textbox.Size = new System.Drawing.Size(124, 29);
+            this.Login_textbox.TabIndex = 0;
             // 
-            // groupBox3
+            // Tasks_group
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Tasks_group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.groupBox2);
-            this.groupBox3.Controls.Add(this.oper_panel);
-            this.groupBox3.Controls.Add(this.MainGrid);
-            this.groupBox3.Controls.Add(this.searchTasks);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-            this.groupBox3.Location = new System.Drawing.Point(219, 28);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1043, 829);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Заявки";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            this.Tasks_group.BackColor = System.Drawing.Color.Transparent;
+            this.Tasks_group.Controls.Add(this.groupBox2);
+            this.Tasks_group.Controls.Add(this.oper_panel);
+            this.Tasks_group.Controls.Add(this.MainGrid);
+            this.Tasks_group.Controls.Add(this.searchTasks);
+            this.Tasks_group.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Tasks_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+            this.Tasks_group.Location = new System.Drawing.Point(219, 28);
+            this.Tasks_group.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.Tasks_group.Name = "Tasks_group";
+            this.Tasks_group.Size = new System.Drawing.Size(1043, 829);
+            this.Tasks_group.TabIndex = 8;
+            this.Tasks_group.TabStop = false;
+            this.Tasks_group.Text = "Заявки";
+            this.Tasks_group.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // groupBox2
             // 
@@ -583,7 +577,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 522);
             this.groupBox2.MinimumSize = new System.Drawing.Size(621, 303);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(652, 303);
+            this.groupBox2.Size = new System.Drawing.Size(646, 303);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Подача заявки";
@@ -593,17 +587,18 @@
             // 
             this.Save_edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Save_edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Save_edit_task_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Save_edit_task_button.BackColor = System.Drawing.Color.DarkKhaki;
             this.Save_edit_task_button.Enabled = false;
             this.Save_edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Save_edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Save_edit_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Save_edit_task_button.Location = new System.Drawing.Point(486, 215);
+            this.Save_edit_task_button.Location = new System.Drawing.Point(483, 231);
             this.Save_edit_task_button.Name = "Save_edit_task_button";
             this.Save_edit_task_button.Size = new System.Drawing.Size(150, 39);
             this.Save_edit_task_button.TabIndex = 58;
             this.Save_edit_task_button.Text = "Сохранить";
             this.Save_edit_task_button.UseVisualStyleBackColor = false;
+            this.Save_edit_task_button.Visible = false;
             this.Save_edit_task_button.Click += new System.EventHandler(this.Save_edit_task_button_Click);
             // 
             // textStateTask_box
@@ -612,7 +607,7 @@
             this.textStateTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.textStateTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textStateTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textStateTask_box.Location = new System.Drawing.Point(486, 26);
+            this.textStateTask_box.Location = new System.Drawing.Point(483, 26);
             this.textStateTask_box.Name = "textStateTask_box";
             this.textStateTask_box.ReadOnly = true;
             this.textStateTask_box.Size = new System.Drawing.Size(124, 27);
@@ -625,11 +620,11 @@
             this.OrderedTypeTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.OrderedTypeTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OrderedTypeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.OrderedTypeTask_box.Location = new System.Drawing.Point(100, 104);
+            this.OrderedTypeTask_box.Location = new System.Drawing.Point(97, 104);
             this.OrderedTypeTask_box.MaxLength = 4;
             this.OrderedTypeTask_box.Name = "OrderedTypeTask_box";
             this.OrderedTypeTask_box.ReadOnly = true;
-            this.OrderedTypeTask_box.Size = new System.Drawing.Size(147, 27);
+            this.OrderedTypeTask_box.Size = new System.Drawing.Size(126, 27);
             this.OrderedTypeTask_box.TabIndex = 59;
             this.OrderedTypeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.OrderedTypeTask_box.WordWrap = false;
@@ -649,7 +644,7 @@
             "Катофалк",
             "Легковая",
             "Автобус"});
-            this.typeTask_box.Location = new System.Drawing.Point(100, 104);
+            this.typeTask_box.Location = new System.Drawing.Point(97, 104);
             this.typeTask_box.Name = "typeTask_box";
             this.typeTask_box.Size = new System.Drawing.Size(147, 28);
             this.typeTask_box.TabIndex = 56;
@@ -660,14 +655,16 @@
             // 
             this.OrdtimeTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.OrdtimeTask_box.CalendarMonthBackground = System.Drawing.Color.Orange;
+            this.OrdtimeTask_box.CustomFormat = "      dd.MM  [HH:mm]";
             this.OrdtimeTask_box.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.OrdtimeTask_box.Enabled = false;
             this.OrdtimeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.OrdtimeTask_box.Location = new System.Drawing.Point(100, 137);
+            this.OrdtimeTask_box.Location = new System.Drawing.Point(97, 137);
             this.OrdtimeTask_box.Name = "OrdtimeTask_box";
             this.OrdtimeTask_box.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.OrdtimeTask_box.Size = new System.Drawing.Size(171, 27);
             this.OrdtimeTask_box.TabIndex = 55;
+            this.OrdtimeTask_box.ValueChanged += new System.EventHandler(this.OrdtimeTask_box_ValueChanged);
             // 
             // panel1
             // 
@@ -677,7 +674,7 @@
             this.panel1.Location = new System.Drawing.Point(46, 61);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(554, 1);
+            this.panel1.Size = new System.Drawing.Size(548, 1);
             this.panel1.TabIndex = 54;
             // 
             // commTask_box
@@ -686,7 +683,7 @@
             this.commTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.commTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.commTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.commTask_box.Location = new System.Drawing.Point(409, 107);
+            this.commTask_box.Location = new System.Drawing.Point(406, 107);
             this.commTask_box.MaximumSize = new System.Drawing.Size(396, 121);
             this.commTask_box.Multiline = true;
             this.commTask_box.Name = "commTask_box";
@@ -701,11 +698,11 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(444, 82);
+            this.label11.Location = new System.Drawing.Point(453, 83);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(182, 19);
+            this.label11.Size = new System.Drawing.Size(170, 19);
             this.label11.TabIndex = 32;
-            this.label11.Text = "Комментарий заказчика";
+            this.label11.Text = "Комментарий к заявке";
             // 
             // numTask_box
             // 
@@ -713,7 +710,7 @@
             this.numTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.numTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.numTask_box.Location = new System.Drawing.Point(110, 26);
+            this.numTask_box.Location = new System.Drawing.Point(107, 26);
             this.numTask_box.Name = "numTask_box";
             this.numTask_box.ReadOnly = true;
             this.numTask_box.Size = new System.Drawing.Size(44, 27);
@@ -732,7 +729,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 74);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 74);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -805,7 +802,7 @@
             this.colorTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.colorTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.colorTask_box.Location = new System.Drawing.Point(305, 104);
+            this.colorTask_box.Location = new System.Drawing.Point(302, 104);
             this.colorTask_box.Name = "colorTask_box";
             this.colorTask_box.ReadOnly = true;
             this.colorTask_box.Size = new System.Drawing.Size(86, 27);
@@ -819,7 +816,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(369, 29);
+            this.label13.Location = new System.Drawing.Point(366, 29);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(113, 19);
             this.label13.TabIndex = 34;
@@ -841,7 +838,7 @@
             "исполняется",
             "завершена",
             "отменена"});
-            this.StateTask_combobox.Location = new System.Drawing.Point(486, 26);
+            this.StateTask_combobox.Location = new System.Drawing.Point(483, 26);
             this.StateTask_combobox.Name = "StateTask_combobox";
             this.StateTask_combobox.Size = new System.Drawing.Size(140, 28);
             this.StateTask_combobox.TabIndex = 35;
@@ -855,7 +852,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(167, 29);
+            this.label15.Location = new System.Drawing.Point(164, 29);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 19);
             this.label15.TabIndex = 27;
@@ -867,7 +864,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(29, 29);
+            this.label4.Location = new System.Drawing.Point(26, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 19);
             this.label4.TabIndex = 13;
@@ -879,12 +876,12 @@
             this.timeTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.timeTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.timeTask_box.Location = new System.Drawing.Point(232, 26);
+            this.timeTask_box.Location = new System.Drawing.Point(229, 26);
             this.timeTask_box.Name = "timeTask_box";
             this.timeTask_box.ReadOnly = true;
             this.timeTask_box.Size = new System.Drawing.Size(125, 27);
             this.timeTask_box.TabIndex = 28;
-            this.timeTask_box.Text = "15 Февраля 11:45";
+            this.timeTask_box.Text = "04.05  [15:50]";
             this.timeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
@@ -893,7 +890,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(253, 107);
+            this.label14.Location = new System.Drawing.Point(250, 107);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 19);
             this.label14.TabIndex = 38;
@@ -905,7 +902,7 @@
             this.departTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.departTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.departTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.departTask_box.Location = new System.Drawing.Point(100, 170);
+            this.departTask_box.Location = new System.Drawing.Point(97, 170);
             this.departTask_box.Name = "departTask_box";
             this.departTask_box.ReadOnly = true;
             this.departTask_box.Size = new System.Drawing.Size(291, 27);
@@ -918,7 +915,7 @@
             this.destTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.destTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.destTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.destTask_box.Location = new System.Drawing.Point(100, 203);
+            this.destTask_box.Location = new System.Drawing.Point(97, 203);
             this.destTask_box.Name = "destTask_box";
             this.destTask_box.ReadOnly = true;
             this.destTask_box.Size = new System.Drawing.Size(291, 27);
@@ -931,7 +928,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(277, 140);
+            this.label12.Location = new System.Drawing.Point(274, 140);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 19);
             this.label12.TabIndex = 20;
@@ -943,7 +940,7 @@
             this.clientTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.clientTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clientTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.clientTask_box.Location = new System.Drawing.Point(100, 71);
+            this.clientTask_box.Location = new System.Drawing.Point(97, 71);
             this.clientTask_box.Name = "clientTask_box";
             this.clientTask_box.ReadOnly = true;
             this.clientTask_box.Size = new System.Drawing.Size(291, 27);
@@ -956,7 +953,7 @@
             this.duraTask_box.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.duraTask_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.duraTask_box.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.duraTask_box.Location = new System.Drawing.Point(357, 137);
+            this.duraTask_box.Location = new System.Drawing.Point(354, 137);
             this.duraTask_box.Name = "duraTask_box";
             this.duraTask_box.ReadOnly = true;
             this.duraTask_box.Size = new System.Drawing.Size(34, 27);
@@ -975,7 +972,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 257);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(652, 46);
+            this.panel3.Size = new System.Drawing.Size(646, 46);
             this.panel3.TabIndex = 58;
             // 
             // Save_add_task_button
@@ -987,7 +984,7 @@
             this.Save_add_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Save_add_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Save_add_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Save_add_task_button.Location = new System.Drawing.Point(486, 4);
+            this.Save_add_task_button.Location = new System.Drawing.Point(483, 4);
             this.Save_add_task_button.Name = "Save_add_task_button";
             this.Save_add_task_button.Size = new System.Drawing.Size(150, 39);
             this.Save_add_task_button.TabIndex = 51;
@@ -999,15 +996,16 @@
             // 
             this.Edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Edit_task_button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Edit_task_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Edit_task_button.Enabled = false;
             this.Edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Edit_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Edit_task_button.Location = new System.Drawing.Point(172, 4);
+            this.Edit_task_button.Location = new System.Drawing.Point(169, 4);
             this.Edit_task_button.Name = "Edit_task_button";
             this.Edit_task_button.Size = new System.Drawing.Size(150, 39);
             this.Edit_task_button.TabIndex = 57;
-            this.Edit_task_button.Text = "Редактировать";
+            this.Edit_task_button.Text = "Изменить";
             this.Edit_task_button.UseVisualStyleBackColor = false;
             this.Edit_task_button.Click += new System.EventHandler(this.Edit_task_button_Click);
             // 
@@ -1020,7 +1018,7 @@
             this.Cancel_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancel_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cancel_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Cancel_task_button.Location = new System.Drawing.Point(330, 4);
+            this.Cancel_task_button.Location = new System.Drawing.Point(327, 4);
             this.Cancel_task_button.Name = "Cancel_task_button";
             this.Cancel_task_button.Size = new System.Drawing.Size(150, 39);
             this.Cancel_task_button.TabIndex = 55;
@@ -1036,11 +1034,11 @@
             this.Create_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Create_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Create_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Create_task_button.Location = new System.Drawing.Point(16, 4);
+            this.Create_task_button.Location = new System.Drawing.Point(13, 4);
             this.Create_task_button.Name = "Create_task_button";
             this.Create_task_button.Size = new System.Drawing.Size(150, 39);
             this.Create_task_button.TabIndex = 56;
-            this.Create_task_button.Text = "Добавить заявку";
+            this.Create_task_button.Text = "Подать заявку";
             this.Create_task_button.UseVisualStyleBackColor = false;
             this.Create_task_button.Click += new System.EventHandler(this.Create_task_button_Click);
             // 
@@ -1061,13 +1059,13 @@
             this.oper_panel.Controls.Add(this.label16);
             this.oper_panel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.oper_panel.Font = new System.Drawing.Font("Cambria", 12.75F);
-            this.oper_panel.Location = new System.Drawing.Point(664, 522);
+            this.oper_panel.Location = new System.Drawing.Point(658, 522);
             this.oper_panel.MaximumSize = new System.Drawing.Size(400, 303);
             this.oper_panel.Name = "oper_panel";
-            this.oper_panel.Size = new System.Drawing.Size(373, 303);
+            this.oper_panel.Size = new System.Drawing.Size(379, 303);
             this.oper_panel.TabIndex = 58;
             this.oper_panel.TabStop = false;
-            this.oper_panel.Text = "Назначить";
+            this.oper_panel.Text = "Обработка заявки";
             // 
             // SelectDriverButton
             // 
@@ -1075,9 +1073,9 @@
             this.SelectDriverButton.Enabled = false;
             this.SelectDriverButton.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SelectDriverButton.ForeColor = System.Drawing.Color.Black;
-            this.SelectDriverButton.Location = new System.Drawing.Point(330, 102);
+            this.SelectDriverButton.Location = new System.Drawing.Point(333, 103);
             this.SelectDriverButton.Name = "SelectDriverButton";
-            this.SelectDriverButton.Size = new System.Drawing.Size(34, 26);
+            this.SelectDriverButton.Size = new System.Drawing.Size(34, 27);
             this.SelectDriverButton.TabIndex = 61;
             this.SelectDriverButton.Text = ". . .";
             this.SelectDriverButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1089,12 +1087,14 @@
             // selectCarButton
             // 
             this.selectCarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.selectCarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.selectCarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.selectCarButton.Enabled = false;
             this.selectCarButton.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.selectCarButton.ForeColor = System.Drawing.Color.Black;
-            this.selectCarButton.Location = new System.Drawing.Point(330, 38);
+            this.selectCarButton.Location = new System.Drawing.Point(333, 39);
             this.selectCarButton.Name = "selectCarButton";
-            this.selectCarButton.Size = new System.Drawing.Size(34, 26);
+            this.selectCarButton.Size = new System.Drawing.Size(34, 27);
             this.selectCarButton.TabIndex = 60;
             this.selectCarButton.Text = ". . .";
             this.selectCarButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1113,7 +1113,7 @@
             this.modelTask_box.Location = new System.Drawing.Point(94, 71);
             this.modelTask_box.Name = "modelTask_box";
             this.modelTask_box.ReadOnly = true;
-            this.modelTask_box.Size = new System.Drawing.Size(230, 27);
+            this.modelTask_box.Size = new System.Drawing.Size(236, 27);
             this.modelTask_box.TabIndex = 59;
             this.modelTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1140,7 +1140,7 @@
             this.driverTask_box.Location = new System.Drawing.Point(94, 103);
             this.driverTask_box.Name = "driverTask_box";
             this.driverTask_box.ReadOnly = true;
-            this.driverTask_box.Size = new System.Drawing.Size(230, 27);
+            this.driverTask_box.Size = new System.Drawing.Size(236, 27);
             this.driverTask_box.TabIndex = 57;
             this.driverTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1154,7 +1154,7 @@
             this.markTask_box.Location = new System.Drawing.Point(94, 39);
             this.markTask_box.Name = "markTask_box";
             this.markTask_box.ReadOnly = true;
-            this.markTask_box.Size = new System.Drawing.Size(230, 27);
+            this.markTask_box.Size = new System.Drawing.Size(236, 27);
             this.markTask_box.TabIndex = 56;
             this.markTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1169,7 +1169,7 @@
             this.dispCommTask_box.Multiline = true;
             this.dispCommTask_box.Name = "dispCommTask_box";
             this.dispCommTask_box.ReadOnly = true;
-            this.dispCommTask_box.Size = new System.Drawing.Size(329, 121);
+            this.dispCommTask_box.Size = new System.Drawing.Size(335, 121);
             this.dispCommTask_box.TabIndex = 55;
             this.dispCommTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1206,11 +1206,11 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(162, 140);
+            this.label16.Location = new System.Drawing.Point(174, 140);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(190, 19);
+            this.label16.Size = new System.Drawing.Size(184, 19);
             this.label16.TabIndex = 49;
-            this.label16.Text = "Комментарий оператора";
+            this.label16.Text = "Последний комментарий";
             // 
             // searchTasks
             // 
@@ -1238,11 +1238,11 @@
             this.AsideDispTab.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.AsideDispTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.AsideDispTab.ItemSize = new System.Drawing.Size(103, 22);
-            this.AsideDispTab.Location = new System.Drawing.Point(3, 179);
+            this.AsideDispTab.Location = new System.Drawing.Point(6, 38);
             this.AsideDispTab.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.AsideDispTab.Name = "AsideDispTab";
             this.AsideDispTab.SelectedIndex = 0;
-            this.AsideDispTab.Size = new System.Drawing.Size(210, 678);
+            this.AsideDispTab.Size = new System.Drawing.Size(210, 819);
             this.AsideDispTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AsideDispTab.TabIndex = 0;
             this.AsideDispTab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -1258,7 +1258,7 @@
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(202, 648);
+            this.tabPage1.Size = new System.Drawing.Size(202, 789);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Водители";
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
@@ -1270,7 +1270,7 @@
             this.searchAsideDrive.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchAsideDrive.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchAsideDrive.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.searchAsideDrive.Location = new System.Drawing.Point(0, 359);
+            this.searchAsideDrive.Location = new System.Drawing.Point(0, 500);
             this.searchAsideDrive.Name = "searchAsideDrive";
             this.searchAsideDrive.Size = new System.Drawing.Size(177, 25);
             this.searchAsideDrive.TabIndex = 65;
@@ -1285,7 +1285,7 @@
             this.SearchPic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchPic1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchPic1.Image = global::AParkDispetcher.Properties.Resources.search_64;
-            this.SearchPic1.Location = new System.Drawing.Point(176, 359);
+            this.SearchPic1.Location = new System.Drawing.Point(176, 500);
             this.SearchPic1.Name = "SearchPic1";
             this.SearchPic1.Size = new System.Drawing.Size(26, 25);
             this.SearchPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1344,13 +1344,36 @@
             this.DriversViewGrid.RowTemplate.ReadOnly = true;
             this.DriversViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DriversViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DriversViewGrid.Size = new System.Drawing.Size(202, 357);
+            this.DriversViewGrid.Size = new System.Drawing.Size(202, 498);
             this.DriversViewGrid.StandardTab = true;
             this.DriversViewGrid.TabIndex = 16;
             this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.DriversViewGrid.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DriversViewGrid_CellLeave);
             this.DriversViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DriversViewGrid_CellMouseDoubleClick);
             this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // FIO_a_col
+            // 
+            this.FIO_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FIO_a_col.FillWeight = 164.467F;
+            this.FIO_a_col.HeaderText = "Фамилия Имя Отчество";
+            this.FIO_a_col.Name = "FIO_a_col";
+            this.FIO_a_col.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 35.53299F;
+            this.Column6.HeaderText = "Состояние";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Tab_a_col
+            // 
+            this.Tab_a_col.HeaderText = "Табельный номер";
+            this.Tab_a_col.Name = "Tab_a_col";
+            this.Tab_a_col.ReadOnly = true;
+            this.Tab_a_col.Visible = false;
             // 
             // Sort_by_state
             // 
@@ -1391,7 +1414,7 @@
             this.groupBox5.Controls.Add(this.tab_aside);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.panel4);
-            this.groupBox5.Location = new System.Drawing.Point(0, 384);
+            this.groupBox5.Location = new System.Drawing.Point(0, 525);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(203, 268);
@@ -1619,8 +1642,8 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Khaki;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage2.Controls.Add(this.searchAsideAuto);
             this.tabPage2.Controls.Add(this.searchPic2);
+            this.tabPage2.Controls.Add(this.searchAsideAuto);
             this.tabPage2.Controls.Add(this.sort_by_car_state);
             this.tabPage2.Controls.Add(this.carViewGrid);
             this.tabPage2.Controls.Add(this.groupBox7);
@@ -1628,10 +1651,40 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(202, 648);
+            this.tabPage2.Size = new System.Drawing.Size(202, 789);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Машины";
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            // 
+            // searchPic2
+            // 
+            this.searchPic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchPic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchPic2.Image = global::AParkDispetcher.Properties.Resources.search_64;
+            this.searchPic2.Location = new System.Drawing.Point(176, 500);
+            this.searchPic2.Name = "searchPic2";
+            this.searchPic2.Size = new System.Drawing.Size(26, 25);
+            this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.searchPic2.TabIndex = 66;
+            this.searchPic2.TabStop = false;
+            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
+            // 
+            // searchAsideAuto
+            // 
+            this.searchAsideAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchAsideAuto.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.searchAsideAuto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchAsideAuto.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchAsideAuto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.searchAsideAuto.Location = new System.Drawing.Point(0, 500);
+            this.searchAsideAuto.Name = "searchAsideAuto";
+            this.searchAsideAuto.Size = new System.Drawing.Size(177, 25);
+            this.searchAsideAuto.TabIndex = 67;
+            this.searchAsideAuto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchAsideAuto.Visible = false;
+            this.searchAsideAuto.TextChanged += new System.EventHandler(this.searchAsideAuto_TextChanged);
+            this.searchAsideAuto.Leave += new System.EventHandler(this.searchAsideAuto_Leave);
             // 
             // sort_by_car_state
             // 
@@ -1705,15 +1758,41 @@
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.carViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.carViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
-            this.carViewGrid.RowTemplate.Height = 44;
+            this.carViewGrid.RowTemplate.Height = 30;
             this.carViewGrid.RowTemplate.ReadOnly = true;
             this.carViewGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.carViewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carViewGrid.Size = new System.Drawing.Size(202, 357);
+            this.carViewGrid.Size = new System.Drawing.Size(202, 498);
             this.carViewGrid.StandardTab = true;
             this.carViewGrid.TabIndex = 0;
             this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
+            this.carViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.carViewGrid_CellMouseDoubleClick);
             this.carViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            // 
+            // Model_a_col
+            // 
+            this.Model_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Model_a_col.FillWeight = 143.6445F;
+            this.Model_a_col.HeaderText = "Модель";
+            this.Model_a_col.Name = "Model_a_col";
+            // 
+            // Num_a_col
+            // 
+            this.Num_a_col.FillWeight = 120.8225F;
+            this.Num_a_col.HeaderText = "Номер";
+            this.Num_a_col.Name = "Num_a_col";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Состояние";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Описание";
+            this.Column9.Name = "Column9";
+            this.Column9.Visible = false;
             // 
             // groupBox7
             // 
@@ -1730,7 +1809,7 @@
             this.groupBox7.Controls.Add(this.model_aside);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.panel6);
-            this.groupBox7.Location = new System.Drawing.Point(-4, 384);
+            this.groupBox7.Location = new System.Drawing.Point(-4, 525);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(209, 271);
@@ -1920,83 +1999,35 @@
             this.car_save_button.UseVisualStyleBackColor = false;
             this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
             // 
-            // FIO_a_col
+            // User_label
             // 
-            this.FIO_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FIO_a_col.FillWeight = 164.467F;
-            this.FIO_a_col.HeaderText = "Фамилия Имя Отчество";
-            this.FIO_a_col.Name = "FIO_a_col";
-            this.FIO_a_col.ReadOnly = true;
+            this.User_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.User_label.BackColor = System.Drawing.Color.Khaki;
+            this.User_label.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.User_label.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.User_label.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.User_label.Location = new System.Drawing.Point(996, 3);
+            this.User_label.Name = "User_label";
+            this.User_label.ReadOnly = true;
+            this.User_label.Size = new System.Drawing.Size(224, 18);
+            this.User_label.TabIndex = 11;
+            this.User_label.TabStop = false;
+            this.User_label.Text = "Сажин А. В. (873831)";
+            this.User_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Column6
+            // exit_button
             // 
-            this.Column6.FillWeight = 35.53299F;
-            this.Column6.HeaderText = "Состояние";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Tab_a_col
-            // 
-            this.Tab_a_col.HeaderText = "Табельный номер";
-            this.Tab_a_col.Name = "Tab_a_col";
-            this.Tab_a_col.ReadOnly = true;
-            this.Tab_a_col.Visible = false;
-            // 
-            // searchAsideAuto
-            // 
-            this.searchAsideAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.searchAsideAuto.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.searchAsideAuto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchAsideAuto.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchAsideAuto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.searchAsideAuto.Location = new System.Drawing.Point(0, 359);
-            this.searchAsideAuto.Name = "searchAsideAuto";
-            this.searchAsideAuto.Size = new System.Drawing.Size(177, 25);
-            this.searchAsideAuto.TabIndex = 67;
-            this.searchAsideAuto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchAsideAuto.Visible = false;
-            this.searchAsideAuto.TextChanged += new System.EventHandler(this.searchAsideAuto_TextChanged);
-            this.searchAsideAuto.Leave += new System.EventHandler(this.searchAsideAuto_Leave);
-            // 
-            // searchPic2
-            // 
-            this.searchPic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.searchPic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchPic2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchPic2.Image = global::AParkDispetcher.Properties.Resources.search_64;
-            this.searchPic2.Location = new System.Drawing.Point(176, 359);
-            this.searchPic2.Name = "searchPic2";
-            this.searchPic2.Size = new System.Drawing.Size(26, 25);
-            this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.searchPic2.TabIndex = 66;
-            this.searchPic2.TabStop = false;
-            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
-            // 
-            // Model_a_col
-            // 
-            this.Model_a_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Model_a_col.FillWeight = 143.6445F;
-            this.Model_a_col.HeaderText = "Модель";
-            this.Model_a_col.Name = "Model_a_col";
-            // 
-            // Num_a_col
-            // 
-            this.Num_a_col.FillWeight = 120.8225F;
-            this.Num_a_col.HeaderText = "Номер";
-            this.Num_a_col.Name = "Num_a_col";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Состояние";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Описание";
-            this.Column9.Name = "Column9";
-            this.Column9.Visible = false;
+            this.exit_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exit_button.BackColor = System.Drawing.Color.Khaki;
+            this.exit_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exit_button.Image = global::AParkDispetcher.Properties.Resources.exit_64;
+            this.exit_button.Location = new System.Drawing.Point(1226, 0);
+            this.exit_button.Name = "exit_button";
+            this.exit_button.Size = new System.Drawing.Size(26, 25);
+            this.exit_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exit_button.TabIndex = 10;
+            this.exit_button.TabStop = false;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // DispetcherFrom
             // 
@@ -2004,17 +2035,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(125)))), ((int)(((byte)(106)))));
             this.ClientSize = new System.Drawing.Size(1264, 861);
+            this.Controls.Add(this.User_label);
+            this.Controls.Add(this.exit_button);
+            this.Controls.Add(this.Tasks_group);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.AsideDispTab);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1250, 765);
             this.Name = "DispetcherFrom";
             this.Text = "Диспетчерская";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.DispetcherFrom_Resize);
             this.menuStrip1.ResumeLayout(false);
@@ -2022,8 +2055,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Tasks_group.ResumeLayout(false);
+            this.Tasks_group.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -2044,13 +2077,14 @@
             this.panel4.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2062,19 +2096,17 @@
         private System.Windows.Forms.DataGridView MainGrid;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Pass_textbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Login_textbox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox Tasks_group;
         private System.Windows.Forms.TextBox searchTasks;
         private System.Windows.Forms.ToolStripMenuItem пользовательToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdminFormButton;
         private System.Windows.Forms.ToolStripMenuItem MenuAdminUsers;
-        private System.Windows.Forms.ToolStripMenuItem машиныToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem водителиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem заявкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem историяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ReportsFormButton;
+        private System.Windows.Forms.ToolStripMenuItem reportHis;
         private System.Windows.Forms.TabControl AsideDispTab;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -2156,6 +2188,19 @@
         private System.Windows.Forms.Button car_cancel_button;
         private System.Windows.Forms.Button Create_task_button;
         private System.Windows.Forms.Button Save_edit_task_button;
+        private System.Windows.Forms.PictureBox SearchPic1;
+        private System.Windows.Forms.TextBox searchAsideDrive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tab_a_col;
+        private System.Windows.Forms.TextBox searchAsideAuto;
+        private System.Windows.Forms.PictureBox searchPic2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Model_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num_a_col;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.PictureBox exit_button;
+        private System.Windows.Forms.TextBox User_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn TNum_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn UTub_col;
@@ -2173,17 +2218,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIO_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.PictureBox SearchPic1;
-        private System.Windows.Forms.TextBox searchAsideDrive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIO_a_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tab_a_col;
-        private System.Windows.Forms.TextBox searchAsideAuto;
-        private System.Windows.Forms.PictureBox searchPic2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Model_a_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Num_a_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
 

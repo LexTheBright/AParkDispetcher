@@ -50,7 +50,7 @@ namespace AParkDispetcher
             this.User_button_save.Name = "User_button_save";
             this.User_button_save.Size = new System.Drawing.Size(150, 32);
             this.User_button_save.TabIndex = 60;
-            this.User_button_save.Text = "Удалить";
+            this.User_button_save.Text = "Да";
             this.User_button_save.UseVisualStyleBackColor = false;
             this.User_button_save.Click += new System.EventHandler(this.User_button_save_Click);
             // 
@@ -67,7 +67,7 @@ namespace AParkDispetcher
             this.User_button_cancel.Name = "User_button_cancel";
             this.User_button_cancel.Size = new System.Drawing.Size(150, 32);
             this.User_button_cancel.TabIndex = 59;
-            this.User_button_cancel.Text = "Отмена";
+            this.User_button_cancel.Text = "Нет";
             this.User_button_cancel.UseVisualStyleBackColor = false;
             this.User_button_cancel.Click += new System.EventHandler(this.User_button_cancel_Click);
             // 

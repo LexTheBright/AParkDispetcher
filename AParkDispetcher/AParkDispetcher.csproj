@@ -79,6 +79,8 @@
     <Compile Include="AdminRolesFrom.Designer.cs">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppUser.cs" />
+    <Compile Include="DateExporter.cs" />
     <Compile Include="dbConnection.cs" />
     <Compile Include="DeleteDialog.cs">
       <SubType>Form</SubType>
@@ -94,6 +96,18 @@
     </Compile>
     <Compile Include="Cars_list.cs" />
     <Compile Include="Drivers_list.cs" />
+    <Compile Include="ExportSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportSettingsForm.Designer.cs">
+      <DependentUpon>ExportSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectDriverForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DispetcherFrom_v1.resx">
       <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportSettingsForm.resx">
+      <DependentUpon>ExportSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectDriverForm.resx">
       <DependentUpon>SelectDriverForm.cs</DependentUpon>
@@ -174,6 +194,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics_chart_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-91.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
