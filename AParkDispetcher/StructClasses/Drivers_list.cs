@@ -1,9 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -26,7 +23,7 @@ namespace AParkDispetcher
             usr.Clear();
             string querry = "";
             querry = "USE autos; SELECT driver_surname, driver_name,  driver_midname, tab_number, driver_state FROM drivers ORDER BY driver_state";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())

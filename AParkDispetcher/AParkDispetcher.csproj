@@ -79,9 +79,9 @@
     <Compile Include="AdminRolesFrom.Designer.cs">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppUser.cs" />
-    <Compile Include="DateExporter.cs" />
-    <Compile Include="dbConnection.cs" />
+    <Compile Include="GeneralClasses\AppUser.cs" />
+    <Compile Include="GeneralClasses\DateExporter.cs" />
+    <Compile Include="GeneralClasses\dbConnection.cs" />
     <Compile Include="DeleteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,8 +94,8 @@
     <Compile Include="DispetcherFrom_v1.Designer.cs">
       <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cars_list.cs" />
-    <Compile Include="Drivers_list.cs" />
+    <Compile Include="StructClasses\Cars_list.cs" />
+    <Compile Include="StructClasses\Drivers_list.cs" />
     <Compile Include="ExportSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,23 +114,23 @@
     <Compile Include="SelectDriverForm.Designer.cs">
       <DependentUpon>SelectDriverForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tasks_list.cs" />
-    <Compile Include="Users_list.cs" />
-    <Compile Include="DBRedactor.cs" />
+    <Compile Include="StructClasses\Tasks_list.cs" />
+    <Compile Include="StructClasses\Users_list.cs" />
+    <Compile Include="GeneralClasses\DBRedactor.cs" />
     <Compile Include="SelectCarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SelectCarForm.Designer.cs">
       <DependentUpon>SelectCarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SingleTaskHistory.cs" />
+    <Compile Include="StructClasses\SingleTaskHistory.cs" />
     <Compile Include="TaskHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TaskHistoryForm.Designer.cs">
       <DependentUpon>TaskHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ParkDispecter.cs" />
+    <Compile Include="GeneralClasses\ParkDispecter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminRolesFrom.resx">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
@@ -213,6 +213,7 @@
   <ItemGroup>
     <None Include="Resources\close-91.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

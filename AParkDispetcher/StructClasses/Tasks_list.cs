@@ -1,11 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Data;
 
 namespace AParkDispetcher
 {
@@ -49,12 +45,12 @@ namespace AParkDispetcher
 
         public Dictionary<string, int> types = new Dictionary<string, int>();
 
-        public void fillComboboxWithTypes(ComboBox combo)
+        public void FillComboboxWithTypes(ComboBox combo)
         {
             types.Clear();
             string querry = "";
             querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -82,35 +78,35 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillDispetcherTasks(DataGridView dgw)
+        public void FillDispetcherTasks(DataGridView dgw)
         {
-            fillTasks();
+            FillTasks();
             for (int i = 0; i < usr.Count; i++)
             {
-                dgw.Rows.Add( "" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "", 
+                dgw.Rows.Add("" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "",
                     "" + usr[i].ordered_time + "", "" + usr[i].ordered_duration + "", "" + usr[i].departure + "", "" + usr[i].destination + "",
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
-                    "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "", 
+                    "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
                     "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
-        public void fillUsersTasks(DataGridView dgw, string uTab)
+        public void FillUsersTasks(DataGridView dgw, string uTab)
         {
-            fillTasks(uTab);
+            FillTasks(uTab);
             for (int i = 0; i < usr.Count; i++)
             {
-                dgw.Rows.Add( "" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "", 
+                dgw.Rows.Add("" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "",
                     "" + usr[i].ordered_time + "", "" + usr[i].ordered_duration + "", "" + usr[i].departure + "", "" + usr[i].destination + "",
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
-                    "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "", 
+                    "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
                     "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
 
-       
-        public void fillTasks(string uTab = null)
+
+        public void FillTasks(string uTab = null)
         {
             usr.Clear();
             string querry = "";
@@ -124,7 +120,7 @@ namespace AParkDispetcher
                 "JOIN users ON tasks.user_tab_number = users.tab_number ";
             if (uTab != null) { querry += $"WHERE user_tab_number = '{uTab}' "; }
             querry += "ORDER BY order_state";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -145,7 +141,7 @@ namespace AParkDispetcher
                         if (reader.IsDBNull(4)) temp_task.ordered_time = DateTime.Today;
                         temp_task.ordered_time = reader.GetDateTime(4);
 
-                        if (reader.IsDBNull(5)) temp_task.ordered_duration = 0;
+                        if (reader.IsDBNull(5)) temp_task.ordered_duration = 120;
                         else temp_task.ordered_duration = reader.GetInt32(5);
 
                         temp_task.departure = reader.GetString(6);
@@ -164,7 +160,8 @@ namespace AParkDispetcher
                         temp_task.user_midname = reader.GetString(18);
 
 
-                        if (reader.IsDBNull(10) || reader.IsDBNull(11)) {
+                        if (reader.IsDBNull(10) || reader.IsDBNull(11))
+                        {
                             temp_task.driver_tab_number = "";
                             temp_task.car_reg_mark = "";
                         }

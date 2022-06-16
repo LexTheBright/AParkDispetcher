@@ -73,7 +73,6 @@
             this.Login_textbox = new System.Windows.Forms.TextBox();
             this.Tasks_group = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Save_edit_task_button = new System.Windows.Forms.Button();
             this.textStateTask_box = new System.Windows.Forms.TextBox();
             this.OrderedTypeTask_box = new System.Windows.Forms.TextBox();
             this.typeTask_box = new System.Windows.Forms.ComboBox();
@@ -101,6 +100,7 @@
             this.clientTask_box = new System.Windows.Forms.TextBox();
             this.duraTask_box = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Save_edit_task_button = new System.Windows.Forms.Button();
             this.Save_add_task_button = new System.Windows.Forms.Button();
             this.Edit_task_button = new System.Windows.Forms.Button();
             this.Cancel_task_button = new System.Windows.Forms.Button();
@@ -547,7 +547,6 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Khaki;
-            this.groupBox2.Controls.Add(this.Save_edit_task_button);
             this.groupBox2.Controls.Add(this.textStateTask_box);
             this.groupBox2.Controls.Add(this.OrderedTypeTask_box);
             this.groupBox2.Controls.Add(this.typeTask_box);
@@ -583,24 +582,6 @@
             this.groupBox2.Text = "Подача заявки";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // Save_edit_task_button
-            // 
-            this.Save_edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Save_edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Save_edit_task_button.BackColor = System.Drawing.Color.DarkKhaki;
-            this.Save_edit_task_button.Enabled = false;
-            this.Save_edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Save_edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save_edit_task_button.ForeColor = System.Drawing.Color.Black;
-            this.Save_edit_task_button.Location = new System.Drawing.Point(483, 231);
-            this.Save_edit_task_button.Name = "Save_edit_task_button";
-            this.Save_edit_task_button.Size = new System.Drawing.Size(150, 39);
-            this.Save_edit_task_button.TabIndex = 58;
-            this.Save_edit_task_button.Text = "Сохранить";
-            this.Save_edit_task_button.UseVisualStyleBackColor = false;
-            this.Save_edit_task_button.Visible = false;
-            this.Save_edit_task_button.Click += new System.EventHandler(this.Save_edit_task_button_Click);
-            // 
             // textStateTask_box
             // 
             this.textStateTask_box.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -624,7 +605,7 @@
             this.OrderedTypeTask_box.MaxLength = 4;
             this.OrderedTypeTask_box.Name = "OrderedTypeTask_box";
             this.OrderedTypeTask_box.ReadOnly = true;
-            this.OrderedTypeTask_box.Size = new System.Drawing.Size(126, 27);
+            this.OrderedTypeTask_box.Size = new System.Drawing.Size(147, 27);
             this.OrderedTypeTask_box.TabIndex = 59;
             this.OrderedTypeTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.OrderedTypeTask_box.WordWrap = false;
@@ -807,7 +788,6 @@
             this.colorTask_box.ReadOnly = true;
             this.colorTask_box.Size = new System.Drawing.Size(86, 27);
             this.colorTask_box.TabIndex = 39;
-            this.colorTask_box.Text = "Сиреневый";
             this.colorTask_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
@@ -965,6 +945,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.panel3.Controls.Add(this.Save_edit_task_button);
             this.panel3.Controls.Add(this.Save_add_task_button);
             this.panel3.Controls.Add(this.Edit_task_button);
             this.panel3.Controls.Add(this.Cancel_task_button);
@@ -974,6 +955,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(646, 46);
             this.panel3.TabIndex = 58;
+            // 
+            // Save_edit_task_button
+            // 
+            this.Save_edit_task_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Save_edit_task_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Save_edit_task_button.BackColor = System.Drawing.Color.DarkKhaki;
+            this.Save_edit_task_button.Enabled = false;
+            this.Save_edit_task_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save_edit_task_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Save_edit_task_button.ForeColor = System.Drawing.Color.Black;
+            this.Save_edit_task_button.Location = new System.Drawing.Point(483, 4);
+            this.Save_edit_task_button.Name = "Save_edit_task_button";
+            this.Save_edit_task_button.Size = new System.Drawing.Size(150, 39);
+            this.Save_edit_task_button.TabIndex = 58;
+            this.Save_edit_task_button.Text = "Сохранить";
+            this.Save_edit_task_button.UseVisualStyleBackColor = false;
+            this.Save_edit_task_button.Visible = false;
+            this.Save_edit_task_button.Click += new System.EventHandler(this.Save_edit_task_button_Click);
             // 
             // Save_add_task_button
             // 

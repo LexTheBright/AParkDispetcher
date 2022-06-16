@@ -1,16 +1,13 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
     class DBRedactor
     {
-        private string getErrorMessage(int ErrorNumber)
+        private string GetErrorMessage(int ErrorNumber)
         {
             switch (ErrorNumber)
             {
@@ -21,7 +18,7 @@ namespace AParkDispetcher
             }
         }
 
-        public int createNewKouple(string table, Dictionary<string, string> props)
+        public int CreateNewKouple(string table, Dictionary<string, string> props)
         {
             string querry = "";
             string addingKeys = "";
@@ -39,7 +36,7 @@ namespace AParkDispetcher
             querry = $"USE autos; INSERT INTO {table}({addingKeys})" +
                 $" VALUES ({addingValues})";
 
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 comm.ExecuteNonQuery();
@@ -48,7 +45,7 @@ namespace AParkDispetcher
             }
             catch (MySqlException e)
             {
-                string ErrMessageText = getErrorMessage(e.Number);
+                string ErrMessageText = GetErrorMessage(e.Number);
                 if (ErrMessageText == "") throw;
                 else MessageBox.Show(ErrMessageText);
                 return 1;
@@ -59,7 +56,7 @@ namespace AParkDispetcher
         {
             string querry = "";
             querry = $"USE autos; DELETE FROM {table} WHERE {id_title} = '{id}'";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 comm.ExecuteNonQuery();
@@ -86,7 +83,7 @@ namespace AParkDispetcher
             querry = $"USE autos; UPDATE {table} SET " + adding +
                 $" WHERE {id_title} = '{id}'";
 
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 comm.ExecuteNonQuery();
@@ -95,7 +92,7 @@ namespace AParkDispetcher
             }
             catch (MySqlException e)
             {
-                string ErrMessageText = getErrorMessage(e.Number);
+                string ErrMessageText = GetErrorMessage(e.Number);
                 if (ErrMessageText == "") throw;
                 else MessageBox.Show(ErrMessageText);
                 return 1;
@@ -107,7 +104,7 @@ namespace AParkDispetcher
             string querry = "";
             querry = $"USE autos; SELECT MAX({id_title}) FROM {table}";
 
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -115,7 +112,7 @@ namespace AParkDispetcher
                     reader.Read();
                     return reader.GetInt32(0);
                 }
-                    
+
             }
             catch (Exception)
             {
@@ -128,7 +125,7 @@ namespace AParkDispetcher
             string querry = "";
             querry = $"USE autos; SELECT CURRENT_TIMESTAMP;";
 
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -136,7 +133,7 @@ namespace AParkDispetcher
                     reader.Read();
                     return Convert.ToDateTime(reader.GetString(0));
                 }
-                    
+
             }
             catch (Exception)
             {

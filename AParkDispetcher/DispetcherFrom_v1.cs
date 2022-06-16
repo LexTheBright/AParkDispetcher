@@ -2,15 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using System.Globalization;
-using IronXL;
 
 namespace APark
 {
@@ -68,7 +62,7 @@ namespace APark
                 this.Enabled = true;
 
                 typeTask_box.Items.Clear();
-                DT.fillComboboxWithTypes(typeTask_box);
+                DT.FillComboboxWithTypes(typeTask_box);
                 if (AppUser.roleTitle == "Администратор" || AppUser.roleTitle == "Оператор")
                 {
                     Edit_task_button.Text = "Обработать";
@@ -81,9 +75,9 @@ namespace APark
                         Tasks_group.Width -= 210;
                     }
 
-                    //DD.fillDispatchersDriverGrid(DriversViewGrid);
+                    DD.fillDispatchersDriverGrid(DriversViewGrid);
                     DC.fillDispatchersCarGrid(carViewGrid);
-                    DT.fillDispetcherTasks(MainGrid);
+                    DT.FillDispetcherTasks(MainGrid);
                 }
 
                 if (AppUser.roleTitle == "Оператор")
@@ -97,7 +91,7 @@ namespace APark
                     AdminFormButton.Visible = false;
                     ReportsFormButton.Visible = false;
 
-                    DT.fillUsersTasks(MainGrid, AppUser.tabNum); //fqiugfuiqueohguoiqeguioqehguheqgqe
+                    DT.FillUsersTasks(MainGrid, AppUser.tabNum); //fqiugfuiqueohguoiqeguioqehguheqgqe
                     oper_panel.Enabled = false;
 
                     if (Tasks_group.Location.X != 6)
@@ -106,7 +100,8 @@ namespace APark
                         Tasks_group.Width += 210;
                     }
                 }
-            } else { this.Close(); }
+            }
+            else { this.Close(); }
             /*StateTask_combobox.Items.Clear();
             if (true)  //todo заполнение от юзера
             {
@@ -118,8 +113,9 @@ namespace APark
                 StateTask_combobox.Items.Add("отменена");
             }
             StateTask_combobox.SelectedIndex = 0;*/
-
+            endingEvent();
             MainGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+            carViewGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
             //dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold); 
         }
 
@@ -151,7 +147,7 @@ namespace APark
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
+
             state_free.Enabled = false;
             state_busy.Enabled = false;
             state_gone.Enabled = false;
@@ -169,7 +165,7 @@ namespace APark
             if (DriversViewGrid.Rows[DriversViewGrid.SelectedCells[0].RowIndex].Cells[1].Value.ToString() == driver_state_prop["driver_state"])
             {
                 Cancel_driverstate_button.PerformClick();
-                return; 
+                return;
             }
             else
             {
@@ -286,7 +282,7 @@ namespace APark
 
         private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == 1)  e.Value = e.Value.ToString().Remove(e.Value.ToString().Length - 3); 
+            if (e.ColumnIndex == 1) e.Value = e.Value.ToString().Remove(e.Value.ToString().Length - 3);
 
             string[] splited_cell = carViewGrid.Rows[e.RowIndex].Cells[2].Value.ToString().Split('~');
 
@@ -323,7 +319,7 @@ namespace APark
         private void button13_Click(object sender, EventArgs e)
         {
             DriversViewGrid.Sort(DriversViewGrid.Columns[1], ListSortDirection.Ascending);
- 
+
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -476,7 +472,7 @@ namespace APark
 
 
                 OrdtimeTask_box.Format = DateTimePickerFormat.Custom;
-                OrdtimeTask_box.CustomFormat = "      dd.MM  [HH:mm]";
+                //OrdtimeTask_box.CustomFormat = "      dd.MM.yy  [HH:mm]";
                 OrdtimeTask_box.Value = task_dep_time;
 
 
@@ -494,7 +490,7 @@ namespace APark
                     //OrderedTypeTask_box.Visible = false;
                     typeTask_box.SelectedItem = task_ctype;
                     OrderedTypeTask_box.Text = task_ctype;
-                    if (task_ctype.Length > 15) OrderedTypeTask_box.Text = task_ctype.Substring(0,15);
+                    if (task_ctype.Length > 15) OrderedTypeTask_box.Text = task_ctype.Substring(0, 15);
                     //typeTask_box.Visible = true;
 
                 }
@@ -503,7 +499,7 @@ namespace APark
                     //typeTask_box.Visible = false;
                     OrderedTypeTask_box.Text = task_ordered_type;
                     typeTask_box.SelectedItem = task_ordered_type;
-                    if (task_ordered_type.Length > 15) OrderedTypeTask_box.Text = task_ordered_type.Substring(0,15);
+                    if (task_ordered_type.Length > 15) OrderedTypeTask_box.Text = task_ordered_type.Substring(0, 15);
                     OrderedTypeTask_box.Visible = true;
                 }
 
@@ -512,7 +508,7 @@ namespace APark
                 //StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
                 //admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key;
                 //textStateTask_box.Text = StateTask_combobox.Text;
-                textStateTask_box.Text = Task_Type[Int32.Parse(task_state)];
+                textStateTask_box.Text = Task_Type[int.Parse(task_state)];
                 try { StateTask_combobox.SelectedItem = textStateTask_box.Text; } catch { StateTask_combobox.SelectedIndex = 0; }
 
                 if (textStateTask_box.Text == "отменена" || textStateTask_box.Text == "завершена")
@@ -557,7 +553,7 @@ namespace APark
 
         private void selectCarButton_Click(object sender, EventArgs e)
         {
-            DateTime Tright;
+            DateTime Tright, Tleft;
             if (duraTask_box.Text != "")
             {
                 string error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
@@ -568,16 +564,17 @@ namespace APark
                 }
                 else
                 {
-                    if (Int32.Parse(duraTask_box.Text) < 40)
+                    if (int.Parse(duraTask_box.Text) < 40)
                     {
                         MessageBox.Show("Неверный формат длительности! Укжите ожидаемую длительность поездки туда-обратно. Не менее 40 минут.");
                         return;
                     }
-                    Tright = OrdtimeTask_box.Value.AddMinutes(Double.Parse(duraTask_box.Text));
+                    Tright = OrdtimeTask_box.Value.AddMinutes(double.Parse(duraTask_box.Text));
                 }
             }
             else Tright = OrdtimeTask_box.Value.AddMinutes(120);
-            SelectCarForm CurSelectCarForm = new SelectCarForm(OrdtimeTask_box.Value, Tright);
+            Tleft = OrdtimeTask_box.Value;
+            SelectCarForm CurSelectCarForm = new SelectCarForm(Tleft, Tright);
             if (CurSelectCarForm.ShowDialog(this) == DialogResult.OK)
             {
                 int Index = CurSelectCarForm.SelectionCarGrid.SelectedCells[0].RowIndex;
@@ -591,7 +588,7 @@ namespace APark
                 modelTask_box.Text = car_model;
                 OrderedTypeTask_box.Text = car_type;
                 colorTask_box.Text = car_color;
-            } 
+            }
         }
 
         private void state_free_CheckedChanged(object sender, EventArgs e)
@@ -664,7 +661,7 @@ namespace APark
         {
             //DriversViewGrid.Rows[e.RowIndex].Cells[0].Style.Font = new Font("Century", 11, FontStyle.Bold);
 
-           //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Century", 11.25);
+            //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Century", 11.25);
         }
 
         private void state_available_CheckedChanged(object sender, EventArgs e)
@@ -681,7 +678,7 @@ namespace APark
             dataGridView3_SelectionChanged(sender, e);
             IsAsideTabSelectingActive = true;
             carViewGrid.Enabled = true;
-            
+
             car_cancel_button.Visible = false;
 
             car_save_button.Enabled = false;
@@ -759,7 +756,7 @@ namespace APark
             searchTasks.Enabled = false;
             MainGrid.Enabled = false;
             OrdtimeTask_box.Enabled = true;
-            Create_task_button.Enabled = false; 
+            Create_task_button.Enabled = false;
             Create_task_button.BackColor = Color.DarkKhaki;
             Edit_task_button.Enabled = false;
             Edit_task_button.BackColor = Color.DarkKhaki;
@@ -830,16 +827,18 @@ namespace APark
         {
             if (!IsAsideTabSelectingActive)
             {
-                MessageBox.Show("Завершите начатую операцию!");
+                MessageBox.Show("Завершите начатую операцию!", "Ошибка переключения вкладки");
                 e.Cancel = true;
             }
         }
 
         private void endingEvent()
         {
-            int start_index_tsk = MainGrid.SelectedCells[0].RowIndex;
+            int start_index_tsk = 0;
+            if (MainGrid.Rows.Count != 0) start_index_tsk = MainGrid.SelectedCells[0].RowIndex;
             MainGrid.Rows.Clear();
-            DT.fillDispetcherTasks(MainGrid);
+            if (AppUser.roleTitle == "Пользователь") DT.FillUsersTasks(MainGrid, AppUser.tabNum);
+            else DT.FillDispetcherTasks(MainGrid);
             if (start_index_tsk < MainGrid.RowCount) MainGrid.Rows[start_index_tsk].Selected = true;
             dataGridView2_SelectionChanged(Cancel_task_button, new EventArgs());
 
@@ -870,7 +869,7 @@ namespace APark
             OrdtimeTask_box.Enabled = false;
             selectCarButton.Enabled = false;
             Create_task_button.Enabled = true;
-            Create_task_button.BackColor = SystemColors.ControlLight; 
+            Create_task_button.BackColor = SystemColors.ControlLight;
             Edit_task_button.Enabled = true;
             Edit_task_button.BackColor = SystemColors.ControlLight;
             Cancel_task_button.Enabled = false;
@@ -881,7 +880,7 @@ namespace APark
             SelectDriverButton.Enabled = false;
 
             isChangingTasks = false;
-        } 
+        }
 
         private void Cancel_task_button_Click(object sender, EventArgs e)
         {
@@ -896,26 +895,29 @@ namespace APark
 
             DateTime current_datetime = DBRed.getDateTimeFromServer();
 
-            add_task_properties.Add("user_tab_number", AppUser.tabNum.ToString()); 
+            add_task_properties.Add("user_tab_number", AppUser.tabNum.ToString());
             add_task_properties.Add("task_num", numTask_box.Text);
             add_task_properties.Add("orderdatetime", current_datetime.ToString("yyyy-MM-dd HH:mm:ss"));
             add_task_properties.Add("order_state", "0");
-            
-            if (typeTask_box.SelectedIndex > -1) {
+
+            if (typeTask_box.SelectedIndex > -1)
+            {
                 add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
             }
 
             if (OrdtimeTask_box.Value > current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay))
             {
                 add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            } 
+            }
             else
             {
                 MessageBox.Show("Укажите дату и время поездки.\n\nВыбирайте время начиная с  " + current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay).ToString("dd.MM.yyyy  [HH:mm]"), "Выезд");
                 return;
             }
 
-            if (duraTask_box.Text != "") { error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
+            if (duraTask_box.Text != "")
+            {
+                error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message);
@@ -923,9 +925,9 @@ namespace APark
                 }
                 else
                 {
-                    if (Int32.Parse(duraTask_box.Text) < 40)
+                    if (int.Parse(duraTask_box.Text) < 40)
                     {
-                        MessageBox.Show("Неверный формат длительности! \n\nУкжите ожидаемую длительность поездки туда-обратно. Не менее 40 минут.", "Выезд");
+                        MessageBox.Show("Неверный формат длительности! \n\nУкжите ожидаемую длительность поездки туда-обратно. Не менее 40 минут.", "Длительность");
                         return;
                     }
                     add_task_properties.Add("ordered_duration", duraTask_box.Text);
@@ -954,7 +956,9 @@ namespace APark
                 add_task_properties.Add("destination", destTask_box.Text);
             }
 
-            if (commTask_box.Text != "") { error_message = ParkDispecter.IsValidValue("Описание", commTask_box.Text, false);
+            if (commTask_box.Text != "")
+            {
+                error_message = ParkDispecter.IsValidValue("Описание", commTask_box.Text, false);
                 if (error_message != null)
                 {
                     MessageBox.Show(error_message, "Комментарий к заявке");
@@ -966,7 +970,7 @@ namespace APark
                 }
             }
 
-            if (DBRed.createNewKouple("tasks", add_task_properties) == 1) return;
+            if (DBRed.CreateNewKouple("tasks", add_task_properties) == 1) return;
             addTaskToHistory(add_task_properties);
             endingEvent();
         }
@@ -979,7 +983,7 @@ namespace APark
             {
                 add_task_properties.Add("task_num", numTask_box.Text);
             }
-            add_task_properties["changer_tab_number"] = AppUser.tabNum; 
+            add_task_properties["changer_tab_number"] = AppUser.tabNum;
             add_task_properties.Remove("user_tab_number");
             add_task_properties["chdatetime"] = DBRed.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss");
             add_task_properties.Remove("orderdatetime");
@@ -990,18 +994,19 @@ namespace APark
             }
             if (!add_task_properties.ContainsKey("user_description")) add_task_properties.Add("user_description", commTask_box.Text);
             if (!add_task_properties.ContainsKey("ordered_ctype")) add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
-            if (DBRed.createNewKouple("thistory", add_task_properties) == 1) return;
+            if (!add_task_properties.ContainsKey("ordered_time")) add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (DBRed.CreateNewKouple("thistory", add_task_properties) == 1) return;
         }
         private void addToTaskHistoryByNumber()
         {
-            
+
         }
 
         private void Edit_task_button_Click(object sender, EventArgs e)
         {
             if (MainGrid.Rows.Count == 0) return;
             if (MainGrid.SelectedRows.Count == 0) MainGrid.Rows[0].Selected = true;
-           
+
             isChangingTasks = true;
             searchTasks.Enabled = false;
             MainGrid.Enabled = false;
@@ -1015,7 +1020,7 @@ namespace APark
                 StateTask_combobox.Items.Clear();
                 StateTask_combobox.Items.Add("новая");
                 if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("подтверждена"); //не обязательно оставлять условие
-                StateTask_combobox.Items.Add("отменена"); 
+                StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
             if (textStateTask_box.Text == "подтверждена")
@@ -1023,7 +1028,7 @@ namespace APark
                 StateTask_combobox.Items.Clear();
                 StateTask_combobox.Items.Add("подтверждена");
                 if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("исполняется"); //не обязательно оставлять условие
-                StateTask_combobox.Items.Add("отменена"); 
+                StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
             if (textStateTask_box.Text == "исполняется")
@@ -1033,7 +1038,7 @@ namespace APark
                 StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
-            
+
             Create_task_button.Enabled = false;
             Create_task_button.BackColor = Color.DarkKhaki;
             Edit_task_button.Enabled = false;
@@ -1088,6 +1093,7 @@ namespace APark
 
             //коммент об изменении
             error_message = ParkDispecter.IsValidValue("Описание", dispCommTask_box.Text, false);
+            if (StateTask_combobox.SelectedItem.ToString() == "отменена" && dispCommTask_box.Text == "") error_message = "Дайте комментарий об изменении!";
             if (error_message != null)
             {
                 MessageBox.Show(error_message, "Последний комментарий");
@@ -1105,60 +1111,60 @@ namespace APark
                 add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
             }
 
-            if (StateTask_combobox.SelectedItem.ToString() != "отменена" &&
+            /*if (StateTask_combobox.SelectedItem.ToString() != "отменена" &&
                 StateTask_combobox.SelectedItem.ToString() != "завершена")
+            {*/
+            //время
+            DateTime current_datetime = DBRed.getDateTimeFromServer();
+            if (OrdtimeTask_box.Value > current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay))
             {
-                //время
-                DateTime current_datetime = DBRed.getDateTimeFromServer();
-                if (OrdtimeTask_box.Value > current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay))
-                {
-                    add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-                }
-                else
-                {
-                    MessageBox.Show("Укажите дату и время поездки.\n\nВыбирайте время начиная с  " + current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay).ToString("dd.MM.yyyy  [HH:mm]"), "Выезд");
-                    return;
-                }
+                add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            }
+            else
+            {
+                MessageBox.Show("Укажите дату и время поездки.\n\nВыбирайте время начиная с  " + current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay).ToString("dd.MM.yyyy  [HH:mm]"), "Выезд");
+                return;
+            }
 
-                //длительность 
-                if (duraTask_box.Text != "")
-                {
-                    error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
-                    if (error_message != null)
-                    {
-                        MessageBox.Show(error_message, "Длительность в минутах");
-                        return;
-                    }
-                    else
-                    {
-                        add_task_properties.Add("ordered_duration", duraTask_box.Text);
-                    }
-                }
-
-                //Откуда
-                error_message = ParkDispecter.IsValidValue("Откуда", departTask_box.Text, false);
+            //длительность 
+            if (duraTask_box.Text != "")
+            {
+                error_message = ParkDispecter.IsValidValue("Длительность", duraTask_box.Text, false);
                 if (error_message != null)
                 {
-                    MessageBox.Show(error_message, "Откуда");
+                    MessageBox.Show(error_message, "Длительность в минутах");
                     return;
                 }
                 else
                 {
-                    add_task_properties.Add("departure", departTask_box.Text);
-                }
-
-                //куда
-                error_message = ParkDispecter.IsValidValue("Куда", destTask_box.Text, false);
-                if (error_message != null)
-                {
-                    MessageBox.Show(error_message, "Куда");
-                    return;
-                }
-                else
-                {
-                    add_task_properties.Add("destination", destTask_box.Text);
+                    add_task_properties.Add("ordered_duration", duraTask_box.Text);
                 }
             }
+
+            //Откуда
+            error_message = ParkDispecter.IsValidValue("Откуда", departTask_box.Text, false);
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message, "Откуда");
+                return;
+            }
+            else
+            {
+                add_task_properties.Add("departure", departTask_box.Text);
+            }
+
+            //куда
+            error_message = ParkDispecter.IsValidValue("Куда", destTask_box.Text, false);
+            if (error_message != null)
+            {
+                MessageBox.Show(error_message, "Куда");
+                return;
+            }
+            else
+            {
+                add_task_properties.Add("destination", destTask_box.Text);
+            }
+            /*}*/
 
             if (DBRed.updateByID("tasks", "task_num", numTask_box.Text, add_task_properties) == 1) return;
             addTaskToHistory(add_task_properties);
@@ -1185,7 +1191,7 @@ namespace APark
             }*/
             if (!isChangingTasks) return;
             ResetAllBoxes();
-            if (StateTask_combobox.SelectedItem.ToString() == "подтверждена") 
+            if (StateTask_combobox.SelectedItem.ToString() == "подтверждена")
             {
                 selectCarButton.Enabled = true;
                 SelectDriverButton.Enabled = true;
@@ -1239,6 +1245,7 @@ namespace APark
                 StateTask_combobox.SelectedItem.ToString() == "завершена" ||
                 StateTask_combobox.SelectedItem.ToString() == "отменена")
             {
+                oper_panel.Enabled = true;
                 dispCommTask_box.Enabled = true;
                 dispCommTask_box.ReadOnly = false;
                 dispCommTask_box.Clear();
@@ -1367,7 +1374,7 @@ namespace APark
                     var row = DriversViewGrid.Rows[i];
 
                     if (row.Cells["Tab_a_col"].Value.ToString().Contains(value) ||
-                        row.Cells["FIO_a_col"].Value.ToString().Contains(value)) 
+                        row.Cells["FIO_a_col"].Value.ToString().Contains(value))
                     {
                         row.Selected = true;
                         DriversViewGrid.FirstDisplayedScrollingRowIndex = row.Index;
@@ -1421,8 +1428,8 @@ namespace APark
             foreach (Control item in groupBox2.Controls)
             {
                 if (item is Label == false)
-                item.ResetText();
-            }  
+                    item.ResetText();
+            }
 
             this.Form1_Load(sender, e);
         }
@@ -1450,13 +1457,14 @@ namespace APark
             if (e.Column.Index == 0)
             {
                 e.SortResult = int.Parse(e.CellValue1.ToString()).CompareTo(int.Parse(e.CellValue2.ToString()));
-                e.Handled = true;//pass by the default sorting
+                e.Handled = true;
             }
         }
 
         private void OrdtimeTask_box_ValueChanged(object sender, EventArgs e)
         {
             if (!isChangingTasks) return;
+            if (MainGrid.Rows.Count == 0) return;
             int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
             driverTask_box.Text = MainGrid.Rows[selectedrowindex].Cells[10].Value.ToString();
             driverTask_box.BackColor = Color.PaleGoldenrod;

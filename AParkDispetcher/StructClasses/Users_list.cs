@@ -1,16 +1,14 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
     class Users_list
     {
-        private struct C1 {
+        private struct C1
+        {
             public string tab_number;
             public string name, surname, midname;
             /*public int state;*/
@@ -27,7 +25,7 @@ namespace AParkDispetcher
             usr.Clear();
             string querry = "";
             querry = "USE autos; SELECT user_surname, user_name, user_midname, tab_number, role_title, login FROM users JOIN roles WHERE users.user_role_id = roles.role_id";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -54,7 +52,7 @@ namespace AParkDispetcher
             }
         }
 
-        public void FillAdminsUserGrid(DataGridView dgw) 
+        public void FillAdminsUserGrid(DataGridView dgw)
         {
             FillUser();
             for (int i = 0; i < usr.Count; i++)
@@ -64,11 +62,11 @@ namespace AParkDispetcher
             }
         }
 
-        private string StateTitle (int state)
+        private string StateTitle(int state)
         {
             switch (state)
             {
-                case 0: 
+                case 0:
                     return "Работает";
                 case 1:
                     return "Занят";

@@ -1,9 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -35,11 +32,8 @@ namespace AParkDispetcher
             public string user_description;
             //
             public string driver_tab_number;
-
             //
             public string user_tab_number;
-
-
             //
             public string user_surname, user_name, user_midname;
             //
@@ -85,9 +79,9 @@ namespace AParkDispetcher
             }
         }*/
 
-        public void fillHistoryTaskForm(DataGridView dgw, string sld_task_num)
+        public void FillHistoryTaskForm(DataGridView dgw, string sld_task_num)
         {
-            fillTaskHistory(sld_task_num);
+            FillTaskHistory(sld_task_num);
             for (int i = 0; i < singleTask.Count; i++)
             {
                 dgw.Rows.Add("" + singleTask[i].order_state + "", "" + singleTask[i].change_time.ToString("dd/MM/yy HH:mm") + "", "" + singleTask[i].changer_tab_number + "", "" + singleTask[i].chdescription + "",
@@ -99,7 +93,7 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillTaskHistory(string sld_task_num)
+        public void FillTaskHistory(string sld_task_num)
         {
             singleTask.Clear();
             string querry = "";
@@ -111,7 +105,7 @@ namespace AParkDispetcher
                 "LEFT JOIN drivers ON thistory.driver_tab_number = drivers.tab_number " +
                 "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
                 $"WHERE thistory.task_num = {sld_task_num}";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())

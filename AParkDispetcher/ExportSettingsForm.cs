@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -106,6 +100,11 @@ namespace AParkDispetcher
         private void Excel_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ExportSettкакingsForm_Deactivate(object sender, EventArgs e)
+        {
+            //this.Close();
         }
     }
 }

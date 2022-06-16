@@ -46,8 +46,8 @@ namespace AParkDispetcher
             this.exDoExportButton = new System.Windows.Forms.Button();
             this.exDriverButton = new System.Windows.Forms.Button();
             this.Excel_panel = new System.Windows.Forms.Panel();
-            this.Excel_group = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Excel_group = new System.Windows.Forms.GroupBox();
             this.panel4.SuspendLayout();
             this.Excel_panel.SuspendLayout();
             this.Excel_group.SuspendLayout();
@@ -281,6 +281,17 @@ namespace AParkDispetcher
             this.Excel_panel.TabIndex = 67;
             this.Excel_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Excel_panel_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12.75F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(4, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Excel ";
+            // 
             // Excel_group
             // 
             this.Excel_group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -296,17 +307,6 @@ namespace AParkDispetcher
             this.Excel_group.Size = new System.Drawing.Size(322, 390);
             this.Excel_group.TabIndex = 8;
             this.Excel_group.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 12.75F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(4, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Excel ";
             // 
             // ExportSettingsForm
             // 
@@ -325,6 +325,7 @@ namespace AParkDispetcher
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройки экспорта";
+            this.Deactivate += new System.EventHandler(this.ExportSettingsForm_Deactivate);
             this.panel4.ResumeLayout(false);
             this.Excel_panel.ResumeLayout(false);
             this.Excel_panel.PerformLayout();

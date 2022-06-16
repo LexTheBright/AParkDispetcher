@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -45,7 +40,7 @@ namespace AParkDispetcher
         {
             groupBox1.Text = "История заявки #" + task_number + "            Подана: " + task_date_time + "            Табельный заказчика: " + tub_from_click;
             ST = new SingleTaskHistory();
-            ST.fillHistoryTaskForm(TaskHistoryGrid, task_number);
+            ST.FillHistoryTaskForm(TaskHistoryGrid, task_number);
             TaskHistoryGrid.ClearSelection();
             THF_size();
         }
@@ -79,7 +74,7 @@ namespace AParkDispetcher
             this.TopMost = true;
 
             // убрать - 8 на продакшене
-            this.Location = new Point(Screen.GetWorkingArea(this.Location).Left - 8, this.Location.Y);
+            this.Location = new Point(Screen.GetWorkingArea(this.Location).Left /*- 8*/, this.Location.Y);
 
             ord_type_col.Visible = true;
             type_col.Visible = true;

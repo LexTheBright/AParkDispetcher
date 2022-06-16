@@ -2,12 +2,8 @@
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -24,12 +20,12 @@ namespace AParkDispetcher
             string querry = $"USE autos; SELECT * FROM tasks WHERE DATE(orderdatetime) BETWEEN '{lestr}' AND '{ristr}' ORDER BY orderdatetime";
             try
             {
-                daCountry = new MySqlDataAdapter(querry, dbConnection.dbConnect);
+                daCountry = new MySqlDataAdapter(querry, DbConnection.dbConnect);
                 dtTasks = new DataTable();
                 daCountry.Fill(dtTasks);
                 DoExport();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -40,22 +36,23 @@ namespace AParkDispetcher
             string lestr = left.ToString("yyyy-MM-dd");
             string ristr = right.ToString("yyyy-MM-dd");
             string querry = $"USE autos; SELECT * FROM tasks WHERE" +
-                $" AND {value} = '{key}'" +
-                $" DATE(orderdatetime) BETWEEN '{lestr}' AND '{ristr}' ORDER BY orderdatetime";
+                $" {value} = '{key}'" +
+                $" AND DATE(orderdatetime) BETWEEN '{lestr}' AND '{ristr}' ORDER BY orderdatetime";
             try
             {
-                daCountry = new MySqlDataAdapter(querry, dbConnection.dbConnect);
+                daCountry = new MySqlDataAdapter(querry, DbConnection.dbConnect);
                 dtTasks = new DataTable();
                 daCountry.Fill(dtTasks);
                 DoExport();
+                MessageBox.Show("Файл сохранен", "Экспорт");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
         }
 
-            private static void DoExport()
+        private static void DoExport()
         {
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
@@ -139,7 +136,7 @@ namespace AParkDispetcher
                 sDialog.DefaultExt = "xlsx";
                 sDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel files (*.xls)| *.xls";
                 if (sDialog.ShowDialog() == DialogResult.OK)
-                excelPackage.SaveAs(new FileInfo(sDialog.FileName));
+                    excelPackage.SaveAs(new FileInfo(sDialog.FileName));
             }
         }
     }

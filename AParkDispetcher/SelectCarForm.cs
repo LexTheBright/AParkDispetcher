@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -48,7 +42,7 @@ namespace AParkDispetcher
 
         private void SelectCarForm_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(Screen.GetWorkingArea(this.Location).Right-this.Width, Screen.GetWorkingArea(this.Location).Bottom - this.Height);
+            this.Location = new Point(Screen.GetWorkingArea(this.Location).Right - this.Width, Screen.GetWorkingArea(this.Location).Bottom - this.Height);
         }
 
         private void cancel_button_Click(object sender, EventArgs e)

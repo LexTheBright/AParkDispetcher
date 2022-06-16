@@ -1,9 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -26,12 +23,12 @@ namespace AParkDispetcher
 
         public Dictionary<string, int> types = new Dictionary<string, int>();
 
-        public void fillTypes (ComboBox combo)
+        public void FillTypes(ComboBox combo)
         {
             types.Clear();
             string querry = "";
             querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -59,18 +56,16 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillCar(DateTime? leftT = null, DateTime? rightT = null)
+        public void FillCar(DateTime? leftT = null, DateTime? rightT = null)
         {
             usr.Clear();
             string querry = "";
             querry = "USE autos; SELECT reg_mark, model, color, description, car_state, type FROM cars JOIN ctypes WHERE cars.car_type_id = ctypes.type_id ORDER BY car_state ";
-            if (leftT != null && rightT != null)
+            if (leftT is DateTime ParsedLeft && rightT is DateTime ParsedRight)
             {
-                DateTime ParsedLeft = DateTime.Parse(leftT.ToString());
-                DateTime ParsedRight = DateTime.Parse(rightT.ToString());
                 querry = $"USE autos; CALL get_free_cars('{ParsedLeft.ToString("yyyy-MM-dd HH:mm:ss")}', '{ParsedRight.ToString("yyyy-MM-dd HH:mm:ss")}')";
             }
-            MySqlCommand comm = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = comm.ExecuteReader())
@@ -93,15 +88,14 @@ namespace AParkDispetcher
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
         public void fillSelectCarForm(DataGridView dgw, DateTime? Tleft = null, DateTime? Tright = null)
         {
-            if (Tleft != null && Tright != null) fillCar(Tleft, Tright);
-            else fillCar();
+            if (Tleft != null && Tright != null) FillCar(Tleft, Tright);
+            else FillCar();
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].reg_mark + "", "" + usr[i].model + "", "" + usr[i].type + "", "" + usr[i].color + "", "" + StateTitle(usr[i].state) + "", "" + usr[i].description + "");
@@ -110,7 +104,7 @@ namespace AParkDispetcher
 
         public void fillAdminsCarGrid(DataGridView dgw)
         {
-            fillCar();
+            FillCar();
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].reg_mark + "", "" + usr[i].model + "", "" + usr[i].type + "", "" + usr[i].color + "", "" + StateTitle(usr[i].state) + "");
@@ -118,7 +112,7 @@ namespace AParkDispetcher
         }
         public void fillDispatchersCarGrid(DataGridView dgw)
         {
-            fillCar();
+            FillCar();
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].model + "", "" + usr[i].reg_mark + "", "" + usr[i].state + "", "" + usr[i].description + "");

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Security.Cryptography;
+using System.Text;
+using System.Windows.Forms;
 
 namespace AParkDispetcher
 {
@@ -21,14 +18,15 @@ namespace AParkDispetcher
 
         private int roleID;
         private string password;
-        
-        public static bool iSsignedIn { get; private set; } 
+
+        public static bool iSsignedIn { get; private set; }
 
         private static AppUser connInstance;
 
-        private AppUser() {
+        private AppUser()
+        {
         }
-        
+
         public static AppUser getConnInstance()
         {
             if (connInstance == null) connInstance = new AppUser();
@@ -37,8 +35,9 @@ namespace AParkDispetcher
 
         public void tryToLogin(string textlogin, string textPassword)
         {
+            iSsignedIn = false;
             string querry = $"USE autos; SELECT * from users where login = '{textlogin}'";
-            MySqlCommand commLine = new MySqlCommand(querry, dbConnection.dbConnect);
+            MySqlCommand commLine = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 using (MySqlDataReader reader = commLine.ExecuteReader())
@@ -56,8 +55,7 @@ namespace AParkDispetcher
                     }
                     else
                     {
-                        MessageBox.Show("Пользователя с таким логином\\паролем не существует.1");
-                        iSsignedIn = false;
+                        MessageBox.Show("Пользователя с таким логином\\паролем не существует.", "Ошибка авторизации пользователя");
                         return;
                     }
                 }
@@ -67,15 +65,30 @@ namespace AParkDispetcher
                 string ErrMessageText = getErrorMessage(e.Number);
                 if (ErrMessageText == "") throw;
                 else MessageBox.Show(ErrMessageText);
-                iSsignedIn = false;
                 return;
             }
             using (SHA256 mySHA256 = SHA256.Create())
             {
+
+                /*string passHash = BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassword))).Replace("-", "").Substring(0, 32)
+                string querry = $"USE autos; CALL try_auth_user('{textlogin}', '{passHash}')";
+                MySqlCommand commLine = new MySqlCommand(querry, DbConnection.dbConnect);
+                try
+                {
+                    using (MySqlDataReader reader = commLine.ExecuteReader())
+                    {
+                        if (reader.Read()) { ...}
+                        else
+                        {
+                            MessageBox.Show("Пользователя с таким логином\\паролем не существует.");
+                            return;
+                        }
+                    }
+                }
+            }*/
                 if (password != BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassword))).Replace("-", "").Substring(0, 32))
                 {
-                    MessageBox.Show("Пользователя с таким логином\\паролем не существует.2");
-                    iSsignedIn = false;
+                    MessageBox.Show("Пользователя с таким логином\\паролем не существует.", "Ошибка авторизации пользователя");
                     return;
                 }
                 else

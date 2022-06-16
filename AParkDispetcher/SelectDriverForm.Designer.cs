@@ -65,6 +65,7 @@ namespace AParkDispetcher
             // 
             // searchDrivers2
             // 
+            this.searchDrivers2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchDrivers2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchDrivers2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchDrivers2.Font = new System.Drawing.Font("Cambria", 11.75F);
