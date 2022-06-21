@@ -962,5 +962,10 @@ namespace AParkDispetcher
                 }
             }
         }
+
+        private void AdminRolesFrom_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

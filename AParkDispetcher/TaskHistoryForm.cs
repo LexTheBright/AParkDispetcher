@@ -111,15 +111,18 @@ namespace AParkDispetcher
                         e.Value = "новая";
                         break;
                     case "1":
-                        e.Value = "подтверждена";
+                        e.Value = "утверждается";
                         break;
                     case "2":
-                        e.Value = "исполняется";
+                        e.Value = "подтверждена";
                         break;
                     case "3":
-                        e.Value = "завершена";
+                        e.Value = "исполняется";
                         break;
                     case "4":
+                        e.Value = "завершена";
+                        break;
+                    case "5":
                         e.Value = "отменена";
                         break;
                     default:

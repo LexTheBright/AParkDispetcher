@@ -91,9 +91,24 @@ namespace AParkDispetcher
                 //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
+
+        public void FillMasterTasks(DataGridView dgw)
+        {
+            FillTasks("1", "order_state");
+            for (int i = 0; i < usr.Count; i++)
+            {
+                dgw.Rows.Add(false, "" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "",
+                    "" + usr[i].ordered_time + "", "" + usr[i].ordered_duration + "", "" + usr[i].departure + "", "" + usr[i].destination + "",
+                    "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
+                    "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
+                    "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
+                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
+            }
+        }
+
         public void FillUsersTasks(DataGridView dgw, string uTab)
         {
-            FillTasks(uTab);
+            FillTasks(uTab, "user_tab_number");
             for (int i = 0; i < usr.Count; i++)
             {
                 dgw.Rows.Add("" + usr[i].task_number + "", "" + usr[i].orderdatetime.ToString("dd.MM  [HH:mm]") + "", "" + usr[i].user_tab_number + "", "" + usr[i].order_state + "",
@@ -106,7 +121,7 @@ namespace AParkDispetcher
         }
 
 
-        public void FillTasks(string uTab = null)
+        public void FillTasks(string value = null, string key = null)
         {
             usr.Clear();
             string querry = "";
@@ -118,7 +133,7 @@ namespace AParkDispetcher
                 "LEFT JOIN drivers ON tasks.driver_tab_number = drivers.tab_number " +
                 "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
                 "JOIN users ON tasks.user_tab_number = users.tab_number ";
-            if (uTab != null) { querry += $"WHERE user_tab_number = '{uTab}' "; }
+            if (value != null && key != null) { querry += $"WHERE {key} = '{value}' "; }
             querry += "ORDER BY order_state";
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try

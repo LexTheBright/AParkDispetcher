@@ -1274,6 +1274,7 @@
             this.MinimumSize = new System.Drawing.Size(962, 607);
             this.Name = "AdminRolesFrom";
             this.Text = "Панель админиcтратора";
+            this.Deactivate += new System.EventHandler(this.AdminRolesFrom_Deactivate);
             this.Load += new System.EventHandler(this.AdminRolesFrom_Load);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

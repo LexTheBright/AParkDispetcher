@@ -85,7 +85,7 @@ namespace AParkDispetcher
                         }
                     }
                 }
-            }*/
+                }*/
                 if (password != BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassword))).Replace("-", "").Substring(0, 32))
                 {
                     MessageBox.Show("Пользователя с таким логином\\паролем не существует.", "Ошибка авторизации пользователя");
@@ -121,6 +121,7 @@ namespace AParkDispetcher
                 case 0: return "Пользователь"; break;
                 case 1: return "Оператор"; break;
                 case 2: return "Администратор"; break;
+                case 3: return "Начальник"; break;
                 default:
                     return ""; break;
             }

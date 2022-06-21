@@ -79,6 +79,12 @@
     <Compile Include="AdminRolesFrom.Designer.cs">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApprovalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovalForm.Designer.cs">
+      <DependentUpon>ApprovalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralClasses\AppUser.cs" />
     <Compile Include="GeneralClasses\DateExporter.cs" />
     <Compile Include="GeneralClasses\dbConnection.cs" />
@@ -134,6 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminRolesFrom.resx">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApprovalForm.resx">
+      <DependentUpon>ApprovalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteDialog.resx">
       <DependentUpon>DeleteDialog.cs</DependentUpon>

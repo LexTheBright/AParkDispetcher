@@ -15,28 +15,21 @@ namespace APark
         Tasks_list DT;
         DBRedactor DBRed;
         ExportSettingsForm SF;
+        ApprovalForm AF;
 
         private static bool isChangingTasks = false;
         private static bool IsAsideTabSelectingActive = true;
 
         public Dictionary<int, string> Task_Type = new Dictionary<int, string>();
 
-        public enum Task_Type_Rev
-        {
-            новая = 0,
-            подтверждена = 1,
-            исполняется = 2,
-            завершена = 3,
-            отменена = 4
-        }
-
         public DispetcherFrom()
         {
             Task_Type.Add(0, "новая");
-            Task_Type.Add(1, "подтверждена");
-            Task_Type.Add(2, "исполняется");
-            Task_Type.Add(3, "завершена");
-            Task_Type.Add(4, "отменена");
+            Task_Type.Add(1, "утверждается");
+            Task_Type.Add(2, "подтверждена");
+            Task_Type.Add(3, "исполняется");
+            Task_Type.Add(4, "завершена");
+            Task_Type.Add(5, "отменена");
 
             InitializeComponent();
         }
@@ -101,7 +94,7 @@ namespace APark
                     }
                 }
             }
-            else { this.Close(); }
+            else { Application.Exit(); }
             /*StateTask_combobox.Items.Clear();
             if (true)  //todo заполнение от юзера
             {
@@ -410,21 +403,26 @@ namespace APark
                         e.Value = "новая";
                         break;
                     case "1":
-                        e.CellStyle.BackColor = Color.LightGreen;
-                        e.CellStyle.SelectionBackColor = Color.Green;
-                        e.Value = "подтверждена";
+                        e.CellStyle.BackColor = Color.Orange;
+                        e.CellStyle.SelectionBackColor = Color.DarkOrange;
+                        e.Value = "утверждается";
                         break;
                     case "2":
                         e.CellStyle.BackColor = Color.LightGreen;
                         e.CellStyle.SelectionBackColor = Color.Green;
-                        e.Value = "исполняется";
+                        e.Value = "подтверждена";
                         break;
                     case "3":
+                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.SelectionBackColor = Color.Green;
+                        e.Value = "исполняется";
+                        break;
+                    case "4":
                         e.Value = "завершена";
                         e.CellStyle.BackColor = Color.LightGray;
                         e.CellStyle.SelectionBackColor = Color.Gray;
                         break;
-                    case "4":
+                    case "5":
                         e.Value = "отменена";
                         e.CellStyle.BackColor = Color.LightGray;
                         e.CellStyle.SelectionBackColor = Color.Gray;
@@ -522,7 +520,7 @@ namespace APark
                     Edit_task_button.Enabled = true;
                     Edit_task_button.BackColor = SystemColors.ControlLight;
                 }
-                if (AppUser.roleTitle == "Пользователь" && textStateTask_box.Text == "подтверждена") Edit_task_button.Text = "Отмена заявки";
+                //if (AppUser.roleTitle == "Пользователь" && textStateTask_box.Text == "подтверждена") Edit_task_button.Text = "Отмена заявки";
                 if (AppUser.roleTitle == "Пользователь" && textStateTask_box.Text == "исполняется")
                 {
                     Edit_task_button.Enabled = false;
@@ -564,9 +562,9 @@ namespace APark
                 }
                 else
                 {
-                    if (int.Parse(duraTask_box.Text) < 40)
+                    if (int.Parse(duraTask_box.Text) < 0.5)
                     {
-                        MessageBox.Show("Неверный формат длительности! Укжите ожидаемую длительность поездки туда-обратно. Не менее 40 минут.");
+                        MessageBox.Show("Неверный формат длительности! Укжите ожидаемую длительность поездки туда-обратно. Не менее 0.5 часа.");
                         return;
                     }
                     Tright = OrdtimeTask_box.Value.AddMinutes(double.Parse(duraTask_box.Text));
@@ -1019,7 +1017,14 @@ namespace APark
             {
                 StateTask_combobox.Items.Clear();
                 StateTask_combobox.Items.Add("новая");
-                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("подтверждена"); //не обязательно оставлять условие
+                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("утверждается"); //не обязательно оставлять условие
+                StateTask_combobox.Items.Add("отменена");
+                StateTask_combobox.SelectedIndex = 0;
+            }
+            if (textStateTask_box.Text == "утверждается")
+            {
+                StateTask_combobox.Items.Clear();
+                StateTask_combobox.Items.Add("утверждается");
                 StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
@@ -1073,7 +1078,7 @@ namespace APark
 
 
             //назначение номера и водителя !!!
-            if (StateTask_combobox.SelectedItem.ToString() == "подтверждена" || markTask_box.Text != "")
+            if (StateTask_combobox.SelectedItem.ToString() == "утверждается" || markTask_box.Text != "")
             {
                 if (markTask_box.Text != "") add_task_properties.Add("car_reg_mark", markTask_box.Text);
                 else
@@ -1191,7 +1196,7 @@ namespace APark
             }*/
             if (!isChangingTasks) return;
             ResetAllBoxes();
-            if (StateTask_combobox.SelectedItem.ToString() == "подтверждена")
+            if (StateTask_combobox.SelectedItem.ToString() == "утверждается")
             {
                 selectCarButton.Enabled = true;
                 SelectDriverButton.Enabled = true;
@@ -1449,7 +1454,8 @@ namespace APark
 
         private void пользовательToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AF = new ApprovalForm();
+            AF.Show();
         }
 
         private void MainGrid_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
@@ -1473,6 +1479,12 @@ namespace APark
             markTask_box.BackColor = Color.PaleGoldenrod;
 
             modelTask_box.Text = MainGrid.Rows[selectedrowindex].Cells[16].Value.ToString();
+        }
+
+        private void update_button_Click(object sender, EventArgs e)
+        {
+            MainGrid.Rows.Clear();
+            DT.FillDispetcherTasks(MainGrid);
         }
     }
 }

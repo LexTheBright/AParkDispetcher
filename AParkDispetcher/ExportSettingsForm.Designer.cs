@@ -325,7 +325,6 @@ namespace AParkDispetcher
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройки экспорта";
-            this.Deactivate += new System.EventHandler(this.ExportSettingsForm_Deactivate);
             this.panel4.ResumeLayout(false);
             this.Excel_panel.ResumeLayout(false);
             this.Excel_panel.PerformLayout();
