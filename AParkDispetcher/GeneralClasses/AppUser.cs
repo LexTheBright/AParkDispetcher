@@ -121,7 +121,7 @@ namespace AParkDispetcher
                 case 0: return "Пользователь"; break;
                 case 1: return "Оператор"; break;
                 case 2: return "Администратор"; break;
-                case 3: return "Начальник"; break;
+                case 3: return "Начальник АХЧ"; break;
                 default:
                     return ""; break;
             }

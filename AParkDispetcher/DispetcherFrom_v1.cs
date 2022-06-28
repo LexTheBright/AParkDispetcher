@@ -56,11 +56,9 @@ namespace APark
 
                 typeTask_box.Items.Clear();
                 DT.FillComboboxWithTypes(typeTask_box);
-                if (AppUser.roleTitle == "Администратор" || AppUser.roleTitle == "Оператор")
+                if (AppUser.roleTitle == "Администратор" || AppUser.roleTitle == "Оператор" || AppUser.roleTitle == "Начальник АХЧ")
                 {
                     Edit_task_button.Text = "Обработать";
-                    MenuAdminUsers.Visible = true;
-                    ReportsFormButton.Visible = true;
 
                     if (Tasks_group.Location.X == 6)
                     {
@@ -73,18 +71,37 @@ namespace APark
                     DT.FillDispetcherTasks(MainGrid);
                 }
 
+                if (AppUser.roleTitle == "Начальник АХЧ")
+                {
+                    approvalButton.Visible = true;
+                    AdminFormButton.Visible = true;
+                    ReportsFormButton.Visible = true;
+                }
+
+                if (AppUser.roleTitle == "Администратор")
+                {
+                    approvalButton.Visible = false;
+                    AdminFormButton.Visible = true;
+                    ReportsFormButton.Visible = true;
+
+                }
+                
                 if (AppUser.roleTitle == "Оператор")
                 {
+                    approvalButton.Visible = false;
                     AdminFormButton.Visible = false;
+                    ReportsFormButton.Visible = true;
                 }
 
                 if (AppUser.roleTitle == "Пользователь")
                 {
-                    Edit_task_button.Text = "Изменить";
+                    approvalButton.Visible = false;
                     AdminFormButton.Visible = false;
                     ReportsFormButton.Visible = false;
 
-                    DT.FillUsersTasks(MainGrid, AppUser.tabNum); //fqiugfuiqueohguoiqeguioqehguheqgqe
+                    Edit_task_button.Text = "Изменить";
+
+                    DT.FillUsersTasks(MainGrid, AppUser.tabNum);
                     oper_panel.Enabled = false;
 
                     if (Tasks_group.Location.X != 6)
@@ -751,6 +768,7 @@ namespace APark
             destTask_box.BackColor = Color.PaleGreen;
             commTask_box.BackColor = Color.PaleGreen;
 
+            update_button.Enabled = false;
             searchTasks.Enabled = false;
             MainGrid.Enabled = false;
             OrdtimeTask_box.Enabled = true;
@@ -862,6 +880,7 @@ namespace APark
             markTask_box.BackColor = Color.PaleGoldenrod;
             driverTask_box.BackColor = Color.PaleGoldenrod;
 
+            update_button.Enabled = true;
             searchTasks.Enabled = true;
             MainGrid.Enabled = true;
             OrdtimeTask_box.Enabled = false;
@@ -1008,6 +1027,7 @@ namespace APark
             isChangingTasks = true;
             searchTasks.Enabled = false;
             MainGrid.Enabled = false;
+            update_button.Enabled = false;
 
             Save_edit_task_button.Visible = true;
             textStateTask_box.Visible = false;

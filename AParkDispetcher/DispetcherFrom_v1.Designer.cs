@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DispetcherFrom));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.approvalButton = new System.Windows.Forms.ToolStripMenuItem();
             this.AdminFormButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuAdminUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportsFormButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportHis = new System.Windows.Forms.ToolStripMenuItem();
             this.MainGrid = new System.Windows.Forms.DataGridView();
             this.TNum_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,12 +120,16 @@
             this.AsideDispTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.searchAsideDrive = new System.Windows.Forms.TextBox();
+            this.SearchPic1 = new System.Windows.Forms.PictureBox();
             this.DriversViewGrid = new System.Windows.Forms.DataGridView();
             this.FIO_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_a_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sort_by_state = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.state_busy = new System.Windows.Forms.RadioButton();
             this.state_free = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -137,6 +143,7 @@
             this.Change_state_button = new System.Windows.Forms.Button();
             this.Save_state_button = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.searchPic2 = new System.Windows.Forms.PictureBox();
             this.searchAsideAuto = new System.Windows.Forms.TextBox();
             this.sort_by_car_state = new System.Windows.Forms.Button();
             this.carViewGrid = new System.Windows.Forms.DataGridView();
@@ -145,6 +152,8 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.mark_aside = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -158,15 +167,6 @@
             this.car_save_button = new System.Windows.Forms.Button();
             this.User_label = new System.Windows.Forms.TextBox();
             this.exit_button = new System.Windows.Forms.PictureBox();
-            this.MenuAdminUsers = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportHis = new System.Windows.Forms.ToolStripMenuItem();
-            this.SearchPic1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.searchPic2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.update_button = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
@@ -178,21 +178,21 @@
             this.oper_panel.SuspendLayout();
             this.AsideDispTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.update_button)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,7 +206,7 @@
             this.ReportsFormButton});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -215,6 +215,7 @@
             this.approvalButton.Name = "approvalButton";
             this.approvalButton.Size = new System.Drawing.Size(104, 21);
             this.approvalButton.Text = "Согласование";
+            this.approvalButton.Visible = false;
             this.approvalButton.Click += new System.EventHandler(this.пользовательToolStripMenuItem_Click);
             // 
             // AdminFormButton
@@ -224,6 +225,15 @@
             this.AdminFormButton.Name = "AdminFormButton";
             this.AdminFormButton.Size = new System.Drawing.Size(142, 21);
             this.AdminFormButton.Text = "Администрирование";
+            this.AdminFormButton.Visible = false;
+            // 
+            // MenuAdminUsers
+            // 
+            this.MenuAdminUsers.Image = global::AParkDispetcher.Properties.Resources.database;
+            this.MenuAdminUsers.Name = "MenuAdminUsers";
+            this.MenuAdminUsers.Size = new System.Drawing.Size(184, 22);
+            this.MenuAdminUsers.Text = "Редактировать БД";
+            this.MenuAdminUsers.Click += new System.EventHandler(this.MenuAdminUsers_Click);
             // 
             // ReportsFormButton
             // 
@@ -232,6 +242,15 @@
             this.ReportsFormButton.Name = "ReportsFormButton";
             this.ReportsFormButton.Size = new System.Drawing.Size(63, 21);
             this.ReportsFormButton.Text = "Отчеты";
+            this.ReportsFormButton.Visible = false;
+            // 
+            // reportHis
+            // 
+            this.reportHis.Image = global::AParkDispetcher.Properties.Resources.excel_48;
+            this.reportHis.Name = "reportHis";
+            this.reportHis.Size = new System.Drawing.Size(180, 22);
+            this.reportHis.Text = "Экспорт в excel";
+            this.reportHis.Click += new System.EventHandler(this.историяToolStripMenuItem_Click);
             // 
             // MainGrid
             // 
@@ -239,8 +258,8 @@
             this.MainGrid.AllowUserToDeleteRows = false;
             this.MainGrid.AllowUserToResizeColumns = false;
             this.MainGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.MainGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -248,14 +267,14 @@
             this.MainGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.MainGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.MainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TNum_col,
@@ -275,33 +294,33 @@
             this.Column21,
             this.FIO_col,
             this.Column23});
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGrid.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.MainGrid.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.MainGrid.Location = new System.Drawing.Point(6, 25);
             this.MainGrid.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.MainGrid.MultiSelect = false;
             this.MainGrid.Name = "MainGrid";
             this.MainGrid.ReadOnly = true;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MainGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MainGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.MainGrid.RowHeadersVisible = false;
             this.MainGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MainGrid.RowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.MainGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.MainGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.MainGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1264,6 +1283,20 @@
             this.searchAsideDrive.TextChanged += new System.EventHandler(this.searchAsideDrive_TextChanged);
             this.searchAsideDrive.Leave += new System.EventHandler(this.searchAsideDrive_Leave);
             // 
+            // SearchPic1
+            // 
+            this.SearchPic1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchPic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchPic1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchPic1.Image = global::AParkDispetcher.Properties.Resources.search_64;
+            this.SearchPic1.Location = new System.Drawing.Point(176, 500);
+            this.SearchPic1.Name = "SearchPic1";
+            this.SearchPic1.Size = new System.Drawing.Size(26, 25);
+            this.SearchPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchPic1.TabIndex = 64;
+            this.SearchPic1.TabStop = false;
+            this.SearchPic1.Click += new System.EventHandler(this.SearchPic1_Click);
+            // 
             // DriversViewGrid
             // 
             this.DriversViewGrid.AllowUserToAddRows = false;
@@ -1277,27 +1310,27 @@
             this.DriversViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DriversViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DriversViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DriversViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DriversViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DriversViewGrid.ColumnHeadersHeight = 33;
             this.DriversViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DriversViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIO_a_col,
             this.Column6,
             this.Tab_a_col});
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.Olive;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DriversViewGrid.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Olive;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriversViewGrid.DefaultCellStyle = dataGridViewCellStyle7;
             this.DriversViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DriversViewGrid.Location = new System.Drawing.Point(0, 27);
             this.DriversViewGrid.Margin = new System.Windows.Forms.Padding(0);
@@ -1307,9 +1340,9 @@
             this.DriversViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DriversViewGrid.RowHeadersVisible = false;
             this.DriversViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DriversViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DriversViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.DriversViewGrid.RowTemplate.Height = 30;
             this.DriversViewGrid.RowTemplate.ReadOnly = true;
@@ -1392,6 +1425,42 @@
             this.groupBox5.TabIndex = 59;
             this.groupBox5.TabStop = false;
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(28, 151);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 64;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            this.pictureBox3.WaitOnLoad = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(28, 124);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 63;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox2.WaitOnLoad = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(28, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 62;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.WaitOnLoad = true;
             // 
             // state_busy
             // 
@@ -1591,6 +1660,20 @@
             this.tabPage2.Text = "Машины";
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
+            // searchPic2
+            // 
+            this.searchPic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchPic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPic2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchPic2.Image = global::AParkDispetcher.Properties.Resources.search_64;
+            this.searchPic2.Location = new System.Drawing.Point(176, 500);
+            this.searchPic2.Name = "searchPic2";
+            this.searchPic2.Size = new System.Drawing.Size(26, 25);
+            this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.searchPic2.TabIndex = 66;
+            this.searchPic2.TabStop = false;
+            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
+            // 
             // searchAsideAuto
             // 
             this.searchAsideAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -1635,8 +1718,8 @@
             this.carViewGrid.AllowUserToDeleteRows = false;
             this.carViewGrid.AllowUserToResizeColumns = false;
             this.carViewGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
-            this.carViewGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.carViewGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.carViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1644,14 +1727,14 @@
             this.carViewGrid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.carViewGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.carViewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carViewGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.carViewGrid.ColumnHeadersHeight = 33;
             this.carViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.carViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1659,14 +1742,14 @@
             this.Num_a_col,
             this.Column7,
             this.Column9});
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.carViewGrid.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.carViewGrid.DefaultCellStyle = dataGridViewCellStyle11;
             this.carViewGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.carViewGrid.Location = new System.Drawing.Point(0, 27);
             this.carViewGrid.Margin = new System.Windows.Forms.Padding(0);
@@ -1675,9 +1758,9 @@
             this.carViewGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.carViewGrid.RowHeadersVisible = false;
             this.carViewGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.carViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.carViewGrid.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.carViewGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
             this.carViewGrid.RowTemplate.Height = 30;
             this.carViewGrid.RowTemplate.ReadOnly = true;
@@ -1736,6 +1819,30 @@
             this.groupBox7.Size = new System.Drawing.Size(209, 271);
             this.groupBox7.TabIndex = 60;
             this.groupBox7.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(30, 147);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 70;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
+            this.pictureBox5.WaitOnLoad = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(30, 119);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 69;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            this.pictureBox4.WaitOnLoad = true;
             // 
             // panel5
             // 
@@ -1926,110 +2033,6 @@
             this.exit_button.TabStop = false;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
-            // MenuAdminUsers
-            // 
-            this.MenuAdminUsers.Image = global::AParkDispetcher.Properties.Resources.database;
-            this.MenuAdminUsers.Name = "MenuAdminUsers";
-            this.MenuAdminUsers.Size = new System.Drawing.Size(184, 22);
-            this.MenuAdminUsers.Text = "Редактировать БД";
-            this.MenuAdminUsers.Click += new System.EventHandler(this.MenuAdminUsers_Click);
-            // 
-            // reportHis
-            // 
-            this.reportHis.Image = global::AParkDispetcher.Properties.Resources.excel_48;
-            this.reportHis.Name = "reportHis";
-            this.reportHis.Size = new System.Drawing.Size(168, 22);
-            this.reportHis.Text = "Экспорт в excel";
-            this.reportHis.Click += new System.EventHandler(this.историяToolStripMenuItem_Click);
-            // 
-            // SearchPic1
-            // 
-            this.SearchPic1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SearchPic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchPic1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchPic1.Image = global::AParkDispetcher.Properties.Resources.search_64;
-            this.SearchPic1.Location = new System.Drawing.Point(176, 500);
-            this.SearchPic1.Name = "SearchPic1";
-            this.SearchPic1.Size = new System.Drawing.Size(26, 25);
-            this.SearchPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchPic1.TabIndex = 64;
-            this.SearchPic1.TabStop = false;
-            this.SearchPic1.Click += new System.EventHandler(this.SearchPic1_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(28, 151);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 64;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
-            this.pictureBox3.WaitOnLoad = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(28, 124);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 63;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            this.pictureBox2.WaitOnLoad = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 62;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            this.pictureBox1.WaitOnLoad = true;
-            // 
-            // searchPic2
-            // 
-            this.searchPic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.searchPic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchPic2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchPic2.Image = global::AParkDispetcher.Properties.Resources.search_64;
-            this.searchPic2.Location = new System.Drawing.Point(176, 500);
-            this.searchPic2.Name = "searchPic2";
-            this.searchPic2.Size = new System.Drawing.Size(26, 25);
-            this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.searchPic2.TabIndex = 66;
-            this.searchPic2.TabStop = false;
-            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(30, 147);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 70;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
-            this.pictureBox5.WaitOnLoad = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(30, 119);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 69;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            this.pictureBox4.WaitOnLoad = true;
-            // 
             // update_button
             // 
             this.update_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2084,24 +2087,24 @@
             this.AsideDispTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.exit_button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.update_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
