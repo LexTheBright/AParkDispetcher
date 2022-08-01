@@ -13,6 +13,7 @@ namespace AParkDispetcher
         public static string password = "admin";
         public static string dbName = "autos";
         private static MySqlConnection myConnection;
+
         // Поле для создания или обращения к уже существующему объекту (соединению)
         public static MySqlConnection dbConnect
         {

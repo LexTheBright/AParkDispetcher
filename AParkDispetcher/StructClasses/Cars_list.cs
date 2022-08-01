@@ -15,9 +15,7 @@ namespace AParkDispetcher
             public string description;
             public int state;
             public string type;
-            //public int car_type_id;
         }
-
 
         public List<C1> usr = new List<C1>();
 
@@ -26,8 +24,7 @@ namespace AParkDispetcher
         public void FillTypes(ComboBox combo)
         {
             types.Clear();
-            string querry = "";
-            querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
+            string querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
@@ -59,8 +56,7 @@ namespace AParkDispetcher
         public void FillCar(DateTime? leftT = null, DateTime? rightT = null)
         {
             usr.Clear();
-            string querry = "";
-            querry = "USE autos; SELECT reg_mark, model, color, description, car_state, type FROM cars JOIN ctypes WHERE cars.car_type_id = ctypes.type_id ORDER BY car_state ";
+            string querry = "USE autos; SELECT reg_mark, model, color, description, car_state, type FROM cars JOIN ctypes WHERE cars.car_type_id = ctypes.type_id ORDER BY car_state ";
             if (leftT is DateTime ParsedLeft && rightT is DateTime ParsedRight)
             {
                 querry = $"USE autos; CALL get_free_cars('{ParsedLeft.ToString("yyyy-MM-dd HH:mm:ss")}', '{ParsedRight.ToString("yyyy-MM-dd HH:mm:ss")}')";
@@ -72,10 +68,12 @@ namespace AParkDispetcher
                 {
                     while (reader.Read())
                     {
-                        C1 temp_c = new C1();
-                        temp_c.reg_mark = reader.GetString(0);
-                        temp_c.model = reader.GetString(1);
-                        temp_c.color = reader.GetString(2);
+                        C1 temp_c = new C1
+                        {
+                            reg_mark = reader.GetString(0),
+                            model = reader.GetString(1),
+                            color = reader.GetString(2)
+                        };
 
                         if (reader.IsDBNull(3)) temp_c.description = "";
                         else temp_c.description = reader.GetString(3);
@@ -92,7 +90,7 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillSelectCarForm(DataGridView dgw, DateTime? Tleft = null, DateTime? Tright = null)
+        public void FillSelectCarForm(DataGridView dgw, DateTime? Tleft = null, DateTime? Tright = null)
         {
             if (Tleft != null && Tright != null) FillCar(Tleft, Tright);
             else FillCar();
@@ -102,7 +100,7 @@ namespace AParkDispetcher
             }
         }
 
-        public void fillAdminsCarGrid(DataGridView dgw)
+        public void FillAdminsCarGrid(DataGridView dgw)
         {
             FillCar();
             for (int i = 0; i < usr.Count; i++)
@@ -110,7 +108,8 @@ namespace AParkDispetcher
                 dgw.Rows.Add("" + usr[i].reg_mark + "", "" + usr[i].model + "", "" + usr[i].type + "", "" + usr[i].color + "", "" + StateTitle(usr[i].state) + "");
             }
         }
-        public void fillDispatchersCarGrid(DataGridView dgw)
+
+        public void FillDispatchersCarGrid(DataGridView dgw)
         {
             FillCar();
             for (int i = 0; i < usr.Count; i++)

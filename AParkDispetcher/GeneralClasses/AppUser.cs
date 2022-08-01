@@ -8,34 +8,29 @@ namespace AParkDispetcher
 {
     class AppUser
     {
-        public static string tabNum { get; private set; }
-        public static string name { get; private set; }
-        public static string secondName { get; private set; }
-        public static string thirdName { get; private set; }
+        public static string TabNum { get; private set; }
+        public static string Name { get; private set; }
+        public static string SecondName { get; private set; }
+        public static string ThirdName { get; private set; }
 
         public static string roleTitle;
-        public string login { get; private set; }
+        public string Login { get; private set; }
 
         private int roleID;
         private string password;
 
-        public static bool iSsignedIn { get; private set; }
+        public static bool ISsignedIn { get; private set; }
 
         private static AppUser connInstance;
-
-        private AppUser()
-        {
-        }
-
         public static AppUser getConnInstance()
         {
             if (connInstance == null) connInstance = new AppUser();
             return connInstance;
         }
 
-        public void tryToLogin(string textlogin, string textPassword)
+        public void TryToLogin(string textlogin, string textPassword)
         {
-            iSsignedIn = false;
+            ISsignedIn = false;
             string querry = $"USE autos; SELECT * from users where login = '{textlogin}'";
             MySqlCommand commLine = new MySqlCommand(querry, DbConnection.dbConnect);
             try
@@ -44,14 +39,14 @@ namespace AParkDispetcher
                 {
                     if (reader.Read())
                     {
-                        tabNum = reader.GetString(0);
-                        name = reader.GetString(2);
-                        secondName = reader.GetString(1);
-                        thirdName = reader.GetString(3);
-                        login = reader.GetString(4);
+                        TabNum = reader.GetString(0);
+                        Name = reader.GetString(2);
+                        SecondName = reader.GetString(1);
+                        ThirdName = reader.GetString(3);
+                        Login = reader.GetString(4);
                         password = reader.GetString(5);
                         roleID = reader.GetInt32(6);
-                        roleTitle = getRoleTitle(roleID);
+                        roleTitle = GetRoleTitle(roleID);
                     }
                     else
                     {
@@ -62,30 +57,13 @@ namespace AParkDispetcher
             }
             catch (MySqlException e)
             {
-                string ErrMessageText = getErrorMessage(e.Number);
+                string ErrMessageText = GetErrorMessage(e.Number);
                 if (ErrMessageText == "") throw;
                 else MessageBox.Show(ErrMessageText);
                 return;
             }
             using (SHA256 mySHA256 = SHA256.Create())
             {
-
-                /*string passHash = BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassword))).Replace("-", "").Substring(0, 32)
-                string querry = $"USE autos; CALL try_auth_user('{textlogin}', '{passHash}')";
-                MySqlCommand commLine = new MySqlCommand(querry, DbConnection.dbConnect);
-                try
-                {
-                    using (MySqlDataReader reader = commLine.ExecuteReader())
-                    {
-                        if (reader.Read()) { ...}
-                        else
-                        {
-                            MessageBox.Show("Пользователя с таким логином\\паролем не существует.");
-                            return;
-                        }
-                    }
-                }
-                }*/
                 if (password != BitConverter.ToString(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassword))).Replace("-", "").Substring(0, 32))
                 {
                     MessageBox.Show("Пользователя с таким логином\\паролем не существует.", "Ошибка авторизации пользователя");
@@ -93,12 +71,12 @@ namespace AParkDispetcher
                 }
                 else
                 {
-                    iSsignedIn = true;
+                    ISsignedIn = true;
                 }
             }
         }
 
-        private string getErrorMessage(int ErrorNumber)
+        private string GetErrorMessage(int ErrorNumber)
         {
             switch (ErrorNumber)
             {
@@ -111,19 +89,19 @@ namespace AParkDispetcher
 
         public static void LogOut()
         {
-            iSsignedIn = false;
+            ISsignedIn = false;
         }
 
-        private string getRoleTitle(int role)
+        private string GetRoleTitle(int role)
         {
             switch (role)
             {
-                case 0: return "Пользователь"; break;
-                case 1: return "Оператор"; break;
-                case 2: return "Администратор"; break;
-                case 3: return "Начальник АХЧ"; break;
+                case 0: return "Пользователь"; 
+                case 1: return "Оператор";
+                case 2: return "Администратор";
+                case 3: return "Начальник АХЧ";
                 default:
-                    return ""; break;
+                    return "";
             }
         }
     }

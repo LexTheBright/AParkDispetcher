@@ -10,10 +10,10 @@ namespace AParkDispetcher
         {
             InitializeComponent();
             Drivers_list DD = new Drivers_list();
-            DD.fillSelectDriverForm(SelectionDriverGrid);
+            DD.FillSelectDriverForm(SelectionDriverGrid);
         }
 
-        private void ok_button_Click(object sender, EventArgs e)
+        private void Ok_button_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
@@ -46,7 +46,7 @@ namespace AParkDispetcher
             this.Location = new Point(Screen.GetWorkingArea(this.Location).Right - this.Width, Screen.GetWorkingArea(this.Location).Bottom - this.Height);
         }
 
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -56,17 +56,17 @@ namespace AParkDispetcher
             if (e.RowIndex != -1) this.DialogResult = DialogResult.OK;
         }
 
-        private void searchDrivers2_Enter(object sender, EventArgs e)
+        private void SearchDrivers2_Enter(object sender, EventArgs e)
         {
             searchDrivers2.Clear();
         }
 
-        private void searchDrivers2_Leave(object sender, EventArgs e)
+        private void SearchDrivers2_Leave(object sender, EventArgs e)
         {
             if (searchDrivers2.Text == "") searchDrivers2.Text = "Поиск";
         }
 
-        private void searchDrivers2_TextChanged(object sender, EventArgs e)
+        private void SearchDrivers2_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(searchDrivers2.Text))
                 return;

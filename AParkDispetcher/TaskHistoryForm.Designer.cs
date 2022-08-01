@@ -94,7 +94,7 @@ namespace AParkDispetcher
             this.minimize_button.Text = "← Свернуть";
             this.minimize_button.UseVisualStyleBackColor = false;
             this.minimize_button.Visible = false;
-            this.minimize_button.Click += new System.EventHandler(this.minimize_button_Click);
+            this.minimize_button.Click += new System.EventHandler(this.Minimize_button_Click);
             // 
             // expand_button
             // 
@@ -110,7 +110,7 @@ namespace AParkDispetcher
             this.expand_button.TabIndex = 1;
             this.expand_button.Text = "Раскрыть →";
             this.expand_button.UseVisualStyleBackColor = false;
-            this.expand_button.Click += new System.EventHandler(this.expand_button_Click);
+            this.expand_button.Click += new System.EventHandler(this.Expand_button_Click);
             // 
             // TaskHistoryGrid
             // 
@@ -197,7 +197,6 @@ namespace AParkDispetcher
             this.TaskHistoryGrid.StandardTab = true;
             this.TaskHistoryGrid.TabIndex = 5;
             this.TaskHistoryGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TaskHistoryGrid_CellFormatting);
-            this.TaskHistoryGrid.SelectionChanged += new System.EventHandler(this.TaskHistoryGrid_SelectionChanged);
             // 
             // Column3
             // 

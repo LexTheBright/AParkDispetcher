@@ -34,12 +34,7 @@ namespace APark
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void DispetcherFrom_Load(object sender, EventArgs e)
         {
             //DU = new Disp_user();
             DD = new Drivers_list();
@@ -51,7 +46,7 @@ namespace APark
             LoginForm newLoginForm = new LoginForm();
             if (newLoginForm.ShowDialog(this) == DialogResult.OK)
             {
-                User_label.Text = AppUser.name + " " + AppUser.secondName[0] + ". " + AppUser.thirdName[0] + ". (" + AppUser.tabNum + ")";
+                User_label.Text = AppUser.Name + " " + AppUser.SecondName[0] + ". " + AppUser.ThirdName[0] + ". (" + AppUser.TabNum + ")";
                 this.Enabled = true;
 
                 typeTask_box.Items.Clear();
@@ -66,8 +61,8 @@ namespace APark
                         Tasks_group.Width -= 210;
                     }
 
-                    DD.fillDispatchersDriverGrid(DriversViewGrid);
-                    DC.fillDispatchersCarGrid(carViewGrid);
+                    DD.FillDispatchersDriverGrid(DriversViewGrid);
+                    DC.FillDispatchersCarGrid(carViewGrid);
                     DT.FillDispetcherTasks(MainGrid);
                 }
 
@@ -85,7 +80,7 @@ namespace APark
                     ReportsFormButton.Visible = true;
 
                 }
-                
+
                 if (AppUser.roleTitle == "Оператор")
                 {
                     approvalButton.Visible = false;
@@ -101,7 +96,7 @@ namespace APark
 
                     Edit_task_button.Text = "Изменить";
 
-                    DT.FillUsersTasks(MainGrid, AppUser.tabNum);
+                    DT.FillUsersTasks(MainGrid, AppUser.TabNum);
                     oper_panel.Enabled = false;
 
                     if (Tasks_group.Location.X != 6)
@@ -112,50 +107,11 @@ namespace APark
                 }
             }
             else { Application.Exit(); }
-            /*StateTask_combobox.Items.Clear();
-            if (true)  //todo заполнение от юзера
-            {
-                StateTask_combobox.Items.Add("подтверждена");
-                StateTask_combobox.Items.Add("исполняется");
-                StateTask_combobox.Items.Add("завершена");
-                StateTask_combobox.Items.Add("отменена");
-            } else {
-                StateTask_combobox.Items.Add("отменена");
-            }
-            StateTask_combobox.SelectedIndex = 0;*/
-            endingEvent();
+            EndingEvent();
             MainGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
             carViewGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold);
-            //dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI Semibold", 12, FontStyle.Bold); 
         }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
+        private void Save_state_button_Click(object sender, EventArgs e)
         {
 
             state_free.Enabled = false;
@@ -163,10 +119,6 @@ namespace APark
             state_gone.Enabled = false;
 
             Dictionary<string, string> driver_state_prop = new Dictionary<string, string>();
-
-            //int selectedIndex = DriversViewGrid.SelectedCells[0].RowIndex;
-            //string tab_num_driv = DriversViewGrid.Rows[selectedIndex].Cells[2].Value.ToString();
-
 
             if (state_free.Checked) driver_state_prop.Add("driver_state", "0");
             if (state_busy.Checked) driver_state_prop.Add("driver_state", "1");
@@ -179,18 +131,13 @@ namespace APark
             }
             else
             {
-                DBRed.updateByID("drivers", "tab_number", tab_aside.Text, driver_state_prop);
+                DBRed.UpdateByID("drivers", "tab_number", tab_aside.Text, driver_state_prop);
             }
 
             //сохраняем индакс и обновляем таблицу
             int savedIndex = DriversViewGrid.SelectedCells[0].RowIndex;
             DriversViewGrid.Rows[savedIndex].Cells[1].Value = driver_state_prop["driver_state"];
-            //DriversViewGrid.Refresh();
-            //dataGridView1_SelectionChanged(sender, e);
 
-            /*DriversViewGrid.Rows.Clear();
-            DD.fillDispatchersDriverGrid(DriversViewGrid);
-            DriversViewGrid.Rows[savedIndex].Selected = true;*/
             DriversViewGrid.Enabled = true;
             DriversViewGrid.Focus();
             Sort_by_state.PerformClick();
@@ -207,9 +154,8 @@ namespace APark
             CurAdminForm.Show();
         }
 
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void DriversViewGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            /*if (e.Value.ToString().Length > 20) e.Value = e.Value.ToString().Substring(0, 20);*/
             string[] splited_cell = e.Value.ToString().Split(' ');
             if (splited_cell.Count() == 3)
             {
@@ -222,38 +168,26 @@ namespace APark
                 case "2":
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
-                    /*e.CellStyle.BackColor = Color.LightGray;
-                    e.CellStyle.SelectionBackColor = Color.Gray;
-                    e.Value = "";*/
                     break;
                 case "0":
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
-                    //dataGridView1.Rows[e.RowIndex].DefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
-                    /*e.CellStyle.BackColor = Color.LightGreen;
-                    e.CellStyle.SelectionBackColor = Color.Green;
-                    e.Value = "";*/
                     break;
                 case "1":
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightYellow;
                     DriversViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.DarkKhaki;
-                    /*e.CellStyle.BackColor = Color.LightYellow;
-                    e.CellStyle.SelectionBackColor = Color.Orange;
-                    e.Value = "";*/
                     break;
                 default:
                     break;
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void DriversViewGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (DriversViewGrid.SelectedCells.Count > 0)
             {
-                //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Segoe UI Semibold", 13, FontStyle.Bold);
                 int selectedrowindex = DriversViewGrid.SelectedCells[0].RowIndex;
                 string FIO = DriversViewGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
-                //DriversViewGrid.Rows[selectedrowindex].Cells[0].Style.Font = new Font("Segoe UI Semibold", 13, FontStyle.Bold);
                 string state = DriversViewGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
                 string tab_number = DriversViewGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
 
@@ -279,7 +213,7 @@ namespace APark
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void Car_edit_button_Click(object sender, EventArgs e)
         {
             carViewGrid.Enabled = false;
             state_notAvailable.Enabled = true;
@@ -290,7 +224,7 @@ namespace APark
             IsAsideTabSelectingActive = false;
         }
 
-        private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void CarViewGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 1) e.Value = e.Value.ToString().Remove(e.Value.ToString().Length - 3);
 
@@ -302,54 +236,46 @@ namespace APark
                 case "1":
                     carViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
                     carViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Gray;
-
-                    //e.CellStyle.BackColor = Color.LightGray;
-                    //e.CellStyle.SelectionBackColor = Color.Gray;
                     break;
                 case "0":
                     carViewGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
                     carViewGrid.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.Green;
-
-                    //e.CellStyle.BackColor = Color.LightGreen;
-                    //e.CellStyle.SelectionBackColor = Color.Green;
                     break;
                 default:
                     break;
             }
         }
 
-        private void tabPage1_Enter(object sender, EventArgs e)
+        private void DriversPage_Enter(object sender, EventArgs e)
         {
-            state_free_CheckedChanged(sender, e);
+            State_free_CheckedChanged(sender, e);
             DriversViewGrid.Rows.Clear();
-            DD.fillDispatchersDriverGrid(DriversViewGrid);
-            //this.ProcessTabKey(true);
+            DD.FillDispatchersDriverGrid(DriversViewGrid);
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void Sort_by_state_Click(object sender, EventArgs e)
         {
             DriversViewGrid.Sort(DriversViewGrid.Columns[1], ListSortDirection.Ascending);
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void Sort_by_car_state_Click(object sender, EventArgs e)
         {
             carViewGrid.Sort(carViewGrid.Columns[2], ListSortDirection.Ascending);
         }
 
-        private void tabPage2_Enter(object sender, EventArgs e)
+        private void AutosPage_Enter(object sender, EventArgs e)
         {
             carViewGrid.Rows.Clear();
-            DC.fillDispatchersCarGrid(carViewGrid);
-            //this.ProcessTabKey(true);
+            DC.FillDispatchersCarGrid(carViewGrid);
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void AsideDispTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ProcessTabKey(true);
         }
 
-        private void dataGridView3_SelectionChanged(object sender, EventArgs e)
+        private void CarViewGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (carViewGrid.SelectedCells.Count > 0)
             {
@@ -392,12 +318,8 @@ namespace APark
             }
         }
 
-        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void MainGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            /*for (int i = 0; i < dataGridView2.RowCount; i++)
-            {
-                dataGridView2.Rows[i].MinimumHeight = 35;
-            }*/
             if (e.RowIndex % 2 == 1) MainGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke;
             else MainGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.AliceBlue; /*Color.FromArgb(153, 180, 209)*/
 
@@ -450,7 +372,7 @@ namespace APark
             }
         }
 
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        private void MainGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (MainGrid.SelectedCells.Count > 0)
             {
@@ -460,9 +382,7 @@ namespace APark
                 string task_tab_user = MainGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
                 string task_state = MainGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
 
-                //string task_dep_time = dataGridView2.Rows[selectedrowindex].Cells[4].Value.ToString();
                 DateTime task_dep_time = Convert.ToDateTime(MainGrid.Rows[selectedrowindex].Cells[4].Value);
-
 
                 string task_dura = MainGrid.Rows[selectedrowindex].Cells[5].Value.ToString();
                 string task_dep = MainGrid.Rows[selectedrowindex].Cells[6].Value.ToString();
@@ -480,14 +400,11 @@ namespace APark
                 numTask_box.Text = task_numb;
                 timeTask_box.Text = task_datetime;
 
-                //clientTask_box.Text = task_tab_user;
                 clientTask_box.Text = task_user_FIO;
-
                 departTask_box.Text = task_dep;
 
 
                 OrdtimeTask_box.Format = DateTimePickerFormat.Custom;
-                //OrdtimeTask_box.CustomFormat = "      dd.MM.yy  [HH:mm]";
                 OrdtimeTask_box.Value = task_dep_time;
 
 
@@ -502,16 +419,12 @@ namespace APark
 
                 if (task_ctype != "")
                 {
-                    //OrderedTypeTask_box.Visible = false;
                     typeTask_box.SelectedItem = task_ctype;
                     OrderedTypeTask_box.Text = task_ctype;
                     if (task_ctype.Length > 15) OrderedTypeTask_box.Text = task_ctype.Substring(0, 15);
-                    //typeTask_box.Visible = true;
-
                 }
                 else
                 {
-                    //typeTask_box.Visible = false;
                     OrderedTypeTask_box.Text = task_ordered_type;
                     typeTask_box.SelectedItem = task_ordered_type;
                     if (task_ordered_type.Length > 15) OrderedTypeTask_box.Text = task_ordered_type.Substring(0, 15);
@@ -520,9 +433,6 @@ namespace APark
 
                 colorTask_box.Text = task_car_color;
 
-                //StateTask_combobox.SelectedIndex = Int32.Parse(task_state);
-                //admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key;
-                //textStateTask_box.Text = StateTask_combobox.Text;
                 textStateTask_box.Text = Task_Type[int.Parse(task_state)];
                 try { StateTask_combobox.SelectedItem = textStateTask_box.Text; } catch { StateTask_combobox.SelectedIndex = 0; }
 
@@ -537,13 +447,11 @@ namespace APark
                     Edit_task_button.Enabled = true;
                     Edit_task_button.BackColor = SystemColors.ControlLight;
                 }
-                //if (AppUser.roleTitle == "Пользователь" && textStateTask_box.Text == "подтверждена") Edit_task_button.Text = "Отмена заявки";
                 if (AppUser.roleTitle == "Пользователь" && textStateTask_box.Text == "исполняется")
                 {
                     Edit_task_button.Enabled = false;
                     Edit_task_button.BackColor = Color.DarkKhaki;
                 }
-                //StateTask_combobox.SelectedItem = textStateTask_box.Text;
             }
             else
             {
@@ -552,10 +460,9 @@ namespace APark
             }
         }
 
-        private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void MainGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1) return;
-            //MessageBox.Show("The row index = " + e.RowIndex);
 
             string task_numb = MainGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             string task_datetime = MainGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -566,7 +473,7 @@ namespace APark
             CurTHistoryForm.Show();
         }
 
-        private void selectCarButton_Click(object sender, EventArgs e)
+        private void SelectCarButton_Click(object sender, EventArgs e)
         {
             DateTime Tright, Tleft;
             if (duraTask_box.Text != "")
@@ -598,7 +505,6 @@ namespace APark
                 string car_type = CurSelectCarForm.SelectionCarGrid.Rows[Index].Cells[2].Value.ToString();
                 string car_color = CurSelectCarForm.SelectionCarGrid.Rows[Index].Cells[3].Value.ToString();
 
-                //MessageBox.Show(car_mark + " " + car_model + " " + car_type + " " + car_color);
                 markTask_box.Text = car_mark;
                 modelTask_box.Text = car_model;
                 OrderedTypeTask_box.Text = car_type;
@@ -606,7 +512,7 @@ namespace APark
             }
         }
 
-        private void state_free_CheckedChanged(object sender, EventArgs e)
+        private void State_free_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -618,7 +524,7 @@ namespace APark
 
         }
 
-        private void state_busy_CheckedChanged(object sender, EventArgs e)
+        private void State_busy_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -629,7 +535,7 @@ namespace APark
             if (state_gone.Checked) pictureBox3.Visible = true;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Change_state_button_Click(object sender, EventArgs e)
         {
             Cancel_driverstate_button.Visible = true;
             Save_state_button.Enabled = true;
@@ -640,14 +546,13 @@ namespace APark
             state_gone.Enabled = true;
 
             DriversViewGrid.Enabled = false;
-            //DriversViewGrid.SelectedRows[0].Selected = true;
             IsAsideTabSelectingActive = false;
         }
 
         private void Cancel_driverstate_button_Click(object sender, EventArgs e)
         {
             IsAsideTabSelectingActive = true;
-            dataGridView1_SelectionChanged(sender, e);
+            DriversViewGrid_SelectionChanged(sender, e);
             DriversViewGrid.Enabled = true;
             Save_state_button.Enabled = false;
             Save_state_button.BackColor = Color.DarkKhaki;
@@ -658,11 +563,7 @@ namespace APark
             state_busy.Enabled = false;
             state_gone.Enabled = false;
 
-            //Change_state_button.Focus();
-            //tabControl1.ProcessTabKey(true);
-            //DriversViewGrid.SelectedRows[0].Cells[0].Selected = true;
             DriversViewGrid.Focus();
-            //DriversViewGrid.SelectedRows[0].Selected = true;
         }
 
         private void DriversViewGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -672,14 +573,7 @@ namespace APark
             Change_state_button.PerformClick();
         }
 
-        private void DriversViewGrid_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            //DriversViewGrid.Rows[e.RowIndex].Cells[0].Style.Font = new Font("Century", 11, FontStyle.Bold);
-
-            //DriversViewGrid.SelectedCells[0].Style.Font = new Font("Century", 11.25);
-        }
-
-        private void state_available_CheckedChanged(object sender, EventArgs e)
+        private void State_available_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox4.Visible = false;
             pictureBox5.Visible = false;
@@ -688,9 +582,9 @@ namespace APark
             if (state_notAvailable.Checked) pictureBox5.Visible = true;
         }
 
-        private void car_cancel_button_Click(object sender, EventArgs e)
+        private void Car_cancel_button_Click(object sender, EventArgs e)
         {
-            dataGridView3_SelectionChanged(sender, e);
+            CarViewGrid_SelectionChanged(sender, e);
             IsAsideTabSelectingActive = true;
             carViewGrid.Enabled = true;
 
@@ -707,7 +601,7 @@ namespace APark
             carViewGrid.Focus();
         }
 
-        private void car_save_button_Click(object sender, EventArgs e)
+        private void Car_save_button_Click(object sender, EventArgs e)
         {
             state_notAvailable.Enabled = false;
             state_available.Enabled = false;
@@ -719,13 +613,12 @@ namespace APark
 
             if (carViewGrid.Rows[carViewGrid.SelectedCells[0].RowIndex].Cells[2].Value.ToString() == car_state_prop["car_state"])
             {
-                //MessageBox.Show("Jlbyfrjdjt");
                 car_cancel_button.PerformClick();
                 return;
             }
             else
             {
-                DBRed.updateByID("cars", "reg_mark", mark_aside.Text, car_state_prop);
+                DBRed.UpdateByID("cars", "reg_mark", mark_aside.Text, car_state_prop);
             }
             //сохраняем индакс и обновляем таблицу
             int savedIndex = carViewGrid.SelectedCells[0].RowIndex;
@@ -782,22 +675,22 @@ namespace APark
             Save_add_task_button.BackColor = SystemColors.ControlLight;
 
 
-            numTask_box.Text = (DBRed.getMaxID("tasks", "task_num") + 1).ToString();
+            numTask_box.Text = (DBRed.GetMaxID("tasks", "task_num") + 1).ToString();
             textStateTask_box.Text = "новая";
             OrdtimeTask_box.Value = DBRed.getDateTimeFromServer();
-            //timeTask_box.Text = OrdtimeTask_box.Value.ToString("g");
             timeTask_box.Text = OrdtimeTask_box.Value.ToString("dd.MM  [HH:mm]");
-            clientTask_box.Text = AppUser.secondName + " " + AppUser.name + " " + AppUser.thirdName;
+            clientTask_box.Text = AppUser.SecondName + " " + AppUser.Name + " " + AppUser.ThirdName;
         }
 
         private void StateTask_combobox_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sfs = new StringFormat();
-            sfs.Alignment = StringAlignment.Center;
+            StringFormat sfs = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
 
             var combo = sender as ComboBox;
 
-            //e.Graphics.FillRectangle(new SoliDBRedush(Color.Navy), e.Bounds);
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
@@ -815,14 +708,15 @@ namespace APark
                                               sfs);
         }
 
-        private void typeTask_box_DrawItem(object sender, DrawItemEventArgs e)
+        private void TypeTask_box_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sft = new StringFormat();
-            sft.Alignment = StringAlignment.Center;
+            StringFormat sft = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
 
             var combo = sender as ComboBox;
 
-            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
@@ -848,15 +742,15 @@ namespace APark
             }
         }
 
-        private void endingEvent()
+        private void EndingEvent()
         {
             int start_index_tsk = 0;
             if (MainGrid.Rows.Count != 0) start_index_tsk = MainGrid.SelectedCells[0].RowIndex;
             MainGrid.Rows.Clear();
-            if (AppUser.roleTitle == "Пользователь") DT.FillUsersTasks(MainGrid, AppUser.tabNum);
+            if (AppUser.roleTitle == "Пользователь") DT.FillUsersTasks(MainGrid, AppUser.TabNum);
             else DT.FillDispetcherTasks(MainGrid);
             if (start_index_tsk < MainGrid.RowCount) MainGrid.Rows[start_index_tsk].Selected = true;
-            dataGridView2_SelectionChanged(Cancel_task_button, new EventArgs());
+            MainGrid_SelectionChanged(Cancel_task_button, new EventArgs());
 
             OrderedTypeTask_box.Visible = true;
             label14.Visible = true;
@@ -901,7 +795,7 @@ namespace APark
 
         private void Cancel_task_button_Click(object sender, EventArgs e)
         {
-            endingEvent();
+            EndingEvent();
         }
 
         private void Save_add_task_button_Click(object sender, EventArgs e)
@@ -912,7 +806,7 @@ namespace APark
 
             DateTime current_datetime = DBRed.getDateTimeFromServer();
 
-            add_task_properties.Add("user_tab_number", AppUser.tabNum.ToString());
+            add_task_properties.Add("user_tab_number", AppUser.TabNum.ToString());
             add_task_properties.Add("task_num", numTask_box.Text);
             add_task_properties.Add("orderdatetime", current_datetime.ToString("yyyy-MM-dd HH:mm:ss"));
             add_task_properties.Add("order_state", "0");
@@ -988,37 +882,29 @@ namespace APark
             }
 
             if (DBRed.CreateNewKouple("tasks", add_task_properties) == 1) return;
-            addTaskToHistory(add_task_properties);
-            endingEvent();
+            AddTaskToHistory(add_task_properties);
+            EndingEvent();
         }
 
-        private void addTaskToHistory(Dictionary<string, string> add_task_properties)
+        private void AddTaskToHistory(Dictionary<string, string> add_task_properties)
         {
-            //int max_history_task_number_plus_one = DBRed.getMaxID("thistory", "htask_num") + 1;
-            //add_task_properties.Add("htask_num", max_history_task_number_plus_one.ToString());
             if (!add_task_properties.ContainsKey("task_num"))
             {
                 add_task_properties.Add("task_num", numTask_box.Text);
             }
-            add_task_properties["changer_tab_number"] = AppUser.tabNum;
+            add_task_properties["changer_tab_number"] = AppUser.TabNum;
             add_task_properties.Remove("user_tab_number");
             add_task_properties["chdatetime"] = DBRed.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss");
             add_task_properties.Remove("orderdatetime");
             if (!add_task_properties.ContainsKey("chdescription"))
             {
                 try { add_task_properties["chdescription"] = add_task_properties["user_description"]; } catch { }
-                //add_task_properties.Remove("user_description");
             }
             if (!add_task_properties.ContainsKey("user_description")) add_task_properties.Add("user_description", commTask_box.Text);
             if (!add_task_properties.ContainsKey("ordered_ctype")) add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
             if (!add_task_properties.ContainsKey("ordered_time")) add_task_properties.Add("ordered_time", OrdtimeTask_box.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             if (DBRed.CreateNewKouple("thistory", add_task_properties) == 1) return;
         }
-        private void addToTaskHistoryByNumber()
-        {
-
-        }
-
         private void Edit_task_button_Click(object sender, EventArgs e)
         {
             if (MainGrid.Rows.Count == 0) return;
@@ -1037,7 +923,7 @@ namespace APark
             {
                 StateTask_combobox.Items.Clear();
                 StateTask_combobox.Items.Add("новая");
-                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("утверждается"); //не обязательно оставлять условие
+                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("утверждается");
                 StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
@@ -1052,7 +938,7 @@ namespace APark
             {
                 StateTask_combobox.Items.Clear();
                 StateTask_combobox.Items.Add("подтверждена");
-                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("исполняется"); //не обязательно оставлять условие
+                if (AppUser.roleTitle != "Пользователь") StateTask_combobox.Items.Add("исполняется");
                 StateTask_combobox.Items.Add("отменена");
                 StateTask_combobox.SelectedIndex = 0;
             }
@@ -1084,7 +970,6 @@ namespace APark
                 string driver_tab_num = CurSelectDriverForm.SelectionDriverGrid.Rows[Index].Cells[1].Value.ToString();
 
                 driverTask_box.Text = driver_tab_num;
-                //driverTask_box.Text = driver_tab_num + " " + driver_FIO.Split(' ')[0] + " " + driver_FIO.Split(' ')[1][0] + ". " + driver_FIO.Split(' ')[2][0] + ".";
             }
         }
 
@@ -1093,7 +978,6 @@ namespace APark
             Dictionary<string, string> add_task_properties = new Dictionary<string, string>();
             string error_message;
 
-            //Статус заявки StateTask_combobox.SelectedItem.ToString()
             add_task_properties.Add("order_state", Task_Type.FirstOrDefault(x => x.Value == StateTask_combobox.SelectedItem.ToString()).Key.ToString());
 
 
@@ -1136,9 +1020,6 @@ namespace APark
                 add_task_properties.Add("ordered_ctype", typeTask_box.SelectedItem.ToString());
             }
 
-            /*if (StateTask_combobox.SelectedItem.ToString() != "отменена" &&
-                StateTask_combobox.SelectedItem.ToString() != "завершена")
-            {*/
             //время
             DateTime current_datetime = DBRed.getDateTimeFromServer();
             if (OrdtimeTask_box.Value > current_datetime.Add(DateTime.Parse("00:30:00").TimeOfDay))
@@ -1189,31 +1070,15 @@ namespace APark
             {
                 add_task_properties.Add("destination", destTask_box.Text);
             }
-            /*}*/
 
-            if (DBRed.updateByID("tasks", "task_num", numTask_box.Text, add_task_properties) == 1) return;
-            addTaskToHistory(add_task_properties);
-            endingEvent();
+            if (DBRed.UpdateByID("tasks", "task_num", numTask_box.Text, add_task_properties) == 1) return;
+            AddTaskToHistory(add_task_properties);
+            EndingEvent();
         }
 
         private void StateTask_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (AppUser.roleTitle == "Пользователь" && Edit_task_button.Text == "Отмена заявки");
-             {
-                string[] tasks_args = new string[3];
-                tasks_args[0] = "№ " + numTask_box.Text;
-                tasks_args[1] = "Выезд " + OrdtimeTask_box.Value.ToString();
-                tasks_args[2] = "Тип авто " + OrderedTypeTask_box.Text;
 
-                DeleteDialog newDialog = new DeleteDialog("tasks", tasks_args);
-
-                if (newDialog.ShowDialog() == DialogResult.OK)
-                {
-
-                }
-                сделать функционал отмена заявки
-                return;
-            }*/
             if (!isChangingTasks) return;
             ResetAllBoxes();
             if (StateTask_combobox.SelectedItem.ToString() == "утверждается")
@@ -1245,7 +1110,6 @@ namespace APark
                 label14.Visible = false;
                 colorTask_box.Visible = false;
                 typeTask_box.Visible = true;
-                //typeTask_box.SelectedIndex = -1;
                 typeTask_box.Size = new Size(291, 25);
                 typeTask_box.Refresh();
                 int selectedrowindex = MainGrid.SelectedCells[0].RowIndex;
@@ -1321,26 +1185,17 @@ namespace APark
             SelectDriverButton.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!AppUser.iSsignedIn)
-            {
-                AppUser.getConnInstance().tryToLogin(Login_textbox.Text, Pass_textbox.Text);
-            }
-            //Login_textbox.Text = AppUser.getConnInstance().tabNum;
-        }
-
-        private void searchTasks_Enter(object sender, EventArgs e)
+        private void SearchTasks_Enter(object sender, EventArgs e)
         {
             searchTasks.Clear();
         }
 
-        private void searchTasks_Leave(object sender, EventArgs e)
+        private void SearchTasks_Leave(object sender, EventArgs e)
         {
             if (searchTasks.Text == "") searchTasks.Text = "Поиск";
         }
 
-        private void searchTasks_TextChanged(object sender, EventArgs e)
+        private void SearchTasks_TextChanged(object sender, EventArgs e)
         {
             MainGrid.ClearSelection();
 
@@ -1378,13 +1233,13 @@ namespace APark
             searchAsideDrive.Focus();
         }
 
-        private void searchAsideDrive_Leave(object sender, EventArgs e)
+        private void SearchAsideDrive_Leave(object sender, EventArgs e)
         {
             searchAsideDrive.Visible = false;
             searchAsideDrive.Clear();
         }
 
-        private void searchAsideDrive_TextChanged(object sender, EventArgs e)
+        private void SearchAsideDrive_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(searchAsideDrive.Text))
                 return;
@@ -1408,19 +1263,19 @@ namespace APark
             }
         }
 
-        private void searchPic2_Click(object sender, EventArgs e)
+        private void SearchPic2_Click(object sender, EventArgs e)
         {
             searchAsideAuto.Visible = true;
             searchAsideAuto.Focus();
         }
 
-        private void searchAsideAuto_Leave(object sender, EventArgs e)
+        private void SearchAsideAuto_Leave(object sender, EventArgs e)
         {
             searchAsideAuto.Visible = false;
             searchAsideAuto.Clear();
         }
 
-        private void searchAsideAuto_TextChanged(object sender, EventArgs e)
+        private void SearchAsideAuto_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(searchAsideAuto.Text))
                 return;
@@ -1444,7 +1299,7 @@ namespace APark
             }
         }
 
-        private void exit_button_Click(object sender, EventArgs e)
+        private void Exit_button_Click(object sender, EventArgs e)
         {
             AppUser.LogOut();
             MainGrid.Rows.Clear();
@@ -1456,23 +1311,23 @@ namespace APark
                     item.ResetText();
             }
 
-            this.Form1_Load(sender, e);
+            this.DispetcherFrom_Load(sender, e);
         }
 
-        private void carViewGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void CarViewGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1) return;
 
             car_edit_button.PerformClick();
         }
 
-        private void историяToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ReportHis_Click(object sender, EventArgs e)
         {
             SF = new ExportSettingsForm();
             SF.Show();
         }
 
-        private void пользовательToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ApprovalButton_Click(object sender, EventArgs e)
         {
             AF = new ApprovalForm();
             AF.Show();
@@ -1501,7 +1356,7 @@ namespace APark
             modelTask_box.Text = MainGrid.Rows[selectedrowindex].Cells[16].Value.ToString();
         }
 
-        private void update_button_Click(object sender, EventArgs e)
+        private void Update_button_Click(object sender, EventArgs e)
         {
             MainGrid.Rows.Clear();
             DT.FillDispetcherTasks(MainGrid);

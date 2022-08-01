@@ -9,35 +9,19 @@ namespace AParkDispetcher
     {
         public struct Task
         {
-            // порядковый номер заявки
             public string task_number;
-            // 
             public DateTime orderdatetime;
-            //
             public int order_state;
-            //
             public string ordered_ctype;
-            //
             public DateTime ordered_time;
-            //
             public int ordered_duration;
-            //
             public string departure, destination;
-            //
             public string user_description, chdescription;
-            //
             public string driver_tab_number;
-            //
             public string car_reg_mark;
-            //
             public string user_tab_number;
-
-
-            //
             public string user_surname, user_name, user_midname;
-            //
             public string driver_surname, driver_name, driver_midname;
-            //
             public string car_model, car_color, car_type;
         }
 
@@ -48,8 +32,7 @@ namespace AParkDispetcher
         public void FillComboboxWithTypes(ComboBox combo)
         {
             types.Clear();
-            string querry = "";
-            querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
+            string querry = "USE autos; SELECT * FROM ctypes ORDER BY type_id";
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
@@ -88,7 +71,6 @@ namespace AParkDispetcher
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
                     "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
                     "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
 
@@ -102,7 +84,6 @@ namespace AParkDispetcher
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
                     "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
                     "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
 
@@ -116,23 +97,20 @@ namespace AParkDispetcher
                     "" + usr[i].user_description + "", "" + usr[i].chdescription + "", "" + usr[i].driver_tab_number + "", "" + usr[i].car_reg_mark + "",
                     "" + usr[i].car_type + "", "" + usr[i].car_color + "", "" + usr[i].ordered_ctype + "",
                     "" + usr[i].user_surname + " " + "" + usr[i].user_name + " " + usr[i].user_midname + "", "" + usr[i].car_model + "");
-                //if (usr[i].state == 0) dgw.CurrentRow.Cells[4].Style.BackColor =  System.Drawing.Color.Green;
             }
         }
-
 
         public void FillTasks(string value = null, string key = null)
         {
             usr.Clear();
-            string querry = "";
-            querry = "USE autos; SELECT task_num, orderdatetime,  order_state, ordered_ctype, ordered_time, ordered_duration, departure, destination, " +
-                "user_description, chdescription, driver_tab_number, car_reg_mark, user_tab_number, " +
-                "model, color, type, user_surname, user_name, user_midname, driver_surname, driver_name, driver_midname " +
-                "FROM tasks " +
-                "LEFT JOIN cars ON tasks.car_reg_mark = cars.reg_mark " +
-                "LEFT JOIN drivers ON tasks.driver_tab_number = drivers.tab_number " +
-                "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
-                "JOIN users ON tasks.user_tab_number = users.tab_number ";
+            string querry = "USE autos; SELECT task_num, orderdatetime,  order_state, ordered_ctype, ordered_time, ordered_duration, departure, destination, " +
+                            "user_description, chdescription, driver_tab_number, car_reg_mark, user_tab_number, " +
+                            "model, color, type, user_surname, user_name, user_midname, driver_surname, driver_name, driver_midname " +
+                            "FROM tasks " +
+                            "LEFT JOIN cars ON tasks.car_reg_mark = cars.reg_mark " +
+                            "LEFT JOIN drivers ON tasks.driver_tab_number = drivers.tab_number " +
+                            "LEFT JOIN ctypes ON cars.car_type_id = ctypes.type_id " +
+                            "JOIN users ON tasks.user_tab_number = users.tab_number ";
             if (value != null && key != null) { querry += $"WHERE {key} = '{value}' "; }
             querry += "ORDER BY order_state";
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
@@ -142,8 +120,10 @@ namespace AParkDispetcher
                 {
                     while (reader.Read())
                     {
-                        Task temp_task = new Task();
-                        temp_task.task_number = reader.GetString(0);
+                        Task temp_task = new Task
+                        {
+                            task_number = reader.GetString(0)
+                        };
 
                         if (reader.IsDBNull(1)) temp_task.orderdatetime = DateTime.Today;
                         else temp_task.orderdatetime = reader.GetDateTime(1);

@@ -66,7 +66,6 @@
             this.FIO_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Pass_textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -118,7 +117,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.searchTasks = new System.Windows.Forms.TextBox();
             this.AsideDispTab = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DriversPage = new System.Windows.Forms.TabPage();
             this.searchAsideDrive = new System.Windows.Forms.TextBox();
             this.SearchPic1 = new System.Windows.Forms.PictureBox();
             this.DriversViewGrid = new System.Windows.Forms.DataGridView();
@@ -142,7 +141,7 @@
             this.Cancel_driverstate_button = new System.Windows.Forms.Button();
             this.Change_state_button = new System.Windows.Forms.Button();
             this.Save_state_button = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.AutosPage = new System.Windows.Forms.TabPage();
             this.searchPic2 = new System.Windows.Forms.PictureBox();
             this.searchAsideAuto = new System.Windows.Forms.TextBox();
             this.sort_by_car_state = new System.Windows.Forms.Button();
@@ -177,7 +176,7 @@
             this.panel3.SuspendLayout();
             this.oper_panel.SuspendLayout();
             this.AsideDispTab.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.DriversPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -185,7 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.AutosPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -216,7 +215,7 @@
             this.approvalButton.Size = new System.Drawing.Size(104, 21);
             this.approvalButton.Text = "Согласование";
             this.approvalButton.Visible = false;
-            this.approvalButton.Click += new System.EventHandler(this.пользовательToolStripMenuItem_Click);
+            this.approvalButton.Click += new System.EventHandler(this.ApprovalButton_Click);
             // 
             // AdminFormButton
             // 
@@ -248,9 +247,9 @@
             // 
             this.reportHis.Image = global::AParkDispetcher.Properties.Resources.excel_48;
             this.reportHis.Name = "reportHis";
-            this.reportHis.Size = new System.Drawing.Size(180, 22);
+            this.reportHis.Size = new System.Drawing.Size(168, 22);
             this.reportHis.Text = "Экспорт в excel";
-            this.reportHis.Click += new System.EventHandler(this.историяToolStripMenuItem_Click);
+            this.reportHis.Click += new System.EventHandler(this.ReportHis_Click);
             // 
             // MainGrid
             // 
@@ -334,9 +333,9 @@
             this.MainGrid.Size = new System.Drawing.Size(1031, 491);
             this.MainGrid.StandardTab = true;
             this.MainGrid.TabIndex = 4;
-            this.MainGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
-            this.MainGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
-            this.MainGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.MainGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.MainGrid_CellFormatting);
+            this.MainGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MainGrid_CellMouseDoubleClick);
+            this.MainGrid.SelectionChanged += new System.EventHandler(this.MainGrid_SelectionChanged);
             this.MainGrid.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.MainGrid_SortCompare);
             // 
             // TNum_col
@@ -462,7 +461,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.Pass_textbox);
             this.groupBox1.Controls.Add(this.label1);
@@ -476,19 +474,6 @@
             this.groupBox1.Size = new System.Drawing.Size(210, 145);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(10, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -517,7 +502,6 @@
             this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Логин";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Login_textbox
             // 
@@ -545,7 +529,6 @@
             this.Tasks_group.TabIndex = 8;
             this.Tasks_group.TabStop = false;
             this.Tasks_group.Text = "Заявки";
-            this.Tasks_group.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // groupBox2
             // 
@@ -585,7 +568,6 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Подача заявки";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // textStateTask_box
             // 
@@ -635,7 +617,7 @@
             this.typeTask_box.Size = new System.Drawing.Size(147, 28);
             this.typeTask_box.TabIndex = 56;
             this.typeTask_box.Visible = false;
-            this.typeTask_box.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.typeTask_box_DrawItem);
+            this.typeTask_box.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TypeTask_box_DrawItem);
             // 
             // OrdtimeTask_box
             // 
@@ -1105,7 +1087,7 @@
             this.selectCarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.selectCarButton.UseMnemonic = false;
             this.selectCarButton.UseVisualStyleBackColor = true;
-            this.selectCarButton.Click += new System.EventHandler(this.selectCarButton_Click);
+            this.selectCarButton.Click += new System.EventHandler(this.SelectCarButton_Click);
             // 
             // modelTask_box
             // 
@@ -1229,16 +1211,16 @@
             this.searchTasks.TabIndex = 5;
             this.searchTasks.Text = "Поиск";
             this.searchTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchTasks.TextChanged += new System.EventHandler(this.searchTasks_TextChanged);
-            this.searchTasks.Enter += new System.EventHandler(this.searchTasks_Enter);
-            this.searchTasks.Leave += new System.EventHandler(this.searchTasks_Leave);
+            this.searchTasks.TextChanged += new System.EventHandler(this.SearchTasks_TextChanged);
+            this.searchTasks.Enter += new System.EventHandler(this.SearchTasks_Enter);
+            this.searchTasks.Leave += new System.EventHandler(this.SearchTasks_Leave);
             // 
             // AsideDispTab
             // 
             this.AsideDispTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.AsideDispTab.Controls.Add(this.tabPage1);
-            this.AsideDispTab.Controls.Add(this.tabPage2);
+            this.AsideDispTab.Controls.Add(this.DriversPage);
+            this.AsideDispTab.Controls.Add(this.AutosPage);
             this.AsideDispTab.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.AsideDispTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.AsideDispTab.ItemSize = new System.Drawing.Size(103, 22);
@@ -1249,23 +1231,23 @@
             this.AsideDispTab.Size = new System.Drawing.Size(210, 819);
             this.AsideDispTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AsideDispTab.TabIndex = 0;
-            this.AsideDispTab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.AsideDispTab.SelectedIndexChanged += new System.EventHandler(this.AsideDispTab_SelectedIndexChanged);
             this.AsideDispTab.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.AsideDispTab_Deselecting);
             // 
-            // tabPage1
+            // DriversPage
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Khaki;
-            this.tabPage1.Controls.Add(this.searchAsideDrive);
-            this.tabPage1.Controls.Add(this.SearchPic1);
-            this.tabPage1.Controls.Add(this.DriversViewGrid);
-            this.tabPage1.Controls.Add(this.Sort_by_state);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(202, 789);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Водители";
-            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
+            this.DriversPage.BackColor = System.Drawing.Color.Khaki;
+            this.DriversPage.Controls.Add(this.searchAsideDrive);
+            this.DriversPage.Controls.Add(this.SearchPic1);
+            this.DriversPage.Controls.Add(this.DriversViewGrid);
+            this.DriversPage.Controls.Add(this.Sort_by_state);
+            this.DriversPage.Controls.Add(this.groupBox5);
+            this.DriversPage.Location = new System.Drawing.Point(4, 26);
+            this.DriversPage.Name = "DriversPage";
+            this.DriversPage.Size = new System.Drawing.Size(202, 789);
+            this.DriversPage.TabIndex = 0;
+            this.DriversPage.Text = "Водители";
+            this.DriversPage.Enter += new System.EventHandler(this.DriversPage_Enter);
             // 
             // searchAsideDrive
             // 
@@ -1280,8 +1262,8 @@
             this.searchAsideDrive.TabIndex = 65;
             this.searchAsideDrive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.searchAsideDrive.Visible = false;
-            this.searchAsideDrive.TextChanged += new System.EventHandler(this.searchAsideDrive_TextChanged);
-            this.searchAsideDrive.Leave += new System.EventHandler(this.searchAsideDrive_Leave);
+            this.searchAsideDrive.TextChanged += new System.EventHandler(this.SearchAsideDrive_TextChanged);
+            this.searchAsideDrive.Leave += new System.EventHandler(this.SearchAsideDrive_Leave);
             // 
             // SearchPic1
             // 
@@ -1351,10 +1333,9 @@
             this.DriversViewGrid.Size = new System.Drawing.Size(202, 498);
             this.DriversViewGrid.StandardTab = true;
             this.DriversViewGrid.TabIndex = 16;
-            this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.DriversViewGrid.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.DriversViewGrid_CellLeave);
+            this.DriversViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DriversViewGrid_CellFormatting);
             this.DriversViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DriversViewGrid_CellMouseDoubleClick);
-            this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.DriversViewGrid.SelectionChanged += new System.EventHandler(this.DriversViewGrid_SelectionChanged);
             // 
             // FIO_a_col
             // 
@@ -1399,7 +1380,7 @@
             this.Sort_by_state.TabIndex = 59;
             this.Sort_by_state.Text = "сортировать по статусу";
             this.Sort_by_state.UseVisualStyleBackColor = false;
-            this.Sort_by_state.Click += new System.EventHandler(this.button13_Click);
+            this.Sort_by_state.Click += new System.EventHandler(this.Sort_by_state_Click);
             // 
             // groupBox5
             // 
@@ -1424,7 +1405,6 @@
             this.groupBox5.Size = new System.Drawing.Size(203, 268);
             this.groupBox5.TabIndex = 59;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // pictureBox3
             // 
@@ -1482,7 +1462,7 @@
             this.state_busy.Text = "занят";
             this.state_busy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_busy.UseVisualStyleBackColor = true;
-            this.state_busy.CheckedChanged += new System.EventHandler(this.state_busy_CheckedChanged);
+            this.state_busy.CheckedChanged += new System.EventHandler(this.State_busy_CheckedChanged);
             // 
             // state_free
             // 
@@ -1500,7 +1480,7 @@
             this.state_free.Text = "свободен";
             this.state_free.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_free.UseVisualStyleBackColor = true;
-            this.state_free.CheckedChanged += new System.EventHandler(this.state_free_CheckedChanged);
+            this.state_free.CheckedChanged += new System.EventHandler(this.State_free_CheckedChanged);
             // 
             // panel2
             // 
@@ -1623,7 +1603,7 @@
             this.Change_state_button.TabIndex = 15;
             this.Change_state_button.Text = "Изменить";
             this.Change_state_button.UseVisualStyleBackColor = false;
-            this.Change_state_button.Click += new System.EventHandler(this.button5_Click);
+            this.Change_state_button.Click += new System.EventHandler(this.Change_state_button_Click);
             // 
             // Save_state_button
             // 
@@ -1640,25 +1620,25 @@
             this.Save_state_button.TabIndex = 6;
             this.Save_state_button.Text = "Сохранить";
             this.Save_state_button.UseVisualStyleBackColor = false;
-            this.Save_state_button.Click += new System.EventHandler(this.button10_Click);
+            this.Save_state_button.Click += new System.EventHandler(this.Save_state_button_Click);
             // 
-            // tabPage2
+            // AutosPage
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Khaki;
-            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage2.Controls.Add(this.searchPic2);
-            this.tabPage2.Controls.Add(this.searchAsideAuto);
-            this.tabPage2.Controls.Add(this.sort_by_car_state);
-            this.tabPage2.Controls.Add(this.carViewGrid);
-            this.tabPage2.Controls.Add(this.groupBox7);
-            this.tabPage2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(202, 789);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Машины";
-            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            this.AutosPage.BackColor = System.Drawing.Color.Khaki;
+            this.AutosPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AutosPage.Controls.Add(this.searchPic2);
+            this.AutosPage.Controls.Add(this.searchAsideAuto);
+            this.AutosPage.Controls.Add(this.sort_by_car_state);
+            this.AutosPage.Controls.Add(this.carViewGrid);
+            this.AutosPage.Controls.Add(this.groupBox7);
+            this.AutosPage.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AutosPage.Location = new System.Drawing.Point(4, 26);
+            this.AutosPage.Name = "AutosPage";
+            this.AutosPage.Padding = new System.Windows.Forms.Padding(3);
+            this.AutosPage.Size = new System.Drawing.Size(202, 789);
+            this.AutosPage.TabIndex = 1;
+            this.AutosPage.Text = "Машины";
+            this.AutosPage.Enter += new System.EventHandler(this.AutosPage_Enter);
             // 
             // searchPic2
             // 
@@ -1672,7 +1652,7 @@
             this.searchPic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.searchPic2.TabIndex = 66;
             this.searchPic2.TabStop = false;
-            this.searchPic2.Click += new System.EventHandler(this.searchPic2_Click);
+            this.searchPic2.Click += new System.EventHandler(this.SearchPic2_Click);
             // 
             // searchAsideAuto
             // 
@@ -1687,8 +1667,8 @@
             this.searchAsideAuto.TabIndex = 67;
             this.searchAsideAuto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.searchAsideAuto.Visible = false;
-            this.searchAsideAuto.TextChanged += new System.EventHandler(this.searchAsideAuto_TextChanged);
-            this.searchAsideAuto.Leave += new System.EventHandler(this.searchAsideAuto_Leave);
+            this.searchAsideAuto.TextChanged += new System.EventHandler(this.SearchAsideAuto_TextChanged);
+            this.searchAsideAuto.Leave += new System.EventHandler(this.SearchAsideAuto_Leave);
             // 
             // sort_by_car_state
             // 
@@ -1710,7 +1690,7 @@
             this.sort_by_car_state.TabIndex = 62;
             this.sort_by_car_state.Text = "сортировать по статусу";
             this.sort_by_car_state.UseVisualStyleBackColor = false;
-            this.sort_by_car_state.Click += new System.EventHandler(this.button14_Click);
+            this.sort_by_car_state.Click += new System.EventHandler(this.Sort_by_car_state_Click);
             // 
             // carViewGrid
             // 
@@ -1769,9 +1749,9 @@
             this.carViewGrid.Size = new System.Drawing.Size(202, 498);
             this.carViewGrid.StandardTab = true;
             this.carViewGrid.TabIndex = 0;
-            this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
-            this.carViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.carViewGrid_CellMouseDoubleClick);
-            this.carViewGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            this.carViewGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.CarViewGrid_CellFormatting);
+            this.carViewGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CarViewGrid_CellMouseDoubleClick);
+            this.carViewGrid.SelectionChanged += new System.EventHandler(this.CarViewGrid_SelectionChanged);
             // 
             // Model_a_col
             // 
@@ -1916,7 +1896,7 @@
             this.state_available.Text = "доступна";
             this.state_available.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.state_available.UseVisualStyleBackColor = true;
-            this.state_available.CheckedChanged += new System.EventHandler(this.state_available_CheckedChanged);
+            this.state_available.CheckedChanged += new System.EventHandler(this.State_available_CheckedChanged);
             // 
             // model_aside
             // 
@@ -1970,7 +1950,7 @@
             this.car_cancel_button.Text = "Отмена";
             this.car_cancel_button.UseVisualStyleBackColor = false;
             this.car_cancel_button.Visible = false;
-            this.car_cancel_button.Click += new System.EventHandler(this.car_cancel_button_Click);
+            this.car_cancel_button.Click += new System.EventHandler(this.Car_cancel_button_Click);
             // 
             // car_edit_button
             // 
@@ -1985,7 +1965,7 @@
             this.car_edit_button.TabIndex = 0;
             this.car_edit_button.Text = "Изменить";
             this.car_edit_button.UseVisualStyleBackColor = false;
-            this.car_edit_button.Click += new System.EventHandler(this.button11_Click);
+            this.car_edit_button.Click += new System.EventHandler(this.Car_edit_button_Click);
             // 
             // car_save_button
             // 
@@ -2001,7 +1981,7 @@
             this.car_save_button.TabIndex = 6;
             this.car_save_button.Text = "Сохранить";
             this.car_save_button.UseVisualStyleBackColor = false;
-            this.car_save_button.Click += new System.EventHandler(this.car_save_button_Click);
+            this.car_save_button.Click += new System.EventHandler(this.Car_save_button_Click);
             // 
             // User_label
             // 
@@ -2031,7 +2011,7 @@
             this.exit_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit_button.TabIndex = 10;
             this.exit_button.TabStop = false;
-            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            this.exit_button.Click += new System.EventHandler(this.Exit_button_Click);
             // 
             // update_button
             // 
@@ -2046,7 +2026,7 @@
             this.update_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.update_button.TabIndex = 59;
             this.update_button.TabStop = false;
-            this.update_button.Click += new System.EventHandler(this.update_button_Click);
+            this.update_button.Click += new System.EventHandler(this.Update_button_Click);
             // 
             // DispetcherFrom
             // 
@@ -2068,7 +2048,7 @@
             this.MinimumSize = new System.Drawing.Size(1250, 765);
             this.Name = "DispetcherFrom";
             this.Text = "Диспетчерская";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.DispetcherFrom_Load);
             this.Resize += new System.EventHandler(this.DispetcherFrom_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -2085,8 +2065,8 @@
             this.oper_panel.ResumeLayout(false);
             this.oper_panel.PerformLayout();
             this.AsideDispTab.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.DriversPage.ResumeLayout(false);
+            this.DriversPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DriversViewGrid)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -2095,8 +2075,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.AutosPage.ResumeLayout(false);
+            this.AutosPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carViewGrid)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -2120,7 +2100,6 @@
         private System.Windows.Forms.TextBox Pass_textbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Login_textbox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox Tasks_group;
         private System.Windows.Forms.TextBox searchTasks;
         private System.Windows.Forms.ToolStripMenuItem approvalButton;
@@ -2129,8 +2108,8 @@
         private System.Windows.Forms.ToolStripMenuItem ReportsFormButton;
         private System.Windows.Forms.ToolStripMenuItem reportHis;
         private System.Windows.Forms.TabControl AsideDispTab;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage DriversPage;
+        private System.Windows.Forms.TabPage AutosPage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

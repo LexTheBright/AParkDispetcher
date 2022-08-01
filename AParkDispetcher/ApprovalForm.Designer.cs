@@ -246,10 +246,10 @@ namespace AParkDispetcher
             this.approvalGrid.Size = new System.Drawing.Size(1291, 546);
             this.approvalGrid.StandardTab = true;
             this.approvalGrid.TabIndex = 4;
-            this.approvalGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.approvalGrid_CellContentClick);
-            this.approvalGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.approvalGrid_CellFormatting);
-            this.approvalGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.approvalGrid_CellMouseDoubleClick);
-            this.approvalGrid.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.approvalGrid_SortCompare);
+            this.approvalGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApprovalGrid_CellContentClick);
+            this.approvalGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ApprovalGrid_CellFormatting);
+            this.approvalGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ApprovalGrid_CellMouseDoubleClick);
+            this.approvalGrid.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.ApprovalGrid_SortCompare);
             // 
             // searchTasks
             // 
@@ -264,9 +264,9 @@ namespace AParkDispetcher
             this.searchTasks.TabIndex = 5;
             this.searchTasks.Text = "Поиск";
             this.searchTasks.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchTasks.TextChanged += new System.EventHandler(this.searchTasks_TextChanged);
-            this.searchTasks.Enter += new System.EventHandler(this.searchTasks_Enter);
-            this.searchTasks.Leave += new System.EventHandler(this.searchTasks_Leave);
+            this.searchTasks.TextChanged += new System.EventHandler(this.SearchTasks_TextChanged);
+            this.searchTasks.Enter += new System.EventHandler(this.SearchTasks_Enter);
+            this.searchTasks.Leave += new System.EventHandler(this.SearchTasks_Leave);
             // 
             // approveCol
             // 

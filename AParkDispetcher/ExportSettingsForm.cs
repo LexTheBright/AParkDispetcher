@@ -9,13 +9,11 @@ namespace AParkDispetcher
         public ExportSettingsForm()
         {
             InitializeComponent();
-            //exLeftPicker.Format = DateTimePickerFormat.Custom;
-            //exRightPicker.Format = DateTimePickerFormat.Custom;
             exLeftPicker.Value = DateTime.Now.AddMonths(-1);
             exRightPicker.Value = DateTime.Now;
         }
 
-        private void exModeBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ExModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             exDoExportButton.Focus();
             if (exModeBox.SelectedItem.ToString() == "Все заявки")
@@ -68,7 +66,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void exAutoButton_Click(object sender, EventArgs e)
+        private void ExAutoButton_Click(object sender, EventArgs e)
         {
             SelectCarForm CurSelectCarForm = new SelectCarForm();
             if (CurSelectCarForm.ShowDialog(this) == DialogResult.OK)
@@ -80,7 +78,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void exDriverButton_Click(object sender, EventArgs e)
+        private void ExDriverButton_Click(object sender, EventArgs e)
         {
             SelectDriverForm CurSelectDriverForm = new SelectDriverForm();
             if (CurSelectDriverForm.ShowDialog(this) == DialogResult.OK)
@@ -90,21 +88,6 @@ namespace AParkDispetcher
                 string Dr_tab_num = CurSelectDriverForm.SelectionDriverGrid.Rows[Index].Cells[1].Value.ToString();
                 exDriverText.Text = Dr_tab_num + " (" + FIO.Split(' ')[0] + ")";
             }
-        }
-
-        private void exLeftPicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Excel_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ExportSettкакingsForm_Deactivate(object sender, EventArgs e)
-        {
-            //this.Close();
         }
     }
 }

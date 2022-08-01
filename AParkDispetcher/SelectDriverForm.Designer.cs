@@ -78,9 +78,9 @@ namespace AParkDispetcher
             this.searchDrivers2.TabStop = false;
             this.searchDrivers2.Text = "Поиск";
             this.searchDrivers2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchDrivers2.TextChanged += new System.EventHandler(this.searchDrivers2_TextChanged);
-            this.searchDrivers2.Enter += new System.EventHandler(this.searchDrivers2_Enter);
-            this.searchDrivers2.Leave += new System.EventHandler(this.searchDrivers2_Leave);
+            this.searchDrivers2.TextChanged += new System.EventHandler(this.SearchDrivers2_TextChanged);
+            this.searchDrivers2.Enter += new System.EventHandler(this.SearchDrivers2_Enter);
+            this.searchDrivers2.Leave += new System.EventHandler(this.SearchDrivers2_Leave);
             // 
             // panel6
             // 
@@ -110,7 +110,7 @@ namespace AParkDispetcher
             this.ok_button.TabIndex = 58;
             this.ok_button.Text = "Ок";
             this.ok_button.UseVisualStyleBackColor = false;
-            this.ok_button.Click += new System.EventHandler(this.ok_button_Click);
+            this.ok_button.Click += new System.EventHandler(this.Ok_button_Click);
             // 
             // cancel_button
             // 
@@ -127,7 +127,7 @@ namespace AParkDispetcher
             this.cancel_button.TabIndex = 51;
             this.cancel_button.Text = "Отмена";
             this.cancel_button.UseVisualStyleBackColor = false;
-            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            this.cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // SelectionDriverGrid
             // 

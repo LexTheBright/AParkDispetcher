@@ -62,7 +62,6 @@ namespace AParkDispetcher
             this.exLeftPicker.Name = "exLeftPicker";
             this.exLeftPicker.Size = new System.Drawing.Size(172, 27);
             this.exLeftPicker.TabIndex = 0;
-            this.exLeftPicker.ValueChanged += new System.EventHandler(this.exLeftPicker_ValueChanged);
             // 
             // exRightPicker
             // 
@@ -90,7 +89,7 @@ namespace AParkDispetcher
             this.exModeBox.Name = "exModeBox";
             this.exModeBox.Size = new System.Drawing.Size(212, 28);
             this.exModeBox.TabIndex = 2;
-            this.exModeBox.SelectedIndexChanged += new System.EventHandler(this.exModeBox_SelectedIndexChanged);
+            this.exModeBox.SelectedIndexChanged += new System.EventHandler(this.ExModeBox_SelectedIndexChanged);
             // 
             // ex_mode_label
             // 
@@ -187,7 +186,7 @@ namespace AParkDispetcher
             this.exAutoButton.Text = "...";
             this.exAutoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exAutoButton.UseVisualStyleBackColor = true;
-            this.exAutoButton.Click += new System.EventHandler(this.exAutoButton_Click);
+            this.exAutoButton.Click += new System.EventHandler(this.ExAutoButton_Click);
             // 
             // panel2
             // 
@@ -253,7 +252,7 @@ namespace AParkDispetcher
             this.exDriverButton.Text = "...";
             this.exDriverButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exDriverButton.UseVisualStyleBackColor = true;
-            this.exDriverButton.Click += new System.EventHandler(this.exDriverButton_Click);
+            this.exDriverButton.Click += new System.EventHandler(this.ExDriverButton_Click);
             // 
             // Excel_panel
             // 
@@ -279,7 +278,6 @@ namespace AParkDispetcher
             this.Excel_panel.Name = "Excel_panel";
             this.Excel_panel.Size = new System.Drawing.Size(310, 373);
             this.Excel_panel.TabIndex = 67;
-            this.Excel_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Excel_panel_Paint);
             // 
             // label1
             // 

@@ -24,8 +24,7 @@ namespace AParkDispetcher
             InitializeComponent();
         }
 
-
-        private void endingEvent(string tab)
+        private void EndingEvent(string tab)
         {
             IsTabSelectingActive = true;
             switch (tab)
@@ -65,7 +64,7 @@ namespace AParkDispetcher
                     admin_users_role.Visible = false;
                     user_role_textbox.Visible = true;
 
-                    dataGridView1_SelectionChanged(User_button_cancel, new EventArgs());
+                    AdminUsersGrid_SelectionChanged(User_button_cancel, new EventArgs());
                     break;
 
                 case "driver":
@@ -73,7 +72,7 @@ namespace AParkDispetcher
 
                     int start_index_dr = AdminDriversGrid.SelectedCells[0].RowIndex;
                     AdminDriversGrid.Rows.Clear();
-                    DD.fillAdminsDriverGrid(AdminDriversGrid);
+                    DD.FillAdminsDriverGrid(AdminDriversGrid);
                     if (start_index_dr < AdminDriversGrid.RowCount) AdminDriversGrid.Rows[start_index_dr].Selected = true;
 
                     Driver_button_delete.Enabled = true;
@@ -91,7 +90,7 @@ namespace AParkDispetcher
                     driver_FIO_textbox.ReadOnly = true;
                     driver_tab_textbox.ReadOnly = true;
 
-                    dataGridView2_SelectionChanged(Driver_button_cancel, new EventArgs());
+                    AdminDriversGrid_SelectionChanged(Driver_button_cancel, new EventArgs());
                     break;
 
                 case "car":
@@ -99,7 +98,7 @@ namespace AParkDispetcher
 
                     int start_index_cr = AdminCarsGrid.SelectedCells[0].RowIndex;
                     AdminCarsGrid.Rows.Clear();
-                    DC.fillAdminsCarGrid(AdminCarsGrid);
+                    DC.FillAdminsCarGrid(AdminCarsGrid);
                     if (start_index_cr < AdminCarsGrid.RowCount) AdminCarsGrid.Rows[start_index_cr].Selected = true;
 
                     admin_car_type_label.Visible = true;
@@ -114,7 +113,6 @@ namespace AParkDispetcher
                     admin_car_color_label.BackColor = Color.Linen;
                     admin_car_descr_label.ReadOnly = true;
                     admin_car_descr_label.BackColor = Color.Linen;
-
 
                     //красим кнопочки
                     admin_car_add_button.Enabled = true;
@@ -131,7 +129,7 @@ namespace AParkDispetcher
                     admin_car_cancel_button.BackColor = Color.Tan;
                     admin_car_add_save_button.BackColor = Color.Tan;
 
-                    dataGridView3_SelectionChanged(Driver_button_cancel, new EventArgs());
+                    AdminCarsGrid_SelectionChanged(Driver_button_cancel, new EventArgs());
                     break;
                 default:
                     break;
@@ -147,13 +145,13 @@ namespace AParkDispetcher
             ADBR = new DBRedactor();
 
             DU.FillAdminsUserGrid(AdminUsersGrid);
-            DD.fillAdminsDriverGrid(AdminDriversGrid);
-            DC.fillAdminsCarGrid(AdminCarsGrid);
+            DD.FillAdminsDriverGrid(AdminDriversGrid);
+            DC.FillAdminsCarGrid(AdminCarsGrid);
             DC.FillTypes(admin_car_type_cbox);
         }
 
 
-        private void searchUsers_TextChanged(object sender, EventArgs e)
+        private void SearchUsers_TextChanged(object sender, EventArgs e)
         {
             AdminUsersGrid.ClearSelection();
 
@@ -179,7 +177,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void AdminUsersGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (AdminUsersGrid.SelectedCells.Count > 0)
             {
@@ -187,32 +185,20 @@ namespace AParkDispetcher
                 string FIO = AdminUsersGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
                 string Tab_num = AdminUsersGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
                 string Role = AdminUsersGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
-                //int RoleNum = Int32.TryParse(Role);
                 string Login = AdminUsersGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
-                //string[] splited_FIO = FIO.Split(' ');
 
                 user_FIO_textbox.Text = FIO;
                 user_tab_textbox.Text = Tab_num;
-                //comboBox1.Text = Role;
                 if (Role == "Пользователь") admin_users_role.SelectedIndex = 0;
                 if (Role == "Оператор") admin_users_role.SelectedIndex = 1;
                 if (Role == "Администратор") admin_users_role.SelectedIndex = 2;
                 login_place.Text = Login;
                 password_place.Text = "********";
                 user_role_textbox.Text = Role;
-                //textBox2.Text = Role;
-                //textBox3.Text = Login;
             }
-
-            //string nameses = dataGridView1.CurrentRow.cek;
-            //textBox1.Text = dataGridView1.CurrentRow.Cells[1].;
-            /*int rowNum = 1;
-            DataGridViewCell cell = dataGridView1.Rows[rowNum].Cells[0];
-            dataGridView1.CurrentCell = cell;
-            dataGridView1.CurrentCell.Selected = true;*/
         }
 
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        private void AdminDriversGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (AdminDriversGrid.SelectedCells.Count > 0)
             {
@@ -220,14 +206,13 @@ namespace AParkDispetcher
                 string FIO = AdminDriversGrid.Rows[selectedrowindex].Cells[0].Value.ToString();
                 string Tab_num = AdminDriversGrid.Rows[selectedrowindex].Cells[1].Value.ToString();
                 string State = AdminDriversGrid.Rows[selectedrowindex].Cells[2].ToString();
-                //string[] splited_FIO = FIO.Split(' ');
 
                 driver_FIO_textbox.Text = FIO;
                 driver_tab_textbox.Text = Tab_num;
             }
         }
 
-        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void AdminDriversGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (AdminDriversGrid.Rows[e.RowIndex].MinimumHeight != 35) AdminDriversGrid.Rows[e.RowIndex].MinimumHeight = 35;
 
@@ -250,32 +235,31 @@ namespace AParkDispetcher
             }
         }
 
-        private void tabPage1_Enter(object sender, EventArgs e)
+        private void UsersPage_Enter(object sender, EventArgs e)
         {
             AdminUsersGrid.Rows.Clear();
             DU.FillAdminsUserGrid(AdminUsersGrid);
         }
 
-        private void tabPage2_Enter(object sender, EventArgs e)
+        private void DriversPage_Enter(object sender, EventArgs e)
         {
             AdminDriversGrid.Rows.Clear();
-            DD.fillAdminsDriverGrid(AdminDriversGrid);
+            DD.FillAdminsDriverGrid(AdminDriversGrid);
         }
 
-
-        private void tabPage3_Enter(object sender, EventArgs e)
+        private void AutosPage_Enter(object sender, EventArgs e)
         {
             AdminCarsGrid.Rows.Clear();
-            DC.fillAdminsCarGrid(AdminCarsGrid);
+            DC.FillAdminsCarGrid(AdminCarsGrid);
         }
 
-        private void tabPage3_Leave(object sender, EventArgs e)
+        private void AutosPage_Leave(object sender, EventArgs e)
         {
             admin_car_type_cbox.Items.Clear();
             DC.FillTypes(admin_car_type_cbox);
         }
 
-        private void dataGridView3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void AdminCarsGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (AdminCarsGrid.Rows[e.RowIndex].MinimumHeight != 35) AdminCarsGrid.Rows[e.RowIndex].MinimumHeight = 35;
 
@@ -293,8 +277,7 @@ namespace AParkDispetcher
                     break;
             }
         }
-
-        private void dataGridView3_SelectionChanged(object sender, EventArgs e)
+        private void AdminCarsGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (AdminCarsGrid.SelectedCells.Count > 0)
             {
@@ -304,18 +287,12 @@ namespace AParkDispetcher
                 string type = AdminCarsGrid.Rows[selectedrowindex].Cells[2].Value.ToString();
                 string color = AdminCarsGrid.Rows[selectedrowindex].Cells[3].Value.ToString();
 
-
-                /*Disp_car DC = new Disp_car();
-                DC.fillCar(dataGridView3, 1);
-                DC.fillTypes(comboBox2);*/
-
                 string temp_check = DC.usr.FirstOrDefault(x => x.reg_mark == reg_mark).reg_mark;
                 string description = "";
                 if (reg_mark == temp_check)
                 {
                     description = DC.usr.FirstOrDefault(x => x.reg_mark == reg_mark).description;
                 }
-                //string[] splited_FIO = FIO.Split(' ');
 
                 admin_car_mark_label.Text = reg_mark;
                 admin_car_model_label.Text = model;
@@ -323,17 +300,16 @@ namespace AParkDispetcher
                 admin_car_color_label.Text = color;
                 admin_car_descr_label.Text = description;
 
-                admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key; //DC.types[type].Key;
+                admin_car_type_cbox.SelectedItem = DC.types.FirstOrDefault(x => x.Key == type).Key;
             }
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void AdminTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ProcessTabKey(true);
-            //SendKeys.Send("{TAB}");
         }
 
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void AdminUsersGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (AdminUsersGrid.Rows[e.RowIndex].MinimumHeight != 35) AdminUsersGrid.Rows[e.RowIndex].MinimumHeight = 35;
         }
@@ -351,8 +327,8 @@ namespace AParkDispetcher
 
             if (newDialog.ShowDialog() == DialogResult.OK)
             {
-                ADBR.deleteByID("users", "tab_number", tab_n);
-                endingEvent("user");
+                ADBR.DeleteByID("users", "tab_number", tab_n);
+                EndingEvent("user");
                 if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
         }
@@ -360,7 +336,6 @@ namespace AParkDispetcher
         private void User_button_edit_Click(object sender, EventArgs e)
         {
             if (AdminUsersGrid.SelectedRows.Count == 0) AdminUsersGrid.Rows[0].Selected = true;
-            //tabControl1.TabPages[0].Focus();
             password_place.Focus();
             IsTabSelectingActive = false;
 
@@ -373,7 +348,6 @@ namespace AParkDispetcher
             user_FIO_textbox.BackColor = Color.PaleGreen;
             admin_users_role.Visible = true;
             user_role_textbox.Visible = false;
-
 
             User_button_delete.Enabled = false;
             User_button_edit.Enabled = false;
@@ -394,7 +368,7 @@ namespace AParkDispetcher
 
         private void User_button_cancel_Click(object sender, EventArgs e)
         {
-            endingEvent("user");
+            EndingEvent("user");
             tempArgs.Clear();
         }
 
@@ -415,7 +389,6 @@ namespace AParkDispetcher
                 }
                 else
                 {
-                    //MessageBox.Show("прошло");
                     properties.Add("tab_number", user_tab_textbox.Text);
                 }
             }
@@ -437,7 +410,6 @@ namespace AParkDispetcher
                 }
                 else
                 {
-                    //MessageBox.Show("прошло");
                     properties.Add("login", login_place.Text);
                 }
             }
@@ -466,7 +438,6 @@ namespace AParkDispetcher
                             return;
                         }
                     }
-                    //MessageBox.Show("прошло");
                     properties.Add("password", hash);
                 }
             }
@@ -487,17 +458,15 @@ namespace AParkDispetcher
                     {
                         for (int i = 3; i < splited_FIO.Length; i++) splited_FIO[2] += splited_FIO[i];
                     }
-                    //MessageBox.Show("прошло");
                     properties.Add("user_surname", splited_FIO[0]);
-                    properties.Add("user_name", splited_FIO[1]);// if index exist checkout
+                    properties.Add("user_name", splited_FIO[1]);
                     properties.Add("user_midname", splited_FIO[2]);
                 }
             }
 
-
             if (user_tab_textbox.ReadOnly)
             {
-                if (properties.Count > 0) ADBR.updateByID("users", "tab_number", user_tab_textbox.Text, properties);
+                if (properties.Count > 0) ADBR.UpdateByID("users", "tab_number", user_tab_textbox.Text, properties);
             }
             else
             {
@@ -508,7 +477,7 @@ namespace AParkDispetcher
                     if (this.Height < Screen.GetWorkingArea(this).Height) this.Height += 35;
                 }
             }
-            endingEvent("user");
+            EndingEvent("user");
             tempArgs.Clear();
         }
 
@@ -534,7 +503,6 @@ namespace AParkDispetcher
             user_FIO_textbox.Clear();
             admin_users_role.Visible = true;
             user_role_textbox.Visible = false;
-
 
             User_button_delete.Enabled = false;
             User_button_edit.Enabled = false;
@@ -586,15 +554,15 @@ namespace AParkDispetcher
 
             if (newDialog.ShowDialog() == DialogResult.OK)
             {
-                ADBR.deleteByID("drivers", "tab_number", tab_n);
-                endingEvent("driver");
+                ADBR.DeleteByID("drivers", "tab_number", tab_n);
+                EndingEvent("driver");
                 if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
         }
 
         private void Driver_button_cancel_Click(object sender, EventArgs e)
         {
-            endingEvent("driver");
+            EndingEvent("driver");
         }
 
         private void Driver_button_save_Click(object sender, EventArgs e)
@@ -611,7 +579,6 @@ namespace AParkDispetcher
             }
             else
             {
-                //MessageBox.Show("прошло");
                 properties_driver.Add("tab_number", driver_tab_textbox.Text);
             }
 
@@ -629,9 +596,8 @@ namespace AParkDispetcher
                 {
                     for (int i = 3; i < splited_FIO.Length; i++) splited_FIO[2] += splited_FIO[i];
                 }
-                //MessageBox.Show("прошло");
                 properties_driver.Add("driver_surname", splited_FIO[0]);
-                properties_driver.Add("driver_name", splited_FIO[1]);// if index exist checkout
+                properties_driver.Add("driver_name", splited_FIO[1]);
                 properties_driver.Add("driver_midname", splited_FIO[2]);
             }
 
@@ -641,10 +607,10 @@ namespace AParkDispetcher
                 if (ADBR.CreateNewKouple("drivers", properties_driver) == 1) return;
                 if (this.Height < Screen.GetWorkingArea(this).Height - this.Location.Y) this.Height += 35;
             }
-            endingEvent("driver");
+            EndingEvent("driver");
         }
 
-        private void admin_car_add_button_Click(object sender, EventArgs e)
+        private void Admin_car_add_button_Click(object sender, EventArgs e)
         {
             admin_car_mark_label.Focus();
             AdminCarsGrid.Enabled = false;
@@ -683,7 +649,7 @@ namespace AParkDispetcher
             admin_car_add_save_button.BackColor = Color.White;
         }
 
-        private void admin_car_edit_button_Click(object sender, EventArgs e)
+        private void Admin_car_edit_button_Click(object sender, EventArgs e)
         {
             if (AdminCarsGrid.SelectedRows.Count == 0) AdminCarsGrid.Rows[0].Selected = true;
             admin_car_descr_label.Focus();
@@ -709,7 +675,7 @@ namespace AParkDispetcher
             admin_car_cancel_button.BackColor = Color.White;
         }
 
-        private void admin_car_delete_button_Click(object sender, EventArgs e)
+        private void Admin_car_delete_button_Click(object sender, EventArgs e)
         {
             if (AdminCarsGrid.SelectedRows.Count == 0) AdminCarsGrid.Rows[0].Selected = true;
             int selectedrowindex = AdminCarsGrid.SelectedCells[0].RowIndex;
@@ -722,23 +688,22 @@ namespace AParkDispetcher
 
             if (newDialog.ShowDialog() == DialogResult.OK)
             {
-                ADBR.deleteByID("cars", "reg_mark", mark_n);
-                endingEvent("car");
+                ADBR.DeleteByID("cars", "reg_mark", mark_n);
+                EndingEvent("car");
                 if (this.Height > this.MinimumSize.Height + 50) this.Height -= 35;
             }
         }
 
-        private void admin_car_cancel_button_Click(object sender, EventArgs e)
+        private void Admin_car_cancel_button_Click(object sender, EventArgs e)
         {
-            endingEvent("car");
+            EndingEvent("car");
         }
 
-        private void admin_car_edit_save_button_Click(object sender, EventArgs e)
+        private void Admin_car_edit_save_button_Click(object sender, EventArgs e)
         {
 
             Dictionary<string, string> car_properties = new Dictionary<string, string>();
 
-            //if (admin_car_descr_label.Text != "")
             {
                 string error_mese = ParkDispecter.IsValidValue("Описание", admin_car_descr_label.Text, false);
                 if (error_mese != null)
@@ -748,16 +713,15 @@ namespace AParkDispetcher
                 }
                 else
                 {
-                    //MessageBox.Show("прошло");
                     car_properties.Add("description", admin_car_descr_label.Text);
-                    ADBR.updateByID("cars", "reg_mark", admin_car_mark_label.Text, car_properties);
-                    endingEvent("car");
+                    ADBR.UpdateByID("cars", "reg_mark", admin_car_mark_label.Text, car_properties);
+                    EndingEvent("car");
                 }
             }
 
         }
 
-        private void admin_car_add_save_button_Click(object sender, EventArgs e)
+        private void Admin_car_add_save_button_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> add_car_properties = new Dictionary<string, string>();
             string error_message;
@@ -816,18 +780,17 @@ namespace AParkDispetcher
 
             if (ADBR.CreateNewKouple("cars", add_car_properties) == 1) return;
             if (this.Height < Screen.GetWorkingArea(this).Height - this.Location.Y) this.Height += 35;
-            endingEvent("car");
+            EndingEvent("car");
         }
 
-        //лисенер не задействуется
-        private void admin_car_type_cbox_DrawItem(object sender, DrawItemEventArgs e)
+        private void Admin_car_type_cbox_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
+            StringFormat sf = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
 
             var combo = sender as ComboBox;
-
-            //e.Graphics.FillRectangle(new SolidBrush(Color.Navy), e.Bounds);
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.PaleGreen), e.Bounds);
@@ -837,11 +800,8 @@ namespace AParkDispetcher
                 if (admin_car_type_cbox.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
             }
 
-
-
-            if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(), //Cambria; 12pt; style=Bold
+            if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(),
                                            new Font("Segoe UI", 11, FontStyle.Bold),
-                                           //new Font("Cambria", 12, FontStyle.Bold), SystemBrushes.ControlText,
                                            new SolidBrush(Color.Black),
                                            e.Bounds,
                                            sf);
@@ -856,10 +816,12 @@ namespace AParkDispetcher
             }
         }
 
-        private void admin_users_role_DrawItem(object sender, DrawItemEventArgs e)
+        private void Admin_users_role_DrawItem(object sender, DrawItemEventArgs e)
         {
-            StringFormat sf = new StringFormat();
-            sf.Alignment = StringAlignment.Center;
+            StringFormat sf = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
 
             var combo = sender as ComboBox;
 
@@ -872,46 +834,44 @@ namespace AParkDispetcher
                 if (admin_users_role.DroppedDown) e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
             }
 
-
-
-            if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(), //Cambria; 12pt; style=Bold
+            if (e.Index > -1) e.Graphics.DrawString(combo.Items[e.Index].ToString(),
                                            new Font("Segoe UI", 11, FontStyle.Bold),
                                            new SolidBrush(Color.Black),
                                            e.Bounds,
                                            sf);
         }
 
-        private void searchTasks_Enter(object sender, EventArgs e)
+        private void SearchTasks_Enter(object sender, EventArgs e)
         {
             searchUsers.Clear();
         }
 
-        private void searchTasks_Leave(object sender, EventArgs e)
+        private void SearchTasks_Leave(object sender, EventArgs e)
         {
             if (searchUsers.Text == "") searchUsers.Text = "Поиск";
         }
 
-        private void textBox9_Enter(object sender, EventArgs e)
+        private void searchDrivers_Enter(object sender, EventArgs e)
         {
             searchDrivers.Clear();
         }
 
-        private void textBox9_Leave(object sender, EventArgs e)
+        private void searchDrivers_Leave(object sender, EventArgs e)
         {
             if (searchDrivers.Text == "") searchDrivers.Text = "Поиск";
         }
 
-        private void searchAuto_Enter(object sender, EventArgs e)
+        private void SearchAuto_Enter(object sender, EventArgs e)
         {
             searchAutos.Clear();
         }
 
-        private void searchAuto_Leave(object sender, EventArgs e)
+        private void SearchAuto_Leave(object sender, EventArgs e)
         {
             if (searchAutos.Text == "") searchAutos.Text = "Поиск";
         }
 
-        private void searchAuto_TextChanged(object sender, EventArgs e)
+        private void SearchAuto_TextChanged(object sender, EventArgs e)
         {
             AdminCarsGrid.ClearSelection();
 
@@ -937,7 +897,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void searchDrivers_TextChanged(object sender, EventArgs e)
+        private void SearchDrivers_TextChanged(object sender, EventArgs e)
         {
             AdminDriversGrid.ClearSelection();
 
@@ -961,11 +921,6 @@ namespace AParkDispetcher
                     }
                 }
             }
-        }
-
-        private void AdminRolesFrom_Deactivate(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

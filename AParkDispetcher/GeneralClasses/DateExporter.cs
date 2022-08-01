@@ -64,7 +64,6 @@ namespace AParkDispetcher
                 worksheet.Cells["A1"].LoadFromDataTable(dtTasks, true);
                 worksheet.Cells["B:B"].Style.Numberformat.Format = "dd-MM-yyyy  (HH:mm)";
                 worksheet.Cells["E:E"].Style.Numberformat.Format = "dd-MM-yyyy  (HH:mm)";
-                //worksheet.Cells["E:E"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
 
                 worksheet.Cells["A1"].Value = "Номер заявки";
                 worksheet.Cells["B1"].Value = "Время заявки";
@@ -132,9 +131,11 @@ namespace AParkDispetcher
                 worksheet.Column(10).Width = 30;
 
 
-                SaveFileDialog sDialog = new SaveFileDialog();
-                sDialog.DefaultExt = "xlsx";
-                sDialog.Filter = "Excel files (*.xlsx)|*.xlsx|Excel files (*.xls)| *.xls";
+                SaveFileDialog sDialog = new SaveFileDialog
+                {
+                    DefaultExt = "xlsx",
+                    Filter = "Excel files (*.xlsx)|*.xlsx|Excel files (*.xls)| *.xls"
+                };
                 if (sDialog.ShowDialog() == DialogResult.OK)
                     excelPackage.SaveAs(new FileInfo(sDialog.FileName));
             }

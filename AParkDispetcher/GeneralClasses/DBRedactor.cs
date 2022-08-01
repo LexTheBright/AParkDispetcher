@@ -20,7 +20,6 @@ namespace AParkDispetcher
 
         public int CreateNewKouple(string table, Dictionary<string, string> props)
         {
-            string querry = "";
             string addingKeys = "";
             string addingValues = "";
 
@@ -33,14 +32,13 @@ namespace AParkDispetcher
             addingKeys = addingKeys.Remove(addingKeys.Length - 2);
             addingValues = addingValues.Remove(addingValues.Length - 2);
 
-            querry = $"USE autos; INSERT INTO {table}({addingKeys})" +
-                $" VALUES ({addingValues})";
+            string querry = $"USE autos; INSERT INTO {table}({addingKeys})" +
+                                                $" VALUES ({addingValues})";
 
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 comm.ExecuteNonQuery();
-                //MessageBox.Show("Записалося!!!!!!");
                 return 0;
             }
             catch (MySqlException e)
@@ -52,10 +50,9 @@ namespace AParkDispetcher
             }
         }
 
-        public void deleteByID(string table, string id_title, string id)
+        public void DeleteByID(string table, string id_title, string id)
         {
-            string querry = "";
-            querry = $"USE autos; DELETE FROM {table} WHERE {id_title} = '{id}'";
+            string querry = $"USE autos; DELETE FROM {table} WHERE {id_title} = '{id}'";
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
@@ -68,9 +65,8 @@ namespace AParkDispetcher
             }
         }
 
-        public int updateByID(string table, string id_title, string id, Dictionary<string, string> props)
+        public int UpdateByID(string table, string id_title, string id, Dictionary<string, string> props)
         {
-            string querry = "";
             string adding = "";
 
             foreach (var prop in props)
@@ -80,14 +76,13 @@ namespace AParkDispetcher
 
             adding = adding.Remove(adding.Length - 2);
 
-            querry = $"USE autos; UPDATE {table} SET " + adding +
-                $" WHERE {id_title} = '{id}'";
+            string querry = $"USE autos; UPDATE {table} SET " + adding +
+                                       $" WHERE {id_title} = '{id}'";
 
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
             {
                 comm.ExecuteNonQuery();
-                //MessageBox.Show("ОБНОВИЛОСЯ!!!!!!");
                 return 0;
             }
             catch (MySqlException e)
@@ -99,10 +94,9 @@ namespace AParkDispetcher
             }
         }
 
-        public int getMaxID(string table, string id_title)
+        public int GetMaxID(string table, string id_title)
         {
-            string querry = "";
-            querry = $"USE autos; SELECT MAX({id_title}) FROM {table}";
+            string querry = $"USE autos; SELECT MAX({id_title}) FROM {table}";
 
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try
@@ -118,12 +112,11 @@ namespace AParkDispetcher
             {
                 throw;
             }
-            return -1;
         }
+
         public DateTime getDateTimeFromServer()
         {
-            string querry = "";
-            querry = $"USE autos; SELECT CURRENT_TIMESTAMP;";
+            string querry = $"USE autos; SELECT CURRENT_TIMESTAMP;";
 
             MySqlCommand comm = new MySqlCommand(querry, DbConnection.dbConnect);
             try

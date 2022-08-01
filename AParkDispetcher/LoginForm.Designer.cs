@@ -70,7 +70,7 @@ namespace AParkDispetcher
             this.logButton.TabIndex = 4;
             this.logButton.Text = "Войти";
             this.logButton.UseVisualStyleBackColor = false;
-            this.logButton.Click += new System.EventHandler(this.logButton_Click);
+            this.logButton.Click += new System.EventHandler(this.LogButton_Click);
             // 
             // label2
             // 
@@ -127,7 +127,7 @@ namespace AParkDispetcher
             this.sloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sloseButton.TabIndex = 5;
             this.sloseButton.TabStop = false;
-            this.sloseButton.Click += new System.EventHandler(this.sloseButton_Click);
+            this.sloseButton.Click += new System.EventHandler(this.SloseButton_Click);
             // 
             // LoginForm
             // 

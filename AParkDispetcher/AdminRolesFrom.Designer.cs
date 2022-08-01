@@ -36,7 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRolesFrom));
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.driversPage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.driver_tab_textbox = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.FIO_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tab_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.usersPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.user_role_textbox = new System.Windows.Forms.TextBox();
@@ -80,7 +80,7 @@
             this.log_field = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminTab = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.autosPage = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.admin_car_color_label = new System.Windows.Forms.TextBox();
@@ -108,18 +108,18 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2.SuspendLayout();
+            this.driversPage.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminDriversGrid)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.usersPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminUsersGrid)).BeginInit();
             this.AdminTab.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.autosPage.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -140,17 +140,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Пользователи";
             // 
-            // tabPage2
+            // driversPage
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Chocolate;
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(938, 624);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Водители";
-            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            this.driversPage.BackColor = System.Drawing.Color.Chocolate;
+            this.driversPage.Controls.Add(this.groupBox2);
+            this.driversPage.Location = new System.Drawing.Point(4, 33);
+            this.driversPage.Name = "driversPage";
+            this.driversPage.Padding = new System.Windows.Forms.Padding(3);
+            this.driversPage.Size = new System.Drawing.Size(938, 624);
+            this.driversPage.TabIndex = 1;
+            this.driversPage.Text = "Водители";
+            this.driversPage.Enter += new System.EventHandler(this.DriversPage_Enter);
             // 
             // groupBox2
             // 
@@ -333,9 +333,9 @@
             this.searchDrivers.TabStop = false;
             this.searchDrivers.Text = "Поиск";
             this.searchDrivers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchDrivers.TextChanged += new System.EventHandler(this.searchDrivers_TextChanged);
-            this.searchDrivers.Enter += new System.EventHandler(this.textBox9_Enter);
-            this.searchDrivers.Leave += new System.EventHandler(this.textBox9_Leave);
+            this.searchDrivers.TextChanged += new System.EventHandler(this.SearchDrivers_TextChanged);
+            this.searchDrivers.Enter += new System.EventHandler(this.searchDrivers_Enter);
+            this.searchDrivers.Leave += new System.EventHandler(this.searchDrivers_Leave);
             // 
             // AdminDriversGrid
             // 
@@ -389,8 +389,8 @@
             this.AdminDriversGrid.Size = new System.Drawing.Size(928, 440);
             this.AdminDriversGrid.StandardTab = true;
             this.AdminDriversGrid.TabIndex = 0;
-            this.AdminDriversGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
-            this.AdminDriversGrid.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.AdminDriversGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.AdminDriversGrid_CellFormatting);
+            this.AdminDriversGrid.SelectionChanged += new System.EventHandler(this.AdminDriversGrid_SelectionChanged);
             // 
             // FIO_col
             // 
@@ -415,20 +415,20 @@
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn5.Width = 117;
             // 
-            // tabPage1
+            // usersPage
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Chocolate;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage1.CausesValidation = false;
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 33);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(938, 624);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Пользователи";
-            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
+            this.usersPage.BackColor = System.Drawing.Color.Chocolate;
+            this.usersPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.usersPage.CausesValidation = false;
+            this.usersPage.Controls.Add(this.groupBox1);
+            this.usersPage.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usersPage.Location = new System.Drawing.Point(4, 33);
+            this.usersPage.Margin = new System.Windows.Forms.Padding(0);
+            this.usersPage.Name = "usersPage";
+            this.usersPage.Size = new System.Drawing.Size(938, 624);
+            this.usersPage.TabIndex = 0;
+            this.usersPage.Text = "Пользователи";
+            this.usersPage.Enter += new System.EventHandler(this.UsersPage_Enter);
             // 
             // groupBox1
             // 
@@ -500,7 +500,7 @@
             this.admin_users_role.Size = new System.Drawing.Size(281, 27);
             this.admin_users_role.TabIndex = 3;
             this.admin_users_role.Visible = false;
-            this.admin_users_role.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.admin_users_role_DrawItem);
+            this.admin_users_role.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Admin_users_role_DrawItem);
             // 
             // password_place
             // 
@@ -722,9 +722,9 @@
             this.searchUsers.TabStop = false;
             this.searchUsers.Text = "Поиск";
             this.searchUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchUsers.TextChanged += new System.EventHandler(this.searchUsers_TextChanged);
-            this.searchUsers.Enter += new System.EventHandler(this.searchTasks_Enter);
-            this.searchUsers.Leave += new System.EventHandler(this.searchTasks_Leave);
+            this.searchUsers.TextChanged += new System.EventHandler(this.SearchUsers_TextChanged);
+            this.searchUsers.Enter += new System.EventHandler(this.SearchTasks_Enter);
+            this.searchUsers.Leave += new System.EventHandler(this.SearchTasks_Leave);
             // 
             // AdminUsersGrid
             // 
@@ -779,8 +779,8 @@
             this.AdminUsersGrid.Size = new System.Drawing.Size(928, 393);
             this.AdminUsersGrid.StandardTab = true;
             this.AdminUsersGrid.TabIndex = 0;
-            this.AdminUsersGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.AdminUsersGrid.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.AdminUsersGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.AdminUsersGrid_CellFormatting);
+            this.AdminUsersGrid.SelectionChanged += new System.EventHandler(this.AdminUsersGrid_SelectionChanged);
             // 
             // SNM_field
             // 
@@ -815,9 +815,9 @@
             // 
             this.AdminTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.AdminTab.CausesValidation = false;
-            this.AdminTab.Controls.Add(this.tabPage1);
-            this.AdminTab.Controls.Add(this.tabPage2);
-            this.AdminTab.Controls.Add(this.tabPage3);
+            this.AdminTab.Controls.Add(this.usersPage);
+            this.AdminTab.Controls.Add(this.driversPage);
+            this.AdminTab.Controls.Add(this.autosPage);
             this.AdminTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminTab.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdminTab.Location = new System.Drawing.Point(0, 0);
@@ -829,23 +829,23 @@
             this.AdminTab.Size = new System.Drawing.Size(946, 661);
             this.AdminTab.TabIndex = 3;
             this.AdminTab.TabStop = false;
-            this.AdminTab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.AdminTab.SelectedIndexChanged += new System.EventHandler(this.AdminTab_SelectedIndexChanged);
             this.AdminTab.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.AdminTab_Deselecting);
             // 
-            // tabPage3
+            // autosPage
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Chocolate;
-            this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 33);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(938, 624);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Автомобили";
-            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
-            this.tabPage3.Leave += new System.EventHandler(this.tabPage3_Leave);
+            this.autosPage.BackColor = System.Drawing.Color.Chocolate;
+            this.autosPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.autosPage.Controls.Add(this.groupBox3);
+            this.autosPage.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.autosPage.Location = new System.Drawing.Point(4, 33);
+            this.autosPage.Margin = new System.Windows.Forms.Padding(0);
+            this.autosPage.Name = "autosPage";
+            this.autosPage.Size = new System.Drawing.Size(938, 624);
+            this.autosPage.TabIndex = 2;
+            this.autosPage.Text = "Автомобили";
+            this.autosPage.Enter += new System.EventHandler(this.AutosPage_Enter);
+            this.autosPage.Leave += new System.EventHandler(this.AutosPage_Leave);
             // 
             // groupBox3
             // 
@@ -935,7 +935,7 @@
             this.admin_car_type_cbox.Size = new System.Drawing.Size(185, 27);
             this.admin_car_type_cbox.TabIndex = 4;
             this.admin_car_type_cbox.Visible = false;
-            this.admin_car_type_cbox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.admin_car_type_cbox_DrawItem);
+            this.admin_car_type_cbox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Admin_car_type_cbox_DrawItem);
             // 
             // admin_car_descr_label
             // 
@@ -993,7 +993,7 @@
             this.admin_car_edit_save_button.Text = "Сохранить";
             this.admin_car_edit_save_button.UseVisualStyleBackColor = false;
             this.admin_car_edit_save_button.Visible = false;
-            this.admin_car_edit_save_button.Click += new System.EventHandler(this.admin_car_edit_save_button_Click);
+            this.admin_car_edit_save_button.Click += new System.EventHandler(this.Admin_car_edit_save_button_Click);
             // 
             // admin_car_add_save_button
             // 
@@ -1011,7 +1011,7 @@
             this.admin_car_add_save_button.TabIndex = 58;
             this.admin_car_add_save_button.Text = "Сохранить";
             this.admin_car_add_save_button.UseVisualStyleBackColor = false;
-            this.admin_car_add_save_button.Click += new System.EventHandler(this.admin_car_add_save_button_Click);
+            this.admin_car_add_save_button.Click += new System.EventHandler(this.Admin_car_add_save_button_Click);
             // 
             // admin_car_cancel_button
             // 
@@ -1030,7 +1030,7 @@
             this.admin_car_cancel_button.TabStop = false;
             this.admin_car_cancel_button.Text = "Отмена";
             this.admin_car_cancel_button.UseVisualStyleBackColor = false;
-            this.admin_car_cancel_button.Click += new System.EventHandler(this.admin_car_cancel_button_Click);
+            this.admin_car_cancel_button.Click += new System.EventHandler(this.Admin_car_cancel_button_Click);
             // 
             // admin_car_edit_button
             // 
@@ -1048,7 +1048,7 @@
             this.admin_car_edit_button.TabStop = false;
             this.admin_car_edit_button.Text = "Изменить";
             this.admin_car_edit_button.UseVisualStyleBackColor = false;
-            this.admin_car_edit_button.Click += new System.EventHandler(this.admin_car_edit_button_Click);
+            this.admin_car_edit_button.Click += new System.EventHandler(this.Admin_car_edit_button_Click);
             // 
             // admin_car_delete_button
             // 
@@ -1066,7 +1066,7 @@
             this.admin_car_delete_button.TabStop = false;
             this.admin_car_delete_button.Text = "Удалить";
             this.admin_car_delete_button.UseVisualStyleBackColor = false;
-            this.admin_car_delete_button.Click += new System.EventHandler(this.admin_car_delete_button_Click);
+            this.admin_car_delete_button.Click += new System.EventHandler(this.Admin_car_delete_button_Click);
             // 
             // admin_car_add_button
             // 
@@ -1083,7 +1083,7 @@
             this.admin_car_add_button.TabIndex = 7;
             this.admin_car_add_button.Text = "Добавить";
             this.admin_car_add_button.UseVisualStyleBackColor = false;
-            this.admin_car_add_button.Click += new System.EventHandler(this.admin_car_add_button_Click);
+            this.admin_car_add_button.Click += new System.EventHandler(this.Admin_car_add_button_Click);
             // 
             // admin_car_model_label
             // 
@@ -1154,9 +1154,9 @@
             this.searchAutos.TabStop = false;
             this.searchAutos.Text = "Поиск";
             this.searchAutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchAutos.TextChanged += new System.EventHandler(this.searchAuto_TextChanged);
-            this.searchAutos.Enter += new System.EventHandler(this.searchAuto_Enter);
-            this.searchAutos.Leave += new System.EventHandler(this.searchAuto_Leave);
+            this.searchAutos.TextChanged += new System.EventHandler(this.SearchAuto_TextChanged);
+            this.searchAutos.Enter += new System.EventHandler(this.SearchAuto_Enter);
+            this.searchAutos.Leave += new System.EventHandler(this.SearchAuto_Leave);
             // 
             // AdminCarsGrid
             // 
@@ -1214,8 +1214,8 @@
             this.AdminCarsGrid.Size = new System.Drawing.Size(928, 391);
             this.AdminCarsGrid.StandardTab = true;
             this.AdminCarsGrid.TabIndex = 0;
-            this.AdminCarsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView3_CellFormatting);
-            this.AdminCarsGrid.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            this.AdminCarsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.AdminCarsGrid_CellFormatting);
+            this.AdminCarsGrid.SelectionChanged += new System.EventHandler(this.AdminCarsGrid_SelectionChanged);
             // 
             // Gov_num_col
             // 
@@ -1274,16 +1274,15 @@
             this.MinimumSize = new System.Drawing.Size(962, 607);
             this.Name = "AdminRolesFrom";
             this.Text = "Панель админиcтратора";
-            this.Deactivate += new System.EventHandler(this.AdminRolesFrom_Deactivate);
             this.Load += new System.EventHandler(this.AdminRolesFrom_Load);
-            this.tabPage2.ResumeLayout(false);
+            this.driversPage.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdminDriversGrid)).EndInit();
-            this.tabPage1.ResumeLayout(false);
+            this.usersPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1291,7 +1290,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdminUsersGrid)).EndInit();
             this.AdminTab.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.autosPage.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1305,7 +1304,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage driversPage;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox driver_tab_textbox;
@@ -1319,7 +1318,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox searchDrivers;
         private System.Windows.Forms.DataGridView AdminDriversGrid;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage usersPage;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox user_role_textbox;
@@ -1346,7 +1345,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn log_field;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TabControl AdminTab;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage autosPage;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox admin_car_type_label;

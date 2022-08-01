@@ -11,19 +11,19 @@ namespace AParkDispetcher
             switch (from)
             {
                 case "tasks":
-                    textBox1.Text = "Отменить заявку?";
+                    ActionText.Text = "Отменить заявку?";
                     this.Text = "Отмена заявки";
                     break;
                 case "users":
-                    textBox1.Text += " пользователя?";
+                    ActionText.Text += " пользователя?";
                     this.Text = "Удаление пользователя";
                     break;
                 case "drivers":
-                    textBox1.Text += " водителя?";
+                    ActionText.Text += " водителя?";
                     this.Text = "Удаление водителя";
                     break;
                 case "cars":
-                    textBox1.Text += " автомобиль?";
+                    ActionText.Text += " автомобиль?";
                     this.Text = "Удаление автомобиля";
                     break;
                 default:
@@ -31,9 +31,9 @@ namespace AParkDispetcher
             }
             foreach (var arg in agrs)
             {
-                textBox2.Text += arg + "\r\n";
+                MessageText.Text += arg + "\r\n";
             }
-            textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 2);
+            MessageText.Text = MessageText.Text.Remove(MessageText.Text.Length - 2);
         }
 
         private void User_button_cancel_Click(object sender, EventArgs e)

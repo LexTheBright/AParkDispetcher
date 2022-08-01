@@ -87,18 +87,18 @@
     </Compile>
     <Compile Include="GeneralClasses\AppUser.cs" />
     <Compile Include="GeneralClasses\DateExporter.cs" />
-    <Compile Include="GeneralClasses\dbConnection.cs" />
+    <Compile Include="GeneralClasses\DbConnection.cs" />
     <Compile Include="DeleteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteDialog.Designer.cs">
       <DependentUpon>DeleteDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="DispetcherFrom_v1.cs">
+    <Compile Include="DispetcherFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DispetcherFrom_v1.Designer.cs">
-      <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
+    <Compile Include="DispetcherFrom.Designer.cs">
+      <DependentUpon>DispetcherFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="StructClasses\Cars_list.cs" />
     <Compile Include="StructClasses\Drivers_list.cs" />
@@ -136,7 +136,7 @@
     <Compile Include="TaskHistoryForm.Designer.cs">
       <DependentUpon>TaskHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneralClasses\ParkDispecter.cs" />
+    <Compile Include="GeneralClasses\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminRolesFrom.resx">
       <DependentUpon>AdminRolesFrom.cs</DependentUpon>
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="DeleteDialog.resx">
       <DependentUpon>DeleteDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DispetcherFrom_v1.resx">
-      <DependentUpon>DispetcherFrom_v1.cs</DependentUpon>
+    <EmbeddedResource Include="DispetcherFrom.resx">
+      <DependentUpon>DispetcherFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExportSettingsForm.resx">
       <DependentUpon>ExportSettingsForm.cs</DependentUpon>

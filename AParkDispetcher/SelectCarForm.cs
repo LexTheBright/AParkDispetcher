@@ -10,13 +10,13 @@ namespace AParkDispetcher
         {
             InitializeComponent();
             Cars_list DC = new Cars_list();
-            DC.fillSelectCarForm(SelectionCarGrid);
+            DC.FillSelectCarForm(SelectionCarGrid);
         }
         public SelectCarForm(DateTime Tleft, DateTime Tright)
         {
             InitializeComponent();
             Cars_list DC = new Cars_list();
-            DC.fillSelectCarForm(SelectionCarGrid, Tleft, Tright);
+            DC.FillSelectCarForm(SelectionCarGrid, Tleft, Tright);
         }
 
         private void SelectionCarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -45,12 +45,12 @@ namespace AParkDispetcher
             this.Location = new Point(Screen.GetWorkingArea(this.Location).Right - this.Width, Screen.GetWorkingArea(this.Location).Bottom - this.Height);
         }
 
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ok_button_Click(object sender, EventArgs e)
+        private void Ok_button_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
@@ -60,17 +60,17 @@ namespace AParkDispetcher
             if (e.RowIndex != -1) this.DialogResult = DialogResult.OK;
         }
 
-        private void searchAutos2_Enter(object sender, EventArgs e)
+        private void SearchAutos2_Enter(object sender, EventArgs e)
         {
             searchAutos2.Clear();
         }
 
-        private void searchAutos2_Leave(object sender, EventArgs e)
+        private void SearchAutos2_Leave(object sender, EventArgs e)
         {
             if (searchAutos2.Text == "") searchAutos2.Text = "Поиск";
         }
 
-        private void searchAutos2_TextChanged(object sender, EventArgs e)
+        private void SearchAutos2_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(searchAutos2.Text))
                 return;

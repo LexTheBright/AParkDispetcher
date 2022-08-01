@@ -31,8 +31,8 @@ namespace AParkDispetcher
         {
             this.User_button_save = new System.Windows.Forms.Button();
             this.User_button_cancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ActionText = new System.Windows.Forms.TextBox();
+            this.MessageText = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -71,40 +71,40 @@ namespace AParkDispetcher
             this.User_button_cancel.UseVisualStyleBackColor = false;
             this.User_button_cancel.Click += new System.EventHandler(this.User_button_cancel_Click);
             // 
-            // textBox1
+            // ActionText
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ActionText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(12, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(299, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Удалить";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ActionText.BackColor = System.Drawing.Color.PapayaWhip;
+            this.ActionText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ActionText.Enabled = false;
+            this.ActionText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ActionText.Location = new System.Drawing.Point(12, 3);
+            this.ActionText.Name = "ActionText";
+            this.ActionText.ReadOnly = true;
+            this.ActionText.Size = new System.Drawing.Size(299, 22);
+            this.ActionText.TabIndex = 0;
+            this.ActionText.Text = "Удалить";
+            this.ActionText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // MessageText
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MessageText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.PapayaWhip;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.textBox2.Location = new System.Drawing.Point(12, 31);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(299, 80);
-            this.textBox2.TabIndex = 61;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MessageText.BackColor = System.Drawing.Color.PapayaWhip;
+            this.MessageText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MessageText.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MessageText.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MessageText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MessageText.Location = new System.Drawing.Point(12, 31);
+            this.MessageText.Multiline = true;
+            this.MessageText.Name = "MessageText";
+            this.MessageText.ReadOnly = true;
+            this.MessageText.Size = new System.Drawing.Size(299, 80);
+            this.MessageText.TabIndex = 61;
+            this.MessageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel3
             // 
@@ -129,8 +129,8 @@ namespace AParkDispetcher
             this.ClientSize = new System.Drawing.Size(323, 153);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.MessageText);
+            this.Controls.Add(this.ActionText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -148,8 +148,8 @@ namespace AParkDispetcher
 
         private System.Windows.Forms.Button User_button_save;
         private System.Windows.Forms.Button User_button_cancel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ActionText;
+        private System.Windows.Forms.TextBox MessageText;
         private System.Windows.Forms.Panel panel3;
     }
 }

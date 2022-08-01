@@ -26,11 +26,6 @@ namespace AParkDispetcher
             InitializeComponent();
         }
 
-        private void TaskHistoryGrid_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TaskHistoryForm_Deactivate(object sender, EventArgs e)
         {
             this.Close();
@@ -52,7 +47,6 @@ namespace AParkDispetcher
             DataGridViewElementStates states = DataGridViewElementStates.None;
             TaskHistoryGrid.ScrollBars = ScrollBars.Horizontal;
             var totalHeight = TaskHistoryGrid.Rows.GetRowsHeight(states) + TaskHistoryGrid.ColumnHeadersHeight;
-            //totalHeight += TaskHistoryGrid.Rows.Count * 4;
 
             this.ClientSize = new Size(this.Width, totalHeight + 28 + 20);
 
@@ -65,9 +59,8 @@ namespace AParkDispetcher
             TaskHistoryGrid.ClientSize = new Size(TaskHistoryGrid.Width, totalHeight);
         }
 
-        private void expand_button_Click(object sender, EventArgs e)
+        private void Expand_button_Click(object sender, EventArgs e)
         {
-            //if (Screen.PrimaryScreen.Bounds.Size.Width >= 1800) {
             expand_button.Visible = false;
             minimize_button.Visible = true;
             this.Width = Screen.GetWorkingArea(this.Location).Width;
@@ -83,7 +76,7 @@ namespace AParkDispetcher
             THF_size();
         }
 
-        private void minimize_button_Click(object sender, EventArgs e)
+        private void Minimize_button_Click(object sender, EventArgs e)
         {
             expand_button.Visible = true;
             minimize_button.Visible = false;

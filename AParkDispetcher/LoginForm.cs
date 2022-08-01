@@ -10,19 +10,19 @@ namespace AParkDispetcher
             InitializeComponent();
         }
 
-        private void logButton_Click(object sender, EventArgs e)
+        private void LogButton_Click(object sender, EventArgs e)
         {
-            if (!AppUser.iSsignedIn)
+            if (!AppUser.ISsignedIn)
             {
-                AppUser.getConnInstance().tryToLogin(Login_textbox.Text, Pass_textbox.Text);
+                AppUser.getConnInstance().TryToLogin(Login_textbox.Text, Pass_textbox.Text);
             }
-            if (AppUser.iSsignedIn)
+            if (AppUser.ISsignedIn)
             {
                 this.DialogResult = DialogResult.OK;
             }
         }
 
-        private void sloseButton_Click(object sender, EventArgs e)
+        private void SloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -39,7 +39,7 @@ namespace AParkDispetcher
         {
             if (e.KeyData == Keys.Enter)
             {
-                logButton_Click(sender, e);
+                LogButton_Click(sender, e);
             }
         }
     }

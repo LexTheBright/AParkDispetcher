@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AParkDispetcher
@@ -33,7 +28,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void approvalGrid_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        private void ApprovalGrid_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
             if (e.Column.Index == 0)
             {
@@ -42,7 +37,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void approvalGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void ApprovalGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex % 2 == 1) approvalGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke;
             else approvalGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.AliceBlue;
@@ -57,13 +52,7 @@ namespace AParkDispetcher
                 e.Value = e.Value.ToString().Remove(e.Value.ToString().Length - 3);
             }
         }
-
-        private void approvalGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void approvalGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ApprovalGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex == 0)
             {
@@ -97,7 +86,7 @@ namespace AParkDispetcher
                 {
                     DBR = new DBRedactor();
                     props.Add("order_state", "2");
-                    DBR.updateByID("tasks", "task_num", row.Cells["TNum_col"].Value.ToString(), props);
+                    DBR.UpdateByID("tasks", "task_num", row.Cells["TNum_col"].Value.ToString(), props);
                     props.Add("task_num", row.Cells["TNum_col"].Value.ToString());
                     props.Add("ordered_ctype", row.Cells["ordered_ctype_col"].Value.ToString());
                     props.Add("ordered_time", DateTime.Parse(row.Cells["ordered_time_col"].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
@@ -106,7 +95,7 @@ namespace AParkDispetcher
                     props.Add("destination", row.Cells["destination_col"].Value.ToString());
                     props.Add("user_description", row.Cells["user_description_col"].Value.ToString());
                     props.Add("car_reg_mark", row.Cells["car_reg_mark_col"].Value.ToString());
-                    props.Add("changer_tab_number", AppUser.tabNum);
+                    props.Add("changer_tab_number", AppUser.TabNum);
                     props.Add("driver_tab_number", row.Cells["driver_tab_number_col"].Value.ToString());
                     props.Add("chdatetime", DBR.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss"));
                     props.Add("chdescription", "Утверждено начальником АХЧ");
@@ -135,7 +124,7 @@ namespace AParkDispetcher
                 {
                     DBR = new DBRedactor();
                     props.Add("order_state", "5");
-                    DBR.updateByID("tasks", "task_num", row.Cells["TNum_col"].Value.ToString(), props);
+                    DBR.UpdateByID("tasks", "task_num", row.Cells["TNum_col"].Value.ToString(), props);
                     props.Add("task_num", row.Cells["TNum_col"].Value.ToString());
                     props.Add("ordered_ctype", row.Cells["ordered_ctype_col"].Value.ToString());
                     props.Add("ordered_time", DateTime.Parse(row.Cells["ordered_time_col"].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
@@ -144,7 +133,7 @@ namespace AParkDispetcher
                     props.Add("destination", row.Cells["destination_col"].Value.ToString());
                     props.Add("user_description", row.Cells["user_description_col"].Value.ToString());
                     props.Add("car_reg_mark", row.Cells["car_reg_mark_col"].Value.ToString());
-                    props.Add("changer_tab_number", AppUser.tabNum);
+                    props.Add("changer_tab_number", AppUser.TabNum);
                     props.Add("driver_tab_number", row.Cells["driver_tab_number_col"].Value.ToString());
                     props.Add("chdatetime", DBR.getDateTimeFromServer().ToString("yyyy-MM-dd HH:mm:ss"));
                     props.Add("chdescription", "Отменена начальником АХЧ");
@@ -156,7 +145,7 @@ namespace AParkDispetcher
             }
         }
 
-        private void searchTasks_TextChanged(object sender, EventArgs e)
+        private void SearchTasks_TextChanged(object sender, EventArgs e)
         {
             approvalGrid.ClearSelection();
 
@@ -188,20 +177,19 @@ namespace AParkDispetcher
             }
         }
 
-        private void searchTasks_Enter(object sender, EventArgs e)
+        private void SearchTasks_Enter(object sender, EventArgs e)
         {
             searchTasks.Clear();
         }
 
-        private void searchTasks_Leave(object sender, EventArgs e)
+        private void SearchTasks_Leave(object sender, EventArgs e)
         {
             if (searchTasks.Text == "") searchTasks.Text = "Поиск";
         }
 
-        private void approvalGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ApprovalGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1) return;
-            //MessageBox.Show("The row index = " + e.RowIndex);
 
             string task_numb = approvalGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             string task_datetime = approvalGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
